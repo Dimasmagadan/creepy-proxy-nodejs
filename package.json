@@ -22,7 +22,7 @@
     "replacestream": "^4.0.0",
     "request": "^2.72.0",
     "tough-cookie": "^2.2.2"
-  }
+  },
   "repositories": [
     {
       "type": "git",
