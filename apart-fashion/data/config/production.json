@@ -1,0 +1,17 @@
+{
+  "site": {
+    "name"        : "apart-fashion",
+    "domain"      : ".de",
+    "port"        : 5051
+  },
+  "header": {
+    "catalog"     : "apart-fashion",
+    "alias"       : "AF",
+    "info"        : "Интернет-магазин apart-fashion. Каталоги.ру - заказ и доставка одежды из европейских интернет-магазинов."
+  },
+  "options": {
+    "height"      : 150,
+    "width"       : 1000
+  },
+  "replaces": []
+}
