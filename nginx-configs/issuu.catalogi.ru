@@ -12,14 +12,8 @@ server {
         root /var/www/issuu;
     }
 
-    location ~* ^.+\.(css|js|jpe?g|gif|png|avi|swf|ico)$ {
-        rewrite ^(.*)$ http://$subdomain.issuu.de$1 permanent;
-    }
-
-    location ~* ^.+\.(ttf|svg|css)$ {
-        proxy_pass http://www.issuu.de:80;
-        proxy_redirect http://www.issuu.de:80/ /;
-        proxy_set_header Host www.issuu.de;
+    location ~* ^.+\.(css|js|jpe?g|gif|png|avi|ico|swf)$ {
+        rewrite ^(.*)$ http://$subdomain.issuu.com$1 permanent;
     }
 
     location / {
