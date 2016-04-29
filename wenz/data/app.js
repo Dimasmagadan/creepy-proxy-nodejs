@@ -93,12 +93,13 @@ if (cluster.isMaster) {
             res.setHeader('Access-Control-Allow-Origin', '*');
             res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With');
         }
-        tmp = fs.statSync(fname)["size"];
+        //was error "no such file"
+        //tmp = fs.statSync(fname)["size"];
         //console.log(tmp);
-        if (fsize != tmp) {
-            fsize = tmp;
-            translates = JSON.parse(fs.readFileSync(fname, 'utf8'));
-        }
+        //if (fsize != tmp) {
+        //    fsize = tmp;
+        //    translates = JSON.parse(fs.readFileSync(fname, 'utf8'));
+        //}
 
 
         //console.log('Trying to access: ' + req.headers.host + req.url);
