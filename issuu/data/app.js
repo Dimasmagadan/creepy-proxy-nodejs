@@ -2,23 +2,17 @@
  * Created by mihailstepancenko on 27.04.16.
  */
 
-
-/**
- * @return {boolean}
- */
 function IsJsonString(str) {
     try {JSON.parse(str);}
     catch (e) {return false;}
     return true;
 }
 
-// Load config
 var config = require('config');
 var SITENAME = config.get('site.name'),
     SITEDOMAIN = config.get('site.domain'),
     SITE = SITENAME + SITEDOMAIN;
 
-// Start server
 var cluster = require('cluster');
 if (cluster.isMaster) {
     console.log('Start master');
@@ -79,12 +73,10 @@ if (cluster.isMaster) {
             res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With');
         };
 
-        var _header = {};
-        if ('user-agent' in req.headers) req.headers['user-agent'] = req.headers['user-agent'];
-        if ('content-type' in req.headers) _header['Content-Type'] = req.headers['content-type'];
-        if ('cookie' in req.headers) _header['Cookie'] = req.headers['cookie'];
         var host = req.headers.host.replace(SITENAME + '.catalogi.ru', SITE);
-        _header['Host'] = host;
+        var proxyfull = "http://" + proxy() + ":3129";
+        var url = "http://" + host + req.url;
+        var piper;
 
         if ('cookie' in req.headers) {
             var cookies = req.headers.cookie.split(' ');
@@ -92,11 +84,6 @@ if (cluster.isMaster) {
                 j.setCookie(request.cookie(cookies[i].replace(';', '')), "http://" + host);
             }
         }
-
-        // Proxyng trafic
-        var proxyfull = "http://" + proxy() + ":3129";
-        var url = "http://" + host + req.url;
-        var piper;
         if (req.method === "GET") {
             piper = proxiedReq.get({
                 url: url,
@@ -111,9 +98,8 @@ if (cluster.isMaster) {
         }
 
         piper.pipe(replacestream('issuu.com', 'issuu.catalogi.ru'))
-             .pipe(replacestream('https', 'http'))
-             .pipe(replacestream('http://static.isu.pub/fe/issuu-documentpage/s3/448/scripts/default.js', 'http://www.' + SITENAME + '.catalogi.ru/static/default.js'))
-             .pipe(res);
+            .pipe(replacestream('https', 'http'))
+            .pipe(res);
 
     }).listen(config.get('site.port'));
 }
