@@ -6,7 +6,7 @@ APP_DIR='/var/www/ateliergs/data';
 PID_FILE=$APP_DIR/pid/app.pid
 LOG_FILE=$APP_DIR/log/app.log
 CONFIG_DIR=$APP_DIR/config
-PORT=7050
+PORT=7051
 NODE_EXEC=/usr/bin/node
 
 ###############
