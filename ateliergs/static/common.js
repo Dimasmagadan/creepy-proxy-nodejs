@@ -58,12 +58,22 @@ catalogi.parse = function() {
     catalogi('.shopping-cart-wrapper').remove();
 
 
-    catalogi('ul.nav').children().remove();
-    catalogi('ul.nav').append($('<li>').text('one'));
-    catalogi('ul.nav').append($('<li>').text('one'));
-    catalogi('ul.nav').append($('<li>').text('one'));
-    catalogi('ul.nav').append($('<li>').text('one'));
-    catalogi('ul.nav').append($('<li>').text('one'));
+    catalogi('#navbar-meta ul.nav').children().remove();
+    catalogi('ul.nav').append($('<li>').text('one').addClass('textInHeader').click(function(){
+        catalogi.login();
+    }));
+    catalogi('ul.nav').append($('<li>').text('one').addClass('textInHeader').click(function(){
+        catalogi.login();
+    }));
+    catalogi('ul.nav').append($('<li>').text('one').addClass('textInHeader').click(function(){
+        catalogi.login();
+    }));
+    catalogi('ul.nav').append($('<li>').text('one').addClass('textInHeader').click(function(){
+        catalogi.login();
+    }));
+    catalogi('ul.nav').append($('<li>').text('one').addClass('textInHeader').click(function(){
+        catalogi.login();
+    }));
 
 //login    
 var cartBtn = $("<button></button>")
