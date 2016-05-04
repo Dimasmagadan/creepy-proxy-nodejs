@@ -130,9 +130,12 @@ var cartBtn = $("<button></button>")
     }));
 
 
-    catalogi('.product-detail-wrapper .row').first().append($('<span>').text('to basket').click(function(){
+    /*catalogi('.product-detail-wrapper .row').first().append($('<span>').text('to basket').click(function(){
         addToCart();
-    }));
+    }));*/
+
+    catalogi('#button-add-to-cart').attr('onclick','addToCart()');
+
 
 
 
