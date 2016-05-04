@@ -55,11 +55,23 @@ catalogi.parse = function() {
     catalogi('.header-popover-wrapper').remove();
     catalogi('.benefit-wrapper').children().remove();
     catalogi('.hotline-wrapper').remove();
+    catalogi('.shopping-cart-wrapper').remove();
 
     //cart
-    catalogi('#js_cart-popover > .cart-badge-wrapper').remove();
-    catalogi('#js_cart-popover').append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:2.1em").text("C"));
-    catalogi('#js_cart-popover > cart-label').text("Корзина");
+    var cartBtn = $("<button></button>")
+        .type('button')
+        .class('btn btn-navbar btn-secondary')
+        .css('border', 'none');
+
+    cartBtn.append($('<span></span>').class('cart-label visible-md-inline-block visible-lg-inline-block').text("Корзина"));
+    cartBtn.append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:35px").text("C"));
+
+    catalogi('.navbar-button-wrapper').append(cartBtn);
+
+
+    /*catalogi('#js_cart-popover > .cart-badge-wrapper').remove();
+    catalogi('#js_cart-popover').append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:35px").text("C"));
+    catalogi('#js_cart-popover > .cart-label').text("Корзина");
     catalogi('#js_cart-popover').parent().click(function(){
         event.preventDefault();
         catalogi.order();
@@ -68,11 +80,11 @@ catalogi.parse = function() {
             catalogi('#cboxLoadedContent').css('height', catalogi('#cboxLoadedContent').css('height').replace('px','')+40+'px');
         },500);
 
-    });
+    });*/
     //search botton
     catalogi('.btn.btn-navbar.btn-secondary.btn-search').children().remove();
     catalogi('.btn.btn-navbar.btn-secondary.btn-search')
-    .append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:2.1em").text("B"));
+    .append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:35px").text("B"));
 
 
 
