@@ -52,13 +52,17 @@ catalogi.parse = function() {
     //// Шапка
     catalogi('#iframe').hide();
     catalogi('.header-popover-wrapper').remove();
+    catalogi('.benefit-wrapper').children().remove();
+    catalogi('.hotline-wrapper').remove();
+    catalogi('.shopping-cart-wrapper').children().remove();
+    catalogi('.shopping-cart-wrapper').prepend($('<div></div>').text("p").css('cssText',"font-family: 'jvds icons',sans-serif;font-size:2.1em"));
 
 
     //юридические страницы
     catalogi('footer').remove();
 
 
-    //some shit
+    
 
 
 
@@ -518,7 +522,7 @@ catalogi.removeShit = function(){
 // On load
 catalogi(function(){
 
-    iShop.controller.ProductlistController.currentUrl = $(location).attr('href').replace('catalogi.ru', 'de');
+    
 
 	var re = /(?:[\s.])([a-z0-9][a-z0-9-]+[a-z0-9])(?:[.\s])/;
 	var str = window.location.hostname;
