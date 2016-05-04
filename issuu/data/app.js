@@ -71,6 +71,7 @@ if (cluster.isMaster) {
 
             res.setHeader('Access-Control-Allow-Origin', '*');
             res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With');
+            res.setHeader('Content-Type', 'text/html; charset=UTF-8');
         };
 
         var host = req.headers.host.replace(SITENAME + '.catalogi.ru', SITE);
