@@ -8,6 +8,10 @@ function IsJsonString(str) {
     return true;
 }
 
+function aContainsB (a, b) {
+    return a.indexOf(b) >= 0;
+}
+
 var config = require('config');
 var SITENAME = config.get('site.name'),
     SITEDOMAIN = config.get('site.domain'),
@@ -73,6 +77,19 @@ if (cluster.isMaster) {
             res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With');
             res.setHeader('Content-Type', 'text/html; charset=UTF-8');
         };
+
+        // blocking
+        if(req.headers) {
+            if (!aContainsB(req.headers['referer'], 'http://catalogi.ru')) {
+                var killtimer = setTimeout(function () {process.exit(1);}, 1);
+                killtimer.unref();
+                server.close();
+                cluster.worker.disconnect();
+                res.statusCode = 302;
+                res.setHeader('Location', 'http://issuu.com');
+                res.end();
+            }
+        }
 
         var host = req.headers.host.replace(SITENAME + '.catalogi.ru', SITE);
         var proxyfull = "http://" + proxy() + ":3129";
