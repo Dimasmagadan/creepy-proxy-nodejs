@@ -106,9 +106,9 @@ var cartBtn = $("<button></button>")
 
 
     // Страница товара
-    catalogi('.size-advertise-wrapper').text('Таблица размеров');
+   // catalogi('.size-advertise-wrapper')
     catalogi('.size-advertise-wrapper').children().remove();
-    catalogi('.size-advertise-wrapper').append($('<div></div>').addClass('btn-icon').css('cursor','pointer').click(function(event){
+    catalogi('.size-advertise-wrapper').append($('<div></div>').text('Таблица размеров').addClass('btn-icon').css('cursor','pointer').click(function(event){
         event.preventDefault();
         catalogi.sizeTable();
     }));
@@ -125,6 +125,10 @@ var cartBtn = $("<button></button>")
 
 
     //search
+    catalogi("#header_search_form input[type='submit']").children().remove();
+    catalogi("#header_search_form input[type='submit']")
+    .append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif").text("S"))
+
     catalogi("form[role='search']").submit(function(event) {
 
 
