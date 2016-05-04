@@ -100,6 +100,7 @@ if (cluster.isMaster) {
         };
         onResponse = function (response) {
             console.log(new Date()+" "+ JSON.stringify(response.headers));
+            console.log(response.statusCode);
          //  if(response.statusCode == 200){
             if ('location' in response.headers)
                 //to avoid error "is not function"
