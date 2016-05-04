@@ -55,7 +55,7 @@ catalogi.parse = function() {
     catalogi('.header-popover-wrapper').remove();
     catalogi('.benefit-wrapper').children().remove();
     catalogi('.hotline-wrapper').remove();
-    catalogi('.shopping-cart-wrapper').children().remove();
+    //catalogi('.shopping-cart-wrapper').children().remove();
     var tempA = $("<a></a>");
     tempA.append($("<span></span>").css('vertical-align', 'super').text("Кабинет"));
     tempA.append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:2.1em").text("S"));
@@ -63,7 +63,7 @@ catalogi.parse = function() {
         event.preventDefault();
         catalogi.login();
     });
-    catalogi('.shopping-cart-wrapper').append(tempA);
+   // catalogi('.shopping-cart-wrapper').append(tempA);
     tempA = $("<a></a>");
     tempA.append($("<span></span>").css('vertical-align', 'super').text("Корзина"));
     tempA.append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:2.1em").text("C"));
@@ -77,7 +77,7 @@ catalogi.parse = function() {
 
         //return false;
     });
-    catalogi('.shopping-cart-wrapper').append(tempA);
+  //  catalogi('.shopping-cart-wrapper').append(tempA);
 
 
     //юридические страницы
