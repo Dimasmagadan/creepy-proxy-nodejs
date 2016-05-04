@@ -518,40 +518,7 @@ catalogi.removeShit = function(){
 // On load
 catalogi(function(){
 
-    iShop.controller.ProductlistController.updateFilters = function(isProductlistAjaxUpdate){
-        if (typeof isProductlistAjaxUpdate === 'undefined') {
-          var $checkedFilters = $("div.filter-wrapper ").find("*:checked");
-          var $sizeFilters = $checkedFilters.filter("[data-size-category]").filter("[data-size]");
-          var sizesWithCategories = "";
-          $sizeFilters.each(function(){
-            sizesWithCategories += $(this).data("size")+"---"+$(this).data("size-category")+";";
-        });
-          var $colorFilters = $checkedFilters.filter("[data-color]");
-          var colors="";
-          $colorFilters.each(function(){
-            colors+=$(this).data("color")+";";
-        });
-          currentUrl = $(location).attr('href').replace('catalogi.ru', 'de');
-          //var $priceMin = $("#js_min-range").val().replace(currencySymbol,"").replace(zeroAmountSuffix,"").trim();
-          //var $priceMax = $("#js_max-range").val().replace(currencySymbol,"").replace(zeroAmountSuffix,"").trim();
-          var price = "29-160";//$priceMin + "-" + $priceMax;
-          var sortBy =  $("select[name='sortBy']").val();
-
-          // TODO fixen... Hier sollte nicht mehr die Url übergeben werden, das muss irdendwie per JAVA im Controller gemacht werden. (Refactoring)
-          var params = {
-            url: currentUrl,
-            colors: colors,
-            sizesWithCategories: sizesWithCategories,
-            price: price,
-            sortBy: sortBy
-        };
-        _post(Dependencies.VariablesModule.getFilterAjaxUrl() , params);
-    }
-    else {
-          // Ajax-Request beim Rücksprung auf die Produktliste von der ADS.
-          _post(Dependencies.VariablesModule.getProductlistUpdateAjaxUrl() , {});
-      }
-  };
+    iShop.controller.ProductlistController.currentUrl = $(location).attr('href').replace('catalogi.ru', 'de');
 
 	var re = /(?:[\s.])([a-z0-9][a-z0-9-]+[a-z0-9])(?:[.\s])/;
 	var str = window.location.hostname;
