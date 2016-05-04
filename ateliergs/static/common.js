@@ -115,6 +115,10 @@ cartBtn = $("<button></button>")
   catalogi('.filter-sort-tab-wrapper').remove();
 
    //side menu
+   catalogi('.navbar-button.navbar-toggle.collapsed .icon-text').text('Меню');
+
+
+
    catalogi('.navbar-offcanvas-login-wrapper').remove();
    catalogi('.nav.navbar-service.visible-xs').children().remove();
    catalogi('.nav.navbar-service.visible-xs').append($("<li>").append($("<a>").text("онлайн каталоги").click(function(){
