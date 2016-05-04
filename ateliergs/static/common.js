@@ -56,7 +56,14 @@ catalogi.parse = function() {
     catalogi('.benefit-wrapper').children().remove();
     catalogi('.hotline-wrapper').remove();
     catalogi('.shopping-cart-wrapper').children().remove();
-    catalogi('.shopping-cart-wrapper').prepend($('<div></div>').text("p").css('cssText',"font-family: 'jvds icons',sans-serif;font-size:2.1em"));
+    var tempA = $("<a></a>");
+    tempA.append($("<span></span>").css('vertical-align', 'super').text("Кабинет"));
+    tempA.append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:2.1em").text("S"));
+    catalogi('.shopping-cart-wrapper').append(tempA);
+    tempA = $("<a></a>");
+    tempA.append($("<span></span>").css('vertical-align', 'super').text("Корзина"));
+    tempA.append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:2.1em").text("С"));
+    catalogi('.shopping-cart-wrapper').append(tempA)
 
 
     //юридические страницы
