@@ -59,7 +59,7 @@ catalogi.parse = function() {
 
 
     catalogi('#navbar-meta ul.nav').children().remove();
-    catalogi('#navbar-meta ul.nav').append($('<li>').text('+74955404949').addClass('textInHeader');
+    catalogi('#navbar-meta ul.nav').append($('<li>').text('+74955404949').addClass('textInHeader'));
     catalogi('#navbar-meta ul.nav').append($('<li>').text('Доставка|').addClass('textInHeader').click(function(){
         catalogi.delivery();
     }));
