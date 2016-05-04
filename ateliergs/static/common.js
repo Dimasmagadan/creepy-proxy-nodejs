@@ -134,9 +134,9 @@ var cartBtn = $("<button></button>")
 
 
 
-    /*catalogi('.product-detail-wrapper .row').first().append($('<span>').text('to basket').click(function(){
+    catalogi('.product-detail-wrapper .row').first().append($('<span>').text('to basket').click(function(){
         addToCart();
-    }));*/
+    }));
 
     catalogi('#button-add-to-cart').attr('onclick','addToCart()');
 
@@ -496,7 +496,7 @@ catalogi(".addToCartForm [name='submit']").text("В корзину");
 
     // Подписка
     catalogi.subscribe(false, '35346');
-
+*/
 
     // Showing body after hiding
     catalogi('body')
@@ -539,6 +539,12 @@ catalogi(".addToCartForm [name='submit']").text("В корзину");
 catalogi('head')
 .delay(5000)
 .queue(function (next) {
+    setInterval(function(){
+
+
+    catalogi('#button-add-to-cart').attr('onclick','addToCart()');
+    catalogi.service();
+    },500);
 
 	if(_auth){
 		catalogi('#_auth_wait').remove();
@@ -560,53 +566,10 @@ catalogi('head')
 		});
 		catalogi('.account-nav-listelem > a').text('Вход');
 	}
-});*/
+});
 };
 
-//function for use filters without redirect
-function addFilter(obj){
 
-	var value = encodeURIComponent(obj.value);
-	var currentUrl = window.location.href.split("?")[0];
-	var urlParts = currentUrl.split("/");
-	var newUrl = "";
-	var appliedFilters = decodeURIComponent(urlParts[urlParts.length-1]).split('_');
-	if(appliedFilters.length == 1){
-		if(obj.id.indexOf('Farbe') != -1){
-			appliedFilters = '_Farbe-'+ value;
-		} else if(obj.id.indexOf('Größe') != -1){
-			appliedFilters = '__Größe-'+ value;
-		}
-		urlParts.pop();
-		newUrl = urlParts.join('/')+'/'+appliedFilters;
-	} else {
-		var farbeFilter = "";
-		var grosseFilter = "";
-		if(obj.id.indexOf('Farbe') != -1){
-			if(appliedFilters[1].indexOf('Farbe') != -1){
-				appliedFilters[1] = appliedFilters[1]+"."+value;
-			} else {
-				appliedFilters.push(appliedFilters[1]);
-				appliedFilters[1] = "Farbe-"+value;
-			}
-		}
-		if(obj.id.indexOf('Größe') != -1){
-			if(appliedFilters[2] && appliedFilters[2].indexOf('Größe') != -1){
-				appliedFilters[2] = appliedFilters[2]+"."+value;
-			} else  {
-				appliedFilters[2] = "Größe-"+value;
-			}
-
-		}
-		urlParts.pop();
-
-		newUrl = urlParts.join('/')+'/'+appliedFilters.join('_');
-	}
-
-
-	catalogi('.form-filter').attr('method','GET').attr('action',newUrl).submit();
-
-}
 
 function checkBasket() {
 	window.clearInterval(window.timer1);
@@ -629,13 +592,16 @@ function checkSeach() {
     //    catalogi('#search').val(seachString);
 }
 
+
+
 // Скидка
 catalogi.service = function(){
 	if('_service' in window && catalogi('.tax-delivery-wrapper')){
+        catalogi('.tax-delivery-wrapper').children().remove();
 		catalogi('#deliveryPriceDiv').remove();
-		_price = catalogi('.pricearea .price .value').text().replace('€','').replace(',','.').trim();
+		_price = catalogi('.price-wrapper').first().text().replace('€','').replace(',','.').trim().replace(' ','');
 		_delivery = parseFloat(_price)+(( parseFloat(_price)/100 )* parseFloat( _service ));
-		catalogi('.pricearea').append($('<div></div>').attr('id','deliveryPriceDiv').text('С учетом доставки € '+_delivery.toFixed(2)));
+		catalogi('.tax-delivery-wrapper').append($('<div></div>').attr('id','deliveryPriceDiv').text('С учетом доставки € '+_delivery.toFixed(2)));
        // catalogi('.product-shipping-costs').text('С учетом доставки € '+_delivery.toFixed(2));
    }
 };
