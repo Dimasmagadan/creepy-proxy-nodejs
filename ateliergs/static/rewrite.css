@@ -58,6 +58,10 @@
     font-size: 1.4em;
 }
 
+div#navbar-meta {
+    margin-bottom: 3.5em;
+}
+
 .shopping-cart-wrapper span {
     margin-left: 0.5em;
     margin-right: 0.5em;

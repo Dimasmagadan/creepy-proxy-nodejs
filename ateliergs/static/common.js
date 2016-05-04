@@ -70,7 +70,53 @@ catalogi.parse = function() {
     catalogi('footer').remove();
 
 
+
+
+
+
+
+
+
+
+
+
+
+    catalogi("form[role='search']").submit(function(event) {
+
+        var form = event.currentTarget;
+
+        var value = catalogi(form).find("input[name='q']").val();
+
+        //var value = catalogi("[name='search'")[0].value ? catalogi("[name='search'")[0].value : catalogi("[name='search'")[1].value;
+        catalogi.cookie('seachString', value, { expires: 7, path: '/', domain: '.catalogi.ru' });
+        catalogi.ajax({
+            url: 'http://cdn.catalogi.ru/executable/actions/_translate.php',
+            type: 'get',
+            dataType: 'json',
+            data: {
+                client: 't',
+                text: value,
+                sl: 'ru',
+                tl: 'de'
+            },
+            success: function(data){
+                console.log('success:' + data);
+                catalogi(form).find("input[name='q']").val(data.text[0]);
+                form.submit(); 
+            },
+            error: function(data){
+                console.log('error:' + data);
+               // top.postMessage({action: 'search', search: catalogi('#search').val()},'*');
+           }
+       });
+        return false;
+    });
+
+
     
+
+
+
 
 
 
