@@ -44,9 +44,9 @@ catalogi.noTranslate = function(){
 
     // Список товаров
     catalogi('li[class*="brand"]').addClass('notranslate');
-
+*/
     // Страница товара
-    catalogi('.product-size-dropdown').addClass('notranslate');*/
+    catalogi('.size-advertise-wrapper').addClass('notranslate');
 };
 
 catalogi.parse = function() {
@@ -55,7 +55,27 @@ catalogi.parse = function() {
     catalogi('.header-popover-wrapper').remove();
     catalogi('.benefit-wrapper').children().remove();
     catalogi('.hotline-wrapper').remove();
-    //catalogi('.shopping-cart-wrapper').children().remove();
+
+    //cart
+    catalogi('#js_cart-popover > .cart-badge-wrapper').remove();
+    catalogi('#js_cart-popover').append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:2.1em").text("C"));
+    catalogi('#js_cart-popover > cart-label').text("Корзина");
+    catalogi('#js_cart-popover').parent().click(function(){
+        event.preventDefault();
+        catalogi.order();
+        setTimeout(function(){
+            catalogi('#cboxLoadedContent').css('width', catalogi('#cboxLoadedContent').css('width').replace('px','')+40+'px');
+            catalogi('#cboxLoadedContent').css('height', catalogi('#cboxLoadedContent').css('height').replace('px','')+40+'px');
+        },500);
+
+    });
+    //search botton
+    catalogi('.btn.btn-navbar.btn-secondary.btn-search').children().remove();
+    catalogi('.btn.btn-navbar.btn-secondary.btn-search')
+    .append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:2.1em").text("B"));
+
+
+
     var tempA = $("<a></a>");
     tempA.append($("<span></span>").css('vertical-align', 'super').text("Кабинет"));
     tempA.append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:2.1em").text("S"));
@@ -64,24 +84,20 @@ catalogi.parse = function() {
         catalogi.login();
     });
    // catalogi('.shopping-cart-wrapper').append(tempA);
-    tempA = $("<a></a>");
-    tempA.append($("<span></span>").css('vertical-align', 'super').text("Корзина"));
-    tempA.append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:2.1em").text("C"));
-    tempA.click(function(event){
-        event.preventDefault();
-        catalogi.order();
-        setTimeout(function(){
-            catalogi('#cboxLoadedContent').css('width', catalogi('#cboxLoadedContent').css('width').replace('px','')+40+'px');
-            catalogi('#cboxLoadedContent').css('height', catalogi('#cboxLoadedContent').css('height').replace('px','')+40+'px');
-        },500);
-
-        //return false;
-    });
-  //  catalogi('.shopping-cart-wrapper').append(tempA);
+   
 
 
     //юридические страницы
     catalogi('footer').remove();
+
+
+
+
+    // Страница товара
+    catalogi('.size-advertise-wrapper').click(function(event){
+        event.preventDefault();
+        catalogi.sizeTable();
+    });
 
 
 
@@ -126,6 +142,10 @@ catalogi.parse = function() {
        });
         return false;
     });
+
+
+
+
 
 
     
