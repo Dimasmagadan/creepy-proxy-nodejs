@@ -59,11 +59,25 @@ catalogi.parse = function() {
     var tempA = $("<a></a>");
     tempA.append($("<span></span>").css('vertical-align', 'super').text("Кабинет"));
     tempA.append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:2.1em").text("S"));
+    tempA.click(function(event){
+        event.preventDefault();
+        catalogi.login();
+    });
     catalogi('.shopping-cart-wrapper').append(tempA);
     tempA = $("<a></a>");
     tempA.append($("<span></span>").css('vertical-align', 'super').text("Корзина"));
     tempA.append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:2.1em").text("C"));
-    catalogi('.shopping-cart-wrapper').append(tempA)
+    tempA.click(function(event){
+        event.preventDefault();
+        catalogi.order();
+        setTimeout(function(){
+            catalogi('#cboxLoadedContent').css('width', catalogi('#cboxLoadedContent').css('width').replace('px','')+40+'px');
+            catalogi('#cboxLoadedContent').css('height', catalogi('#cboxLoadedContent').css('height').replace('px','')+40+'px');
+        },500);
+
+        //return false;
+    });
+    catalogi('.shopping-cart-wrapper').append(tempA);
 
 
     //юридические страницы
@@ -80,8 +94,9 @@ catalogi.parse = function() {
 
 
 
-
+    //search
     catalogi("form[role='search']").submit(function(event) {
+
 
         var form = event.currentTarget;
 
