@@ -117,19 +117,19 @@ cartBtn = $("<button></button>")
    //side menu
    catalogi('.navbar-offcanvas-login-wrapper').remove();
    catalogi('.nav.navbar-service.visible-xs').children().remove();
-   catalogi('.nav.navbar-service.visible-xs').append($("<li>").append($("<a>").text(" Онлайн каталоги").click(function(){
+   catalogi('.nav.navbar-service.visible-xs').append($("<li>").append($("<a>").text("онлайн каталоги").click(function(){
     catalogi.catalogs();
 })));
-   catalogi('.nav.navbar-service.visible-xs').append($("<li>").append($("<a>").text("Интернет-магазины").click(function(){
+   catalogi('.nav.navbar-service.visible-xs').append($("<li>").append($("<a>").text("интернет-магазины").click(function(){
     catalogi.shops();
 })));
-   catalogi('.nav.navbar-service.visible-xs').append($("<li>").append($("<a>").text("Оплата").click(function(){
+   catalogi('.nav.navbar-service.visible-xs').append($("<li>").append($("<a>").text("оплата").click(function(){
     catalogi.payment();
 })));
-   catalogi('.nav.navbar-service.visible-xs').append($("<li>").append($("<a>").text("Доставка").click(function(){
+   catalogi('.nav.navbar-service.visible-xs').append($("<li>").append($("<a>").text("доставка").click(function(){
     catalogi.delivery();
 })));
-   catalogi('.nav.navbar-service.visible-xs').append($("<li>").append($("<a>").text(" Таблица размеров").click(function(){
+   catalogi('.nav.navbar-service.visible-xs').append($("<li>").append($("<a>").text("таблица размеров").click(function(){
     catalogi.sizeTable();
 })));
    
