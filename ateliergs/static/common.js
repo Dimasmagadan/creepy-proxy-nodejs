@@ -63,7 +63,7 @@ var cartBtn = $("<button></button>")
         .addClass('btn btn-navbar btn-secondary')
         .css('border', 'none');
 
-    cartBtn.append($('<span></span>').class('cart-label visible-md-inline-block visible-lg-inline-block').text("Кабинет"));
+    cartBtn.append($('<span></span>').addClass('cart-label visible-md-inline-block visible-lg-inline-block').text("Кабинет"));
     cartBtn.append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:35px").text("S"));
     cartBtn.click(function(){
         event.preventDefault();
@@ -78,7 +78,7 @@ var cartBtn = $("<button></button>")
         .addClass('btn btn-navbar btn-secondary')
         .css('border', 'none');
 
-    cartBtn.append($('<span></span>').class('cart-label visible-md-inline-block visible-lg-inline-block').text("Корзина"));
+    cartBtn.append($('<span></span>').addClass('cart-label visible-md-inline-block visible-lg-inline-block').text("Корзина"));
     cartBtn.append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:35px").text("C"));
     cartBtn.click(function(){
         event.preventDefault();
@@ -107,10 +107,11 @@ var cartBtn = $("<button></button>")
 
     // Страница товара
     catalogi('.size-advertise-wrapper').text('Таблица размеров');
-    catalogi('.size-advertise-wrapper').click(function(event){
+    catalogi('.size-advertise-wrapper').children().remove();
+    catalogi('.size-advertise-wrapper').append($('<div></div>').addClass('btn-icon').css('cursor','pointer').click(function(event){
         event.preventDefault();
         catalogi.sizeTable();
-    });
+    }));
 
 
 
