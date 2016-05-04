@@ -57,13 +57,21 @@ catalogi.parse = function() {
     catalogi('.hotline-wrapper').remove();
     catalogi('.shopping-cart-wrapper').remove();
 
+
+    catalogi('ul.nav').children().remove();
+    catalogi('ul.nav').append($('<li>').text('one'));
+    catalogi('ul.nav').append($('<li>').text('one'));
+    catalogi('ul.nav').append($('<li>').text('one'));
+    catalogi('ul.nav').append($('<li>').text('one'));
+    catalogi('ul.nav').append($('<li>').text('one'));
+
 //login    
 var cartBtn = $("<button></button>")
         .attr('type','button')
         .addClass('btn btn-navbar btn-secondary')
         .css('border', 'none');
 
-    cartBtn.append($('<span></span>').addClass('cart-label visible-md-inline-block visible-lg-inline-block').text("Кабинет"));
+   // cartBtn.append($('<span></span>').addClass('cart-label visible-md-inline-block visible-lg-inline-block').text("Кабинет"));
     cartBtn.append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:35px").text("S"));
     cartBtn.click(function(){
         event.preventDefault();
@@ -78,7 +86,7 @@ var cartBtn = $("<button></button>")
         .addClass('btn btn-navbar btn-secondary')
         .css('border', 'none');
 
-    cartBtn.append($('<span></span>').addClass('cart-label visible-md-inline-block visible-lg-inline-block').text("Корзина"));
+  //  cartBtn.append($('<span></span>').addClass('cart-label visible-md-inline-block visible-lg-inline-block').text("Корзина"));
     cartBtn.append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:35px").text("C"));
     cartBtn.click(function(){
         event.preventDefault();
@@ -125,8 +133,8 @@ var cartBtn = $("<button></button>")
 
 
     //search
-    catalogi("#header_search_form input[type='submit']").children().remove();
-    catalogi("#header_search_form input[type='submit']")
+    catalogi("#header_search_form button[type='submit']").children().remove();
+    catalogi("#header_search_form button[type='submit']")
     .append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif").text("S"));
 
     catalogi('#search').attr('placeholder', 'найти');
