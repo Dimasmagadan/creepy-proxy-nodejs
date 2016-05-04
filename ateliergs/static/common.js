@@ -25,6 +25,7 @@ catalogi(document).ready(function(){
 
 catalogi.noTranslate = function(){
     // Шапка
+    catalogi('.col-xs-12.col-sm-10.col-md-10.header_right').addClass('notranslate');
    /* catalogi('#meta-nav').addClass('notranslate');
     catalogi('#header-wrapper').find('*').addClass('notranslate');
     catalogi(".addToCartForm [name='submit']").addClass('notranslate');
