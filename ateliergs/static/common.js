@@ -651,10 +651,8 @@ catalogi.removeShit = function(){
 };
 
 function addToCart(event){
-        try{
+    try{
 
-           
-          
             // артикул
             var articul     = "<a href='"+window.location.href+"' target='_blank'>"+catalogi("span.order-nr").text()+"</a>";
             // название
@@ -695,20 +693,18 @@ function addToCart(event){
                 price: price,
                 count: count,
                 img: img
-            });
+            }); 
 
-        } 
-
-        console.log('OK');
-    } catch(e) {
-        console.log(e);
-    }
-    setTimeout(function(){
-        catalogi('#cboxLoadedContent').css('width', catalogi('#cboxLoadedContent').css('width').replace('px','')+40+'px');
-        catalogi('#cboxLoadedContent').css('height', catalogi('#cboxLoadedContent').css('height').replace('px','')+40+'px');
-    },500);
-    return false;
-});
+            console.log('OK');
+        } catch(e) {
+            console.log(e);
+        }
+        setTimeout(function(){
+            catalogi('#cboxLoadedContent').css('width', catalogi('#cboxLoadedContent').css('width').replace('px','')+40+'px');
+            catalogi('#cboxLoadedContent').css('height', catalogi('#cboxLoadedContent').css('height').replace('px','')+40+'px');
+        },500);
+        return false;
+    });
 
 // On load
 catalogi(function(){
