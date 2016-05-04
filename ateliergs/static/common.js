@@ -59,19 +59,19 @@ catalogi.parse = function() {
 
 
     catalogi('#navbar-meta ul.nav').children().remove();
-    catalogi('ul.nav').append($('<li>').text('one').addClass('textInHeader').click(function(){
+    catalogi('#navbar-meta ul.nav').append($('<li>').addClass('textInHeader').append($('<span>').text('two').click(function(){
+        catalogi.login();
+    })));
+    catalogi('#navbar-meta ul.nav').append($('<li>').text('one').addClass('textInHeader').click(function(){
         catalogi.login();
     }));
-    catalogi('ul.nav').append($('<li>').text('one').addClass('textInHeader').click(function(){
+    catalogi('#navbar-meta ul.nav').append($('<li>').text('one').addClass('textInHeader').click(function(){
         catalogi.login();
     }));
-    catalogi('ul.nav').append($('<li>').text('one').addClass('textInHeader').click(function(){
+    catalogi('#navbar-meta ul.nav').append($('<li>').text('one').addClass('textInHeader').click(function(){
         catalogi.login();
     }));
-    catalogi('ul.nav').append($('<li>').text('one').addClass('textInHeader').click(function(){
-        catalogi.login();
-    }));
-    catalogi('ul.nav').append($('<li>').text('one').addClass('textInHeader').click(function(){
+    catalogi('#navbar-meta ul.nav').append($('<li>').text('one').addClass('textInHeader').click(function(){
         catalogi.login();
     }));
 
