@@ -130,6 +130,14 @@ var cartBtn = $("<button></button>")
     }));
 
 
+    /*catalogi('.product-detail-wrapper .row').first().append($('<span>').text('to basket').click(function(){
+        addToCart();
+    }));*/
+
+    catalogi('#button-add-to-cart').attr('onclick','addToCart()');
+
+
+
 
 
 
@@ -642,7 +650,65 @@ catalogi.removeShit = function(){
     //console.log('> ADshit removed.');
 };
 
+function addToCart(event){
+        try{
 
+           
+          
+            // артикул
+            var articul     = "<a href='"+window.location.href+"' target='_blank'>"+catalogi("span.order-nr").text()+"</a>";
+            // название
+            var name        = catalogi('h1.product-headline').text().trim();
+            // количество
+            var count       = catalogi("#cart-quantity").val();
+            // цена
+            var price       = catalogi('.pricearea .price .value').first().text().replace(',','.');
+            // картинка
+            var img         = catalogi('.product-detail-view img').attr('src');
+            
+            
+
+            var param = [];
+
+            // цвет
+            var color1      = catalogi('.btn.color-pattern.active img').attr('alt');
+            var color2      = catalogi('li[class*="selected"]:eq(0)').attr('title');
+            var color       = (color1 == "") ? color2 : color1;
+            if (color && color.length > 0) param.push(color);
+
+            // размер
+            var size1       = catalogi('.btn.sizes-box.active ').text();
+            var size2       = catalogi('li[class*="selected"]:eq(1)').text();
+            var size        = ((size1 == "") ? size2 : size1).trim();
+            if (size == 'Выберите размер' || size == 'Выберите размер ') {
+                alert('Выберите размер!');
+                return;
+            }
+            if (size && size.length > 0) param.push(size);
+
+            // отправка запроса
+            catalogi.basket.add({
+                catalog: 'AtelierGS.de',
+                articul: articul,
+                name: name,
+                size: (param.join(' ').trim() == '') ? 0 : param.join(' ').trim(),
+                price: price,
+                count: count,
+                img: img
+            });
+
+        } 
+
+        console.log('OK');
+    } catch(e) {
+        console.log(e);
+    }
+    setTimeout(function(){
+        catalogi('#cboxLoadedContent').css('width', catalogi('#cboxLoadedContent').css('width').replace('px','')+40+'px');
+        catalogi('#cboxLoadedContent').css('height', catalogi('#cboxLoadedContent').css('height').replace('px','')+40+'px');
+    },500);
+    return false;
+});
 
 // On load
 catalogi(function(){
