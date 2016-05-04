@@ -62,7 +62,7 @@ catalogi.parse = function() {
     catalogi('.shopping-cart-wrapper').append(tempA);
     tempA = $("<a></a>");
     tempA.append($("<span></span>").css('vertical-align', 'super').text("Корзина"));
-    tempA.append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:2.1em").text("С"));
+    tempA.append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:2.1em").text("C"));
     catalogi('.shopping-cart-wrapper').append(tempA)
 
 
