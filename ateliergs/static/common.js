@@ -127,7 +127,9 @@ var cartBtn = $("<button></button>")
     //search
     catalogi("#header_search_form input[type='submit']").children().remove();
     catalogi("#header_search_form input[type='submit']")
-    .append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif").text("S"))
+    .append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif").text("S"));
+
+    catalogi('#search').attr('placeholder', 'найти');
 
     catalogi("form[role='search']").submit(function(event) {
 
