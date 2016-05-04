@@ -1,4 +1,4 @@
-#! /bin/sh  
+#!/bin/sh
 
 NODE_ENV="production"
 NODE_APP='app.js'
