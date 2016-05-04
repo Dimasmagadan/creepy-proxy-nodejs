@@ -704,7 +704,7 @@ function addToCart(event){
             catalogi('#cboxLoadedContent').css('height', catalogi('#cboxLoadedContent').css('height').replace('px','')+40+'px');
         },500);
         return false;
-    });
+    };
 
 // On load
 catalogi(function(){
