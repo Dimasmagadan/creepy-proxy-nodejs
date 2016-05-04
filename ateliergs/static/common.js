@@ -129,6 +129,10 @@ var cartBtn = $("<button></button>")
         catalogi.sizeTable();
     }));
 
+    catalogi('.tax-delivery-wrapper').children().remove();
+    catalogi('.tax-delivery-wrapper').append($('<div>').attr('id','deliveryPriceDiv'));
+
+
 
     /*catalogi('.product-detail-wrapper .row').first().append($('<span>').text('to basket').click(function(){
         addToCart();
@@ -627,8 +631,8 @@ function checkSeach() {
 
 // Скидка
 catalogi.service = function(){
-	if('_service' in window && catalogi('.pricearea .price .value')){
-		//catalogi('#deliveryPriceDiv').remove();
+	if('_service' in window && catalogi('.tax-delivery-wrapper')){
+		catalogi('#deliveryPriceDiv').remove();
 		_price = catalogi('.pricearea .price .value').text().replace('€','').replace(',','.').trim();
 		_delivery = parseFloat(_price)+(( parseFloat(_price)/100 )* parseFloat( _service ));
 		catalogi('.pricearea').append($('<div></div>').attr('id','deliveryPriceDiv').text('С учетом доставки € '+_delivery.toFixed(2)));
@@ -660,7 +664,7 @@ function addToCart(event){
             // количество
             var count       = catalogi("#cart-quantity").val();
             // цена
-            var price       = catalogi('.pricearea .price .value').first().text().replace(',','.');
+            var price       = catalogi('.price-wrapper').first().text().replace('€','').replace(',','.').trim().replace(' ','');
             // картинка
             var img         = catalogi('.product-detail-view img').attr('src');
             
