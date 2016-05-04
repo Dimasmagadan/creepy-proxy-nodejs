@@ -59,20 +59,20 @@ catalogi.parse = function() {
 
 
     catalogi('#navbar-meta ul.nav').children().remove();
-    catalogi('#navbar-meta ul.nav').append($('<li>').addClass('textInHeader').append($('<span>').text('two').click(function(){
-        catalogi.login();
-    })));
-    catalogi('#navbar-meta ul.nav').append($('<li>').text('one').addClass('textInHeader').click(function(){
+    catalogi('#navbar-meta ul.nav').append($('<li>').text('one').addClass('+74955404949').click(function(){
         catalogi.login();
     }));
-    catalogi('#navbar-meta ul.nav').append($('<li>').text('one').addClass('textInHeader').click(function(){
-        catalogi.login();
+    catalogi('#navbar-meta ul.nav').append($('<li>').text('one').addClass('Доставка').click(function(){
+        catalogi.delivery();
     }));
-    catalogi('#navbar-meta ul.nav').append($('<li>').text('one').addClass('textInHeader').click(function(){
-        catalogi.login();
+    catalogi('#navbar-meta ul.nav').append($('<li>').text('one').addClass('Оплата').click(function(){
+        catalogi.payment();
     }));
-    catalogi('#navbar-meta ul.nav').append($('<li>').text('one').addClass('textInHeader').click(function(){
-        catalogi.login();
+    catalogi('#navbar-meta ul.nav').append($('<li>').text('one').addClass('Интернет-магазины').click(function(){
+        catalogi.shops();
+    }));
+    catalogi('#navbar-meta ul.nav').append($('<li>').text('one').addClass('Онлайн каталоги').click(function(){
+        catalogi.catalogs();
     }));
 
 //login    
