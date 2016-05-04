@@ -496,7 +496,7 @@ catalogi(".addToCartForm [name='submit']").text("В корзину");
 
     // Подписка
     catalogi.subscribe(false, '35346');
-*/
+    */
 
     // Showing body after hiding
     catalogi('body')
@@ -540,32 +540,36 @@ catalogi('head')
 .delay(5000)
 .queue(function (next) {
     setInterval(function(){
-
-
-    catalogi('#button-add-to-cart').attr('onclick','addToCart()');
-    catalogi.service();
+        catalogi('.size-advertise-wrapper').children().remove();
+        catalogi('.size-advertise-wrapper').append($('<div></div>').text('Таблица размеров').addClass('btn-icon').css('cursor','pointer').click(function(event){
+            event.preventDefault();
+            catalogi.sizeTable();
+        }));
+        catalogi('#button-add-to-cart').attr('data-target','');
+        catalogi('#button-add-to-cart').attr('onclick','addToCart()');
+        catalogi.service();
     },500);
 
-	if(_auth){
-		catalogi('#_auth_wait').remove();
-		catalogi('.myaccount.notranslate > a').remove();
-		catalogi('.myaccount.notranslate')
-		.html('<a href="http://catalogi.ru/cabinet/" class="my-account-login underline-alternative" target="_blank">Личный кабинет</a>');
-		catalogi('.myaccount.notranslate > a').text('S').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:2.1em");
-		catalogi('.account-nav-listelem').show();
-		catalogi('._logout').click(function(){
-			catalogi.logout();
-			return false;
-		});
-	} else {
-		catalogi('#_auth_wait').remove();
-		catalogi('.account-nav-listelem').show();
-		catalogi('.account-nav-listelem > a').click(function(){
-			catalogi.login();
-			return false;
-		});
-		catalogi('.account-nav-listelem > a').text('Вход');
-	}
+    if(_auth){
+      catalogi('#_auth_wait').remove();
+      catalogi('.myaccount.notranslate > a').remove();
+      catalogi('.myaccount.notranslate')
+      .html('<a href="http://catalogi.ru/cabinet/" class="my-account-login underline-alternative" target="_blank">Личный кабинет</a>');
+      catalogi('.myaccount.notranslate > a').text('S').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:2.1em");
+      catalogi('.account-nav-listelem').show();
+      catalogi('._logout').click(function(){
+         catalogi.logout();
+         return false;
+     });
+  } else {
+      catalogi('#_auth_wait').remove();
+      catalogi('.account-nav-listelem').show();
+      catalogi('.account-nav-listelem > a').click(function(){
+         catalogi.login();
+         return false;
+     });
+      catalogi('.account-nav-listelem > a').text('Вход');
+  }
 });
 };
 
