@@ -44,7 +44,7 @@ catalogi.noTranslate = function(){
 
     // Список товаров
     catalogi('li[class*="brand"]').addClass('notranslate');
-*/
+    */
     // Страница товара
     catalogi('.size-advertise-wrapper').addClass('notranslate');
 };
@@ -75,44 +75,64 @@ catalogi.parse = function() {
 
 //login    
 var cartBtn = $("<button></button>")
-        .attr('type','button')
-        .addClass('btn btn-navbar btn-secondary')
-        .css('border', 'none');
+.attr('type','button')
+.addClass('btn btn-navbar btn-secondary')
+.css('border', 'none');
 
    // cartBtn.append($('<span></span>').addClass('cart-label visible-md-inline-block visible-lg-inline-block').text("Кабинет"));
-    cartBtn.append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:35px").text("S"));
-    cartBtn.click(function(){
-        event.preventDefault();
-        catalogi.login();
-    });
+   cartBtn.append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:35px").text("S"));
+   cartBtn.click(function(){
+    event.preventDefault();
+    catalogi.login();
+});
 
-    catalogi('.navbar-button-wrapper').append(cartBtn);
+   catalogi('.navbar-button-wrapper').append(cartBtn);
 
 //cart
-    cartBtn = $("<button></button>")
-        .attr('type','button')
-        .addClass('btn btn-navbar btn-secondary')
-        .css('border', 'none');
+cartBtn = $("<button></button>")
+.attr('type','button')
+.addClass('btn btn-navbar btn-secondary')
+.css('border', 'none');
 
   //  cartBtn.append($('<span></span>').addClass('cart-label visible-md-inline-block visible-lg-inline-block').text("Корзина"));
-    cartBtn.append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:35px").text("C"));
-    cartBtn.click(function(){
-        event.preventDefault();
-        catalogi.order();
-        setTimeout(function(){
-            catalogi('#cboxLoadedContent').css('width', catalogi('#cboxLoadedContent').css('width').replace('px','')+40+'px');
-            catalogi('#cboxLoadedContent').css('height', catalogi('#cboxLoadedContent').css('height').replace('px','')+40+'px');
-        },500);
-    });
+  cartBtn.append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:35px").text("C"));
+  cartBtn.click(function(){
+    event.preventDefault();
+    catalogi.order();
+    setTimeout(function(){
+        catalogi('#cboxLoadedContent').css('width', catalogi('#cboxLoadedContent').css('width').replace('px','')+40+'px');
+        catalogi('#cboxLoadedContent').css('height', catalogi('#cboxLoadedContent').css('height').replace('px','')+40+'px');
+    },500);
+});
 
-    catalogi('.navbar-button-wrapper').append(cartBtn);
+  catalogi('.navbar-button-wrapper').append(cartBtn);
 
-    catalogi('.btn.btn-navbar.btn-secondary.btn-search').children().remove();
-    catalogi('.btn.btn-navbar.btn-secondary.btn-search')
-    .append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:35px").text("B"));
+  catalogi('.btn.btn-navbar.btn-secondary.btn-search').children().remove();
+  catalogi('.btn.btn-navbar.btn-secondary.btn-search')
+  .append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:35px").text("B"));
 
 
-   catalogi('.filter-sort-tab-wrapper').remove();
+  catalogi('.filter-sort-tab-wrapper').remove();
+
+   //side menu
+   catalogi('.navbar-offcanvas-login-wrapper').remove();
+   catalogi('.nav.navbar-service.visible-xs').children().remove();
+   catalogi('.nav.navbar-service.visible-xs').append($("<li>").append($("<a>").text("Онлайн каталоги").click(function(){
+    catalogi.catalogs();
+})));
+   catalogi('.nav.navbar-service.visible-xs').append($("<li>").append($("<a>").text("Интернет-магазины").click(function(){
+    catalogi.shops();
+})));
+   catalogi('.nav.navbar-service.visible-xs').append($("<li>").append($("<a>").text("Оплата").click(function(){
+    catalogi.payment();
+})));
+   catalogi('.nav.navbar-service.visible-xs').append($("<li>").append($("<a>").text("Доставка").click(function(){
+    catalogi.delivery();
+})));
+   catalogi('.nav.navbar-service.visible-xs').append($("<li>").append($("<a>").text("Таблица размеров").click(function(){
+    catalogi.sizeTable();
+})));
+   
 
 
     //юридические страницы
@@ -123,22 +143,22 @@ var cartBtn = $("<button></button>")
 
     // Страница товара
    // catalogi('.size-advertise-wrapper')
-    catalogi('.size-advertise-wrapper').children().remove();
-    catalogi('.size-advertise-wrapper').append($('<div></div>').text('Таблица размеров').addClass('btn-icon').css('cursor','pointer').click(function(event){
-        event.preventDefault();
-        catalogi.sizeTable();
-    }));
+   catalogi('.size-advertise-wrapper').children().remove();
+   catalogi('.size-advertise-wrapper').append($('<div></div>').text('Таблица размеров').addClass('btn-icon').css('cursor','pointer').click(function(event){
+    event.preventDefault();
+    catalogi.sizeTable();
+}));
 
-    catalogi('.tax-delivery-wrapper').children().remove();
-    catalogi('.tax-delivery-wrapper').append($('<div>').attr('id','deliveryPriceDiv'));
+   catalogi('.tax-delivery-wrapper').children().remove();
+   catalogi('.tax-delivery-wrapper').append($('<div>').attr('id','deliveryPriceDiv'));
 
 
 
-    catalogi('.product-detail-wrapper .row').first().append($('<span>').text('to basket').click(function(){
-        addToCart();
-    }));
+   catalogi('.product-detail-wrapper .row').first().append($('<span>').text('to basket').click(function(){
+    addToCart();
+}));
 
-    catalogi('#button-add-to-cart').attr('onclick','addToCart()');
+   catalogi('#button-add-to-cart').attr('onclick','addToCart()');
 
 
 
@@ -257,16 +277,16 @@ catalogi('head')
       catalogi('.myaccount.notranslate > a').text('S').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:2.1em");
       catalogi('.account-nav-listelem').show();
       catalogi('._logout').click(function(){
-         catalogi.logout();
-         return false;
-     });
+       catalogi.logout();
+       return false;
+   });
   } else {
       catalogi('#_auth_wait').remove();
       catalogi('.account-nav-listelem').show();
       catalogi('.account-nav-listelem > a').click(function(){
-         catalogi.login();
-         return false;
-     });
+       catalogi.login();
+       return false;
+   });
       catalogi('.account-nav-listelem > a').text('Вход');
   }
 });
@@ -301,10 +321,10 @@ function checkSeach() {
 catalogi.service = function(){
 	if('_service' in window && catalogi('.tax-delivery-wrapper')){
         catalogi('.tax-delivery-wrapper').children().remove();
-		catalogi('#deliveryPriceDiv').remove();
-		_price = catalogi('.price-wrapper').first().text().replace('€','').replace(',','.').trim().replace(' ','');
-		_delivery = parseFloat(_price)+(( parseFloat(_price)/100 )* parseFloat( _service ));
-		catalogi('.tax-delivery-wrapper').append($('<div></div>').attr('id','deliveryPriceDiv').text('С учетом доставки € '+_delivery.toFixed(2)));
+        catalogi('#deliveryPriceDiv').remove();
+        _price = catalogi('.price-wrapper').first().text().replace('€','').replace(',','.').trim().replace(' ','');
+        _delivery = parseFloat(_price)+(( parseFloat(_price)/100 )* parseFloat( _service ));
+        catalogi('.tax-delivery-wrapper').append($('<div></div>').attr('id','deliveryPriceDiv').text('С учетом доставки € '+_delivery.toFixed(2)));
        // catalogi('.product-shipping-costs').text('С учетом доставки € '+_delivery.toFixed(2));
    }
 };
@@ -382,7 +402,7 @@ function addToCart(event){
 // On load
 catalogi(function(){
 
-    
+
 
 	var re = /(?:[\s.])([a-z0-9][a-z0-9-]+[a-z0-9])(?:[.\s])/;
 	var str = window.location.hostname;
