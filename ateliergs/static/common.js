@@ -532,9 +532,9 @@ catalogi(function(){
             colors+=$(this).data("color")+";";
         });
           currentUrl = $(location).attr('href').replace('catalogi.ru', 'de');
-          var $priceMin = $("#js_min-range").val().replace(currencySymbol,"").replace(zeroAmountSuffix,"").trim();
-          var $priceMax = $("#js_max-range").val().replace(currencySymbol,"").replace(zeroAmountSuffix,"").trim();
-          var price = $priceMin + "-" + $priceMax;
+          //var $priceMin = $("#js_min-range").val().replace(currencySymbol,"").replace(zeroAmountSuffix,"").trim();
+          //var $priceMax = $("#js_max-range").val().replace(currencySymbol,"").replace(zeroAmountSuffix,"").trim();
+          var price = "29-160";//$priceMin + "-" + $priceMax;
           var sortBy =  $("select[name='sortBy']").val();
 
           // TODO fixen... Hier sollte nicht mehr die Url übergeben werden, das muss irdendwie per JAVA im Controller gemacht werden. (Refactoring)
@@ -552,7 +552,7 @@ catalogi(function(){
           _post(Dependencies.VariablesModule.getProductlistUpdateAjaxUrl() , {});
       }
   };
-    
+
 	var re = /(?:[\s.])([a-z0-9][a-z0-9-]+[a-z0-9])(?:[.\s])/;
 	var str = window.location.hostname;
 	var m;
