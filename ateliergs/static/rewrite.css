@@ -53,16 +53,16 @@
 
 
 .textInHeader {
-    padding-top: 1em;
-    margin-left: 1em;
-    margin-right: 1em;
+    padding-top: 0.5em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
     font-style: italic;
-    font-size: 1.4em;
+    //font-size: 1.4em;
     cursor: pointer;
 }
 
 div#navbar-meta {
-    margin-bottom: 3.5em;
+    margin-bottom: 3em;
 }
 
 .shopping-cart-wrapper span {
