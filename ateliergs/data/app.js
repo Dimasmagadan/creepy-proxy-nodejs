@@ -76,7 +76,7 @@ if (cluster.isMaster) {
     var translates, fsize = 0;
 
     var server = http.createServer(function (req, res) {
-        console.log('Trying to access: ' + req.headers.host + req.url);
+        //console.log('Trying to access: ' + req.headers.host + req.url);
         onError = function (err) {
             console.error(err);
 
@@ -99,8 +99,8 @@ if (cluster.isMaster) {
             }
         };
         onResponse = function (response) {
-            console.log(new Date()+" "+ JSON.stringify(response.headers));
-            console.log(response.statusCode);
+            //console.log(new Date()+" "+ JSON.stringify(response.headers));
+            //console.log(response.statusCode);
          //  if(response.statusCode == 200){
             if ('location' in response.headers)
                 //to avoid error "is not function"
