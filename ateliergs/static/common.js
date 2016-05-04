@@ -57,45 +57,45 @@ catalogi.parse = function() {
     catalogi('.hotline-wrapper').remove();
     catalogi('.shopping-cart-wrapper').remove();
 
-    //cart
-    var cartBtn = $("<button></button>")
-        .type('button')
+//login    
+var cartBtn = $("<button></button>")
+        .attr('type','button')
+        .class('btn btn-navbar btn-secondary')
+        .css('border', 'none');
+
+    cartBtn.append($('<span></span>').class('cart-label visible-md-inline-block visible-lg-inline-block').text("Кабинет"));
+    cartBtn.append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:35px").text("S"));
+    cartBtn.click(function(){
+        event.preventDefault();
+        catalogi.login();
+    });
+
+    catalogi('.navbar-button-wrapper').append(cartBtn);
+
+//cart
+    cartBtn = $("<button></button>")
+        .attr('type','button')
         .class('btn btn-navbar btn-secondary')
         .css('border', 'none');
 
     cartBtn.append($('<span></span>').class('cart-label visible-md-inline-block visible-lg-inline-block').text("Корзина"));
     cartBtn.append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:35px").text("C"));
-
-    catalogi('.navbar-button-wrapper').append(cartBtn);
-
-
-    /*catalogi('#js_cart-popover > .cart-badge-wrapper').remove();
-    catalogi('#js_cart-popover').append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:35px").text("C"));
-    catalogi('#js_cart-popover > .cart-label').text("Корзина");
-    catalogi('#js_cart-popover').parent().click(function(){
+    cartBtn.click(function(){
         event.preventDefault();
         catalogi.order();
         setTimeout(function(){
             catalogi('#cboxLoadedContent').css('width', catalogi('#cboxLoadedContent').css('width').replace('px','')+40+'px');
             catalogi('#cboxLoadedContent').css('height', catalogi('#cboxLoadedContent').css('height').replace('px','')+40+'px');
         },500);
+    });
 
-    });*/
-    //search botton
+    catalogi('.navbar-button-wrapper').append(cartBtn);
+
     catalogi('.btn.btn-navbar.btn-secondary.btn-search').children().remove();
     catalogi('.btn.btn-navbar.btn-secondary.btn-search')
     .append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:35px").text("B"));
 
 
-
-    var tempA = $("<a></a>");
-    tempA.append($("<span></span>").css('vertical-align', 'super').text("Кабинет"));
-    tempA.append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:2.1em").text("S"));
-    tempA.click(function(event){
-        event.preventDefault();
-        catalogi.login();
-    });
-   // catalogi('.shopping-cart-wrapper').append(tempA);
    
 
 
