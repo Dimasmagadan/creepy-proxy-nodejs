@@ -49,8 +49,20 @@ catalogi.noTranslate = function(){
 };
 
 catalogi.parse = function() {
-    /*//// Шапка
+    //// Шапка
     catalogi('#iframe').hide();
+    catalogi('.header-popover-wrapper').remove();
+
+
+    //юридические страницы
+    catalogi('footer').remove();
+
+
+    //some shit
+
+
+
+    /*
     catalogi('#mbflyout-area').remove();
     catalogi('.myaccount.notranslate').css('max-width','140px');
     catalogi('.benefit.first').text('ЭКСПЕРТ ПО БОЛЬШИМ РАЗМЕРАМ');
@@ -118,9 +130,7 @@ catalogi('#menu').text('Меню');
 
 
 
-    //юридические страницы
-    catalogi('.services').remove();
-    catalogi('footer').remove();
+    
 
     // Разное
     catalogi('a[href*="/de/login"]').parent().parent().remove();
