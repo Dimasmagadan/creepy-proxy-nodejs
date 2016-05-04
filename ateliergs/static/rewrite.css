@@ -53,11 +53,12 @@
 
 
 .textInHeader {
-    padding-top: 0.5em;
+    //padding-top: 0.5em;
     //margin-left: 0.5em;
     //margin-right: 0.5em;
     //font-style: italic;
     //font-size: 1.4em;
+    font-size: 13px;
     cursor: pointer;
 }
 
