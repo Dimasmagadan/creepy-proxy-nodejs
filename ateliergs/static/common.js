@@ -25,7 +25,7 @@ catalogi(document).ready(function(){
 
 catalogi.noTranslate = function(){
     // Шапка
-    catalogi('#meta-nav').addClass('notranslate');
+   /* catalogi('#meta-nav').addClass('notranslate');
     catalogi('#header-wrapper').find('*').addClass('notranslate');
     catalogi(".addToCartForm [name='submit']").addClass('notranslate');
     //catalogi('.benefit').addClass('notranslate');
@@ -45,11 +45,11 @@ catalogi.noTranslate = function(){
     catalogi('li[class*="brand"]').addClass('notranslate');
 
     // Страница товара
-    catalogi('.product-size-dropdown').addClass('notranslate');
+    catalogi('.product-size-dropdown').addClass('notranslate');*/
 };
 
 catalogi.parse = function() {
-    //// Шапка
+    /*//// Шапка
     catalogi('#iframe').hide();
     catalogi('#mbflyout-area').remove();
     catalogi('.myaccount.notranslate').css('max-width','140px');
@@ -106,10 +106,7 @@ catalogi('.logged').text('S').css('cssText',"font-family: 'jvds icons',sans-seri
 	event.preventDefault();
 	catalogi.login();
 });
-catalogi('.myaccount .link').remove();/*text('Вход').click(function(event){
-	event.preventDefault();
-	catalogi.login();
-});*/
+catalogi('.myaccount .link').remove();
 catalogi('#account-nav > li > a').attr('href', '#');
 catalogi('.my-account').remove();
 catalogi('#wishlist-link').remove();
@@ -118,7 +115,7 @@ catalogi('#cc-column-570cb3af6bd07').remove();
 catalogi('a[href*="/service/faq"]').attr('href', '#').attr('id', 'menu-mob');
 catalogi('#menu-mob > span > span').text('Меню');
 catalogi('#menu').text('Меню');
-catalogi('#page-header').attr('style', '/* height: 100px; */');
+
 
 
     //юридические страницы
@@ -412,7 +409,7 @@ catalogi('head')
 		});
 		catalogi('.account-nav-listelem > a').text('Вход');
 	}
-});
+});*/
 };
 
 //function for use filters without redirect
@@ -474,8 +471,8 @@ function checkBasket() {
 }
 
 function checkSeach() {
-	catalogi('#mbflyout-area').remove();
-	catalogi('.minicart-amount').remove();
+	//catalogi('#mbflyout-area').remove();
+	//catalogi('.minicart-amount').remove();
     //var seachString = catalogi.cookie('seachString');
     //if (seachString)
     //    catalogi('#search').val(seachString);
@@ -484,7 +481,7 @@ function checkSeach() {
 // Скидка
 catalogi.service = function(){
 	if('_service' in window && catalogi('.pricearea .price .value')){
-		catalogi('#deliveryPriceDiv').remove();
+		//catalogi('#deliveryPriceDiv').remove();
 		_price = catalogi('.pricearea .price .value').text().replace('€','').replace(',','.').trim();
 		_delivery = parseFloat(_price)+(( parseFloat(_price)/100 )* parseFloat( _service ));
 		catalogi('.pricearea').append($('<div></div>').attr('id','deliveryPriceDiv').text('С учетом доставки € '+_delivery.toFixed(2)));
