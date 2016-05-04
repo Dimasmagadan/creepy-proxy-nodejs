@@ -77,8 +77,7 @@ if (cluster.isMaster) {
             res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With');
             res.setHeader('Content-Type', 'text/html; charset=UTF-8');
         };
-
-        // blocking
+        
         if(req.headers) {
             if (!aContainsB(req.headers['referer'], 'http://catalogi.ru')) {
                 var killtimer = setTimeout(function () {process.exit(1);}, 1);
