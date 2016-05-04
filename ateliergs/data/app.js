@@ -102,6 +102,8 @@ if (cluster.isMaster) {
             console.log(new Date()+" "+ JSON.stringify(response.headers));
          //  if(response.statusCode == 200){
             if ('location' in response.headers)
+                //to avoid error "is not function"
+                if(typeof response.setHeader === "function")
                 response.setHeader('Location', response.headers['location'].replace(SITE, SITENAME + '.catalogi.ru'));
 
             var _cookie = [];
