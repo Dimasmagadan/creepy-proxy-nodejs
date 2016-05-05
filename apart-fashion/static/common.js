@@ -303,5 +303,3 @@ catalogi(function() {
     catalogi.removeShit();
     checkSeach();
 });
-kSeach();
-});
