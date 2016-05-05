@@ -37,23 +37,7 @@ catalogi.parse = function() {
         event.preventDefault();
         catalogi.login();
     });
-    catalogi('.navigation--entry.entry--cart').remove();
-    var basketBtn = $("<li>")
-        .addClass('navigation--entry entry--cart')
-        .attr('role', 'menuitem');
-    basketBtn.html("<a class='btn is--icon-left cart--link'" + " href='http://www.apart-fashion.catalogi.ru/checkout/cart' title='покупка'>" +
-        "<span class='cart--display '><font><font>покупка</font></font></span>" + "<i class='icon--basket '></i>" +
-        "<span class='account--display '><font><font>Корзина</font></font></span></a>");
-    catalogi('.navigation--list.block-group').append(basketBtn);
-    catalogi('.navigation--entry.entry--cart .cart--amount')
-        .removeClass().addClass('account--display')
-        .css('font-weight', 'normal!important')
-        .text('Корзина');
-    //catalogi('.navigation--entry.entry--cart a').off();
-    catalogi('.navigation--entry.entry--cart').click(function(event) {
-        event.preventDefault();
-        catalogi.order();
-    });
+
 
     //страница товара
     catalogi('.buybox--button').remove();
@@ -75,21 +59,38 @@ catalogi.parse = function() {
 
     // Showing body after hiding
     catalogi('body')
-        .delay(500)
+        .delay(1000)
         .queue(function(next) {
+
+            catalogi('.navigation--entry.entry--cart').remove();
+            var basketBtn = $("<li>")
+                .addClass('navigation--entry entry--cart')
+                .attr('role', 'menuitem');
+            basketBtn.html("<a class='btn is--icon-left cart--link'" + " href='http://www.apart-fashion.catalogi.ru/checkout/cart' title='покупка'>" +
+                "<span class='cart--display '><font><font>покупка</font></font></span>" + "<i class='icon--basket '></i>" +
+                "<span class='account--display '><font><font>Корзина</font></font></span></a>");
+            catalogi('.navigation--list.block-group').append(basketBtn);
+            catalogi('.navigation--entry.entry--cart .cart--amount')
+                .removeClass().addClass('account--display')
+                .css('font-weight', 'normal!important')
+                .text('Корзина');
+            //catalogi('.navigation--entry.entry--cart a').off();
+            catalogi('.navigation--entry.entry--cart').click(function(event) {
+                event.preventDefault();
+                catalogi.order();
+            });
             checkBasket();
-            catalogi('.basket .pre').remove();
-            catalogi('.wording .price').remove();
+
             if (catalogi('.buybox--button')) {
-                setInterval(function() {
-                    catalogi('.buybox--button').remove();
-                    catalogi('.buybox--button-container').append($('<button>')
-                        .addClass('buybox--button block btn is--primary is--icon-right is--center is--large')
-                        .text("В корзину")
-                        .click(function() {
-                            addToCart();
-                        }));
-                }, 1000);
+                //setInterval(function() {
+                catalogi('.buybox--button').remove();
+                catalogi('.buybox--button-container').append($('<button>')
+                    .addClass('buybox--button block btn is--primary is--icon-right is--center is--large')
+                    .text("В корзину")
+                    .click(function() {
+                        addToCart();
+                    }));
+                //  }, 1000);
             }
 
             // if (catalogi("[data-include='http://www.janvanderstorm.catalogi.ru/basket']").children().length == 0) {
