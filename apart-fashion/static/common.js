@@ -37,6 +37,15 @@ catalogi.parse = function() {
         event.preventDefault();
         catalogi.login();
     });
+    catalogi('.navigation--entry.headerHint').children().remove();
+    catalogi('.navigation--entry.headerHint').append($('<li>')
+        .append($("<a> Каталоги.ру - заказ и доставка одежды из интернет-магазина apart-fashion.de.</a>")
+            .attr('href', 'http://www.catalogi.ru')
+            .attr('target', '_blank')
+            .addClass('headerLinks _home catalogiLink')));
+
+    //юр страницы
+    catalogi('footer.footer-main').remove();
 
 
     //страница товара
@@ -93,27 +102,6 @@ catalogi.parse = function() {
                     );
                 }, 1000);
             }
-
-            // if (catalogi("[data-include='http://www.janvanderstorm.catalogi.ru/basket']").children().length == 0) {
-            //     catalogi("[data-include='http://www.janvanderstorm.catalogi.ru/basket']").html("<div class='minibasket-area'>" +
-            //         "<a class='wkempty' ><span class='minibasketicon'><span class='glyphicon basket'>Корзина</span>" +
-            //         "</span><span class='wording'><span class='basket'>Корзина</span><span class='article'>" +
-            //         "<span class='num'>0</span><span class='text'>Artikel</span></span></span></a></div>");
-            //     catalogi('a[title*="Warenkorb"]').attr('href', '#').click(function(event) {
-            //         event.preventDefault();
-            //         catalogi.order();
-            //         setTimeout(function() {
-            //             catalogi('#cboxLoadedContent').css('width', catalogi('#cboxLoadedContent').css('width').replace('px', '') + 40 + 'px');
-            //             catalogi('#cboxLoadedContent').css('height', catalogi('#cboxLoadedContent').css('height').replace('px', '') + 40 + 'px');
-            //         }, 500);
-            //
-            //         //return false;
-            //     });
-            //     catalogi('.basket').text('Корзина');
-            //
-            // }
-
-
 
             catalogi(this).css('visibility', 'visible');
         });
