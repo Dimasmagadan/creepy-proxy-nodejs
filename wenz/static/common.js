@@ -7,11 +7,11 @@ function _googleTranslateElementInit() {
     }, 'google_translate_element');
 }
 
-catalogi.noTranslate = function () {
+catalogi.noTranslate = function() {
     // Шапка
     catalogi('img[itemprop="logo"]').attr('src', 'http://catalogi.ru/images/site/logo.png')
-    //catalogi('.categoryNavList').addClass('notranslate');
-    //catalogi('.headerContentContainer').addClass('notranslate');
+        //catalogi('.categoryNavList').addClass('notranslate');
+        //catalogi('.headerContentContainer').addClass('notranslate');
     catalogi('span:contains("Neu")').text('Новинки');
     catalogi('span:contains("Damen")').text('Женщинам');
     catalogi('span:contains("Herren")').text('Мужчинам');
@@ -38,26 +38,28 @@ catalogi.noTranslate = function () {
     // Футер
 };
 
-catalogi.parse = function () {
+catalogi.parse = function() {
     // Удаляем оригинальное меню с подпиской
     catalogi('#newsletterPopupContainer').remove();
     catalogi('.reveal-modal-bg').remove();
 
     // Шапка
-    catalogi('header > div').css('display', 'none');
-    catalogi("#iframe").appendTo("header");
+    //catalogi('header > div').css('display', 'none');
+    //catalogi("#iframe").appendTo("header");
 
     // Show body after f@cking hiding >_<
     catalogi('body')
         .delay(800)
-        .queue(function (next) {
+        .queue(function(next) {
             $(this).css('visibility', 'visible');
             console.log('visible');
         });
 
     catalogi('#miniShopCart').unbind('click');
     catalogi('#miniShopCart').bind('click', function() {
-        top.postMessage({action: 'basket'},'*');
+        top.postMessage({
+            action: 'basket'
+        }, '*');
         return false;
     });
     catalogi('div.main-menu.mobile').remove();
@@ -82,18 +84,18 @@ catalogi.parse = function () {
     catalogi('div.reveal-modal.modal-OutfitDetail-Popup').attr('id', 'popupContainer');
     catalogi('a[data-reveal-=""]').attr('data-reveal-id', 'popupContainer');
 
-    catalogi('#productAjaxDescription').bind('DOMNodeInserted', function (e) {
+    catalogi('#productAjaxDescription').bind('DOMNodeInserted', function(e) {
         //стоимость с учетом доставки
         catalogi.service();
 
         if (!catalogi('#addToCartButton').hasClass('checked')) {
             catalogi('#addToCartButton').removeAttr('onclick');
-            catalogi('#addToCartButton').click(function (e) {
+            catalogi('#addToCartButton').click(function(e) {
                 var articul = catalogi('#productId>span>span').text().replace(/[ \/]/g, '');
 
                 var name = catalogi('div.brandName[itemprop="brand"]').text() + ' ' + catalogi('div[itemprop="name"]').attr('origin');
                 var price = (catalogi('span[itemprop="offers"] span.price.reduced').length === 0) ?
-                    catalogi('div.price span.price').text().trim().replace(/[€ ]/g,'') : catalogi('div.price span.reduced').text().trim().replace(/[€ а-яА-Я]/g,'');
+                    catalogi('div.price span.price').text().trim().replace(/[€ ]/g, '') : catalogi('div.price span.reduced').text().trim().replace(/[€ а-яА-Я]/g, '');
                 var count = catalogi('#quantityField').val();
                 var color = catalogi('#color').val();
                 var size = catalogi('#size').val();
@@ -109,7 +111,9 @@ catalogi.parse = function () {
                     param.push(size);
                 }
 
-                catalogi('.additionalAttribute > select').each(function() {param.push(catalogi(this).val())});
+                catalogi('.additionalAttribute > select').each(function() {
+                    param.push(catalogi(this).val())
+                });
 
                 catalogi.basket.add({
                     catalog: 'WZ',
@@ -148,9 +152,9 @@ catalogi.parse = function () {
 
         if (!catalogi('#outfitAddToCart').hasClass('checked')) {
             catalogi('#outfitAddToCart').removeAttr('onclick');
-            catalogi('#outfitAddToCart').click(function (e) {
+            catalogi('#outfitAddToCart').click(function(e) {
 
-                catalogi('.outfitProductContainer').each(function () {
+                catalogi('.outfitProductContainer').each(function() {
 
                     var articul = catalogi(this).find('span[itemprop="identifier"]').text().replace(/[ \/]/g, '');
                     if (articul === "") return;
@@ -172,7 +176,7 @@ catalogi.parse = function () {
                         param.push(size);
                     }
 
-                    catalogi('.additionalAttribute > select').each(function () {
+                    catalogi('.additionalAttribute > select').each(function() {
                         param.push(catalogi(this).val())
                     });
 
@@ -193,7 +197,9 @@ catalogi.parse = function () {
         }
     });
 
-    catalogi('div#mainContent > div').bind('DOMNodeInserted', function(e) {console.log()});
+    catalogi('div#mainContent > div').bind('DOMNodeInserted', function(e) {
+        console.log()
+    });
     // Футер
     catalogi('.footer').remove();
 
@@ -205,9 +211,9 @@ function recalculateTotal() {
     var total = 0;
     catalogi('.outfitProductContainer').each(function() {
         if (catalogi(this).find('.outfitSubmit').is(':checked'))
-            var _price = (catalogi(this).find('div.price span.price.reduced').length === 0) ? catalogi(this).find('div.price span.price').text().trim().replace(/[€ ]/g,'') : catalogi(this).find('div.price span.price.reduced').text().trim().replace(/[€ а-яА-Я]/g,'');
-            if(!isNaN(parseFloat(_price)))
-                total += parseFloat(_price);
+            var _price = (catalogi(this).find('div.price span.price.reduced').length === 0) ? catalogi(this).find('div.price span.price').text().trim().replace(/[€ ]/g, '') : catalogi(this).find('div.price span.price.reduced').text().trim().replace(/[€ а-яА-Я]/g, '');
+        if (!isNaN(parseFloat(_price)))
+            total += parseFloat(_price);
     });
     total.toPrecision(2);
     catalogi('#outfitPrice').text('€ ' + total.toFixed(2));
@@ -215,12 +221,12 @@ function recalculateTotal() {
 }
 
 // Скидка
-catalogi.service = function () {
+catalogi.service = function() {
     if ('_service' in window) {
         var _price = (catalogi('span[itemprop="offers"] span.price.reduced').length === 0) ?
-            catalogi('div.price span.price').text().trim().replace(/[€ ]/g,'') : catalogi('div.price span.reduced').text().trim().replace(/[€ а-яА-Я]/g,'');
+            catalogi('div.price span.price').text().trim().replace(/[€ ]/g, '') : catalogi('div.price span.reduced').text().trim().replace(/[€ а-яА-Я]/g, '');
         if (_price != '') {
-            var _delivery = parseFloat(_price.replace(',','.')) + (( parseFloat(_price.replace(',','.')) / 100 ) * parseFloat(_service));
+            var _delivery = parseFloat(_price.replace(',', '.')) + ((parseFloat(_price.replace(',', '.')) / 100) * parseFloat(_service));
             if (catalogi('.vatLabel').text() != 'С учетом доставки € ' + _delivery.toFixed(2)) {
                 catalogi('.vatLabel').text('С учетом доставки € ' + _delivery.toFixed(2));
             }
@@ -228,11 +234,11 @@ catalogi.service = function () {
     }
 };
 
-catalogi.serviceCustom = function (element) {
+catalogi.serviceCustom = function(element) {
     if ('_service' in window) {
-        var _price = (element.find('div.price span.price.reduced').length === 0) ? element.find('div.price span.price').text().trim().replace(/[€ ]/g,'') : element.find('div.price span.price.reduced').text().trim().replace(/[€ а-яА-Я]/g,'');
+        var _price = (element.find('div.price span.price.reduced').length === 0) ? element.find('div.price span.price').text().trim().replace(/[€ ]/g, '') : element.find('div.price span.price.reduced').text().trim().replace(/[€ а-яА-Я]/g, '');
         if (_price != '') {
-            var _delivery = parseFloat(_price.replace(',','.')) + (( parseFloat(_price.replace(',','.')) / 100 ) * parseFloat(_service));
+            var _delivery = parseFloat(_price.replace(',', '.')) + ((parseFloat(_price.replace(',', '.')) / 100) * parseFloat(_service));
             if (element.find('.vatLabel').text() != 'С учетом доставки € ' + _delivery.toFixed(2)) {
                 element.find('.vatLabel').text('С учетом доставки € ' + _delivery.toFixed(2));
             }
@@ -240,7 +246,7 @@ catalogi.serviceCustom = function (element) {
 
         var _priceTotal = catalogi('#outfitPrice').text().trim().replace(/[€ ]/g, '');
         if (_priceTotal != '') {
-            var _delivery = parseFloat(_priceTotal.replace(',','.')) + (( parseFloat(_priceTotal.replace(',','.')) / 100 ) * parseFloat(_service));
+            var _delivery = parseFloat(_priceTotal.replace(',', '.')) + ((parseFloat(_priceTotal.replace(',', '.')) / 100) * parseFloat(_service));
             if (catalogi('div.outfitPriceListing > span.vatLabel').text() != 'С учетом доставки € ' + _delivery.toFixed(2)) {
                 catalogi('div.outfitPriceListing > span.vatLabel').text('С учетом доставки € ' + _delivery.toFixed(2));
             }
@@ -248,21 +254,20 @@ catalogi.serviceCustom = function (element) {
     }
 };
 
-catalogi.urlParam = function(name){
+catalogi.urlParam = function(name) {
     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-    if (results==null){
+    if (results == null) {
         return null;
-    }
-    else{
+    } else {
         return results[1] || 0;
     }
 };
 
-catalogi(function () {
+catalogi(function() {
     /***
      * Обработка команд с ifame
      **/
-    catalogi(window).on('message', function (event) {
+    catalogi(window).on('message', function(event) {
         switch (event.originalEvent.data.action) {
             case 'search':
 
