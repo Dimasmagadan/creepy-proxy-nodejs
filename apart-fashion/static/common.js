@@ -100,7 +100,11 @@ catalogi.parse = function() {
         }));
 
     catalogi('.product--delivery').remove();
-
+    catalogi('div.product--configurator').append($('<div></div>')
+        .text('Таблица размеров').css('cursor', 'pointer').click(function(event) {
+            event.preventDefault();
+            catalogi.sizeTable();
+        }));
 
 
 
