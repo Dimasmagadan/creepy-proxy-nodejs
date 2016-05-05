@@ -83,7 +83,7 @@ catalogi.parse = function() {
 
             if (catalogi('.buybox--button')) {
                 setInterval(function() {
-                    catalogi('.buybox--button')..replaceWith(
+                    catalogi('.buybox--button').replaceWith(
                         $("<a>В корзину</a>")
                         .attr('id', 'addToCartBtn')
                         .click(function(event) {
