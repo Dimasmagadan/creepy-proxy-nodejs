@@ -252,11 +252,11 @@ catalogi(function() {
     }
     catalogi('#mbflyout-area').remove();
 
-    catalogi('.searchform').submit(function(event) {
+    catalogi('.main-search--form').submit(function(event) {
 
         var form = event.currentTarget;
 
-        var value = catalogi(form).find("[name='search']").val();
+        var value = catalogi(form).find("[name='sSearch']").val();
 
         //var value = catalogi("[name='search'")[0].value ? catalogi("[name='search'")[0].value : catalogi("[name='search'")[1].value;
         catalogi.cookie('seachString', value, {
@@ -276,7 +276,7 @@ catalogi(function() {
             },
             success: function(data) {
                 console.log('success:' + data);
-                catalogi(form).find("[name='search']").val(data.text[0]);
+                catalogi(form).find("[name='sSearch']").val(data.text[0]);
                 form.submit();
             },
             error: function(data) {
@@ -302,4 +302,6 @@ catalogi(function() {
     catalogi.parse();
     catalogi.removeShit();
     checkSeach();
+});
+kSeach();
 });
