@@ -67,11 +67,12 @@ catalogi.parse = function() {
         .css('border', 'none');
 
     // cartBtn.append($('<span></span>').addClass('cart-label visible-md-inline-block visible-lg-inline-block').text("Кабинет"));
-    cartBtn.append($('<span></span>').css('cssText', "font-family: 'jvds icons',sans-serif;font-size:35px").text("S"));
-    cartBtn.click(function() {
-        event.preventDefault();
-        catalogi.login();
-    });
+    cartBtn.append($('<span></span>').css('cssText', "font-family: 'jvds icons',sans-serif;font-size:35px")
+        .text("S").click(function() {
+            event.preventDefault();
+            catalogi.login();
+        }));
+
 
     catalogi('.navbar-button-wrapper').append(cartBtn);
 
