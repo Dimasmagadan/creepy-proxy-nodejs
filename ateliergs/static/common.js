@@ -58,10 +58,19 @@ catalogi.parse = function() {
     catalogi('#navbar-meta ul.nav').append($('<li>').text('Онлайн каталоги').addClass('textInHeader').click(function() {
         catalogi.catalogs();
     }));
+
+    catalogi('#navbar-meta ul.nav').append($('<li>')
+        .append($("<a> Каталоги.ру</a>")
+            .attr('href', 'http://www.catalogi.ru')
+            .attr('target', '_blank')
+            .addClass('headerLinks _home catalogiLink')));
+
     catalogi('#main-navigation li.index_6').remove();
     catalogi('#main-navigation a.home-link').children().remove();
     catalogi('#main-navigation a.home-link').append($('<span></span>')
         .css('cssText', "font-family: 'jvds icons',sans-serif;font-size:1.5em").text("2"));
+
+
 
     //login
     var cartBtn = $("<button></button>")
