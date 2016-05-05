@@ -60,7 +60,7 @@ catalogi.parse = function() {
     }));
 
     catalogi('#navbar-meta ul.nav').append($('<li>')
-        .append($("<a> Каталоги.ру</a>")
+        .append($("<a> Каталоги.ру - заказ и доставка одежды из интернет-магазина AtelierGS.de.</a>")
             .attr('href', 'http://www.catalogi.ru')
             .attr('target', '_blank')
             .addClass('headerLinks _home catalogiLink')));
