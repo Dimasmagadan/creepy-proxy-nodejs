@@ -83,14 +83,14 @@ catalogi.parse = function() {
 
             if (catalogi('.buybox--button')) {
                 setInterval(function() {
-                    catalogi('.buybox--button').remove();
-                    catalogi('.buybox--button-container').append($('<button>')
-                        .addClass('buybox--button block btn is--primary is--icon-right is--center is--large')
-                        .text("В корзину")
+                    catalogi('.buybox--button')..replaceWith(
+                        $("<a>В корзину</a>")
+                        .attr('id', 'addToCartBtn')
                         .click(function(event) {
                             event.stopPropagation();
                             addToCart();
-                        }));
+                        })
+                    );
                 }, 1000);
             }
 
