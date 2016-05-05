@@ -72,6 +72,9 @@ catalogi.parse = function() {
     catalogi('#navbar-meta ul.nav').append($('<li>').text('Онлайн каталоги|').addClass('textInHeader').click(function(){
         catalogi.catalogs();
     }));
+		catalogi('#main-navigation li.index_6').remove();
+		catalogi('#main-navigation a.home-link').children().remove();
+		catalogi('#main-navigation a.home-link').append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:35px").text("2"));
 
 //login
 var cartBtn = $("<button></button>")
