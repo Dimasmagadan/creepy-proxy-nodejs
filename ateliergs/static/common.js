@@ -74,7 +74,8 @@ catalogi.parse = function() {
     }));
 		catalogi('#main-navigation li.index_6').remove();
 		catalogi('#main-navigation a.home-link').children().remove();
-		catalogi('#main-navigation a.home-link').append($('<span></span>').css('cssText',"font-family: 'jvds icons',sans-serif;font-size:35px").text("2"));
+		catalogi('#main-navigation a.home-link').append($('<span></span>')
+		.css('cssText',"font-family: 'jvds icons',sans-serif;font-size:1.5em").text("2"));
 
 //login
 var cartBtn = $("<button></button>")
