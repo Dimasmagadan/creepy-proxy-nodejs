@@ -44,6 +44,22 @@ catalogi.parse = function() {
             .attr('target', '_blank')
             .addClass('headerLinks _home catalogiLink')));
 
+
+    catalogi('ul.service--list').children().remove();
+    catalogi('ul.service--list').append($('<li>').text('+74955404949').addClass('service--entry'));
+    catalogi('ul.service--list').append($('<li>').text('Доставка').addClass('service--entry').click(function() {
+        catalogi.delivery();
+    }));
+    catalogi('ul.service--list').append($('<li>').text('Оплата').addClass('service--entry').click(function() {
+        catalogi.payment();
+    }));
+    catalogi('ul.service--list').append($('<li>').text('Интернет-магазины').addClass('service--entry').click(function() {
+        catalogi.shops();
+    }));
+    catalogi('ul.service--list').append($('<li>').text('Онлайн каталоги').addClass('service--entry').click(function() {
+        catalogi.catalogs();
+    }));
+
     //юр страницы
     catalogi('footer.footer-main').remove();
 
