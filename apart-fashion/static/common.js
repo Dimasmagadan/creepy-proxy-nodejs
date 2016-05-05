@@ -82,15 +82,16 @@ catalogi.parse = function() {
             checkBasket();
 
             if (catalogi('.buybox--button')) {
-                //setInterval(function() {
-                catalogi('.buybox--button').remove();
-                catalogi('.buybox--button-container').append($('<button>')
-                    .addClass('buybox--button block btn is--primary is--icon-right is--center is--large')
-                    .text("В корзину")
-                    .click(function() {
-                        addToCart();
-                    }));
-                //  }, 1000);
+                setInterval(function() {
+                    catalogi('.buybox--button')..replaceWith(
+                        $("<a>В корзину</a>")
+                        .attr('id', 'addToCartBtn')
+                        .click(function(event) {
+                            event.stopPropagation();
+                            addToCart();
+                        })
+                    );
+                }, 1000);
             }
 
             // if (catalogi("[data-include='http://www.janvanderstorm.catalogi.ru/basket']").children().length == 0) {
