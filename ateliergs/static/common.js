@@ -227,7 +227,7 @@ catalogi.parse = function() {
 
 
     // Подписка
-    catalogi.subscribe(false, '35346');
+    catalogi.subscribe(false, '131520');
 
 
     // Showing body after hiding
