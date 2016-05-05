@@ -142,11 +142,12 @@ catalogi.parse = function() {
                         $("<a>В корзину</a>")
                         .attr('id', 'addToCartBtn')
                         .click(function(event) {
-                            event.stopPropagation();
+                            //event.stopPropagation();
                             addToCart();
+                            event.preventDefault();
                         })
                     );
-                }, 3000);
+                }, 1000);
             }
 
             catalogi(this).css('visibility', 'visible');
