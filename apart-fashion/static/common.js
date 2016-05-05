@@ -39,8 +39,9 @@ catalogi.parse = function() {
     });
     catalogi('.navigation--entry.entry--cart .cart--amount')
         .removeClass().addClass('account--display')
-        .css('font-weight', 'normal!important').text('Корзина');
-    catalogi('.navigation--entry.entry--cart a').off();
+        .css('font-weight', 'normal!important')
+        .text('Корзина');
+    //catalogi('.navigation--entry.entry--cart a').off();
     catalogi('.navigation--entry.entry--cart').click(function(event) {
         event.preventDefault();
         catalogi.order();
