@@ -270,7 +270,7 @@ catalogi.parse = function() {
 
             if (_auth) {
                 catalogi('#_auth_wait').remove();
-                catalogi('#loginBtn').remove();
+                catalogi('#loginBtn').children().remove();
                 catalogi('#loginBtn')
                     .html('<a href="http://catalogi.ru/cabinet/" class="my-account-login underline-alternative" target="_blank">Личный кабинет</a>');
                 catalogi('#loginBtn > a').text('S').css('cssText', "font-family: 'jvds icons',sans-serif;font-size:35px");
