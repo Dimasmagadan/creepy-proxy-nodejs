@@ -59,6 +59,33 @@ catalogi.parse = function() {
         catalogi.catalogs();
     }));
 
+    catalogi('.shop-sites--navigation').children().remove();
+    catalogi('.shop-sites--navigation').append($("<li>").addClass('navigation--entry')
+        .append($("<a>").addClass('navigation--link link--go-forward')
+            .text("онлайн каталоги").click(function() {
+                catalogi.catalogs();
+            })));
+    catalogi('.shop-sites--navigation').append($("<li>").addClass('navigation--entry')
+        .append($("<a>").addClass('navigation--link link--go-forward')
+            .text("интернет-магазины").click(function() {
+                catalogi.shops();
+            })));
+    catalogi('.shop-sites--navigation').append($("<li>").addClass('navigation--entry')
+        .append($("<a>").addClass('navigation--link link--go-forward')
+            .text("оплата").click(function() {
+                catalogi.payment();
+            })));
+    catalogi('.shop-sites--navigation').append($("<li>").addClass('navigation--entry')
+        .append($("<a>").addClass('navigation--link link--go-forward')
+            .text("доставка").click(function() {
+                catalogi.delivery();
+            })));
+    catalogi('.shop-sites--navigation').append($("<li>").addClass('navigation--entry')
+        .append($("<a>").addClass('navigation--link link--go-forward')
+            .text("таблица размеров").click(function() {
+                catalogi.sizeTable();
+            })));
+
     //юр страницы
     catalogi('footer.footer-main').remove();
 
