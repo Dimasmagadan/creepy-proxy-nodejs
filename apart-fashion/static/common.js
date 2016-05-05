@@ -31,8 +31,12 @@ catalogi.noTranslate = function() {
 catalogi.parse = function() {
     //// Шапка
     catalogi('#iframe').hide();
+    catalogi('.navigation--entry.entry--notepad').remove();
+    catalogi('.navigation--entry.entry--account .account--display').text('Кабинет');
+    catalogi('.navigation--entry.entry--cart .cart--amount').text('Корзина');
 
-    catalogi(".addToCartForm [name='submit']").text("В корзину");
+    //страница товара
+    catalogi('.buybox--button').text("В корзину");
     // Добавление в корзину
     catalogi('.addToCartForm').submit(function(event) {
         try {
