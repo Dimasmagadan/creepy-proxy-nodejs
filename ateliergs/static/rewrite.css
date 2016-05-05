@@ -6,6 +6,11 @@
 }
 
 @font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url("/static/fonts/glyphicons-halflings-regular.eot");
+}
+
+@font-face {
     font-family: "GinIcons";
     src: url("/static/fonts/janvanderstorm-iconfont.eot");
     src: url("/static/fonts/janvanderstorm-iconfont.eot?#iefix") format("embedded-opentype"), url("/static/fonts/janvanderstorm-iconfont.woff") format("woff"), url("/static/fonts/janvanderstorm-iconfont.ttf") format("truetype"), url("/static/fonts/janvanderstorm-iconfont.svg#impressionen-iconfont") format("svg");
