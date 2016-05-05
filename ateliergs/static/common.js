@@ -73,7 +73,7 @@ catalogi.parse = function() {
         catalogi.catalogs();
     }));
 
-//login    
+//login
 var cartBtn = $("<button></button>")
 .attr('type','button')
 .addClass('btn btn-navbar btn-secondary')
@@ -87,6 +87,9 @@ var cartBtn = $("<button></button>")
 });
 
    catalogi('.navbar-button-wrapper').append(cartBtn);
+
+//подписка на новости
+catalogi('#newsletterLayer').remove();
 
 //cart
 cartBtn = $("<button></button>")
@@ -136,7 +139,7 @@ cartBtn = $("<button></button>")
    catalogi('.nav.navbar-service.visible-xs').append($("<li>").append($("<a>").text("таблица размеров").click(function(){
     catalogi.sizeTable();
 })));
-   
+
 
 
     //юридические страницы
@@ -205,7 +208,7 @@ cartBtn = $("<button></button>")
             success: function(data){
                 console.log('success:' + data);
                 catalogi(form).find("input[name='q']").val(data.text[0]);
-                form.submit(); 
+                form.submit();
             },
             error: function(data){
                 console.log('error:' + data);
@@ -301,7 +304,7 @@ catalogi('head')
 function checkBasket() {
 	window.clearInterval(window.timer1);
 	catalogi('.basket').text('Корзина');
-	
+
 	var ordersNumber = catalogi.cookie('ordersNum');
 	if(ordersNumber)
 		catalogi('.wording .article .num').text(ordersNumber);
@@ -351,7 +354,8 @@ function addToCart(event){
     try{
 
             // артикул
-            var articul     = "<a href='"+window.location.href+"' target='_blank'>"+catalogi("span.order-nr").text()+"</a>";
+            var articul     = "<a href='"+window.location.href+"' target='_blank'>"
+						+catalogi("span.order-nr").first().text().replace('-','')+"</a>";
             // название
             var name        = catalogi('h1.product-headline').text().trim();
             // количество
@@ -360,8 +364,8 @@ function addToCart(event){
             var price       = catalogi('.price-wrapper').first().text().replace('€','').replace(',','.').trim().replace(' ','');
             // картинка
             var img         = catalogi('.product-detail-view img').attr('src');
-            
-            
+
+
 
             var param = [];
 
@@ -390,7 +394,7 @@ function addToCart(event){
                 price: price,
                 count: count,
                 img: img
-            }); 
+            });
 
             console.log('OK');
         } catch(e) {
@@ -443,7 +447,7 @@ catalogi(function(){
     		success: function(data){
     			console.log('success:' + data);
     			catalogi(form).find("[name='search']").val(data.text[0]);
-    			form.submit(); 
+    			form.submit();
     		},
     		error: function(data){
     			console.log('error:' + data);
