@@ -33,7 +33,8 @@ catalogi.parse = function() {
     catalogi('#iframe').hide();
     catalogi('.navigation--entry.entry--notepad').remove();
     catalogi('.navigation--entry.entry--account .account--display').text('Кабинет');
-    catalogi('.navigation--entry.entry--cart .cart--amount').text('Корзина');
+    catalogi('.navigation--entry.entry--cart .cart--amount')
+        .css('font-weight', 'normal!important').text('Корзина');
 
     //страница товара
     catalogi('.buybox--button').text("В корзину");
