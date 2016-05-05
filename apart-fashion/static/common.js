@@ -56,93 +56,14 @@ catalogi.parse = function() {
     });
 
     //страница товара
-    catalogi('.buybox--button').text("В корзину");
-    // Добавление в корзину
-    catalogi('.addToCartForm').submit(function(event) {
-        try {
+    catalogi('.buybox--button').remove();
+    catalogi('.buybox--button-container').append($('<button>')
+        .addClass('buybox--button block btn is--primary is--icon-right is--center is--large')
+        .text("В корзину")
+        .click(function() {
+            addToCart();
+        }));
 
-            var complekt = catalogi('.variantselectform');
-
-            if (complekt.length == 1) {
-                var queryString = $('.addToCartForm').serialize();
-                // артикул
-                var articul = "<a href='" + window.location.href + "' target='_blank'>" + catalogi(".articlenumber .num").text() + "</a>";
-                // название
-                var name = catalogi('.articlemain .articlename').text().trim();
-                // количество
-                var count = catalogi("input[name=quantity]").val();
-                // цена
-                var price = catalogi('.pricearea .price .value').first().text().replace(',', '.');
-                // картинка
-                if (window.innerWidth < 770) {
-                    var img = catalogi('#thumbslider img').attr('data-src');
-                } else {
-                    var img = catalogi('#thumbimages img').attr('src');
-                }
-
-
-                var param = [];
-
-                // цвет
-                var color1 = catalogi('#colorSelect .active').attr('data-original-title');
-                var color2 = catalogi('li[class*="selected"]:eq(0)').attr('title');
-                var color = (color1 == "") ? color2 : color1;
-                if (color && color.length > 0) param.push(color);
-
-                // размер
-                var size1 = catalogi('.button-holder .active').text();
-                var size2 = catalogi('li[class*="selected"]:eq(1)').text();
-                var size = ((size1 == "") ? size2 : size1).trim();
-                if (size == 'Выберите размер' || size == 'Выберите размер ') {
-                    alert('Выберите размер!');
-                    return;
-                }
-                if (size && size.length > 0) param.push(size);
-
-                // отправка запроса
-                catalogi.basket.add({
-                    catalog: 'Janvanderstorm.de',
-                    articul: articul,
-                    name: name,
-                    size: (param.join(' ').trim() == '') ? 0 : param.join(' ').trim(),
-                    price: price,
-                    count: count,
-                    img: img
-                });
-
-            } else {
-                var numberPattern = /\d+/g;
-
-                var namePart = catalogi('.articlemain .articlenumber').text();
-                namePart = namePart.match(numberPattern);
-                namePart = "<a href='" + window.location.href + "' target='_blank'>" + namePart + "</a>";
-                for (var i = 0; i < complekt.length; i++) {
-                    if (catalogi(complekt[i]).find('.checkbox.dark.active').length > 0) {
-                        var objToSend = {
-                            catalog: 'apart-fashion.de',
-                            articul: "<a href='" + window.location.href + "' target='_blank'>" + JSON.parse(catalogi(complekt[i]).attr('data-variantselect')).productId + "</a>",
-                            name: "Комплект " + catalogi(complekt[i]).find('.articlename').text(),
-                            size: "size " + catalogi(complekt[i]).find('.variantselect .button-holder .active').text(),
-                            price: catalogi(complekt[i]).find('.price .value').text().replace(',', '.'),
-                            count: 1,
-                            img: catalogi(complekt[i]).find('.imgholder img').attr('src')
-                        };
-                        catalogi.basket.add(objToSend);
-                    }
-                    //alert(catalogi(complekt[i]).find('.imgholder img').attr('src'));
-                }
-            }
-
-            console.log('OK');
-        } catch (e) {
-            console.log(e);
-        }
-        setTimeout(function() {
-            catalogi('#cboxLoadedContent').css('width', catalogi('#cboxLoadedContent').css('width').replace('px', '') + 40 + 'px');
-            catalogi('#cboxLoadedContent').css('height', catalogi('#cboxLoadedContent').css('height').replace('px', '') + 40 + 'px');
-        }, 500);
-        return false;
-    });
 
 
 
@@ -159,7 +80,17 @@ catalogi.parse = function() {
             checkBasket();
             catalogi('.basket .pre').remove();
             catalogi('.wording .price').remove();
-
+            if (catalogi('.buybox--button')) {
+                setInterval(function() {
+                    catalogi('.buybox--button').remove();
+                    catalogi('.buybox--button-container').append($('<button>')
+                        .addClass('buybox--button block btn is--primary is--icon-right is--center is--large')
+                        .text("В корзину")
+                        .click(function() {
+                            addToCart();
+                        }));
+                }, 1000);
+            }
 
             // if (catalogi("[data-include='http://www.janvanderstorm.catalogi.ru/basket']").children().length == 0) {
             //     catalogi("[data-include='http://www.janvanderstorm.catalogi.ru/basket']").html("<div class='minibasket-area'>" +
@@ -200,7 +131,60 @@ catalogi.parse = function() {
         });
 };
 
+function addToCart() {
+    try {
 
+        // артикул
+        var articul = "<a href='" + window.location.href + "' target='_blank'>" +
+            catalogi('span.entry--label').text() + "</a>";
+        // название
+        var name = catalogi('.product--info > h1.product--title').text().trim();
+        // количество
+        var count = catalogi('#sQuantity').val();
+        // цена
+        var price = catalogi('.product--price')
+            .first()
+            .text()
+            .replace('€', '')
+            .replace('*', '')
+            .replace(',', '.')
+            .trim();
+        // картинка
+        var img = catalogi('.image--thumbnails img').first().attr('srcset').split(',')[0];
+        var param = [];
+
+        // цвет
+        var color1 = catalogi(catalogi('.configurator--form').children()[2]).text().trim();
+        var color2 = "undef"
+        var color = (color1 == "") ? color2 : color1;
+        if (color && color.length > 0) param.push(color);
+
+        // размер
+        var size1 = catalogi(".configurator--form select option[selected='selected'").text().trim();
+        var size2 = catalogi('li[class*="selected"]:eq(1)').text();
+        var size = ((size1 == "") ? size2 : size1).trim();
+        if (size == 'Выберите размер' || size == 'Выберите размер ') {
+            alert('Выберите размер!');
+            return;
+        }
+        if (size && size.length > 0) param.push(size);
+
+        // отправка запроса
+        catalogi.basket.add({
+            catalog: 'APART-FASHION.DE',
+            articul: articul,
+            name: name,
+            size: (param.join(' ').trim() == '') ? 0 : param.join(' ').trim(),
+            price: price,
+            count: count,
+            img: img
+        });
+        console.log('OK');
+    } catch (e) {
+        console.log(e);
+    }
+    return false;
+}
 
 function checkBasket() {
     window.clearInterval(window.timer1);
@@ -262,7 +246,6 @@ catalogi(function() {
         }
         var currentDomain = m[0].replace('.', '').replace('.', '');
     }
-    catalogi('#mbflyout-area').remove();
 
     catalogi('.main-search--form').submit(function(event) {
 
