@@ -37,6 +37,13 @@ catalogi.parse = function() {
         event.preventDefault();
         catalogi.login();
     });
+    catalogi('.navigation--entry.entry--cart').remove();
+    var basketBtn = $("<li>")
+        .addClass('navigation--entry entry--cart')
+        .attr('role', 'menuitem');
+    basketBtn.html("<a class='btn is--icon-left cart--link'" + " href='http://www.apart-fashion.catalogi.ru/checkout/cart' title='покупка'>" +
+        "<span class='cart--display '><font><font>покупка</font></font></span>" + "<i class='icon--basket '></i>" +
+        "<span class='account--display '><font><font>Корзина</font></font></span></a>");
     catalogi('.navigation--entry.entry--cart .cart--amount')
         .removeClass().addClass('account--display')
         .css('font-weight', 'normal!important')
