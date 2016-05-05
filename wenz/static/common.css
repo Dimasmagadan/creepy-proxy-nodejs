@@ -30,7 +30,7 @@ a[href="http://www.liveinternet.ru/click;CatalogiRU_NEW"] {
 .storelogo,
 .headerContentContainer,
 .miniCartPriceContainer {
-    display: none;
+  //  display: none;
 }
 
 .buttonText::before {
