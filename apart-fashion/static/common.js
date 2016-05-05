@@ -34,6 +34,7 @@ catalogi.parse = function() {
     catalogi('.navigation--entry.entry--notepad').remove();
     catalogi('.navigation--entry.entry--account .account--display').text('Кабинет');
     catalogi('.navigation--entry.entry--cart .cart--amount')
+        .removeClass().addClass('account--display')
         .css('font-weight', 'normal!important').text('Корзина');
 
     //страница товара
