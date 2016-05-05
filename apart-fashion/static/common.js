@@ -99,7 +99,7 @@ catalogi.parse = function() {
             addToCart();
         }));
 
-
+    catalogi('.product--delivery').remove();
 
 
 
@@ -241,11 +241,17 @@ function checkSeach() {
 
 // Скидка
 catalogi.service = function() {
-    if ('_service' in window && catalogi('.pricearea .price .value')) {
-        catalogi('#deliveryPriceDiv').remove();
-        _price = catalogi('.pricearea .price .value').text().replace('€', '').replace(',', '.').trim();
+    if ('_service' in window && catalogi('p.product--tax')) {
+        catalogi('p.product--tax').children().remove();
+        _price = catalogi('.product--price')
+            .first()
+            .text()
+            .replace('€', '')
+            .replace('*', '')
+            .replace(',', '.')
+            .trim();
         _delivery = parseFloat(_price) + ((parseFloat(_price) / 100) * parseFloat(_service));
-        catalogi('.pricearea').append($('<div></div>').attr('id', 'deliveryPriceDiv').text('С учетом доставки € ' + _delivery.toFixed(2)));
+        catalogi('p.product--tax').text('С учетом доставки € ' + _delivery.toFixed(2));
         // catalogi('.product-shipping-costs').text('С учетом доставки € '+_delivery.toFixed(2));
     }
 };
