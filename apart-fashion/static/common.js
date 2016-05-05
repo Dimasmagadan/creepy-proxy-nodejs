@@ -146,7 +146,7 @@ catalogi.parse = function() {
                             addToCart();
                         })
                     );
-                }, 1000);
+                }, 3000);
             }
 
             catalogi(this).css('visibility', 'visible');
