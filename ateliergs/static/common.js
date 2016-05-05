@@ -62,6 +62,7 @@ catalogi.parse = function() {
     //login
     var cartBtn = $("<button></button>")
         .attr('type', 'button')
+        .attr('id', 'loginBtn')
         .addClass('btn btn-navbar btn-secondary')
         .css('border', 'none');
 
@@ -176,8 +177,6 @@ catalogi.parse = function() {
     catalogi('#search').attr('placeholder', 'найти');
 
     catalogi("form[role='search']").submit(function(event) {
-
-
         var form = event.currentTarget;
 
         var value = catalogi(form).find("input[name='q']").val();
@@ -271,10 +270,10 @@ catalogi.parse = function() {
 
             if (_auth) {
                 catalogi('#_auth_wait').remove();
-                catalogi('.myaccount.notranslate > a').remove();
-                catalogi('.myaccount.notranslate')
+                catalogi('#loginBtn').remove();
+                catalogi('#loginBtn')
                     .html('<a href="http://catalogi.ru/cabinet/" class="my-account-login underline-alternative" target="_blank">Личный кабинет</a>');
-                catalogi('.myaccount.notranslate > a').text('S').css('cssText', "font-family: 'jvds icons',sans-serif;font-size:2.1em");
+                catalogi('#loginBtn > a').text('S').css('cssText', "font-family: 'jvds icons',sans-serif;font-size:35px");
                 catalogi('.account-nav-listelem').show();
                 catalogi('._logout').click(function() {
                     catalogi.logout();
@@ -357,8 +356,6 @@ function addToCart(event) {
         // картинка
         var img = catalogi('.product-detail-view img').attr('src');
 
-
-
         var param = [];
 
         // цвет
@@ -402,8 +399,6 @@ function addToCart(event) {
 // On load
 catalogi(function() {
 
-
-
     var re = /(?:[\s.])([a-z0-9][a-z0-9-]+[a-z0-9])(?:[.\s])/;
     var str = window.location.hostname;
     var m;
@@ -415,8 +410,6 @@ catalogi(function() {
         var currentDomain = m[0].replace('.', '').replace('.', '');
     }
     catalogi('#mbflyout-area').remove();
-
-
 
     catalogi('.searchform').submit(function(event) {
 
