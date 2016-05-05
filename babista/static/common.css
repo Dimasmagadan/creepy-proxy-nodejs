@@ -1,0 +1,36 @@
+body{
+	background-image: url('bg.png') !important;
+	background-repeat: repeat-x !important;
+	background-position: top !important;
+	background-color: #0A1B37 !important;
+  padding: 0;
+  top: 0 !important;
+  visibility: hidden;
+}
+
+#iframe{
+	margin: 0 auto;
+	display: block;
+}
+
+#header{
+	padding: 0 !important;
+	height: 25px !important;
+}
+
+.filter-PRICE-wrap .ui-slider li .ui-slider-label-show{
+	width: 30px !important;
+}
+
+#toplogo,
+#topsearch,
+#ehilogo,
+#topaccount,
+#topbasket,
+.prod_remember,
+.prod_remember + div,
+.availabilitybox,
+#information,
+a[href="http://www.liveinternet.ru/click;CatalogiRU_NEW"]{
+	display: none !important;
+}

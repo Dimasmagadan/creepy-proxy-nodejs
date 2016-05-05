@@ -1,0 +1,32 @@
+body{
+  top: 0 !important;
+  visibility: hidden;
+}
+#iframe{
+	margin: 0 auto;
+	display: block;
+}
+#header{
+	background: #fff !important;
+	height: 110px !important;
+}
+
+#header > .wrapper,
+#web10951Banner,
+#addArticleToNotepadButton,
+.ShareView,
+a[href="/news-specials/mobile-app/"],
+a[href="/news-specials/boutique-aktionen/"],
+a[href="/news-specials/freundschaftswerbung/"],
+a[href="/news-specials/fashion-videos/"],
+#Sozial-Media,
+#Footer-Navi,
+#servicePagesLinks,
+#AppsandQL,
+#BottomText,
+#bottom-navi,
+#app-quali,
+#black-impress > .wrapper,
+#SocialMedia{
+	display: none !important;
+}

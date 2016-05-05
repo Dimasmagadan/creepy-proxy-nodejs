@@ -1,0 +1,11 @@
+#_head #_center ._info{
+	margin: 0px 0 0 58px !important;
+}
+
+/* Скрываем мусор */
+#AcceptCookiesBannerTemplate {
+    display: none !important;
+}
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}

@@ -1,0 +1,41 @@
+body{
+  top: 0 !important;
+  visibility: hidden;
+}
+
+#iframe{
+	margin: 0 auto;
+	display: block;
+}
+
+#colorbox, #colorbox *{
+	box-sizing: content-box !important;
+}
+
+#cboxClose{
+	padding-left: 0 !important;
+	padding-top: 0 !important;
+	padding-right: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+header,
+.shippingCostLink,
+.addToWishlist,
+.bv-write-review,
+.bv-write-review-label,
+.footerNavigationContainer,
+.footerRule,
+.teaserText,
+footer,
+a[href="http://www.liveinternet.ru/click;CatalogiRU_NEW"]{
+	display: none !important;
+}
+
+/*** моб. верися ***/
+@media only screen and (max-width: 480px){
+	#iframe,
+	#un-button{
+		display: none !important;
+	}
+}

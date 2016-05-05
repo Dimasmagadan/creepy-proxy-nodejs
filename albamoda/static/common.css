@@ -1,0 +1,14 @@
+/* Скрываем мусор */
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+body{
+    top: 0 !important;
+    visibility: hidden;
+    overflow-y: scroll;
+}
+
+/* Выравниваем меню */
+header #topnavi ul.navleiste li.tnav_small, header #topnavi ul.navleiste li.tnav_big {
+    padding: 0 20px 3px;
+}

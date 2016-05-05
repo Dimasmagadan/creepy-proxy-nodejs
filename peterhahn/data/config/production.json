@@ -1,0 +1,17 @@
+{
+  "site": {
+    "name"        : "peterhahn",
+    "domain"      : ".de",
+    "port"        : 6052
+  },
+  "header": {
+    "catalog"     : "peterhahn",
+    "alias"       : "PH",
+    "info"        : "Интернет-магазин Peterhahn. Каталоги.ру - заказ и доставка одежды из европейских интернет-магазинов."
+  },
+  "options": {
+    "height"      : 112,
+    "width"       : 960
+  },
+  "replaces": []
+}

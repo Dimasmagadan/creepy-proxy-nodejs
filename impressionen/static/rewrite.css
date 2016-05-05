@@ -1,0 +1,164 @@
+/* Заменяем шрифты */
+@font-face {
+	font-family: 'FontAwesome';
+	src: url('/static/fonts/fontawesome-webfont.eot?v=4.4.0');
+	src: url('/static/fonts/fontawesome-webfont.eot?#iefix&v=4.4.0') format('embedded-opentype'),
+		 url('/static/fonts/fontawesome-webfont.woff2?v=4.4.0') format('woff2'),
+		 url('/static/fonts/fontawesome-webfont.woff?v=4.4.0') format('woff'),
+		 url('/static/fonts/fontawesome-webfont.ttf?v=4.4.0') format('truetype'),
+		 url('/static/fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+    font-family: "ImpIcons";
+    src: url("/static/fonts/impressionen-iconfont.eot");
+    src: url("/static/fonts/impressionen-iconfont.eot?#iefix") format("embedded-opentype"), url("/static/fonts/impressionen-iconfont.woff") format("woff"), url("/static/fonts/impressionen-iconfont.ttf") format("truetype"), url("/static/fonts/impressionen-iconfont.svg#impressionen-iconfont") format("svg");
+    font-weight: normal;
+    font-style: normal
+}
+@font-face {
+    font-family: "Caslon";
+    src: url("/static/fonts/bffd5c7d-d118-4267-9111-ab80ddbc6393.eot?#iefix");
+    src: url("/static/fonts/bffd5c7d-d118-4267-9111-ab80ddbc6393.eot?#iefix") format("eot"), url("/static/fonts/edc4dafe-7361-4b16-aaaa-572b215416c4.woff2") format("woff2"), url("/static/fonts/80ea0cd0-de5a-4e8d-8baf-5ed5eac8aec3.woff") format("woff"), url("/static/fonts/88868532-7f23-4745-8db7-bedc7642da4c.ttf") format("truetype"), url("/static/fonts/1d323bdf-3ef6-4899-baa0-cbb3dae25643.svg#1d323bdf-3ef6-4899-baa0-cbb3dae25643") format("svg");
+    font-weight: 400;
+    font-style: normal
+}
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/static/fonts/8fbe1c6a-a910-474d-ac42-8a2bc9249af4.eot?#iefix");
+    src: url("/static/fonts/8fbe1c6a-a910-474d-ac42-8a2bc9249af4.eot?#iefix") format("eot"), url("/static/fonts/6e4905bc-1e85-46a9-b5c5-2305d641f394.woff2") format("woff2"), url("/static/fonts/f3f4b1c8-520e-4141-9f6f-8e21a2857a9c.woff") format("woff"), url("/static/fonts/774feb13-4351-429a-8c47-2bec5277e372.ttf") format("truetype"), url("/static/fonts/929a2d07-7af1-4552-aa8a-ea9a9622f0af.svg#929a2d07-7af1-4552-aa8a-ea9a9622f0af") format("svg");
+    font-weight: 400;
+    font-style: normal
+}
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/static/fonts/7d6c3b9e-86b7-44dd-9e46-8ab30da85834.eot?#iefix");
+    src: url("/static/fonts/7d6c3b9e-86b7-44dd-9e46-8ab30da85834.eot?#iefix") format("eot"), url("/static/fonts/58d18624-bc03-415b-b7a0-bdf9b4508a1c.woff2") format("woff2"), url("/static/fonts/a0cf2f5e-c70c-45a8-a420-4143b3afb187.woff") format("woff"), url("/static/fonts/c7acfb18-afc1-4a67-a281-baa1130b7baa.ttf") format("truetype"), url("/static/fonts/3799441c-73d4-4e5f-8a55-456233b45f0e.svg#3799441c-73d4-4e5f-8a55-456233b45f0e") format("svg");
+    font-weight: 700;
+    font-style: normal
+}
+
+
+/* Активные элементы шапки */
+._logout{
+    background-image: url(http://cdn.catalogi.ru/static/images/_logout.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    display: block;
+    float: right;
+    width: 10px;
+    height: 16px;
+}
+._home{
+    background-image: url(http://cdn.catalogi.ru/static/images/_home.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    line-height: 20px;
+    padding: 0 0 0 20px;
+    font-weight: bold;
+
+    color: #666;
+}
+
+/* Новые расположения элементов шапки */
+@media screen and (max-width: 63.9em) {
+    #page-header.sticky #account-nav {
+        top: 22px;
+        right: 235px;
+        width: 110px;
+    }
+    #page-header:not(.sticky) #account-nav {
+        top: 14px;
+        right: 50px;
+        width: 110px
+    }
+    #page-header:not(.sticky) #account-nav .my-account a,
+    #page-header:not(.sticky) #account-nav .my-account .link {
+        position: relative
+    }
+}
+@media screen and (min-width: 64em) {
+    #page-header.sticky #account-nav {
+        top: 22px;
+        right: 300px;
+        width: 110px;
+    }
+    #page-header:not(.sticky) #account-nav {
+        top: 14px;
+        right: 100px;
+        width: 115px
+    }
+    #page-header:not(.sticky) #account-nav .my-account a,
+    #page-header:not(.sticky) #account-nav .my-account .link {
+        position: relative
+    }
+    #page-header:not(.sticky) #meta-nav {
+        max-width: 60%;
+    }
+}
+@media screen and (min-width: 80em) {
+    #page-header.sticky #account-nav {
+        top: 22px;
+        width: 110px;
+    }
+}
+
+/* Уменьшаем шрифты */
+#page-header:not(.sticky) #meta-nav li a, #page-header:not(.sticky) #meta-nav li .link {
+    font: 500 12px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    display: block;
+}
+#account-nav a, #account-nav .link {
+    font: 500 12px/18px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #111;
+}
+#wishlist-link>a, #wishlist-link>.link, #minicart-link>a, #minicart-link>.link {
+    color: #111;
+    font: 500 12px/1 "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+#account-nav .my-account-login, #account-nav .my-account-flyout-btn {
+    color: #111;
+}
+#page-header.sticky #minicart {
+    top: 21px;
+}
+
+/* Заменяем лого */
+#header-brand-logo {
+    display: block;
+    text-indent: -9999em;
+    background: transparent url("/static/images/impressionen-logo.svg") no-repeat 0 0 scroll;
+    background-image: url("/static/images/impressionen-logo.svg");
+    height: 58px;
+    position: relative;
+    top: 65px;
+    margin-bottom: 39px;
+    background-size: contain;
+}
+
+
+/* Скрываем мусор */
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+.js-layer.layer-hide {
+    display: none !important;
+}
+.panel.panel-type-4 {
+    display: none !important;
+}
+#js-comments-write_button_review, .review-inner-button-panel {
+    display:none;
+}
+
+/* Подготовка к отображению */
+#_head #_center ._info{
+    margin: 0px 0 0 34px !important;
+}
+body{
+    top: 0 !important;
+    visibility: hidden;
+}

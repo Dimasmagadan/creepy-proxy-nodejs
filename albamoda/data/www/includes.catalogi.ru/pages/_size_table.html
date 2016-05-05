@@ -1,0 +1,1774 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="language" content="ru" />
+  <link href="http://catalogi.ru/_header/css/jquery.jscrollpane.css" rel="stylesheet" type="text/css" />
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript" src="http://catalogi.ru/_header/js/jquery.mousewheel.js"></script>
+  <script type="text/javascript" src="http://catalogi.ru/_header/js/jquery.jscrollpane.min.js"></script>
+	<title>Таблица размеров</title>
+  <style>
+  /*** scroll pane ***/
+  #_head .jspVerticalBar,
+  #colorbox .jspVerticalBar{
+    background: none;
+    width: 10px;
+  }
+  
+  #_head .jspTrack,
+  #colorbox .jspTrack{
+    background: #ccc;
+    margin: 0 auto;
+    width: 1px;
+  }
+  #_head .jspDrag,
+  #colorbox .jspDrag{
+    background: #ccc;
+    margin: 0 0 0 -1px;
+    width: 3px;
+  }
+  
+  #_head .jspDragTop,
+  #colorbox .jspDragTop{
+    background: none !important;
+  }
+
+    /*** Таблица размеров ***/
+    #_size_table{
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  
+    #_size_table ul{
+      list-style: none;
+      display: table;
+      width: 100%;
+      margin: 0 0 10px 0;
+      padding: 0 0 20px 0;
+      border-bottom: 2px solid #EF0F97;
+    }
+    
+    #_size_table ul li{
+      text-transform: uppercase;
+      display: table-cell;
+      text-align: center;
+      font-weight: bold;
+      font-size: 13px;
+    }
+    
+    #_size_table ul li a{
+      text-decoration: none;
+      color: #666;
+    }
+    
+    #_size_table ul li a[state="1"]{
+      text-decoration: underline;
+    }
+    
+    
+    #_size_table ._scroll{
+      width: 760px;
+      height: 450px;
+      overflow: hidden;
+      display: none;
+      outline: none;
+      color: #333 !important;
+    }
+    
+    #_size_table ._scroll ._header{
+      text-transform: uppercase;
+      font-size: 12px;
+      text-align: center;
+      padding: 15px 0;
+      width: 740px;
+    }
+    
+    #_size_table ._scroll table{
+      border-collapse: collapse;
+      width: 740px;
+    }
+    
+    #_size_table ._scroll table tr td{
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: 1px solid #cccccc;
+      font-size: 10px !important;
+      vertical-align: top;
+      text-align: center;
+      padding: 3px;
+    }
+    
+    #_size_table ._scroll table tr._sizes_header td{
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="_size_table" role="tab" class="notranslate catalogi_scroll">
+  	<ul>
+  		<li>Таблица размеров:</li>
+  		<li><a href="#" tab="womens">Женская одежда</a></li>
+  		<li><a href="#" tab="mens">Мужская одежда</a></li>
+  		<li><a href="#" tab="childrens">Детская одежда</a></li>
+    </ul>
+    <div class="_scroll" tab="womens" style="display: block;">
+    	<div class="_header">Блузки, брюки, юбки</div>
+      <table>				
+    		<tr class="_sizes_header bluz-br-up">
+    			<td>Малые размеры, рост 156-163 см</td>
+    			<td>Размеры для высоких, см, рост от 173 см</td>
+    			<td>Экстра малые размеры, рост до 156 см</td>
+    			<td>Нормальные размеры, рост 164-172 см</td>
+    			<td>Обхват груди см</td>
+    			<td>Обхват талии см</td>
+    			<td>Обхват бёдер см</td>
+    		</tr>
+    		<tr>
+    			<td>16</td>
+    			<td>-</td>
+    			<td>-</td>
+    			<td>32</td>
+    			<td>78-81</td>
+    			<td>60-63</td>
+    			<td>84-88</td>
+    		</tr>
+    		<tr>
+    			<td>17</td>
+    			<td>68</td>
+    			<td>175</td>
+    			<td>34</td>
+    			<td>78-81</td>
+    			<td>60-63</td>
+    			<td>84-88</td>
+    		</tr>
+    		<tr>
+    			<td>18</td>
+    			<td>72</td>
+    			<td>185</td>
+    			<td>36</td>
+    			<td>86-89</td>
+    			<td>70-73</td>
+    			<td>96-98</td>
+    		</tr>
+    		<tr>
+    			<td>19</td>
+    			<td>76</td>
+    			<td>195</td>
+    			<td>38</td>
+    			<td>90-93</td>
+    			<td>74-77</td>
+    			<td>99-101</td>
+    		</tr>
+    		<tr>
+    			<td>20</td>
+    			<td>80</td>
+    			<td>205</td>
+    			<td>40</td>
+    			<td>94-97</td>
+    			<td>78-81</td>
+    			<td>102-104</td>
+    		</tr>
+    		<tr>
+    			<td>21</td>
+    			<td>84</td>
+    			<td>215</td>
+    			<td>42</td>
+    			<td>98-101</td>
+    			<td>82-85</td>
+    			<td>105-107</td>
+    		</tr>
+    		<tr>
+    			<td>22</td>
+    			<td>88</td>
+    			<td>225</td>
+    			<td>44</td>
+    			<td>102-106</td>
+    			<td>86-91</td>
+    			<td>108-111</td>
+    		</tr>
+    		<tr>
+    			<td>23</td>
+    			<td>92</td>
+    			<td>235</td>
+    			<td>44</td>
+    			<td>102-106</td>
+    			<td>86-91</td>
+    			<td>108-111</td>
+    		</tr>
+    		<tr>
+    			<td>24</td>
+    			<td>96</td>
+    			<td>245</td>
+    			<td>48</td>
+    			<td>113-118</td>
+    			<td>98-104</td>
+    			<td>117-121</td>
+    		</tr>
+    		<tr>
+    			<td>25</td>
+    			<td>100</td>
+    			<td>255</td>
+    			<td>50</td>
+    			<td>119-124</td>
+    			<td>105-110</td>
+    			<td>122-126</td>
+    		</tr>
+    		<tr>
+    			<td>26</td>
+    			<td>104</td>
+    			<td>265</td>
+    			<td>52</td>
+    			<td>125-130</td>
+    			<td>111-117</td>
+    			<td>127-131</td>
+    		</tr>
+    		<tr>
+    			<td>27</td>
+    			<td>108</td>
+    			<td>275</td>
+    			<td>54</td>
+    			<td>131-136</td>
+    			<td>118-123</td>
+    			<td>132-136</td>
+    		</tr>
+    		<tr>
+    			<td>28</td>
+    			<td>112</td>
+    			<td>285</td>
+    			<td>56</td>
+    			<td>137-142</td>
+    			<td>124-130</td>
+    			<td>137-141</td>
+    		</tr>
+    		<tr>
+    			<td>29</td>
+    			<td>116</td>
+    			<td>295</td>
+    			<td>58</td>
+    			<td>143-148</td>
+    			<td>131-136</td>
+    			<td>142-146</td>
+    		</tr>
+    		<tr>
+    			<td>30</td>
+    			<td>120</td>
+    			<td>305</td>
+    			<td>60</td>
+    			<td>149-154</td>
+    			<td>137-143</td>
+    			<td>147-151</td>
+    		</tr>
+    	</table>
+    
+    	<div class="_header">Джинсовые размеры</div>
+      <table>
+    		<tr class="_sizes_header">
+    			<td>Заказываемый размер в дюймах</td>
+    			<td>Немецкие размеры</td>
+    			<td>Обхват талии</td>
+    		</tr>
+    		<tr>
+    			<td>25</td>
+    			<td>32</td>
+    			<td>63</td>
+    		</tr>
+    		<tr>
+    			<td>26</td>
+    			<td>34/36</td>
+    			<td>67</td>
+    		</tr>
+    		<tr>
+    			<td>27</td>
+    			<td>36</td>
+    			<td>69</td>
+    		</tr>
+    		<tr>
+    			<td>28</td>
+    			<td>36/38</td>
+    			<td>71</td>
+    		</tr>
+    		<tr>
+    			<td>29</td>
+    			<td>38</td>
+    			<td>74</td>
+    		</tr>
+    		<tr>
+    			<td>30</td>
+    			<td>38/40</td>
+    			<td>76</td>
+    		</tr>
+    		<tr>
+    			<td>31</td>
+    			<td>40</td>
+    			<td>79</td>
+    		</tr>
+    		<tr>
+    			<td>32</td>
+    			<td>40/42</td>
+    			<td>81</td>
+    		</tr>
+    		<tr>
+    			<td>33</td>
+    			<td>42</td>
+    			<td>84</td>
+    		</tr>
+    		<tr>
+    			<td>34</td>
+    			<td>42/44</td>
+    			<td>86</td>
+    		</tr>
+    		<tr>
+    			<td>&nbsp;</td>
+    			<td>&nbsp;</td>
+    			<td>&nbsp;</td>
+    		</tr>
+    		<tr>
+    			<td>Длина по внутреннему шву</td>
+    			<td colspan="2">32 дюйма = 81 см</td>
+    		</tr>
+    		<tr>
+    			<td>Длина по внутреннему шву </td>
+    			<td colspan="2">34 дюйма = 87 см</td>
+    		</tr>
+    	</table>
+    
+    	<div class="_header">Бюстгальтеры, корсажи</div>
+      <table>
+    		<tr class="_sizes_header">
+    			<td>Обхват груди</td>
+    			<td>Ваш размер</td>
+    			<td colspan="7">Обхват груди, измерительная лента должна проходить горизонтально и по самым выступающим точкам см.</td>
+    		</tr>
+    		<tr class="_sizes_header">
+    			<td>под грудью см</td>
+    			<td></td>
+    			<td>Чашка А</td>
+    			<td>Чашка B</td>
+    			<td>Чашка C</td>
+    			<td>Чашка D</td>
+    			<td>Чашка E</td>
+    			<td>Чашка F</td>
+    			<td>Чашка G</td>
+    		</tr>
+    		<tr>
+    			<td>68-72</td>
+    			<td>70</td>
+    			<td>82-84</td>
+    			<td>84-86</td>
+    			<td>86-88</td>
+    			<td></td>
+    			<td></td>
+    			<td></td>
+    			<td></td>
+    		</tr>
+    		<tr>
+    			<td>73-77</td>
+    			<td>75</td>
+    			<td>87-89</td>
+    			<td>89-91</td>
+    			<td>91-93</td>
+    			<td>93-95</td>
+    			<td>95-97</td>
+    			<td>97-99</td>
+    			<td>97-99</td>											
+    		</tr>
+    		<tr>
+    			<td>78-82</td>
+    			<td>80</td>
+    			<td>92-94</td>
+    			<td>94-96</td>
+    			<td>96-98</td>
+    			<td>98-100</td>
+    			<td>100-102</td>
+    			<td>102-104</td>
+    			<td>102-104</td>											
+    		</tr>
+    		<tr>
+    			<td>83-87</td>
+    			<td>85</td>
+    			<td>97-99</td>
+    			<td>99-101</td>
+    			<td>101-103</td>
+    			<td>103-105</td>
+    			<td>105-107</td>
+    			<td>107-109</td>
+    			<td>107-109</td>											
+    		</tr>
+    		<tr>
+    			<td>88-92</td>
+    			<td>90</td>
+    			<td>102-104</td>
+    			<td>104-106</td>
+    			<td>106-108</td>
+    			<td>108-110</td>
+    			<td>110-112</td>
+    			<td>112-114</td>
+    			<td>112-114</td>											
+    		</tr>
+    		<tr>
+    			<td>93-97</td>
+    			<td>95</td>
+    			<td>107-109</td>
+    			<td>109-111</td>
+    			<td>111-113</td>
+    			<td>111-113</td>
+    			<td>115-117</td>
+    			<td>117-119</td>
+    			<td>117-119</td>											
+    		</tr>
+    		<tr>
+    			<td>98-102</td>
+    			<td>100</td>
+    			<td>112-114</td>
+    			<td>114-123</td>
+    			<td>116-118</td>
+    			<td>116-118</td>
+    			<td>120-122</td>
+    			<td>122-124</td>
+    			<td>122-124</td>											
+    		</tr>
+    		<tr>
+    			<td>103-107</td>
+    			<td>105</td>
+    			<td>117-119</td>
+    			<td>119-121</td>
+    			<td>121-123</td>
+    			<td>123-125</td>
+    			<td>125-127</td>
+    			<td>127-129</td>
+    			<td>127-129</td>											
+    		</tr>
+    		<tr>
+    			<td>108-112</td>
+    			<td>110</td>
+    			<td></td>
+    			<td>124-126</td>
+    			<td>126-128</td>
+    			<td>128-130</td>
+    			<td>130-132</td>
+    			<td>132-134</td>
+    			<td>132-134</td>											
+    		</tr>
+    		<tr>
+    			<td>113-117</td>
+    			<td>115</td>
+    			<td></td>
+    			<td>129-131</td>
+    			<td>131-133</td>
+    			<td>133-135</td>
+    			<td>135-137</td>
+    			<td>137-139</td>
+    			<td>137-139</td>											
+    		</tr>
+    		<tr>
+    			<td>118-122</td>
+    			<td>120</td>
+    			<td></td>
+    			<td>134-136</td>
+    			<td>136-138</td>
+    			<td>138-140</td>
+    			<td>140-142</td>
+    			<td>142-144</td>
+    			<td>142-144</td>											
+    		</tr>
+    	</table>
+    
+    	<div class="_header">Утягивающие трусики</div>
+      <table>
+    		<tr class="_sizes_header">
+    			<td>Обхват талии см.</td>
+    			<td>Ваш размер</td>
+    		</tr>
+    		<tr>
+    			<td>63-67</td>
+    			<td>65</td>
+    		</tr>
+    		<tr>
+    			<td>68-72</td>
+    			<td>70</td>
+    		</tr>
+    		<tr>
+    			<td>73-77</td>
+    			<td>75</td>
+    		</tr>
+    		<tr>
+    			<td>78-82</td>
+    			<td>80</td>
+    		</tr>
+    		<tr>
+    			<td>83-87</td>
+    			<td>85</td>
+    		</tr>
+    		<tr>
+    			<td>88-92</td>
+    			<td>90</td>
+    		</tr>
+    		<tr>
+    			<td>93-97</td>
+    			<td>95</td>
+    		</tr>
+    		<tr>
+    			<td>98-102</td>
+    			<td>100</td>
+    		</tr>
+    		<tr>
+    			<td>103-107</td>
+    			<td>105</td>
+    		</tr>
+    		<tr>
+    			<td>108-112</td>
+    			<td>110</td>
+    		</tr>
+    		<tr>
+    			<td>113-117</td>
+    			<td>115</td>
+    		</tr>
+    	</table>
+    
+    	<div class="_header">Ремни</div>
+      <table>
+    		<tr class="_sizes_header">
+    			<td>Заказываемый размер</td>
+    			<td>длина в см</td>
+    		</tr>
+    		<tr>
+    			<td>70</td>
+    			<td>66-74</td>
+    		</tr>
+    		<tr>
+    			<td>75</td>
+    			<td>71-79</td>
+    		</tr>
+    		<tr>
+    			<td>80</td>
+    			<td>76-84</td>
+    		</tr>
+    		<tr>
+    			<td>85</td>
+    			<td>81-89</td>
+    		</tr>
+    		<tr>
+    			<td>90</td>
+    			<td>86-94</td>
+    		</tr>
+    		<tr>
+    			<td>95</td>
+    			<td>91-99</td>
+    		</tr>
+    		<tr>
+    			<td>100</td>
+    			<td>96-104</td>
+    		</tr>
+    		<tr>
+    			<td>105</td>
+    			<td>101-109</td>
+    		</tr>
+    		<tr>
+    			<td>110</td>
+    			<td>106-114</td>
+    		</tr>
+    		<tr>
+    			<td>115</td>
+    			<td>111-119</td>
+    		</tr>
+    		<tr>
+    			<td>120</td>
+    			<td>116-124</td>
+    		</tr>
+    	</table>
+    
+    	<div class="_header">Женская обувь</div>
+      <table>
+    		<tr class="_sizes_header">
+    			<td>Немецкие размеры</td>
+    			<td>Английские размеры</td>
+    			<td>Длина стопы см</td>
+    		</tr>
+    		<tr>
+    			<td>35</td>
+    			<td>2,5</td>
+    			<td>21,8</td>
+    		</tr>
+    		<tr>
+    			<td>36</td>
+    			<td>3,5</td>
+    			<td>22,5</td>
+    		</tr>
+    		<tr>
+    			<td>37</td>
+    			<td>4,5</td>
+    			<td>23,1</td>
+    		</tr>
+    		<tr>
+    			<td>38</td>
+    			<td>5,5</td>
+    			<td>23,8</td>
+    		</tr>
+    		<tr>
+    			<td>39</td>
+    			<td>6</td>
+    			<td>24,5</td>
+    		</tr>
+    		<tr>
+    			<td>40</td>
+    			<td>6,5</td>
+    			<td>25,1</td>
+    		</tr>
+    		<tr>
+    			<td>40,5</td>
+    			<td>7</td>
+    			<td>22,5</td>
+    		</tr>
+    		<tr>
+    			<td>41</td>
+    			<td>7,5</td>
+    			<td>25,8</td>
+    		</tr>
+    		<tr>
+    			<td>42</td>
+    			<td>8</td>
+    			<td>26,5</td>
+    		</tr>
+    		<tr>
+    			<td>43</td>
+    			<td>9</td>
+    			<td>27,1</td>
+    		</tr>
+    		<tr>
+    			<td>44</td>
+    			<td>9,5</td>
+    			<td>27,8</td>
+    		</tr>
+    	</table>
+    
+    	<div class="_header">Перчатки</div>
+      <table>
+    		<tr class="_sizes_header">
+    			<td>Обхват кисти см.</td>
+    			<td>Заказываемый размер</td>
+    		</tr>
+    		<tr>
+    			<td>14</td>
+    			<td>3</td>
+    		</tr>
+    		<tr>
+    			<td>14,5</td>
+    			<td>3,5</td>
+    		</tr>
+    		<tr>
+    			<td>15</td>
+    			<td>4</td>
+    		</tr>
+    		<tr>
+    			<td>15,5</td>
+    			<td>4,5</td>
+    		</tr>
+    		<tr>
+    			<td>16</td>
+    			<td>5</td>
+    		</tr>
+    		<tr>
+    			<td>16,5</td>
+    			<td>6</td>
+    		</tr>
+    		<tr>
+    			<td>17,5</td>
+    			<td>6,5</td>
+    		</tr>
+    		<tr>
+    			<td>19</td>
+    			<td>7</td>
+    		</tr>
+    		<tr>
+    			<td>20,5</td>
+    			<td>7,5</td>
+    		</tr>
+    		<tr>
+    			<td>22</td>
+    			<td>8</td>
+    		</tr>
+    		<tr>
+    			<td>23</td>
+    			<td>8,5</td>
+    		</tr>
+    		<tr>
+    			<td>24</td>
+    			<td>9</td>
+    		</tr>
+    		<tr>
+    			<td>26</td>
+    			<td>9,5</td>
+    		</tr>
+    		<tr>
+    			<td>27</td>
+    			<td>10</td>
+    		</tr>
+    	</table>
+    </div>
+    <div class="_scroll" tab="mens">
+  	<div class="_header">Размеры для мужчин с нормальной фигурой</div>
+      <table>
+    		<tr class="_sizes_header">
+    			<td>Ваш размер</td>
+    			<td>Обхват груди (2),см</td>
+    			<td>Обхват талии (4),см</td>
+    			<td>Рост (1),см</td>
+    			<td>Обхват ягодиц (5),см</td>
+    			<td>Длина брюк (6),см</td>
+    		</tr>
+    		<tr>
+    			<td>46</td>
+    			<td>90-93</td>
+    			<td>78-81</td>
+    			<td>168-173</td>
+    			<td>96-99</td>
+    			<td>102-104</td>
+    		</tr>
+    		<tr>
+    			<td>48</td>
+    			<td>94-97</td>
+    			<td>82-85</td>
+    			<td>171-176</td>
+    			<td>100-103</td>
+    			<td>103-106</td>
+    		</tr>
+    		<tr>
+    			<td>50</td>
+    			<td>98-101</td>
+    			<td>86-89</td>
+    			<td>174-179</td>
+    			<td>104-107</td>
+    			<td>105-108</td>
+    		</tr>
+    		<tr>
+    			<td>52</td>
+    			<td>102-105</td>
+    			<td>90-94</td>
+    			<td>177-182</td>
+    			<td>108-111</td>
+    			<td>107-109</td>
+    		</tr>
+    		<tr>
+    			<td>54</td>
+    			<td>106-109</td>
+    			<td>95-99</td>
+    			<td>180-184</td>
+    			<td>112-115</td>
+    			<td>108-110</td>
+    		</tr>
+    		<tr>
+    			<td>56</td>
+    			<td>110-113</td>
+    			<td>100-104</td>
+    			<td>182-186</td>
+    			<td>116-119</td>
+    			<td>109-112</td>
+    		</tr>
+    		<tr>
+    			<td>58</td>
+    			<td>114-117</td>
+    			<td>105-109</td>
+    			<td>184-188</td>
+    			<td>120-123</td>
+    			<td>111-114</td>
+    		</tr>
+    		<tr>
+    			<td>60</td>
+    			<td>118-121</td>
+    			<td>110-114</td>
+    			<td>186-190</td>
+    			<td>124-127</td>
+    			<td>112-115</td>
+    		</tr>
+    		<tr>
+    			<td>62</td>
+    			<td>122-125</td>
+    			<td>115-119</td>
+    			<td>188-192</td>
+    			<td>128-131</td>
+    			<td>113-116</td>
+    		</tr>
+    	</table>
+    
+    	<div class="_header">Размеры для коренастых мужчин с плотной фигурой</div>
+      <table>
+    		<tr class="_sizes_header">
+    			<td>Ваш размер</td>
+    			<td>Обхват груди (2),см</td>
+    			<td>Обхват талии (4),см</td>
+    			<td>Рост (1),см</td>
+    			<td>Обхват ягодиц (5),см</td>
+    			<td>Длина брюк (6),см</td>
+    		</tr>
+    		<tr>
+    			<td>24</td>
+    			<td>94-97</td>
+    			<td>86-89</td>
+    			<td>166-170</td>
+    			<td>100-103</td>
+    			<td>99-102</td>
+    		</tr>
+    		<tr>
+    			<td>25</td>
+    			<td>98-101</td>
+    			<td>90-93</td>
+    			<td>169-173</td>
+    			<td>104-107</td>
+    			<td>101-104</td>
+    		</tr>
+    		<tr>
+    			<td>26</td>
+    			<td>102-105</td>
+    			<td>94-97</td>
+    			<td>172-176</td>
+    			<td>108-111</td>
+    			<td>102-105</td>
+    		</tr>
+    		<tr>
+    			<td>27</td>
+    			<td>106-109</td>
+    			<td>98-101</td>
+    			<td>175-178</td>
+    			<td>112-115</td>
+    			<td>104-107</td>
+    		</tr>
+    		<tr>
+    			<td>28</td>
+    			<td>110-113</td>
+    			<td>102-106</td>
+    			<td>177-180</td>
+    			<td>116-119</td>
+    			<td>105-108</td>
+    		</tr>
+    		<tr>
+    			<td>29</td>
+    			<td>114-117</td>
+    			<td>107-111</td>
+    			<td>178-182</td>
+    			<td>120-123</td>
+    			<td>106-109</td>
+    		</tr>
+    		<tr>
+    			<td>30</td>
+    			<td>118-121</td>
+    			<td>112-115</td>
+    			<td>181-183</td>
+    			<td>124-127</td>
+    			<td>108-111</td>
+    		</tr>
+    		<tr>
+    			<td>31</td>
+    			<td>122-125</td>
+    			<td>116-119</td>
+    			<td>182-184</td>
+    			<td>128-131</td>
+    			<td>110-112</td>
+    		</tr>
+    		<tr>
+    			<td>32</td>
+    			<td>126-129</td>
+    			<td>120-123</td>
+    			<td>183-185</td>
+    			<td>132-136</td>
+    			<td>111-113</td>
+    		</tr>
+    
+    		<tr>
+    			<td>33</td>
+    			<td>130-133</td>
+    			<td>124-127</td>
+    			<td>184-186</td>
+    			<td>137-140</td>
+    			<td>112-114</td>
+    		</tr>
+    		<tr>
+    			<td>34</td>
+    			<td>134-137</td>
+    			<td>128-131</td>
+    			<td>185-187</td>
+    			<td>141-143</td>
+    			<td>113-115</td>
+    		</tr>
+    	</table>
+    
+    	<div class="_header">Размеры для высоких мужчин со стройной фигурой</div>
+      <table>	
+    		<tr class="_sizes_header">
+    			<td>Ваш размер</td>
+    			<td>Обхват груди (2),см</td>
+    			<td>Обхват талии (4),см</td>
+    			<td>Рост (1),см</td>
+    			<td>Обхват ягодиц (5),см</td>
+    			<td>Длина брюк (6),см</td>
+    		</tr>
+    		<tr>
+    			<td>88</td>
+    			<td>85-87</td>
+    			<td>71-74</td>
+    			<td>174-178</td>
+    			<td>89-91</td>
+    			<td>105-107</td>
+    		</tr>
+    		<tr>
+    			<td>90</td>
+    			<td>88-90</td>
+    			<td>74-77</td>
+    			<td>177-181</td>
+    			<td>92-95</td>
+    			<td>106-109</td>
+    		</tr>
+    		<tr>
+    			<td>94</td>
+    			<td>91-94</td>
+    			<td>78-81</td>
+    			<td>180-184</td>
+    			<td>96-99</td>
+    			<td>108-110</td>
+    		</tr>
+    		<tr>
+    			<td>98</td>
+    			<td>95-98</td>
+    			<td>82-85</td>
+    			<td>182-186</td>
+    			<td>100-103</td>
+    			<td>109-112</td>
+    		</tr>
+    		<tr>
+    			<td>102</td>
+    			<td>99-102</td>
+    			<td>86-89</td>
+    			<td>184-188</td>
+    			<td>104-107</td>
+    			<td>111-113</td>
+    		</tr>
+    		<tr>
+    			<td>106</td>
+    			<td>103-106</td>
+    			<td>90-94</td>
+    			<td>187-191</td>
+    			<td>108-111</td>
+    			<td>112-115</td>
+    		</tr>
+    		<tr>
+    			<td>110</td>
+    			<td>107-110</td>
+    			<td>95-99</td>
+    			<td>190-194</td>
+    			<td>112-115</td>
+    			<td>114-116</td>
+    		</tr>
+    		<tr>
+    			<td>114</td>
+    			<td>111-114</td>
+    			<td>100-104</td>
+    			<td>193-197</td>
+    			<td>116-119</td>
+    			<td>115-117</td>
+    		</tr>
+    	</table>
+    
+    	<div class="_header">Рубашки</div>
+      <table>
+    		<tr class="_sizes_header">
+    			<td>Обхват шеи</td>
+    			<td>Ваш размер</td>
+    			<td>Двойной размер</td>
+    			<td>Международный размер</td>
+    		</tr>
+    		<tr>
+    			<td>35</td>
+    			<td>35</td>
+    			<td rowspan="2" style="vertical-align:middle">35/36</td>				
+    		</tr>
+    		<tr>
+    			<td>36</td>
+    			<td>36</td>
+    			<td rowspan="2" style="vertical-align:middle">XS</td>			
+    		</tr>
+    		<tr>
+    			<td>37</td>
+    			<td>37</td>
+    			<td rowspan="2" style="vertical-align:middle">37/38</td>			
+    		</tr>
+    		<tr>
+    			<td>38</td>
+    			<td>38</td>
+    			<td rowspan="2" style="vertical-align:middle">S</td>			
+    		</tr>
+    		<tr>
+    			<td>39</td>
+    			<td>39</td>
+    			<td rowspan="2" style="vertical-align:middle">39-40</td>			
+    		</tr>
+    		<tr>
+    			<td>40</td>
+    			<td>40</td>
+    			<td rowspan="2" style="vertical-align:middle">M</td>			
+    		</tr>
+    		<tr>
+    			<td>41</td>
+    			<td>41</td>
+    			<td rowspan="2" style="vertical-align:middle">41-42</td>			
+    		</tr>
+    		<tr>
+    			<td>42</td>
+    			<td>42</td>
+    			<td rowspan="2" style="vertical-align:middle">L</td>			
+    		</tr>
+    		<tr>
+    			<td>43</td>
+    			<td>43</td>
+    			<td rowspan="2" style="vertical-align:middle">43-44</td>			
+    		</tr>
+    		<tr>
+    			<td>44</td>
+    			<td>44</td>
+    			<td rowspan="2" style="vertical-align:middle">XL</td>			
+    		</tr>
+    		<tr>
+    			<td>45</td>
+    			<td>45</td>
+    			<td rowspan="2" style="vertical-align:middle">45-46</td>			
+    		</tr>
+    		<tr>
+    			<td>46</td>
+    			<td>46</td>
+    			<td rowspan="2" style="vertical-align:middle">XXL</td>			
+    		</tr>
+    		<tr>
+    			<td>47</td>
+    			<td>47</td>
+    			<td rowspan="2" style="vertical-align:middle">47-48</td>			
+    		</tr>
+    		<tr>
+    			<td>48</td>
+    			<td>48</td>
+    			<td rowspan="2" style="vertical-align:middle">3XL</td>			
+    		</tr>
+    		<tr>
+    			<td>49</td>
+    			<td>49</td>
+    			<td rowspan="2" style="vertical-align:middle">49-50</td>			
+    		</tr>
+    		<tr>
+    			<td>50</td>
+    			<td>50</td>
+    			<td rowspan="2" style="vertical-align:middle">4XL</td>			
+    		</tr>
+    	</table>
+    
+    	<div class="_header">Джинсы для мужчин с нормальной фигурой</div>
+      <table>	
+    		<tr class="_sizes_header">
+    			<td>Обхват пояса (4) см.</td>
+    			<td>Приблизительная шаговая длина (7) см.</td>
+    			<td>Заказываемый размер</td>
+    		</tr>
+    		<tr>
+    			<td>70-72</td>
+    			<td>76</td>
+    			<td>28/30</td>
+    		</tr>
+    		<tr>
+    			<td>72,5-74-5</td>
+    			<td>81</td>
+    			<td>30/32</td>
+    		</tr>
+    		<tr>
+    			<td>80-82</td>
+    			<td>81</td>
+    			<td>32/32</td>
+    		</tr>
+    		<tr>
+    			<td>82,5-84,5</td>
+    			<td>81</td>
+    			<td>33/32</td>
+    		</tr>
+    		<tr>
+    			<td>85-87</td>
+    			<td>81</td>
+    			<td>34/32</td>
+    		</tr>
+    		<tr>
+    			<td>90-92</td>
+    			<td>86</td>
+    			<td>36/34</td>
+    		</tr>
+    		<tr>
+    			<td>95,5-97,5</td>
+    			<td>86</td>
+    			<td>38/34</td>
+    		</tr>
+    		<tr>
+    			<td>100,5-102,5</td>
+    			<td>86</td>
+    			<td>40/34</td>
+    		</tr>
+    		<tr>
+    			<td>105,5-107,5</td>
+    			<td>86</td>
+    			<td>42/34</td>
+    		</tr>
+    	</table>
+    
+    	<div class="_header">Джинсы для высоких мужчин со стройной фигурой</div>
+      <table>	
+    		<tr class="_sizes_header">
+    			<td>Обхват пояса (4) см.</td>
+    			<td>Приблизительная шаговая длина (7) см.</td>
+    			<td>Заказываемый размер</td>
+    		</tr>
+    		<tr>
+    			<td>72,5-74,5</td>
+    			<td>81</td>
+    			<td>29-32</td>
+    		</tr>
+    		<tr>
+    			<td>75-77</td>
+    			<td>86</td>
+    			<td>30/34</td>
+    		</tr>
+    		<tr>
+    			<td>80-82</td>
+    			<td>86</td>
+    			<td>32/34</td>
+    		</tr>
+    		<tr>
+    			<td>82,5-84,5</td>
+    			<td>86</td>
+    			<td>33/34</td>
+    		</tr>
+    		<tr>
+    			<td>85-87</td>
+    			<td>91</td>
+    			<td>34/36</td>
+    		</tr>
+    		<tr>
+    			<td>90-92</td>
+    			<td>91</td>
+    			<td>36/36</td>
+    		</tr>
+    		<tr>
+    			<td>95,5-97,5</td>
+    			<td>91</td>
+    			<td>38/36</td>
+    		</tr>
+    	</table>
+    
+    	<div class="_header">Джинсы для коренастых мужчин с плотной фигурой</div>
+      <table>	
+    		<tr class="_sizes_header">
+    			<td>Обхват пояса (4) см.</td>
+    			<td>Приблизительная шаговая длина (7) см.</td>
+    			<td>Заказываемый размер</td>
+    		</tr>
+    		<tr>
+    			<td>82,5-84,5</td>
+    			<td>76</td>
+    			<td>33/30</td>
+    		</tr>
+    		<tr>
+    			<td>85-87</td>
+    			<td>76</td>
+    			<td>34/30</td>
+    		</tr>
+    		<tr>
+    			<td>90-92</td>
+    			<td>81</td>
+    			<td>36/32</td>
+    		</tr>
+    		<tr>
+    			<td>95,5-97,5</td>
+    			<td>81</td>
+    			<td>33/32</td>
+    		</tr>
+    		<tr>
+    			<td>85-87</td>
+    			<td>81</td>
+    			<td>36/32</td>
+    		</tr>
+    		<tr>
+    			<td>100,5-102,5</td>
+    			<td>81</td>
+    			<td>40/32</td>
+    		</tr>
+    		<tr>
+    			<td>105,5-107,5</td>
+    			<td>81</td>
+    			<td>42/32</td>
+    		</tr>
+    	</table>
+    
+    	<div class="_header">Нижнее белье, плавки</div>
+      <table>	
+    		<tr class="_sizes_header">
+    			<td>Рост (1)</td>
+    			<td>Обхват груди (2), см</td>
+    			<td>Обхват талии (4), см</td>
+    			<td>Размер</td>
+    			<td>Размер</td>
+    			<td>Размер</td>
+    		</tr>
+    		<tr>
+    			<td>158-168</td>
+    			<td>83-88</td>
+    			<td>76-81</td>
+    			<td>3</td>
+    			<td>-</td>
+    			<td>-</td>
+    		</tr>
+    		<tr>
+    			<td>158-168</td>
+    			<td>88-93</td>
+    			<td>80-85</td>
+    			<td>4</td>
+    			<td>S</td>
+    			<td>42</td>
+    		</tr>
+    		<tr>
+    			<td>166-176</td>
+    			<td>91-99</td>
+    			<td>86-91</td>
+    			<td>5</td>
+    			<td>M</td>
+    			<td>46</td>
+    		</tr>
+    		<tr>
+    			<td>170-180</td>
+    			<td>100-105</td>
+    			<td>92-97</td>
+    			<td>6</td>
+    			<td>L</td>
+    			<td>48-50</td>
+    		</tr>
+    		<tr>
+    			<td>174-181</td>
+    			<td>106-111</td>
+    			<td>98-103</td>
+    			<td>7</td>
+    			<td>XL</td>
+    			<td>52-54</td>
+    		</tr>
+    		<tr>
+    			<td>178-188</td>
+    			<td>112-117</td>
+    			<td>104-109</td>
+    			<td>8</td>
+    			<td>XXL</td>
+    			<td>56-58</td>
+    		</tr>
+    		<tr>
+    			<td>180-190</td>
+    			<td>118-123</td>
+    			<td>110-115</td>
+    			<td>9</td>
+    			<td>-</td>
+    			<td>-</td>
+    		</tr>
+    		<tr>
+    			<td>184-194</td>
+    			<td>124-131</td>
+    			<td>116-123</td>
+    			<td>10</td>
+    			<td>-</td>
+    			<td>-</td>
+    		</tr>
+    		<tr>
+    			<td>186-196</td>
+    			<td>132-143</td>
+    			<td>124-135</td>
+    			<td>12</td>
+    			<td>-</td>
+    			<td>-</td>
+    		</tr>
+    		<tr>
+    			<td>188-198</td>
+    			<td>144-152</td>
+    			<td>136-147</td>
+    			<td>14</td>
+    			<td>-</td>
+    			<td>-</td>
+    		</tr>
+    	</table>
+    
+    	<div class="_header">Ремни</div>
+      <table>	
+    		<tr class="_sizes_header">
+    			<td>Талия (4), см</td>
+    			<td>Размер для заказа</td>
+    		</tr>
+    		<tr>
+    			<td>66-74</td>
+    			<td>70</td>
+    		</tr>
+    		<tr>
+    			<td>76-84</td>
+    			<td>80</td>
+    		</tr>
+    		<tr>
+    			<td>86-94</td>
+    			<td>90</td>
+    		</tr>
+    		<tr>
+    			<td>96-104</td>
+    			<td>100</td>
+    		</tr>
+    		<tr>
+    			<td>106-114</td>
+    			<td>110</td>
+    		</tr>
+    		<tr>
+    			<td>116-124</td>
+    			<td>120</td>
+    		</tr>
+    	</table>
+    
+    	<div class="_header">Перчатки</div>
+      <table>	
+    		<tr class="_sizes_header">
+    			<td>Обхват кисти см.</td>
+    			<td>Заказываемый размер</td>
+    		</tr>
+    		<tr>
+    			<td>14</td>
+    			<td>3</td>
+    		</tr>
+    		<tr>
+    			<td>14,5</td>
+    			<td>3,5</td>
+    		</tr>
+    		<tr>
+    			<td>15</td>
+    			<td>4</td>
+    		</tr>
+    		<tr>
+    			<td>15,5</td>
+    			<td>4,5</td>
+    		</tr>
+    		<tr>
+    			<td>16</td>
+    			<td>5</td>
+    		</tr>
+    		<tr>
+    			<td>16,5</td>
+    			<td>6</td>
+    		</tr>
+    		<tr>
+    			<td>17,5</td>
+    			<td>6,5</td>
+    		</tr>
+    		<tr>
+    			<td>19</td>
+    			<td>7</td>
+    		</tr>
+    		<tr>
+    			<td>20,5</td>
+    			<td>7,5</td>
+    		</tr>
+    		<tr>
+    			<td>22</td>
+    			<td>8</td>
+    		</tr>
+    		<tr>
+    			<td>23</td>
+    			<td>8,5</td>
+    		</tr>
+    		<tr>
+    			<td>24</td>
+    			<td>9</td>
+    		</tr>
+    		<tr>
+    			<td>26</td>
+    			<td>9,5</td>
+    		</tr>
+    		<tr>
+    			<td>27</td>
+    			<td>10</td>
+    		</tr>
+    	</table>
+    
+    	<div class="_header">Обувь</div>
+      <table>	
+    		<tr>
+    			<td>Немецкий размер</td>
+    			<td>35</td>
+    			<td>36</td>
+    			<td>37</td>
+    			<td>38</td>
+    			<td>39</td>
+    			<td>40</td>
+    			<td>41</td>
+    			<td>42</td>
+    			<td>43</td>
+    			<td>44</td>
+    			<td>45</td>
+    			<td>46</td>
+    			<td>47</td>
+    			<td>48</td>
+    			<td>49</td>
+    			<td>50</td>
+    		</tr>
+    		<tr>
+    			<td>Длина стопы в см.</td>
+    			<td>21,8</td>
+    			<td>22,5</td>
+    			<td>23,1</td>
+    			<td>23,8</td>
+    			<td>24,5</td>
+    			<td>25,1</td>
+    			<td>25,8</td>
+    			<td>26,5</td>
+    			<td>27,1</td>
+    			<td>27,8</td>
+    			<td>28,5</td>
+    			<td>29,1</td>
+    			<td>29,8</td>
+    			<td>30,5</td>
+    			<td>31,5</td>
+    			<td>31,9</td>
+    		</tr>			
+    	</table>
+    </div>
+    <div class="_scroll" tab="childrens">
+  		<div class="_header">Для малышей</div>
+      <table>
+  			<tr class="_sizes_header">
+  				<td>Рост, см</td>
+  				<td>Грудь, см</td>
+  				<td>Талия, см</td>
+  				<td>Бедра, см</td>
+  				<td>Размер</td>
+  			</tr>
+  			<tr>
+  				<td>45-50</td>
+  				<td>41-43</td>
+  				<td>41-43</td>
+  				<td>41-43</td>
+  				<td>50</td>
+  			</tr>
+  			<tr>
+  				<td>51-56</td>
+  				<td>43-45</td>
+  				<td>43-45</td>
+  				<td>43-45</td>
+  				<td>56</td>
+  			</tr>
+  			<tr>
+  				<td>57-62</td>
+  				<td>45-47</td>
+  				<td>45-47</td>
+  				<td>45-47</td>
+  				<td>62</td>
+  			</tr>
+  			<tr>
+  				<td>63-68</td>
+  				<td>47-49</td>
+  				<td>46-48</td>
+  				<td>47-49</td>
+  				<td>68</td>
+  			</tr>
+  			<tr>
+  				<td>69-74</td>
+  				<td>49-51</td>
+  				<td>47-49</td>
+  				<td>49-51</td>
+  				<td>74</td>
+  			</tr>
+  			<tr>
+  				<td>75-80</td>
+  				<td>51-53</td>
+  				<td>48-50</td>
+  				<td>51-53</td>
+  				<td>80</td>
+  			</tr>
+  			<tr>
+  				<td>81-86</td>
+  				<td>52-54</td>
+  				<td>49-51</td>
+  				<td>52-54</td>
+  				<td>86</td>
+  			</tr>
+  			<tr>
+  				<td>87-92</td>
+  				<td>53-55</td>
+  				<td>50-52</td>
+  				<td>53-56</td>
+  				<td>92</td>
+  			</tr>
+  			<tr>
+  				<td>93-98</td>
+  				<td>54-56</td>
+  				<td>51-53</td>
+  				<td>55-58</td>
+  				<td>98</td>
+  			</tr>
+  			<tr>
+  				<td>99-104</td>
+  				<td>55-57</td>
+  				<td>52-54</td>
+  				<td>57-60</td>
+  				<td>104</td>
+  			</tr>
+  			<tr>
+  				<td>105-110</td>
+  				<td>56-58</td>
+  				<td>53-55</td>
+  				<td>59-62</td>
+  				<td>110</td>
+  			</tr>
+  			<tr>
+  				<td>111-116</td>
+  				<td>57-59</td>
+  				<td>53-55</td>
+  				<td>61-64</td>
+  				<td>116</td>
+  			</tr>
+  			<tr>
+  				<td>117-122</td>
+  				<td>58-62</td>
+  				<td>55-58</td>
+  				<td>63-67</td>
+  				<td>122</td>
+  			</tr>
+  			<tr>
+  				<td>123-128</td>
+  				<td>61-65</td>
+  				<td>57-59</td>
+  				<td>66-70</td>
+  				<td>128</td>
+  			</tr>
+  			<tr>
+  				<td>129-134</td>
+  				<td>64-68</td>
+  				<td>58-61</td>
+  				<td>69-73</td>
+  				<td>134</td>
+  			</tr>
+  			<tr>
+  				<td>135-140</td>
+  				<td>67-71</td>
+  				<td>60-62</td>
+  				<td>72-76</td>
+  				<td>140</td>
+  			</tr>
+  			<tr>
+  				<td>141-146</td>
+  				<td>70-74</td>
+  				<td>61-64</td>
+  				<td>75-80</td>
+  				<td>146</td>
+  			</tr>
+  		</table>
+  
+  		<div class="_header">Для девушек</div>
+      <table>
+  			<tr class="_sizes_header">
+  				<td>Рост, см</td>
+  				<td>Грудь, см</td>
+  				<td>Талия, см</td>
+  				<td>Бедра, см</td>
+  				<td>Размер</td>
+  			</tr>
+  			<tr>
+  				<td>147-152</td>
+  				<td>73-77</td>
+  				<td>63-65</td>
+  				<td>79-83</td>
+  				<td>152</td>
+  			</tr>
+  			<tr>
+  				<td>153-158</td>
+  				<td>76-80</td>
+  				<td>64-67</td>
+  				<td>82-87</td>
+  				<td>158</td>
+  			</tr>
+  			<tr>
+  				<td>159-164</td>
+  				<td>79-83</td>
+  				<td>66-68</td>
+  				<td>86-90</td>
+  				<td>164</td>
+  			</tr>
+  			<tr>
+  				<td>165-170</td>
+  				<td>82-86</td>
+  				<td>67-70</td>
+  				<td>89-94</td>
+  				<td>170</td>
+  			</tr>
+  			<tr>
+  				<td>171-176</td>
+  				<td>85-89</td>
+  				<td>69-71</td>
+  				<td>93-97</td>
+  				<td>176</td>
+  			</tr>
+  			<tr>
+  				<td>177-182</td>
+  				<td>88-92</td>
+  				<td>70-73</td>
+  				<td>96-101</td>
+  				<td>182</td>
+  			</tr>
+  			<tr>
+  				<td>183-188</td>
+  				<td>91-95</td>
+  				<td>72-75</td>
+  				<td>100-105</td>
+  				<td>188</td>
+  			</tr>
+  		</table>
+  
+  		<div class="_header">Для юношей</div>
+      <table>
+  			<tr class="_sizes_header">
+  				<td>Рост, см</td>
+  				<td>Грудь, см</td>
+  				<td>Талия, см</td>
+  				<td>Бедра, см</td>
+  				<td>Размер</td>
+  			</tr>
+  			<tr>
+  				<td>147-152</td>
+  				<td>73-77</td>
+  				<td>63-65</td>
+  				<td>79-83</td>
+  				<td>152</td>
+  			</tr>
+  			<tr>
+  				<td>153-158</td>
+  				<td>76-80</td>
+  				<td>66-69</td>
+  				<td>81-85</td>
+  				<td>158</td>
+  			</tr>
+  			<tr>
+  				<td>159-164</td>
+  				<td>79-83</td>
+  				<td>68-71</td>
+  				<td>84-98</td>
+  				<td>164</td>
+  			</tr>
+  			<tr>
+  				<td>165-170</td>
+  				<td>82-86</td>
+  				<td>70-73</td>
+  				<td>87-91</td>
+  				<td>170</td>
+  			</tr>
+  			<tr>
+  				<td>171-176</td>
+  				<td>85-89</td>
+  				<td>72-75</td>
+  				<td>90-94</td>
+  				<td>176</td>
+  			</tr>
+  			<tr>
+  				<td>177-182</td>
+  				<td>88-92</td>
+  				<td>74-78</td>
+  				<td>93-97</td>
+  				<td>182</td>
+  			</tr>
+  			<tr>
+  				<td>183-188</td>
+  				<td>91-95</td>
+  				<td>77-81</td>
+  				<td>96-100</td>
+  				<td>188</td>
+  			</tr>
+  		</table>
+  
+  		<div class="_header">Обувь, носочки</div>
+      <table>
+  			<tr class="_sizes_header">
+  				<td>длина в см</td>
+  				<td>заказывайте размер</td>
+  				<td>длина в см</td>
+  				<td>заказывайте размер</td>
+  			</tr>
+  			<tr>
+  				<td>10,1</td>
+  				<td>17</td>
+  				<td>16,5</td>
+  				<td>26</td>
+  			</tr>
+  			<tr>
+  				<td>11,0</td>
+  				<td>18</td>
+  				<td>16,8</td>
+  				<td>27</td>
+  			</tr>
+  			<tr>
+  				<td>11,6</td>
+  				<td>19</td>
+  				<td>17,4</td>
+  				<td>28</td>
+  			</tr>
+  			<tr>
+  				<td>12,3</td>
+  				<td>20</td>
+  				<td>18,1</td>
+  				<td>29</td>
+  			</tr>
+  			<tr>
+  				<td>12,5</td>
+  				<td>20</td>
+  				<td>18,7</td>
+  				<td>30</td>
+  			</tr>
+  			<tr>
+  				<td>13,1</td>
+  				<td>21</td>
+  				<td>19,4</td>
+  				<td>31</td>
+  			</tr>
+  			<tr>
+  				<td>13,7</td>
+  				<td>22</td>
+  				<td>20,1</td>
+  				<td>32</td>
+  			</tr>
+  			<tr>
+  				<td>14,3</td>
+  				<td>23</td>
+  				<td>20,7</td>
+  				<td>33</td>
+  			</tr>
+  			<tr>
+  				<td>14,9</td>
+  				<td>24</td>
+  				<td>21,4</td>
+  				<td>34</td>
+  			</tr>
+  			<tr>
+  				<td>15,5</td>
+  				<td>25</td>
+  				<td>22,1</td>
+  				<td>35</td>
+  			</tr>
+  		</table>
+    </div>
+  </div>
+  <script language="javascript">
+    // Прокрутка
+    $('#_size_table ._scroll').jScrollPane({autoReinitialise: false});
+    
+    // Вкладки
+    $('#_size_table[role="tab"] > ul > li > a').click(function(){
+      $(this).parents('#_size_table[role="tab"]').find('a[tab][state="1"]').attr('state', '0');
+      $(this).attr('state', '1');
+      $(this).parents('#_size_table[role="tab"]').find('div[tab]:visible').hide();
+      $(this).parents('#_size_table[role="tab"]').find('div[tab="'+$(this).attr('tab')+'"]').show();
+      $(this).parents('#_size_table[role="tab"]').find('div[tab="'+$(this).attr('tab')+'"]').data('jsp').reinitialise();
+      $(this).parents('#_size_table[role="tab"]').find('div[tab="'+$(this).attr('tab')+'"]').data('jsp').scrollToY(0);
+      return false;
+    });
+  
+    $('#_size_table[role="tab"] > ul > li:eq(1) > a').trigger('click');
+  </script>
+</body>
+</html>

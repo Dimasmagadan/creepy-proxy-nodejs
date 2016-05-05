@@ -1,0 +1,8 @@
+{
+  "site": {
+    "name"        : "issuu",
+    "domain"      : ".com",
+    "port"        : 6050
+  },
+  "replaces": []
+}

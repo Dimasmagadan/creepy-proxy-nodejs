@@ -1,0 +1,122 @@
+.navigation-main-outer-wrapper {
+    position: relative;
+    box-sizing: border-box;
+    clear: both;
+    margin: 8px 0 0 0;
+    padding: 0 0 0 0;
+    height: 52px;
+    width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+    .navigation-main-outer-wrapper {
+        margin: 40px 0 0 0;
+    }
+}
+@media only screen and (max-width: 1024px) and (min-width: 720px) and (orientation: portrait), (max-width: 880px) and (min-width: 720px) {
+    .navigation-main-outer-wrapper {
+        margin: 140px 0 0 0;
+    }
+}
+
+#cookiesdirective {
+    display: none !important;
+}
+
+.favoriteWrap {
+    display: none !important;
+}
+.outfitWrap {
+    display: none !important;
+}
+
+/* Правим корзину */
+#warenkorb a {
+    padding: 15px 0 0 75px;
+}
+#warenkorb {
+    width: 166px;
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 720px) {
+    #header {
+        height: auto;
+        padding: 0;
+    }
+}
+
+/* Верхнее меню */
+._home{
+    background-image: url(http://cdn.catalogi.ru/static/images/_home.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    line-height: 20px;
+    padding: 0 0 0 20px;
+    font-weight: bold;
+    color: #666;
+}
+._logout{
+    background-image: url(http://cdn.catalogi.ru/static/images/_logout.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    display: block;
+    float: right;
+    width: 10px;
+    height: 18px;
+    margin-left: 5px;
+}
+#catalogi-head {
+    font-size: 100%;
+}
+#catalogi-head {
+    background: #f5f5f5;
+    color: #000;
+    font-family: Arial;
+    font-size: 14px;
+    height: auto;
+    left: 0;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    max-width:  1000px;
+    padding: 5px 0;
+    position: relative;
+    z-index: 1001;
+    margin:  0 auto;
+}
+#catalogi-head #catalogi-headInnerBox {
+    margin-left: auto;
+    margin-right: auto;
+}
+#catalogi-head #catalogi-head-left {
+    float: left;
+    margin: 0 0 0 10px;
+    width: 85%;
+    text-align: left;
+}
+#catalogi-head #catalogi-head-right {
+    float: right;
+    margin: 0 10px 0 0;
+}
+#catalogi-head #catalogi-headtext a {
+    margin-right: 15px;
+    text-decoration: none;
+}
+@media only screen and (max-width: 719px) {
+    #catalogi-head #catalogi-head-left {
+        width: 90%;
+        float: none;
+    }
+    #catalogi-head a#catalogi-head-right {
+        width: 40px;
+        float: none;
+        display: block;
+        margin-left: 7px;
+    }
+}
+/*Поиск*/
+#suche .text {
+    width: 120px;
+}

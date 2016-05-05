@@ -1,0 +1,16 @@
+{
+  "site": {
+    "name"        : "gingar",
+    "domain"      : ".de"
+  },
+  "header": {
+    "catalog"     : "gingar",
+    "alias"       : "GR",
+    "info"        : "Интернет-магазин Gingar. Каталоги.ру - заказ и доставка одежды из европейских интернет-магазинов."
+  },
+  "options": {
+    "height"      : 120,
+    "width"       : 960
+  },
+  "replaces": []
+}

@@ -1,0 +1,148 @@
+body{
+    top: 0 !important;
+    visibility: hidden;
+    overflow-y: scroll;
+}
+
+#un-button.un-left.css3{
+    font-size: 12px !important;
+}
+
+#header-container .metaNaviIcons > iframe{
+    padding: 0;
+    /* float: right; */
+    height: 45px;
+    /* --- */
+    position: absolute !important;
+    top: 0;
+    right: 0;
+    margin: 0 !important;
+}
+
+#header-container .metaNaviIcons a span.iconFont {
+    margin-bottom: 0;
+    line-height: 18px;
+    height: 22px;
+}
+#header-container .metaNaviIcons a span {
+    display: block;
+}
+
+#customerAccountBox {
+    position: absolute !important;
+    right: 50px;
+    top: 0px;
+}
+#customerAccountBox > a{
+    margin: 0 !important;
+    text-align: center;
+    float: right;
+    width: 70px;
+    height: 45px;
+}
+.subNav > li:hover > div {
+    left: 0 !important;
+}
+.subNav > li:hover {
+    border-bottom: 1px solid #666;
+}
+.headerUsp .posWrapper{
+    width: 1000px !important;
+}
+
+.headerUsp p{
+    font-weight: normal !important;
+    cursor: default !important;
+    text-transform: none !important;
+    width: 20% !important;
+}
+
+.headerUsp p.textCenter{
+    width: 50% !important;
+}
+
+.headerUsp p.textRight{
+    width: 30% !important;
+}
+
+.headerUsp p a{
+    color: #666 !important;
+    cursor: pointer;
+}
+
+.headerUsp p ul li{
+    display: inline-block;
+}
+
+.headerUsp p ul li > a{
+    border-left: 1px solid #666;
+    padding: 0 0 0 3px;
+}
+
+.headerUsp p ul li:first-child > a{
+    padding: 0 0 0 0;
+    border-left: none;
+}
+
+.uspBarCloseButton,
+#userAreaLink,
+#zOverlay,
+.modalContainer,
+.cookieAdvice,
+    /*.headerUsp,
+    .header,*/
+.usbBarClose,
+#header-container #customerAccountBox .iconFont.noJsHidden,
+#customerAccountBoxLayer,
+#modalLoginLinkWishList,
+#damenLoungeNav,
+.uspTeaser,
+.js-addNewReview,
+.js-rateReview,
+.sizeHelp,
+#addToWishlist,
+.social,
+#modalReviewLink,
+.footer,
+a[href="http://www.liveinternet.ru/click;CatalogiRU_NEW"]{
+    display: none !important;
+}
+
+/*** моб. верися ***/
+@media only screen and (max-width: 8000px){
+    #un-button{
+        display: none !important;
+    }
+
+    #iframe{
+        margin: 7px 0 0 0;
+        float: right;
+    }
+
+    .msgAccount{
+        margin: 10px 0 0 0;
+        text-align: center;
+        float: right;
+        width: 70px;
+        height: 45px;
+    }
+
+    .msgAccount span{
+        font-size: 10px;
+        display: block;
+    }
+
+    .msgAccount .iconFont{
+        font-size: 24px;
+    }
+
+    #cart,
+    #wishlistLink,
+    .js-addToWishlist,
+    .uspBlock,
+    a[href="/doregister/#r1"],
+    a[href="/login/"],
+    .navFooter{
+        display: none !important;
+    }
+}

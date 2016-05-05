@@ -1,0 +1,18 @@
+{
+  "site": {
+    "name"        : "heine",
+    "domain"      : ".de",
+    "port"        : "6051"
+  },
+  "header": {
+    "catalog"     : "heine",
+    "alias"       : "HE",
+    "info"        : "Интернет-магазин Heine. Каталоги.ру - заказ и доставка одежды из европейских интернет-магазинов."
+  },
+  "options": {
+    "height"      : 112,
+    "width"       : 984
+  },
+  "replaces": [
+  ]
+}

@@ -1,0 +1,81 @@
+body{
+  top: 0 !important;
+  visibility: hidden;
+}
+
+#colorbox{
+	z-index: 1000100;
+}
+
+#head{
+	height: 160px !important;
+	background-repeat: repeat-x !important;
+	background-position: bottom !important;
+}
+
+#navibalken{
+	top: 106px !important;
+	width: 880px !important;
+}
+
+#navi_head{
+	top: 160px !important;
+}
+
+#head_bg{
+	background: none !important;
+}
+
+#nav_13000{
+	width: 160px !important;
+}
+
+#nav_11000{
+	width: 83px !important;
+}
+
+#nav_18000{
+	width: 107px !important;
+}
+
+#nav_19000{
+	width: 95px !important;
+}
+
+#nav_15000{
+	width: 102px !important;
+}
+
+#nav_16000{
+	width: 140px !important;
+}
+
+#nav_41000{
+	width: 164px !important;
+}
+
+#nav_52000{
+	width: 155px !important;
+}
+
+#nav_53000{
+	width: 95px !important;
+}
+
+#cookieMeldung,
+#head_bg > a,
+#laenderauswahl,
+#sicher_shoppen,
+#suche,
+#konto,
+#wk,
+#top-service,
+#buttons_merken_wk .merken,
+.besticken,
+#social_wrapper,
+.add-bewertung,
+#nav_service,
+#footer,
+a[href="http://www.liveinternet.ru/click;CatalogiRU_NEW"]{
+	display: none !important;
+}

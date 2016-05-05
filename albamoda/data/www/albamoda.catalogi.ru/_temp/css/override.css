@@ -1,0 +1,77 @@
+/*** Переопределения стиля ***/
+body{
+  padding: 0;
+  top: 0 !important;
+}
+
+#_head{
+  height: 120px !important;
+}
+
+#_head > div{
+  background: #fff !important;
+  width: 968px !important;
+  height: 120px !important;
+}
+
+#_head #_center{
+  margin: 0 auto !important;
+  height: 120px !important;
+  width: 968px !important;
+}
+
+#_head #_center ._info{
+  margin: 0px 0 0 43px !important;
+}
+
+header #suchBox{
+  position: static !important;
+  width: auto !important;
+}
+
+div.breadcrumb{
+  font-size: 10px !important;
+}
+
+#product .infoContent .infoSelects #priceBox{
+  height: 84px !important;
+}
+
+#product .infoContent .infoSelects #priceBox .oldPrice{
+  font-size: 10px !important;
+}
+
+#product .infoContent .infoSelects #priceBox .delivery{
+  font-size: 10px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+#product #infoContainer #contentInfoLinks a{
+  font-size: 10px !important;
+}
+
+.searchNavigation em div.filterButton{
+  width: 40px !important;
+}
+
+header .topnaviAktiv{
+  background: url("http://albamoda.catalogi.ru/images/damenmode_mo.png") no-repeat scroll 20px 4px #868686 !important;
+}
+
+header #topnavi .herren a.tn{
+  background: url("http://albamoda.catalogi.ru/images/herren.png") no-repeat scroll 10px 0 #434343 !important;
+}
+
+header #topnavi ul.navleiste li.tnav_big {
+  width: 182px !important;
+}
+
+header #topnavi ul.navleiste li.lastTN {
+  width: 182px !important;
+}
+
+span.headContent{
+  font-size: 12px;
+}

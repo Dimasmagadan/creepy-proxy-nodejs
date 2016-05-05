@@ -1,0 +1,76 @@
+#_login_partial{
+  font-family: Arial, Helvetica, sans-serif;
+  width: 400px;
+}
+
+#_login_partial h2{
+  text-align: center;
+  margin: 0 0 15px;
+  font-weight: normal;
+  color: #EF0F97;
+}
+
+#_login_partial table{
+  margin: 0 auto;
+}
+
+#_login_partial table tr td{
+  border: none;
+  padding: 7px;
+}
+
+#_login_partial p{
+  text-align: center;
+  font-size: 15px;
+  color: #848284;
+}
+
+#_login_partial a{
+  text-decoration: none;
+  font-size: 15px;
+  color: #848284;
+}
+
+#_login_partial input[type="text"],
+#_login_partial input[type="password"]{
+  background-image: url(http://catalogi.ru/css/images/input-text-bg2.png);
+  background-position: left top;
+  background-repeat: no-repeat;
+  text-align: center;
+  line-height: 31px;
+  font-size: 15px;
+  color: #848284;
+  border: none;
+  width: 229px;
+  height: 31px;
+}
+
+#_login_partial input[type="submit"]{
+  background-image: url(http://catalogi.ru/css/images/button-bg2.png);
+  background-position: left top;
+  background-repeat: no-repeat;
+  text-align: center;
+  line-height: 37px;
+  font-size: 12px;
+  cursor: pointer;
+  border: none;
+  width: 229px;
+  height: 37px;
+}
+
+#_login_partial label{
+  font-size: 12px;
+  font-weight: normal;
+  color: #848284;
+  display: inline;
+}
+
+#_login_partial .info{
+  margin: 20px 0 0 0;
+  color: #848284;
+  font-size: 12px;
+}
+
+#_login_partial .info span{
+  text-decoration: underline;
+}

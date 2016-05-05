@@ -1,0 +1,31 @@
+/*** Переопределения стиля ***/
+body{
+  padding: 0;
+  top: 0 !important;
+  visibility: hidden;
+}
+
+.searchNavigation em div.filterButton {
+  width: 40px !important;
+}
+
+div.breadcrumb{
+	font-size: 10px !important;
+	padding: 5px 0;
+}
+
+#headerbanner,
+#logo,
+#metanavigation,
+.miniBasket,
+#suchBox,
+.callback[data-title="Kontakt"],
+#contentInfoLinks,
+#social,
+#scusiContactContainer,
+#subFooter,
+#visa,
+#suchBoxBottom,
+footer{
+  display: none !important;
+}

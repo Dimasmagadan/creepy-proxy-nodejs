@@ -1,0 +1,38 @@
+#_logout_partial{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#_logout_partial table td{
+  border: none;
+}
+
+#_logout_partial h2{
+  text-align: center;
+  margin: 0 0 15px;
+  font-weight: normal;
+  color: #EF0F97;
+}
+
+#_logout_partial p{
+  text-align: center;
+  font-size: 15px;
+  color: #848284;
+  margin: 30px 0;
+}
+
+#_logout_partial a{
+  background-image: url(http://catalogi.ru/css/images/button-bg2.png);
+  background-position: left top;
+  background-repeat: no-repeat;
+  text-decoration: none;
+  text-align: center;
+  line-height: 37px;
+  font-size: 15px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  border: none;
+  width: 229px;
+  height: 37px;
+  color: #333;
+}

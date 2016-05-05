@@ -1,0 +1,19 @@
+body{
+  padding: 0;
+  top: 0 !important;
+  visibility: hidden;
+}
+
+#_head #_center #_logo{
+	padding: 0 !important;
+	margin: 0 !important;
+	width: auto !important;
+}
+
+#_head,
+.header .search,
+.header .directorder,
+.header .search,
+.footer{
+	display: none !important;
+}

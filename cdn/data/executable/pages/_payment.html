@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="language" content="ru" />
+  <link href="http://catalogi.ru/_header/css/jquery.jscrollpane.css" rel="stylesheet" type="text/css" />
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript" src="http://catalogi.ru/_header/js/jquery.mousewheel.js"></script>
+  <script type="text/javascript" src="http://catalogi.ru/_header/js/jquery.jscrollpane.min.js"></script>
+	<title>Доставка</title>
+  <style>
+    #_payment_partial{
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  
+    #_payment_partial ._scroll{
+      width: 394px;
+      height: 210px;
+      outline: none;
+    }
+    
+    #_payment_partial ._scroll ._content{
+      text-align: left !important;
+      width: 384px;
+      color: #333 !important;
+      font-size: 12px !important;
+    }
+    
+    #_payment_partial ._scroll ._content p{
+      padding: 0 !important;
+      margin: 5px 0 !important;
+    }
+
+    #_payment_partial ._scroll ._content ul{
+      margin: 0;
+      padding: 0 0 0 5px;
+    }
+
+    @media only screen and (max-width: 300px){
+      #_payment_partial,
+      #_payment_partial ._scroll,
+      #_payment_partial ._scroll ._content{
+        width: 190px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="_payment_partial" class="notranslate catalogi_scroll">
+    <div class="_scroll">
+      <div class="_content">
+        <h4>ОПЛАТА ЗАКАЗА</h4>
+        <p>Предоплата заказа 15% производится рублями по установленному банком курсу на день осуществления платежа:</p>
+        <ul>
+          <li>в офисе через платежные терминалы банка, при оплате требуется паспорт РФ,</li>
+          <li>банковскими картами VISA, MasterCard, кроме Electron,</li>
+          <li>безналичным банковским переводом</li>
+        </ul>
+        <p>Оставшаяся стоимость заказа оплачивается при получении посылки:</p>
+        <ul>
+          <li>курьеру</li>
+          <li>на почте</li>
+          <li>в офисе</li>
+        </ul>
+        <p>ПОЛНЫЕ УСЛОВИЯ ДОСТАВКИ СМОТРИТЕ <a href="http://catalogi.ru/delivery/" title="Полные условия заказа" target="_blank">ЗДЕСЬ</a></p>    
+      </div>
+    </div>
+  </div>
+  <script language="javascript">
+    // Прокрутка
+    $('#_payment_partial ._scroll').jScrollPane({autoReinitialise: false});
+  </script>
+</body>
+</html>

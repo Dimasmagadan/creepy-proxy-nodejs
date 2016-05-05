@@ -1,0 +1,17 @@
+{
+  "site": {
+    "name"        : "impressionen",
+    "domain"      : ".de",
+    "port"        : 5057
+  },
+  "header": {
+    "catalog"     : "impressionen",
+    "alias"       : "IM",
+    "info"        : "Интернет-магазин Impressionen. Каталоги.ру - заказ и доставка одежды из европейских интернет-магазинов."
+  },
+  "options": {
+    "height"      : 120,
+    "width"       : 960
+  },
+  "replaces": []
+}

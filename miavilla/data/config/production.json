@@ -1,0 +1,17 @@
+{
+  "site": {
+    "name"        : "miavilla",
+    "domain"      : ".de",
+    "port"        : "6055"
+  },
+  "header": {
+    "catalog"     : "miavilla",
+    "alias"       : "MV",
+    "info"        : "Интернет-магазин Miavilla. Каталоги.ру - заказ и доставка одежды из европейских интернет-магазинов."
+  },
+  "options": {
+    "height"      : 120,
+    "width"       : 960
+  },
+  "replaces": []
+}

@@ -1,0 +1,9 @@
+            <form id="suchBox" name="suchbox" action="http://www.albamoda.catalogi.ru/suche.html" method="get">
+              <input class="suchbox ac_input" autocomplete="off" type="text" id="queryString" name="query" rel="Название товара или артикул" value="" />
+              <input class="suggest" type="hidden" name="suggest" value="" />
+              <input type="hidden" name="aht" value="1" />
+              <input type="submit" class="_submit" value="" />
+            </form>
+            <script>
+              catalogi('#suchBox #queryString').defaultValue();
+            </script>

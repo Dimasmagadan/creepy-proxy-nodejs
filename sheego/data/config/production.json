@@ -1,0 +1,17 @@
+{
+  "site": {
+    "name"        : "sheego",
+    "domain"      : ".de",
+    "port"        : 7050
+  },
+  "header": {
+    "catalog"     : "sheego",
+    "alias"       : "SH",
+    "info"        : "Интернет-магазин sheego. Каталоги.ру - заказ и доставка одежды из европейских интернет-магазинов."
+  },
+  "options": {
+    "height"      : 150,
+    "width"       : 1000
+  },
+  "replaces": []
+}

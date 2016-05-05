@@ -1,0 +1,51 @@
+body{
+  top: 0 !important;
+  visibility: hidden;
+}
+
+.add-bewertung,
+#bewertung > div{
+  display: none !important;
+}
+
+/***
+ * Гугл переводчик
+ *******************************************************/
+.skiptranslate{
+  display: none;
+}
+
+#google_translate_element{
+  float: left;
+  padding: 10px 0px;
+}
+
+.goog-te-gadget{
+  display: block;
+  float: left
+}
+
+.goog-te-gadget img{
+  display: inline;
+}
+
+.goog-tooltip {
+  display: none !important;
+}
+.goog-tooltip:hover {
+  display: none !important;
+}
+.goog-text-highlight {
+  background-color: transparent !important;
+  border: none !important; 
+  box-shadow: none !important;
+}
+
+#google_translate_element{
+  display: none !important;
+}
+
+#sidebar,
+#merken_wk .merken{
+	display: none !important;
+}

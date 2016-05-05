@@ -1,0 +1,17 @@
+{
+  "site": {
+    "name": "site.name",
+    "domain": "site.domain",
+    "port": 1234
+  },
+  "header": {
+    "catalog": "header.catalog",
+    "alias": "header.alias",
+    "info": "header.info"
+  },
+  "options": {
+    "height": "options.height",
+    "width": "options.width"
+  },
+  "replaces": []
+}

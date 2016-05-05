@@ -1,0 +1,27 @@
+php_flag display_errors on
+php_flag always_populate_raw_post_data on
+Options +FollowSymLinks +ExecCGI
+
+#SetEnvIf User-Agent ^.*YandexBot.* BAD_BOT
+SetEnvIf User-Agent ^.*Googlebot.* BAD_BOT
+SetEnvIf User-Agent ^.*bingbot.* BAD_BOT
+#SetEnvIf User-Agent ^.*bot.* BAD_BOT
+
+# Bad bot, no cookie!
+Order Allow,Deny
+Allow from all
+Deny from env=BAD_BOT
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{HTTP_HOST} ^(.*)\.avendro\.catalogi\.ru
+  RewriteRule ^(?!\/(_js|_css|_images)\/)(.*)\.(djs|js|gif|jpg|png|css|swf|flv|ico|mp4).*$ http://%1.otto.de/$2.$3 [r=301,L]
+
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>

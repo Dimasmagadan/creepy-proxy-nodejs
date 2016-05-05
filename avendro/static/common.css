@@ -1,0 +1,65 @@
+/*** Переопределения стиля ***/
+/*body{*/
+  /*padding: 0;*/
+  /*top: 0 !important;*/
+  /*visibility: hidden;*/
+/*}*/
+
+/*#_head #_center ._btns > div > a{*/
+  /*text-decoration: none !important;*/
+/*}*/
+
+/*._table{*/
+	/*width: 686px;*/
+/*}*/
+
+/*#_head #_center ._info{*/
+	/*margin: 0px 0 0 30px;*/
+/*}*/
+
+/*#cboxLoadedContent{*/
+  /*box-sizing: content-box !important;*/
+/*}*/
+
+/*.js_shortname{*/
+  /*font-size: 18px !important;*/
+/*}*/
+
+/*header nav .overState{*/
+  /*font-size: 18px !important;*/
+/*}*/
+
+/*.availabilityLayerContent td.legend{*/
+	/*width: 400px !important;*/
+/*}*/
+
+/*#_head, #_head *{*/
+  /*moz-box-sizing: content-box !important;*/
+  /*-webkit-box-sizing: content-box !important;*/
+  /*box-sizing: content-box !important;*/
+/*}*/
+
+/*#_head #_center ._search ._submit{*/
+  /*width: 22px !important;*/
+  /*height: 30px !important;*/
+/*}*/
+
+/*#sanHeadWrp,*/
+/*header div.grid_3.alpha,*/
+/*div.grid_12.omega,*/
+/*.sortiments-woche-campaign,*/
+/*.contentText,*/
+/*footer,*/
+/*div.av_anchor,*/
+/*.user_feedback_splice_bar_live.user_js_feedback_splice_bar,*/
+/*div.addon,*/
+/*a.js_wishListLink.wishListLink,*/
+/*div.campaign.js_promotion.c_btnIcon.js_promotion_rabatt_gutschein_code,*/
+/*div.js_deliveryServices,*/
+/*.wishListLink,*/
+/*.js_wishListLink,*/
+/*li[aria-controls="verkauf_und_versand"],*/
+/*#user_id_feedback_splice_bar_tooltip,*/
+/*a.submitReview{*/
+  /*display: none !important;*/
+/*}*/

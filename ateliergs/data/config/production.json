@@ -1,0 +1,17 @@
+{
+  "site": {
+    "name"        : "ateliergs",
+    "domain"      : ".de",
+    "port"        : 7051
+  },
+  "header": {
+    "catalog"     : "ateliergs",
+    "alias"       : "AT",
+    "info"        : "Интернет-магазин ateliergs. Каталоги.ру - заказ и доставка одежды из европейских интернет-магазинов."
+  },
+  "options": {
+    "height"      : 150,
+    "width"       : 1000
+  },
+  "replaces": []
+}

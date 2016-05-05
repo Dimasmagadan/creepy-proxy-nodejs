@@ -1,0 +1,17 @@
+{
+  "site": {
+    "name"        : "schneider",
+    "domain"      : ".de",
+    "port"        : 6056
+  },
+  "header": {
+    "catalog"     : "schneider",
+    "alias"       : "SN",
+    "info"        : "Интернет-магазин Schneider. Каталоги.ру - заказ и доставка одежды из европейских интернет-магазинов."
+  },
+  "options": {
+    "height"      : 120,
+    "width"       : 960
+  },
+  "replaces": []
+}

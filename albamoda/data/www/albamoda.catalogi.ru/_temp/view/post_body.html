@@ -1,0 +1,114 @@
+<script>
+  catalogi(document).ready(function(){
+    jQuery(".productContainer .toBasketSB").unbind("click");
+    catalogi(".productContainer .toBasketSB").click(function(){
+      if(checkOrderSelects()){
+        if(catalogi(".singleSize").size()>0){
+          size=catalogi(".singleSize").attr("title");
+          deliveryDesignation=catalogi(".singleSize").attr("data-deliverydesignation")
+        }else{
+          //size=catalogi(".chosenItem").attr("title");
+          size=catalogi(".chosenItem").text();
+          deliveryDesignation=catalogi(".chosenItem").attr("data-deliverydesignation")
+        }if(deliveryDesignation!="1"){
+          
+          if(catalogi(".chosenModel").attr("data-articleno-promo")){
+            articul = catalogi(".chosenModel").attr("data-articleno-promo");
+          }else if(catalogi('#modelSelector .aktiv').attr('data-articleno-promo')){
+            articul = catalogi('#modelSelector .aktiv').attr('data-articleno-promo');
+          }else{
+            articul = catalogi("#articleNumberWithPromotionCode").val()
+          }
+
+          if(!size){
+            size = '0';
+          }
+
+          var product = {
+            articul: articul,
+            size: size,
+            price: parseFloat(varprice.replace(',','.')),
+            name: catalogi('h1[itemprop="name"]').text(),
+            count: 1
+          }
+
+          catalogi.basket.add({
+            catalog: 'AM',
+            articul: product.articul,
+            size: product.size,
+            price: product.price,
+            name: product.name,
+            count: product.count
+          });
+
+          /*
+          catalogi.get(baseUrl+"/ajax_addtobasket.html",{
+            vid:vid,
+            bid:catalogi("#bid").val(),
+            amount:"1",
+            articleNumberWithPromotionCode:catalogi("#articleNumberWithPromotionCode").val()
+          },function(a){
+            Shadowbox.open({
+              content:a,
+              player:"html",
+              handleOversize:"none",
+              width:"286",
+              height:"260",
+              options:{
+                overlayOpacity:0.3,
+                onFinish:function(b){
+                  copyInMinibasket();
+                  catalogi("#quickviewBasket").load(baseUrl+"/ajaxRefreshQuickViewBasket.html",function(c,e,d){
+                    initQuickviewWarenkorb()
+                  })
+                }
+              }
+            })
+          });
+        catalogi(".productContainer .toBasketSB").unbind("click");
+        setTimeout("initButtonDv()",5000);
+        return false
+        */
+        }else{
+          alert(catalogi("#errorMessage").attr("data-articleSoldOut"))
+        }
+      }
+
+    });    
+  });
+
+  // Перевод строки поиска
+  catalogi('#suchBox').submit(function(){
+		catalogi.ajax({
+		  url: '/_header/actions/_translate.php',
+      type: 'get',
+      dataType: 'json',
+      data: {
+        client: 't',
+        text: catalogi('#suchBox #queryString').val(),
+        sl: 'ru',
+        tl: 'de'
+      },
+      success: function(data){
+		    catalogi('#suchBox #queryString').val(data.sentences[0].trans);
+        catalogi('#suchBox').get(0).submit();
+      },
+      error: function(data){
+        console.log(data)
+      }
+		});
+    return false;
+  });
+</script>
+<div style="display:none">
+<!--LiveInternet counter--><script type="text/javascript"><!--
+document.write("<a href='http://www.liveinternet.ru/click;CatalogiRU_NEW' "+
+"target=_blank><img src='//counter.yadro.ru/hit;CatalogiRU_NEW?t45.6;r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random()+
+"' alt='' title='LiveInternet' "+
+"border='0' width='31' height='31'><\/a>")
+//--></script><!--/LiveInternet-->
+</div>

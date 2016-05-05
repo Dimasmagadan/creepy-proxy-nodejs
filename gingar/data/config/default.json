@@ -1,0 +1,28 @@
+{
+  "site": {
+    "name"        : "site.name",
+    "domain"      : "site.domain"
+  },
+  "header": {
+    "catalog"     : "header.catalog",
+    "alias"       : "header.alias",
+    "info"        : "header.info"
+  },
+  "options": {
+    "height"      : "options.height",
+    "width"       : "options.width"
+  },
+  "replaces": [
+//    {
+//      "type": "usual",
+//      "from": "from",
+//      "to": "to"
+//    },
+//    {
+//      "type": "regex",
+//      "from": "\\(from)",
+//      "args": "g",
+//      "to": "$1"
+//    }
+  ]
+}

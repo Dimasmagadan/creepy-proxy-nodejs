@@ -1,0 +1,16 @@
+body{
+  top: 0 !important;
+  visibility: hidden;
+}
+
+#iframe,
+#un-button,
+.zertifikate,
+#merkzettel,
+a[href="https://erwinmueller.catalogi.ru/mobile/my_account-DE-de-EM"],
+.betrag,
+.button_in_mk1,
+.laenderwahl,
+#footer{
+	display: none !important;
+}

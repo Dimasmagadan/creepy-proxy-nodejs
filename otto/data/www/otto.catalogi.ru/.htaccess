@@ -1,0 +1,18 @@
+php_flag display_errors on
+php_flag always_populate_raw_post_data on
+Options +FollowSymLinks +ExecCGI
+
+SetEnvIf User-Agent ^.*bot.* BAD_BOT
+
+Order Allow,Deny
+Allow from all
+Deny from env=BAD_BOT
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>

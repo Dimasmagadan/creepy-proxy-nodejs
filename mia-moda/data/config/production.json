@@ -1,0 +1,17 @@
+{
+  "site": {
+    "name"        : "mia-moda",
+    "domain"      : ".de",
+    "port"        : 5052
+  },
+  "header": {
+    "catalog"     : "mia-moda",
+    "alias"       : "MA",
+    "info"        : "Интернет-магазин MIA-MODA. Каталоги.ру - заказ и доставка одежды из европейских интернет-магазинов."
+  },
+  "options": {
+    "height"      : 112,
+    "width"       : 957
+  },
+  "replaces": []
+}

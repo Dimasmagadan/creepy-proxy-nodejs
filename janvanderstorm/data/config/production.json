@@ -1,0 +1,17 @@
+{
+  "site": {
+    "name"        : "janvanderstorm",
+    "domain"      : ".de",
+    "port"        : 6059
+  },
+  "header": {
+    "catalog"     : "janvanderstorm",
+    "alias"       : "JS",
+    "info"        : "Интернет-магазин MIA-MODA. Каталоги.ру - заказ и доставка одежды из европейских интернет-магазинов."
+  },
+  "options": {
+    "height"      : 150,
+    "width"       : 1000
+  },
+  "replaces": []
+}

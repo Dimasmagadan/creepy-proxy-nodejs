@@ -1,0 +1,115 @@
+html, body{
+  padding: 0;
+  margin: 0;
+}
+
+#_order_partial{
+  font-family: Arial, Helvetica, sans-serif;
+  height: 250px;
+  width: 910px;
+}
+
+#_order_partial h2{
+  margin: 0 0 20px 0;
+  text-align: center;
+  font-weight: normal;
+  font-size: 22px;
+  color: #EF0F97;
+}
+
+#_order_partial > div{
+  overflow: hidden;
+  height: 390px;
+  margin: 5px 0;
+  outline: none;
+}
+
+#_order_partial table{
+  border-collapse: separate !important;
+  border-spacing: 5px !important;
+  width: 100%;
+}
+
+#_order_partial table tr td{
+  padding: 4px 2px;
+  text-align: center;
+  border: 1px solid #888;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  word-break: break-all;
+  line-height: 12px;
+  font-size: 12px;
+  color: #848284;
+}
+
+#_order_partial table tr td.last{
+  width: auto;
+  border: none;
+  background: none;
+}
+
+#_order_partial table tr td > a{
+  text-decoration: underline;
+  color: #848284;
+}
+
+#_order_partial table tr td > a:hover{
+  text-decoration: none;
+}
+
+#_order_partial table tr td > a.delete{
+  padding: 0 0 0 15px;
+  background: url("http://catalogi.ru/css/images/icon-delete.gif") no-repeat 0 3px;
+  color: #E66C2A;
+  float: right;
+  font-size: 11px;
+  display: inline !important;
+}
+
+#_order_partial .order{
+  background: url("http://catalogi.ru/css/images/button_190.png") no-repeat;
+  text-decoration: none;
+  font-size: 11px;
+  text-align: center;
+  line-height: 28px;
+  display: block;
+  width: 190px;
+  height: 28px;
+  float: left;
+  color: #333;
+}
+
+#_order_partial .continue{
+  background: url("http://catalogi.ru/css/images/button_190.png") no-repeat;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 11px;
+  text-align: center;
+  line-height: 28px;
+  position: static;
+  display: block;
+  width: 190px;
+  height: 28px;
+  float: right;
+  color: #333;
+}
+
+@media only screen and (max-width: 480px){
+  html, body,
+  #_order_partial{
+    width: 700px;
+  }
+  #_order_partial table tr td.flex{
+    display: none;
+  }
+  #_order_partial table tr td > a.delete{
+    overflow: hidden;
+    display: block;
+    height: 15px;
+    width: 0;
+  }
+}

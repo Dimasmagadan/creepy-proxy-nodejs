@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteBase /
+
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{HTTP_HOST} ^(.*)\.albamoda\.catalogi\.ru
+  RewriteRule ^(?!\/(_js|_css|_images)\/)(.*)\.(js|gif|jpg|png|css|swf|flv|ico|mp4).*$ http://%1.albamoda.de/$2.$3 [r=301,L]
+
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>

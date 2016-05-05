@@ -1,0 +1,26 @@
+body{
+  padding: 0;
+  top: 0 !important;
+  visibility: hidden;
+}
+
+.m_sp_global{
+	background-image: url(http://www.avendro.com/img/logos/avendro_kl__rot_sw_300x76.png) !important;
+	background-size: 100%;
+}
+
+div.topnavi_width.padding_left.padding_topTopnavi,
+div#UseCaseselected,
+div.ListMerkzettelPos,
+div.merken,
+div#ADSMerkzettel,
+
+#_head,
+#wkIcon,
+#shoppingListButtons,
+#contextMenu .signIn,
+footer,
+
+div.bgcolor_footer{
+  display: none !important;
+}

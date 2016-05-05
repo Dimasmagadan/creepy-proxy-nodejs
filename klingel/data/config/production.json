@@ -1,0 +1,18 @@
+{
+  "site": {
+    "name"        : "klingel",
+    "domain"      : ".de",
+    "port"        : 5058
+  },
+  "header": {
+    "catalog"     : "klingel",
+    "alias"       : "KL",
+    "info"        : "Интернет-магазин KLINGEL. Каталоги.ру - заказ и доставка одежды из европейских интернет-магазинов."
+  },
+  "options": {
+    "height"      : 108,
+    "width"       : 960
+  },
+  "replaces": [
+  ]
+}

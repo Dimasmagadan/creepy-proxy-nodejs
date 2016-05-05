@@ -1,0 +1,7 @@
+/*mobile view*/
+@media only screen and (max-width: 849px) {
+    header {
+        visibility: hidden;
+        height: 0;
+    }
+}

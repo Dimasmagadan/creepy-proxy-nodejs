@@ -1,0 +1,166 @@
+/*
+ * CSS Styles that are needed by jScrollPane for it to operate correctly.
+ *
+ * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
+ * may not operate correctly without them.
+ */
+
+.catalogi_scroll .jspContainer,
+#colorbox .jspContainer
+{
+	overflow: hidden;
+	position: relative;
+}
+
+.catalogi_scroll .jspPane,
+#colorbox .jspPane
+{
+	position: absolute;
+}
+
+.catalogi_scroll .jspVerticalBar,
+#colorbox .jspVerticalBar
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 16px;
+	height: 100%;
+	background: red;
+}
+
+.catalogi_scroll .jspHorizontalBar,
+#colorbox .jspHorizontalBar
+{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 16px;
+	background: red;
+}
+
+.catalogi_scroll .jspVerticalBar *,
+.catalogi_scroll .jspHorizontalBar *,
+#colorbox .jspVerticalBar *,
+#colorbox .jspHorizontalBar *
+{
+	margin: 0;
+	padding: 0;
+}
+
+.catalogi_scroll .jspCap,
+#colorbox .jspCap
+{
+	display: none;
+}
+
+.catalogi_scroll .jspHorizontalBar .jspCap,
+#colorbox .jspHorizontalBar .jspCap
+{
+	float: left;
+}
+
+.catalogi_scroll .jspTrack,
+#colorbox .jspTrack
+{
+	background: #dde;
+	position: relative;
+}
+
+.catalogi_scroll .jspDrag,
+#colorbox .jspDrag
+{
+	background: #bbd;
+	position: relative;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+}
+
+.catalogi_scroll .jspHorizontalBar .jspTrack,
+.catalogi_scroll .jspHorizontalBar .jspDrag,
+#colorbox .jspHorizontalBar .jspTrack,
+#colorbox .jspHorizontalBar .jspDrag
+{
+	float: left;
+	height: 100%;
+}
+
+.catalogi_scroll .jspArrow,
+#colorbox .jspArrow
+{
+	background: #50506d;
+	text-indent: -20000px;
+	display: block;
+	cursor: pointer;
+}
+
+.catalogi_scroll .jspArrow.jspDisabled,
+#colorbox .jspArrow.jspDisabled
+{
+	cursor: default;
+	background: #80808d;
+}
+
+.catalogi_scroll .jspVerticalBar .jspArrow,
+#colorbox .jspVerticalBar .jspArrow
+{
+	height: 16px;
+}
+
+.catalogi_scroll .jspHorizontalBar .jspArrow,
+#colorbox .jspHorizontalBar .jspArrow
+{
+	width: 16px;
+	float: left;
+	height: 100%;
+}
+
+.catalogi_scroll .jspVerticalBar .jspArrow:focus,
+#colorbox .jspVerticalBar .jspArrow:focus
+{
+	outline: none;
+}
+
+.catalogi_scroll .jspCorner,
+#colorbox .jspCorner
+{
+	background: #eeeef4;
+	float: left;
+	height: 100%;
+}
+
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
+* html .jspCorner
+{
+	margin: 0 -3px 0 0;
+}
+
+/****
+ * Override
+ ***/
+/*** scroll pane ***/
+.catalogi_scroll .jspVerticalBar,
+#colorbox .jspVerticalBar{
+  background: none;
+  width: 10px;
+}
+
+.catalogi_scroll .jspTrack,
+#colorbox .jspTrack{
+  background: #ccc;
+  margin: 0 auto;
+  width: 1px;
+}
+.catalogi_scroll .jspDrag,
+#colorbox .jspDrag{
+  background: #ccc;
+  margin: 0 0 0 -1px;
+  width: 3px;
+}
+
+.catalogi_scroll .jspDragTop,
+#colorbox .jspDragTop{
+  background: none !important;
+}

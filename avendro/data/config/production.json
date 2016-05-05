@@ -1,0 +1,17 @@
+{
+  "site": {
+    "name"        : "otto",
+    "domain"      : ".de",
+    "port"        : "6057"
+  },
+  "header": {
+    "catalog"     : "otto",
+    "alias"       : "OT",
+    "info"        : "Интернет-магазин Avendro - member of OTTO group. Каталоги.ру - заказ и доставка одежды из европейских интернет-магазинов."
+  },
+  "options": {
+    "height"      : 120,
+    "width"       : 960
+  },
+  "replaces": []
+}

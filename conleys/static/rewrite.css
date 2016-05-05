@@ -1,0 +1,224 @@
+/* Заменяем шрифты */
+@font-face {
+    font-family: "ConIcons";
+    src: url("/static/fonts/conleys-iconfont.eot");
+    src: url("/static/fonts/conleys-iconfont.eot?#iefix") format("embedded-opentype"), url("/static/fonts/conleys-iconfont.woff") format("woff"), url("/static/fonts/conleys-iconfont.ttf") format("truetype"), url("/static/fonts/conleys-iconfont.svg#conleys-iconfont") format("svg");
+    font-weight: normal;
+    font-style: normal
+}
+@font-face {
+    font-family: "Caslon";
+    src: url("/static/fonts/7e4f61cb-f00d-40f2-8581-97c33ce543d2.eot?#iefix");
+    src: url("/static/fonts/7e4f61cb-f00d-40f2-8581-97c33ce543d2.eot?#iefix") format("eot"), url("/static/fonts/1ad92c04-a319-4176-a83b-ea1c7bbd8321.woff2") format("woff2"), url("/static/fonts/ae721eac-0fd7-4dea-abe9-33b9e5dbd09e.woff") format("woff"), url("/static/fonts/be46afc4-ec9f-4cf7-9af1-49fc83ea4675.ttf") format("truetype"), url("/static/fonts/230e7105-d3d4-4a8e-bc8c-b59bc4aa5621.svg#230e7105-d3d4-4a8e-bc8c-b59bc4aa5621") format("svg");
+    font-weight: 700;
+    font-style: italic
+}
+@font-face {
+    font-family: "BrandonGrotW01-Bold";
+    src: url("/static/fonts/c12a6d37-72c1-408b-9ca9-32946956c57f.eot?#iefix");
+    src: url("/static/fonts/c12a6d37-72c1-408b-9ca9-32946956c57f.eot?#iefix") format("eot"), url("/static/fonts/df1cd944-a6a3-4d30-8fd3-391c2e9531f1.woff2") format("woff2"), url("/static/fonts/4f2d0548-c7dc-459b-a2e0-e86656a10ded.woff") format("woff"), url("/static/fonts/dc21d9e5-516f-4e7e-9a84-7be79a44c2dd.ttf") format("truetype"), url("/static/fonts/a9bdb836-ee14-494d-8c69-5617c5720992.svg#a9bdb836-ee14-494d-8c69-5617c5720992") format("svg");
+    font-weight: 700;
+    font-style: normal
+}
+
+/* Активные элементы шапки */
+._logout{
+    background-image: url(http://cdn.catalogi.ru/static/images/_logout.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    display: block;
+    float: right;
+    width: 10px;
+    height: 16px;
+}
+._home{
+    background-image: url(http://cdn.catalogi.ru/static/images/_home.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    line-height: 20px;
+    padding: 0 0 0 20px;
+    font-weight: bold;
+
+    color: #666;
+}
+
+/* Новые расположения элементов шапки */
+@media screen and (max-width: 63.9em) {
+    #page-header.sticky #account-nav {
+        top: 22px;
+        right: 250px;
+        width: 120px;
+    }
+    #page-header:not(.sticky) #account-nav {
+        top: 14px;
+        right: 50px;
+        width: 120px
+    }
+    #page-header:not(.sticky) #account-nav .my-account a,
+    #page-header:not(.sticky) #account-nav .my-account .link {
+        position: relative
+    }
+
+    #page-header.sticky .search {
+        width: 165px;
+        left: 555px;
+    }
+    #page-header:not(.sticky) .search {
+        width: 170px;
+        left: 535px;
+    }
+    #page-header:not(.sticky) .search-button {
+        width: 50px;
+        overflow: hidden;
+    }
+
+    #page-header.sticky #minicart {
+        right: 200px;
+    }
+}
+@media screen and (min-width: 64em) {
+    #page-header.sticky #account-nav {
+        top: 22px;
+        right: 230px;
+        width: 120px;
+    }
+    #page-header:not(.sticky) #account-nav {
+        top: 14px;
+        right: 100px;
+        width: 120px
+    }
+    #page-header:not(.sticky) #account-nav .my-account a,
+    #page-header:not(.sticky) #account-nav .my-account .link {
+        position: relative
+    }
+
+    #page-header:not(.sticky) #meta-nav {
+        max-width: 70%;
+    }
+
+    #page-header.sticky .search {
+        top: 13px;
+        width: 140px;
+        left: 815px;
+    }
+    #page-header.sticky .search .searchfield {
+        width: 100px;
+    }
+    #page-header:not(.sticky) .search-button {
+        width: 50px;
+        overflow: hidden;
+    }
+    .search {
+        width: 280px;
+        left: 655px;
+    }
+
+    #page-header #root-nav {
+        margin-top: 30px;
+    }
+
+    #page-header.sticky #minicart {
+        width: 275px;
+        right: 170px;
+    }
+}
+@media screen and (min-width: 80em) {
+    #page-header.sticky #account-nav {
+        top: 22px;
+        right: 320px;
+        width: 120px;
+    }
+
+    #page-header.sticky .search {
+        left: 1010px;
+        width: 170px;
+    }
+    #page-header.sticky .search .searchfield {
+        width: 115px;
+    }
+    .search {
+        left: 885px;
+        width: 280px;
+    }
+
+    #page-header.sticky #minicart {
+        right: 222px;
+    }
+}
+
+.search .searchfield {
+    width: 63%;
+}
+#page-header.sticky .search .search-button {
+    overflow: hidden;
+    width: 37px;
+}
+
+/* Уменьшаем шрифты */
+#page-header:not(.sticky) #meta-nav li a, #page-header:not(.sticky) #meta-nav li .link {
+    font: 500 12px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    display: block;
+}
+#account-nav a, #account-nav .link {
+    font: 500 12px/18px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #111;
+}
+#wishlist-link>a, #wishlist-link>.link, #minicart-link>a, #minicart-link>.link {
+    color: #111;
+    font: 500 12px/1 "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+#account-nav .my-account-login, #account-nav .my-account-flyout-btn {
+    color: #111;
+}
+#page-header.sticky #minicart {
+    top: 21px;
+}
+
+#page-header.sticky #page-header-main-wrapper #header-brand-logo {
+    width: 184px;
+    height: 60px;
+    top: 11px;
+}
+
+/* Заменяем лого */
+#header-brand-logo {
+    display: block;
+    text-indent: -9999em;
+    background: transparent url("/static/images/conleys-logo.svg") no-repeat 0 0 scroll;
+    background-image: url("/static/images/conleys-logo.svg");
+    height: 70px;
+    width: 400px;
+    position: relative;
+    top: 53px;
+    margin-bottom: 34px;
+    background-size: contain;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Скрываем мусор */
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+.js-layer.layer-hide {
+    display: none !important;
+}
+.panel.panel-type-4 {
+    display: none !important;
+}
+#js-comments-write_button_review, .review-inner-button-panel {
+    display:none;
+}
+
+/* Подготовка к отображению */
+#_head #_center ._info{
+    margin: 0px 0 0 34px !important;
+}
+body{
+    top: 0 !important;
+    visibility: hidden;
+}

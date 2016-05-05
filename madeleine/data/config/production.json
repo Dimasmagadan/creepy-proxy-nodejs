@@ -1,0 +1,17 @@
+{
+  "site": {
+    "name"        : "madeleine",
+    "domain"      : ".de",
+    "port"        : 5055
+  },
+  "header": {
+    "catalog"     : "madeleine",
+    "alias"       : "ML",
+    "info"        : "Интернет-магазин MADELEINE. Каталоги.ру - заказ и доставка одежды из европейских интернет-магазинов."
+  },
+  "options": {
+    "height"      : 120,
+    "width"       : 958
+  },
+  "replaces": []
+}

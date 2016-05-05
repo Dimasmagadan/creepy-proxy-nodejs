@@ -1,0 +1,244 @@
+/*** Табличная разметка ***/
+._table{
+  float: right;
+  display: table;
+  width: 676px;
+}
+
+._tr{
+  display: table-row;
+}
+
+._td{
+  padding: 10px 0 0 0;
+  display: table-cell;
+  vertical-align: top;
+  line-height: 20px;
+}
+
+._td:first-child{
+  width:290px;
+  padding: 10px 10px 0 0;
+}
+
+
+/***
+ * _head (Шапка)
+ *******************************************************/
+#_head{
+  font-family: sans-serif;
+  font-size: 12px;
+  width: 100%;
+  height: 108px;
+  z-index: 10000; 
+}
+
+#_head > div{
+  height: 108px;
+  width: 966px;
+  margin: 0 auto;
+}
+
+#_head #_center{
+  background-color: #fff;
+  /*background-image: url(/images/_head_center_bg.png);
+  background-position: bottom;
+  background-repeat: repeat-x;*/
+  height: 108px;
+  width: 966px;
+}
+
+#_head #_center #_logo{
+  float: left;
+}
+
+#_head #_center ._phone{
+  background-image: url(/images/_phone.png);
+  background-position: left center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  line-height: 20px;
+  padding: 0 0 0 20px;
+  margin: 0 20px 0 0;
+  font-weight: bold;
+  color: #666;
+}
+
+#_head #_center ._home{
+  background-image: url(/images/_home.png);
+  background-position: left center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  line-height: 20px;
+  padding: 0 0 0 20px;
+  font-weight: bold;
+  
+  color: #666;
+}
+
+#_head #_center ._home a{
+  text-decoration: none;
+  color: #666;
+}
+
+#_head #_center ._links ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#_head #_center ._links ul li{
+  border-left: 1px solid #333;
+  text-transform: none; 
+  display: inline-block;
+  padding: 0 5px 0 5px;
+  font-weight: normal;
+  line-height: 10px; 
+  float: none;
+}
+
+#_head #_center ._links ul li:first-child{
+  border-left: none;
+  padding: 0 5px 0 0;
+  line-height: 20px;
+}
+
+#_head #_center ._links ul li a{
+  text-decoration: none;
+  line-height: 10px;
+  color: #666;
+}
+
+#_head #_center ._login{
+  background-image: url(/images/_login.png);
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  text-decoration: none;
+  margin:0 65px 0 0;
+  padding: 0 0 2px 15px;
+  color: #666; 
+  height: 15px;
+  display: block; 
+  float: right;
+  line-height: 20px;
+}
+
+#_head #_center ._account{
+  text-align: right;
+  width: 108px;
+  float: right;
+}
+
+#_head #_center ._account a{
+  float: left;
+}
+
+#_head #_center ._account a:first-child{
+  line-height: 20px !important;
+  text-decoration: none;
+  display: block;
+  color: #666;
+}
+
+#_head #_center ._account > ._logout{
+  background-image: url(/images/_logout.png);
+  background-position: left center;
+  background-repeat: no-repeat;
+  display: block;
+  float: right;
+  width: 9px;
+  height: 20px;
+}
+
+#_head #_center ._btns{
+  position: relative;
+  width: 265px;
+}
+
+#_head #_center ._btns > div{
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  width: 130px;
+  height: 44px;
+  color: #fff;
+}
+
+#_head #_center ._btns > div > a{
+  line-height: 32px;
+  text-align: center;
+  display: block;
+  background: #ccc;
+  width: 130px;
+  height: 32px;
+  color: #fff;
+}
+
+
+/*** Форма поиска ***/
+#_head #_center ._search input[type="text"]{
+  background: none !important;
+  border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  font-family: sans-serif;
+  font-style: normal;
+  position: static;
+  border-right: none;
+  padding: 0 0 0 10px;
+  height: 30px !important;
+  width: 189px !important;
+  float: left;
+  font-size: 11px;
+  margin: 0;
+  color: #333;
+}
+
+#_head #_center ._search input[type="text"].empty {
+  color: #ccc;
+}
+
+#_head #_center ._search ._submit{
+  background-image: url(/images/_search.png);
+  background-position: left center;
+  background-repeat: no-repeat;
+  margin: 0 0 0 200px;
+  display: block;
+  width: 34px;
+  height: 32px;
+  border: none;
+}
+
+#_head #_center ._info{
+  display: block;
+  float: left;
+  margin: 0px 0 0 40px;
+  font-size: 11px;
+  color: #ccc;
+}
+
+#_head #_center #_basket{
+  background: url(/images/_basket.png) left center no-repeat;
+  cursor: pointer;
+  display: block;
+  width: 98px;
+  height: 32px;
+  float: right;
+  text-align: right;
+  padding: 0 10px 0 0;
+  line-height: 32px;
+  color: #fff;
+}
+
+@media only screen and (max-width: 960px){
+  #_head > div,
+  #_head #_center{
+    width: auto;
+  }
+
+  #_head #_center ._table,
+  #_head #_center ._info,
+  #un-button{
+    display: none;
+  }
+}
