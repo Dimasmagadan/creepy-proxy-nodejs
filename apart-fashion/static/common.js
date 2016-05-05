@@ -44,6 +44,7 @@ catalogi.parse = function() {
     basketBtn.html("<a class='btn is--icon-left cart--link'" + " href='http://www.apart-fashion.catalogi.ru/checkout/cart' title='покупка'>" +
         "<span class='cart--display '><font><font>покупка</font></font></span>" + "<i class='icon--basket '></i>" +
         "<span class='account--display '><font><font>Корзина</font></font></span></a>");
+    catalogi('.navigation--list.block-group').append(basketBtn);
     catalogi('.navigation--entry.entry--cart .cart--amount')
         .removeClass().addClass('account--display')
         .css('font-weight', 'normal!important')
@@ -189,24 +190,12 @@ catalogi.parse = function() {
         .queue(function(next) {
 
             if (_auth) {
-                catalogi('#_auth_wait').remove();
-                catalogi('.myaccount.notranslate > a').remove();
-                catalogi('.myaccount.notranslate')
-                    .html('<a href="http://catalogi.ru/cabinet/" class="my-account-login underline-alternative" target="_blank">Личный кабинет</a>');
-                catalogi('.myaccount.notranslate > a').text('S').css('cssText', "font-family: 'jvds icons',sans-serif;font-size:2.1em");
-                catalogi('.account-nav-listelem').show();
-                catalogi('._logout').click(function() {
-                    catalogi.logout();
-                    return false;
-                });
+                catalogi('.navigation--entry.entry--account').off();
+                catalogi('.navigation--entry.entry--account a')
+                    .attr('href', "http://catalogi.ru/cabinet/")
+                    .attr('target', '_blank');
             } else {
-                catalogi('#_auth_wait').remove();
-                catalogi('.account-nav-listelem').show();
-                catalogi('.account-nav-listelem > a').click(function() {
-                    catalogi.login();
-                    return false;
-                });
-                catalogi('.account-nav-listelem > a').text('Вход');
+
             }
         });
 };
