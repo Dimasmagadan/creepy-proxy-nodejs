@@ -38,11 +38,10 @@ catalogi.parse = function() {
         catalogi.login();
     });
     catalogi('.navigation--entry.headerHint').children().remove();
-    catalogi('.navigation--entry.headerHint').append($('<li>')
-        .append($("<a> Каталоги.ру - заказ и доставка одежды из интернет-магазина apart-fashion.de.</a>")
-            .attr('href', 'http://www.catalogi.ru')
-            .attr('target', '_blank')
-            .addClass('headerLinks _home catalogiLink')));
+    catalogi('.navigation--entry.headerHint').append($("<a> Каталоги.ру - заказ и доставка одежды из интернет-магазина apart-fashion.de.</a>")
+        .attr('href', 'http://www.catalogi.ru')
+        .attr('target', '_blank')
+        .addClass('headerLinks _home catalogiLink'));
 
 
     catalogi('ul.service--list').children().remove();
