@@ -42,16 +42,16 @@ catalogi.parse = function() {
 
     catalogi('#navbar-meta ul.nav').children().remove();
     catalogi('#navbar-meta ul.nav').append($('<li>').text('+74955404949').addClass('textInHeader'));
-    catalogi('#navbar-meta ul.nav').append($('<li>').text('Доставка|').addClass('textInHeader').click(function() {
+    catalogi('#navbar-meta ul.nav').append($('<li>').text('Доставка | ').addClass('textInHeader').click(function() {
         catalogi.delivery();
     }));
-    catalogi('#navbar-meta ul.nav').append($('<li>').text('Оплата|').addClass('textInHeader').click(function() {
+    catalogi('#navbar-meta ul.nav').append($('<li>').text('Оплата | ').addClass('textInHeader').click(function() {
         catalogi.payment();
     }));
-    catalogi('#navbar-meta ul.nav').append($('<li>').text('Интернет-магазины|').addClass('textInHeader').click(function() {
+    catalogi('#navbar-meta ul.nav').append($('<li>').text('Интернет-магазины | ').addClass('textInHeader').click(function() {
         catalogi.shops();
     }));
-    catalogi('#navbar-meta ul.nav').append($('<li>').text('Онлайн каталоги|').addClass('textInHeader').click(function() {
+    catalogi('#navbar-meta ul.nav').append($('<li>').text('Онлайн каталоги | ').addClass('textInHeader').click(function() {
         catalogi.catalogs();
     }));
     catalogi('#main-navigation li.index_6').remove();
