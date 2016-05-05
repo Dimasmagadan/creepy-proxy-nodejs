@@ -33,9 +33,17 @@ catalogi.parse = function() {
     catalogi('#iframe').hide();
     catalogi('.navigation--entry.entry--notepad').remove();
     catalogi('.navigation--entry.entry--account .account--display').text('Кабинет');
+    catalogi('.navigation--entry.entry--account').click(function(event) {
+        event.preventDefault();
+        catalogi.login();
+    });
     catalogi('.navigation--entry.entry--cart .cart--amount')
         .removeClass().addClass('account--display')
         .css('font-weight', 'normal!important').text('Корзина');
+    catalogi('.navigation--entry.entry--cart').click(function(event) {
+        event.preventDefault();
+        catalogi.order();
+    });
 
     //страница товара
     catalogi('.buybox--button').text("В корзину");

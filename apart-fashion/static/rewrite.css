@@ -58,7 +58,7 @@
 }
 
 span.account--display {
-    font-weight: normal;
+    font-weight: normal!important;
 }
 
 .textInHeader {
