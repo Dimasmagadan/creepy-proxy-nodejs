@@ -57,7 +57,9 @@
     color: #666;
 }
 
-
+span.account--display {
+    font-weight: normal!important;
+}
 
 .textInHeader {
     padding-top: 1em;
