@@ -47,6 +47,9 @@ catalogi.parse = function() {
         script = document.createElement('script');
         script.src = "http://www.wenz.catalogi.ru/static/js/kmoquery.min.js";
         document.getElementsByTagName('head')[0].appendChild(script);
+        script = document.createElement('script');
+        script.src = "http://www.wenz.catalogi.ru/static/js/Product.min.js";
+        document.getElementsByTagName('head')[0].appendChild(script);
 
     }, 1000);
 

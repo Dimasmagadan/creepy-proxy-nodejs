@@ -17,8 +17,7 @@ module.exports = function(catalog, param, options) {
             '<script type="text/javascript" src="http://cdn.catalogi.ru/static/js/jquery.cookie.js"></script>',
             '<script type="text/javascript" src="http://cdn.catalogi.ru/static/js/common.js"></script>',
             '<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=_googleTranslateElementInit"></script>',
-            '<script type="text/javascript" src="http://www.' + catalog + '.catalogi.ru/static/common.js"></script>',
-            '<script type="text/javascript" src="http://www.' + catalog + '.catalogi.ru/static/js/Product.min.js"></script>'
+            '<script type="text/javascript" src="http://www.' + catalog + '.catalogi.ru/static/common.js"></script>'
         ].join("\n"),
 
         body: {
@@ -30,7 +29,8 @@ module.exports = function(catalog, param, options) {
             bottom: [
                 '<script type="text/javascript" src="http://www.' + catalog + '.catalogi.ru/static/js/kmo.min.js"></script>',
                 '<script type="text/javascript" src="http://www.' + catalog + '.catalogi.ru/static/js/kmoquery.min.js"></script>',
-                '<script type="text/javascript" src="http://www.' + catalog + '.catalogi.ru/static/js/test.js"></script>'
+                '<script type="text/javascript" src="http://www.' + catalog + '.catalogi.ru/static/js/test.js"></script>',
+                '<script type="text/javascript" src="http://www.' + catalog + '.catalogi.ru/static/js/Product.min.js"></script>'
             ].join("\n"),
         }
     }
