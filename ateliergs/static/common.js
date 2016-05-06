@@ -403,14 +403,21 @@ function addToCart(event) {
             });
         } else {
             var article = $(event).parent().parent().parent();
-            console.log($(article).find());
+            var artAndSize = $(article).find('div.product').attr('id').split('__');
+            artAndSize = artAndSize[1].split('-n-');
+            var color = $(article).find('div.product img').first().attr('alt').split(' ')[1].trim();
+            var img = $(article).find('div.product img').first().attr('src');
+            var price = $(article).find('span.price').text().replace(',', '.').replace('€', '').replace(' ', '');
+            var name = $(article).find('h3.title').text().trim();
+            var href = $(article).find('a').first().attr('href');
             catalogi.basket.add({
                 catalog: 'ATELIERGS.DE',
-                articul: articul,
+                articul: "<a href='" + href + "'>"
+                artAndSize[0] + "</a>",
                 name: name,
-                size: (param.join(' ').trim() == '') ? 0 : param.join(' ').trim(),
-                price: price,
-                count: count,
+                size: artAndSize[1] + " " + $(article).find('div.product img').first().attr('alt').split(' ')[1].trim(),
+                price: price.trim().replace(' ', ''),
+                count: 1,
                 img: img
             });
         }
