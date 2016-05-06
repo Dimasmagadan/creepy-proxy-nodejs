@@ -335,7 +335,7 @@ function checkSeach() {
 
 // Скидка
 catalogi.service = function() {
-    if ('_service' in window && catalogi('.tax-delivery-wrapper')) {
+    if ('_service' in window && catalogi('.price-wrapper').length) {
         catalogi('.tax-delivery-wrapper').children().remove();
         catalogi('#deliveryPriceDiv').remove();
         if (catalogi('.price-wrapper').children().first().attr('class').trim() != "price") {
