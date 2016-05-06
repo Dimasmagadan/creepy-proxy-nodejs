@@ -272,6 +272,7 @@ catalogi.parse = function() {
         .delay(5000)
         .queue(function(next) {
             setInterval(function() {
+                catalogi('article.product-item-wrapper div.btn-wrapper').attr('onclick', 'addToCart(this);');
                 catalogi('.size-advertise-wrapper').children().remove();
                 catalogi('.size-advertise-wrapper').append($('<div></div>').text('Таблица размеров').addClass('btn-icon').css('cursor', 'pointer').click(function(event) {
                     event.preventDefault();
