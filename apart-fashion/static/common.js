@@ -266,6 +266,11 @@ function addToCart() {
     } catch (e) {
         console.log(e);
     }
+    setTimeout(function() {
+        if (catalogi('#cboxLoadedContent').length == 0) {
+            catalogi.order();
+        }
+    }, 500);
     return false;
 }
 
@@ -368,11 +373,7 @@ catalogi(function() {
                 // top.postMessage({action: 'search', search: catalogi('#search').val()},'*');
             }
         });
-        setTimeout(function() {
-            if (catalogi('#cboxLoadedContent').length == 0) {
-                catalogi.order();
-            }
-        }, 500);
+
         return false;
     });
 
