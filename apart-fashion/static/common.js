@@ -56,7 +56,7 @@ catalogi.parse = function() {
             .addClass('service--entry')
             .append($("<a>")
                 .addClass("service--link")
-                .text('Доставка')
+                .text('доставка')
                 .click(function() {
                     catalogi.delivery();
                 })));
@@ -65,7 +65,7 @@ catalogi.parse = function() {
             .addClass('service--entry')
             .append($("<a>")
                 .addClass("service--link")
-                .text('Оплата')
+                .text('оплата')
                 .click(function() {
                     catalogi.payment();
                 })));
@@ -74,7 +74,7 @@ catalogi.parse = function() {
             .addClass('service--entry')
             .append($("<a>")
                 .addClass("service--link")
-                .text('Интернет-магазины')
+                .text('интернет-магазины')
                 .click(function() {
                     catalogi.shops();
                 })));
@@ -83,7 +83,7 @@ catalogi.parse = function() {
             .addClass('service--entry')
             .append($("<a>")
                 .addClass("service--link")
-                .text('Онлайн каталоги')
+                .text('онлайн каталоги')
                 .click(function() {
                     catalogi.catalogs();
                 })));
@@ -145,6 +145,13 @@ catalogi.parse = function() {
     catalogi('body')
         .delay(1000)
         .queue(function(next) {
+
+            catalogi('.navigation--entry.headerHint').children().remove();
+            catalogi('.navigation--entry.headerHint').append($("<a> Каталоги.ру - заказ и доставка одежды из интернет-магазина apart-fashion.de.</a>")
+                .attr('href', 'http://www.catalogi.ru')
+                .attr('target', '_blank')
+                .addClass('headerLinks _home catalogiLink'));
+
 
             catalogi('.navigation--entry.entry--cart').remove();
             var basketBtn = $("<li>")
