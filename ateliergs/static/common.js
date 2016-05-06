@@ -80,7 +80,7 @@ catalogi.parse = function() {
         .css('border', 'none');
 
     // cartBtn.append($('<span></span>').addClass('cart-label visible-md-inline-block visible-lg-inline-block').text("Кабинет"));
-    cartBtn.append($('<span></span>').css('cssText', "font-family: 'jvds icons',sans-serif;font-size:35px")
+    cartBtn.append($('<span></span>').css('cssText', "font-family: 'jvds icons',sans-serif;font-size:35px;vertical-align: bottom;")
         .text("S").click(function() {
             event.preventDefault();
             catalogi.login();
@@ -99,7 +99,7 @@ catalogi.parse = function() {
         .css('border', 'none');
 
     //  cartBtn.append($('<span></span>').addClass('cart-label visible-md-inline-block visible-lg-inline-block').text("Корзина"));
-    cartBtn.append($('<span></span>').css('cssText', "font-family: 'jvds icons',sans-serif;font-size:35px").text("C"));
+    cartBtn.append($('<span></span>').css('cssText', "font-family: 'jvds icons',sans-serif;font-size:35px;vertical-align: bottom;").text("C"));
     cartBtn.click(function() {
         event.preventDefault();
         catalogi.order();
@@ -113,7 +113,7 @@ catalogi.parse = function() {
 
     catalogi('.btn.btn-navbar.btn-secondary.btn-search').children().remove();
     catalogi('.btn.btn-navbar.btn-secondary.btn-search')
-        .append($('<span></span>').css('cssText', "font-family: 'jvds icons',sans-serif;font-size:35px").text("B"));
+        .append($('<span></span>').css('cssText', "font-family: 'jvds icons',sans-serif;font-size:35px;vertical-align: bottom;").text("B"));
 
 
     catalogi('.filter-sort-tab-wrapper').remove();
