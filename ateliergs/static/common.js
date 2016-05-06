@@ -412,8 +412,7 @@ function addToCart(event) {
             var href = $(article).find('a').first().attr('href');
             catalogi.basket.add({
                 catalog: 'ATELIERGS.DE',
-                articul: "<a href='" + href + "'>"
-                artAndSize[0] + "</a>",
+                articul: "<a href='" + href + "'>" + artAndSize[0] + "</a>",
                 name: name,
                 size: artAndSize[1] + " " + $(article).find('div.product img').first().attr('alt').split(' ')[1].trim(),
                 price: price.trim().replace(' ', ''),
