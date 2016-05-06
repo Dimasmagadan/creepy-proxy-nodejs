@@ -273,6 +273,7 @@ catalogi.parse = function() {
         .queue(function(next) {
             setInterval(function() {
                 catalogi('article.product-item-wrapper div.btn-wrapper').attr('onclick', 'addToCart(this);');
+                catalogi('article.product-item-wrapper div.btn-wrapper a').attr('href', '');
                 catalogi('.size-advertise-wrapper').children().remove();
                 catalogi('.size-advertise-wrapper').append($('<div></div>').text('Таблица размеров').addClass('btn-icon').css('cursor', 'pointer').click(function(event) {
                     event.preventDefault();
@@ -360,46 +361,59 @@ catalogi.removeShit = function() {
 function addToCart(event) {
     try {
 
-        // артикул
-        var articul = "<a href='" + window.location.href + "' target='_blank'>" + catalogi("span.order-nr").first().text().replace('-', '') + "</a>";
-        // название
-        var name = catalogi('h1.product-headline').text().trim();
-        // количество
-        var count = catalogi("#cart-quantity").val() ? catalogi("#cart-quantity").val() : 1;
-        // цена
-        var price = catalogi('.price-wrapper').first().text().replace('€', '').replace(',', '.').trim().replace(' ', '');
-        // картинка
-        var img = catalogi('.product-detail-view img').attr('src');
+        if (catalogi("span.order-nr").first().text()) {
+            // артикул
+            var articul = "<a href='" + window.location.href + "' target='_blank'>" + catalogi("span.order-nr").first().text().replace('-', '') + "</a>";
+            // название
+            var name = catalogi('h1.product-headline').text().trim();
+            // количество
+            var count = catalogi("#cart-quantity").val() ? catalogi("#cart-quantity").val() : 1;
+            // цена
+            var price = catalogi('.price-wrapper').first().text().replace('€', '').replace(',', '.').trim().replace(' ', '');
+            // картинка
+            var img = catalogi('.product-detail-view img').attr('src');
 
-        var param = [];
+            var param = [];
 
-        // цвет
-        var color1 = catalogi('.btn.color-pattern.active img').attr('alt');
-        var color2 = catalogi('li[class*="selected"]:eq(0)').attr('title');
-        var color = (color1 == "") ? color2 : color1;
-        if (color && color.length > 0) param.push(color);
+            // цвет
+            var color1 = catalogi('.btn.color-pattern.active img').attr('alt');
+            var color2 = catalogi('li[class*="selected"]:eq(0)').attr('title');
+            var color = (color1 == "") ? color2 : color1;
+            if (color && color.length > 0) param.push(color);
 
-        // размер
-        var size1 = catalogi('.btn.sizes-box.active ').text();
-        var size2 = catalogi('li[class*="selected"]:eq(1)').text();
-        var size = ((size1 == "") ? size2 : size1).trim();
-        if (size == 'Выберите размер' || size == 'Выберите размер ') {
-            alert('Выберите размер!');
-            return;
+            // размер
+            var size1 = catalogi('.btn.sizes-box.active ').text();
+            var size2 = catalogi('li[class*="selected"]:eq(1)').text();
+            var size = ((size1 == "") ? size2 : size1).trim();
+            if (size == 'Выберите размер' || size == 'Выберите размер ') {
+                alert('Выберите размер!');
+                return;
+            }
+            if (size && size.length > 0) param.push(size);
+
+            // отправка запроса
+            catalogi.basket.add({
+                catalog: 'ATELIERGS.DE',
+                articul: articul,
+                name: name,
+                size: (param.join(' ').trim() == '') ? 0 : param.join(' ').trim(),
+                price: price,
+                count: count,
+                img: img
+            });
+        } else {
+            var article = $(event).parent().parent().parent();
+            console.log($(article).find());
+            catalogi.basket.add({
+                catalog: 'ATELIERGS.DE',
+                articul: articul,
+                name: name,
+                size: (param.join(' ').trim() == '') ? 0 : param.join(' ').trim(),
+                price: price,
+                count: count,
+                img: img
+            });
         }
-        if (size && size.length > 0) param.push(size);
-
-        // отправка запроса
-        catalogi.basket.add({
-            catalog: 'AtelierGS.de',
-            articul: articul,
-            name: name,
-            size: (param.join(' ').trim() == '') ? 0 : param.join(' ').trim(),
-            price: price,
-            count: count,
-            img: img
-        });
-
         console.log('OK');
     } catch (e) {
         console.log(e);
