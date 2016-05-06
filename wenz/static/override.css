@@ -1,7 +1,10 @@
 #_head #_center ._info{
-	margin: 0px 0 0 34px !important;
+	margin: 0px 0 0 58px;
 }
 
-.myaccount {
-    display: inline-block!important;
+@font-face {
+    font-family: 'IcoMoon';
+    src: url("/static/fonts/icomoon.woff");
+    font-weight: normal;
+    font-style: normal
 }
