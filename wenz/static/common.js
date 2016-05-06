@@ -46,7 +46,7 @@ catalogi.parse = function() {
     // Шапка
     //catalogi('header > div').css('display', 'none');
     //catalogi("#iframe").appendTo("header");
-
+    catalogi("#iframe").hide();
     // Show body after f@cking hiding >_<
     catalogi('body')
         .delay(800)
