@@ -179,7 +179,6 @@ catalogi.parse = function() {
                         $("<a>В корзину</a>")
                         .addClass('notranslate')
                         .attr('id', 'addToCartBtn')
-                        .attr('onclick', 'addToCart();')
                         //  .attr('href', '#')
                         .bind('click', function(event) {
                             //  event.preventDefault();
@@ -369,6 +368,11 @@ catalogi(function() {
                 // top.postMessage({action: 'search', search: catalogi('#search').val()},'*');
             }
         });
+        setTimeout(function() {
+            if (catalogi('#cboxLoadedContent').length == 0) {
+                catalogi.order();
+            }
+        }, 500)
         return false;
     });
 
