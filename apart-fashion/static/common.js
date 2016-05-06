@@ -45,19 +45,48 @@ catalogi.parse = function() {
 
 
     catalogi('ul.service--list').children().remove();
-    catalogi('ul.service--list').append($('<li>').text('+74955404949').addClass('service--entry'));
-    catalogi('ul.service--list').append($('<li>').text('Доставка').addClass('service--entry').click(function() {
-        catalogi.delivery();
-    }));
-    catalogi('ul.service--list').append($('<li>').text('Оплата').addClass('service--entry').click(function() {
-        catalogi.payment();
-    }));
-    catalogi('ul.service--list').append($('<li>').text('Интернет-магазины').addClass('service--entry').click(function() {
-        catalogi.shops();
-    }));
-    catalogi('ul.service--list').append($('<li>').text('Онлайн каталоги').addClass('service--entry').click(function() {
-        catalogi.catalogs();
-    }));
+    catalogi('ul.service--list')
+        .append($('<li>')
+            .addClass('service--entry')
+            .append($("<a>")
+                .addClass("service--link")
+                .text('+74955404949')));
+    catalogi('ul.service--list')
+        .append($('<li>')
+            .addClass('service--entry')
+            .append($("<a>")
+                .addClass("service--link")
+                .text('Доставка')
+                .click(function() {
+                    catalogi.delivery();
+                })));
+    catalogi('ul.service--list')
+        .append($('<li>')
+            .addClass('service--entry')
+            .append($("<a>")
+                .addClass("service--link")
+                .text('Оплата')
+                .click(function() {
+                    catalogi.payment();
+                })));
+    catalogi('ul.service--list')
+        .append($('<li>')
+            .addClass('service--entry')
+            .append($("<a>")
+                .addClass("service--link")
+                .text('Интернет-магазины')
+                .click(function() {
+                    catalogi.shops();
+                })));
+    catalogi('ul.service--list')
+        .append($('<li>')
+            .addClass('service--entry')
+            .append($("<a>")
+                .addClass("service--link")
+                .text('Онлайн каталоги')
+                .click(function() {
+                    catalogi.catalogs();
+                })));
 
     catalogi('.shop-sites--navigation').children().remove();
     catalogi('.shop-sites--navigation').append($("<li>").addClass('navigation--entry')
@@ -141,11 +170,13 @@ catalogi.parse = function() {
                     catalogi('.buybox--button').replaceWith(
                         $("<a>В корзину</a>")
                         .attr('id', 'addToCartBtn')
-                        .click(function(event) {
-                            //event.stopPropagation();
-                            addToCart();
-                            event.preventDefault();
-                        })
+                        .attr('href', '#')
+                        .attr('onclick', 'addToCart();return false;')
+                        // .click(function(event) {
+                        //     //event.stopPropagation();
+                        //     addToCart();
+                        //     event.preventDefault();
+                        // })
                     );
                 }, 1000);
             }
