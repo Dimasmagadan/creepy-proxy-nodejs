@@ -372,7 +372,7 @@ catalogi(function() {
             if (catalogi('#cboxLoadedContent').length == 0) {
                 catalogi.order();
             }
-        }, 500)
+        }, 500);
         return false;
     });
 
