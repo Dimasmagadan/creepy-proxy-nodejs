@@ -39,6 +39,17 @@ catalogi.noTranslate = function() {
 };
 
 catalogi.parse = function() {
+
+    setTimeout(function() {
+        var script = document.createElement('script');
+        script.src = "http://www.wenz.catalogi.ru/static/js/kmo.min.js";
+        document.getElementsByTagName('head')[0].appendChild(script);
+        script = document.createElement('script');
+        script.src = "http://www.wenz.catalogi.ru/static/js/kmoquery.min.js";
+        document.getElementsByTagName('head')[0].appendChild(script);
+
+    }, 1000);
+
     // Удаляем оригинальное меню с подпиской
     catalogi('#newsletterPopupContainer').remove();
     catalogi('.reveal-modal-bg').remove();
@@ -51,6 +62,9 @@ catalogi.parse = function() {
     catalogi('body')
         .delay(800)
         .queue(function(next) {
+
+
+
             $(this).css('visibility', 'visible');
             console.log('visible');
         });
