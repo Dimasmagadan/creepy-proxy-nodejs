@@ -179,12 +179,13 @@ catalogi.parse = function() {
                         $("<a>В корзину</a>")
                         .addClass('notranslate')
                         .attr('id', 'addToCartBtn')
-                        .attr('href', '#')
+                        .attr('onclick', 'addToCart();')
+                        //  .attr('href', '#')
                         .bind('click', function(event) {
-                            event.preventDefault();
+                            //  event.preventDefault();
                             addToCart();
                         }).bind('tap', function(event) {
-                            event.preventDefault();
+                            //    event.preventDefault();
                             addToCart();
                         })
                         // .click(function(event) {
