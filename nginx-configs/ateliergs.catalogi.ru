@@ -49,4 +49,8 @@ server {
         root /var/www;
         internal;
     }
+
+    if ($scheme = https) {
+        return 301 http://$server_name$request_uri;
+      }
 }
