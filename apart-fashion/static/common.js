@@ -177,6 +177,7 @@ catalogi.parse = function() {
                 setInterval(function() {
                     catalogi('.buybox--button').replaceWith(
                         $("<a>В корзину</a>")
+                        .addClass('notranslate')
                         .attr('id', 'addToCartBtn')
                         .attr('href', '#')
                         .bind('click', function(event) {
