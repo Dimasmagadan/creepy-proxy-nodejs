@@ -145,7 +145,8 @@ catalogi.parse = function() {
         .text("таблица размеров").click(function() {
             catalogi.sizeTable();
         })));
-
+    //maip page bottom block
+    catalogi('.serviceteaser').remove();
 
 
     //юридические страницы
@@ -369,7 +370,23 @@ function addToCart(event) {
             // количество
             var count = catalogi("#cart-quantity").val() ? catalogi("#cart-quantity").val() : 1;
             // цена
-            var price = catalogi('.price-wrapper').first().text().replace('€', '').replace(',', '.').trim().replace(' ', '');
+            if (catalogi('.price-wrapper').children().first().attr('class').trim() != "price") {
+                var price = catalogi('.price-wrapper .price.offer')
+                    .first()
+                    .text()
+                    .replace('€', '')
+                    .replace(',', '.')
+                    .trim()
+                    .replace(' ', '');
+            } else {
+                var price = catalogi('.price-wrapper')
+                    .first()
+                    .text()
+                    .replace('€', '')
+                    .replace(',', '.')
+                    .trim()
+                    .replace(' ', '');
+            }
             // картинка
             var img = catalogi('.product-detail-view img').attr('src');
 
