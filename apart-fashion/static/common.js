@@ -24,7 +24,7 @@ catalogi(document).ready(function() {
 });
 
 catalogi.noTranslate = function() {
-
+    catalogi('.navigation--entry.headerHint').addClass('notranslate');
     catalogi('.product-size-dropdown').addClass('notranslate');
 };
 
@@ -49,7 +49,7 @@ catalogi.parse = function() {
         .append($('<li>')
             .addClass('service--entry')
             .append($("<a>")
-                .addClass("service--link")
+                .addClass("service--link icon--phone")
                 .text('+74955404949')));
     catalogi('ul.service--list')
         .append($('<li>')
