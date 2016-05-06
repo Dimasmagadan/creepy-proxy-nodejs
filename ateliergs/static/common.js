@@ -338,7 +338,24 @@ catalogi.service = function() {
     if ('_service' in window && catalogi('.tax-delivery-wrapper')) {
         catalogi('.tax-delivery-wrapper').children().remove();
         catalogi('#deliveryPriceDiv').remove();
-        _price = catalogi('.price-wrapper').first().text().replace('€', '').replace(',', '.').trim().replace(' ', '');
+        if (catalogi('.price-wrapper').children().first().attr('class').trim() != "price") {
+            _price = catalogi('.price-wrapper .price.offer')
+                .first()
+                .text()
+                .replace('€', '')
+                .replace(',', '.')
+                .trim()
+                .replace(' ', '');
+        } else {
+            _price = catalogi('.price-wrapper')
+                .first()
+                .text()
+                .replace('€', '')
+                .replace(',', '.')
+                .trim()
+                .replace(' ', '');
+        }
+        //_price = catalogi('.price-wrapper').first().text().replace('€', '').replace(',', '.').trim().replace(' ', '');
         _delivery = parseFloat(_price) + ((parseFloat(_price) / 100) * parseFloat(_service));
         catalogi('.tax-delivery-wrapper').append($('<div></div>').attr('id', 'deliveryPriceDiv').text('С учетом доставки € ' + _delivery.toFixed(2)));
         // catalogi('.product-shipping-costs').text('С учетом доставки € '+_delivery.toFixed(2));
