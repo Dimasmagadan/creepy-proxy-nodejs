@@ -147,6 +147,7 @@ catalogi.parse = function() {
         .queue(function(next) {
 
             catalogi('.navigation--entry.headerHint').children().remove();
+            catalogi('.navigation--entry.headerHint').text("");
             catalogi('.navigation--entry.headerHint').append($("<a> Каталоги.ру - заказ и доставка одежды из интернет-магазина apart-fashion.de.</a>")
                 .attr('href', 'http://www.catalogi.ru')
                 .attr('target', '_blank')
