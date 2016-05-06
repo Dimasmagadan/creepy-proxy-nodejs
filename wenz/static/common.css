@@ -3,6 +3,13 @@ body {
     visibility: hidden;
 }
 
+@font-face {
+    font-family: 'IcoMoon';
+    src: url("http://www.wenz.catalogi.ru/static/fonts/icomoon.woff");
+    font-weight: normal;
+    font-style: normal
+}
+
 #iframe {
     margin: 0 auto;
     display: block;
