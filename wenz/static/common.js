@@ -77,6 +77,8 @@ catalogi.parse = function() {
         .attr('onclick', '')
         .attr('href', 'http://catalogi.ru/katalog_wenz/');
 
+    catalogi('.headerTopNavigation').css('margin-top', '5px');
+
     catalogi('.headerTopNavigation').children().remove();
     catalogi('.headerTopNavigation').append($('<li>').text('+74955404949').addClass('textInHeader'));
     catalogi('.headerTopNavigation').append($('<li>').text('|').addClass('textInHeader'));
