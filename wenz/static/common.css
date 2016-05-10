@@ -81,7 +81,9 @@ a[href="http://www.liveinternet.ru/click;CatalogiRU_NEW"] {
     header > div {
         display: block !important;
     }
-
+    header {
+      display: none!important;
+    }
     .storelogo,
     .headerContentContainer {
         display: block;

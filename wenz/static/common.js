@@ -98,6 +98,28 @@ catalogi.parse = function() {
         catalogi.catalogs();
     }));
 
+    //mobile menu links
+    catalogi('#mobileCategoryMenu ul').append($("<li>").append($("<a>")
+        .text("онлайн каталоги").click(function() {
+            catalogi.catalogs();
+        })));
+    catalogi('#mobileCategoryMenu ul').append($("<li>").append($("<a>")
+        .text("интернет-магазины").click(function() {
+            catalogi.shops();
+        })));
+    catalogi('#mobileCategoryMenu ul').append($("<li>").append($("<a>")
+        .text("оплата").click(function() {
+            catalogi.payment();
+        })));
+    catalogi('#mobileCategoryMenu ul').append($("<li>").append($("<a>")
+        .text("доставка").click(function() {
+            catalogi.delivery();
+        })));
+    catalogi('#mobileCategoryMenu ul').append($("<li>").append($("<a>")
+        .text("таблица размеров").click(function() {
+            catalogi.sizeTable();
+        })));
+
     catalogi('.storeHeaderBar').append($("<a> Каталоги.ру - заказ и доставка одежды из интернет-магазина wenz.de.</a>")
         .attr('href', 'http://www.catalogi.ru')
         .attr('target', '_blank')
