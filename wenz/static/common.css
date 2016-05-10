@@ -15,9 +15,14 @@ body {
     display: block;
 }
 
+.storeHeaderBar {
+  margin-top: 5px;
+}
+
 .textInHeader {
     padding:0 0.1em!important;
     margin: 0em!important;
+    cursor: pointer;
     //font-style: italic;
     //font-size: 1.4em;
 }
