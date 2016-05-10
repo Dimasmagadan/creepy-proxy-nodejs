@@ -102,7 +102,8 @@ catalogi.parse = function() {
 
 
     //search  headerSearchForm
-    catalogi('.headerSearchForm').submit(function(event) {
+    catalogi('#headerSearchForm').attr('onsubmit', '');
+    catalogi('#headerSearchForm').submit(function(event) {
 
         var form = event.currentTarget;
 
