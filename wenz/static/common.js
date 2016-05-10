@@ -41,15 +41,25 @@ catalogi.noTranslate = function() {
 catalogi.parse = function() {
 
     setTimeout(function() {
-        var script = document.createElement('script');
-        script.src = "http://www.wenz.catalogi.ru/static/js/kmo.min.js";
-        document.getElementsByTagName('head')[0].appendChild(script);
-        script = document.createElement('script');
-        script.src = "http://www.wenz.catalogi.ru/static/js/kmoquery.min.js";
-        document.getElementsByTagName('head')[0].appendChild(script);
-        script = document.createElement('script');
-        script.src = "http://www.wenz.catalogi.ru/static/js/Product.min.js";
-        document.getElementsByTagName('head')[0].appendChild(script);
+        var script = null;
+        setTimeout(function() {
+            script = document.createElement('script');
+            script.src = "http://www.wenz.catalogi.ru/static/js/kmo.min.js";
+            document.getElementsByTagName('head')[0].appendChild(script);
+            setTimeout(function() {
+                script = document.createElement('script');
+                script.src = "http://www.wenz.catalogi.ru/static/js/kmoquery.min.js";
+                document.getElementsByTagName('head')[0].appendChild(script);
+                setTimeout(function() {
+                    script = document.createElement('script');
+                    script.src = "http://www.wenz.catalogi.ru/static/js/Product.min.js";
+                    document.getElementsByTagName('head')[0].appendChild(script);
+                }, 500);
+            }, 500);
+        }, 500);
+
+
+
 
     }, 1000);
 
@@ -58,7 +68,7 @@ catalogi.parse = function() {
             var images = JSON.parse(catalogi('#' + $(e).attr('data-original')).text());
             $(e).attr('src', images.MAIN).removeClass('lazyLoad');
         });
-    }, 2000);
+    }, 3000);
 
     // Удаляем оригинальное меню с подпиской
     catalogi('#newsletterPopupContainer').remove();
