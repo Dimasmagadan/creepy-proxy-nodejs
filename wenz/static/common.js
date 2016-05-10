@@ -283,6 +283,22 @@ catalogi.parse = function() {
 
     // Подписка
     catalogi.subscribe(false, '30460');
+
+
+    catalogi('head')
+        .delay(5000)
+        .queue(function(next) {
+
+            if (_auth) {
+                catalogi('.accountHeaderIcon a')
+                    .attr('href', 'http://catalogi.ru/cabinet/');
+            } else {
+                catalogi('.accountHeaderIcon a').click(function(event) {
+                    event.preventDefault();
+                    catalogi.login();
+                });
+            }
+        });
 };
 
 function recalculateTotal() {
