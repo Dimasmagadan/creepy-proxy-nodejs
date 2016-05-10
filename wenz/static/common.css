@@ -16,10 +16,10 @@ body {
 }
 
 .textInHeader {
-    padding: 0em;
-    margin: 0em;
-    font-style: italic;
-    font-size: 1.4em;
+    padding: 0em!important;
+    margin: 0em!important;
+    //font-style: italic;
+    //font-size: 1.4em;
 }
 
 #cboxLoadedContent {
