@@ -101,45 +101,45 @@ catalogi.parse = function() {
     });
 
 
-    //search  headerSearchForm
-    catalogi('#headerSearchForm').attr('onsubmit', '');
-    catalogi('#headerSearchForm').submit(function(event) {
+    setTimeout(function() {
+        //search  headerSearchForm
+        catalogi('#headerSearchForm').attr('onsubmit', '');
+        catalogi('#headerSearchForm').submit(function(event) {
 
-        var form = event.currentTarget;
+            var form = event.currentTarget;
 
-        var value = catalogi(form).find("[name='searchTerm']").val();
+            var value = catalogi(form).find("[name='searchTerm']").val();
 
-        //var value = catalogi("[name='search'")[0].value ? catalogi("[name='search'")[0].value : catalogi("[name='search'")[1].value;
-        catalogi.cookie('seachString', value, {
-            expires: 7,
-            path: '/',
-            domain: '.catalogi.ru'
+            //var value = catalogi("[name='search'")[0].value ? catalogi("[name='search'")[0].value : catalogi("[name='search'")[1].value;
+            catalogi.cookie('seachString', value, {
+                expires: 7,
+                path: '/',
+                domain: '.catalogi.ru'
+            });
+            catalogi.ajax({
+                url: 'http://cdn.catalogi.ru/executable/actions/_translate.php',
+                type: 'get',
+                dataType: 'json',
+                data: {
+                    client: 't',
+                    text: value,
+                    sl: 'ru',
+                    tl: 'de'
+                },
+                success: function(data) {
+                    console.log('success:' + data);
+                    catalogi(form).find("[name='searchTerm']").val(data.text[0]);
+                    form.submit();
+                },
+                error: function(data) {
+                    console.log('error:' + data);
+                    // top.postMessage({action: 'search', search: catalogi('#search').val()},'*');
+                }
+            });
+
+            return false;
         });
-        catalogi.ajax({
-            url: 'http://cdn.catalogi.ru/executable/actions/_translate.php',
-            type: 'get',
-            dataType: 'json',
-            data: {
-                client: 't',
-                text: value,
-                sl: 'ru',
-                tl: 'de'
-            },
-            success: function(data) {
-                console.log('success:' + data);
-                catalogi(form).find("[name='searchTerm']").val(data.text[0]);
-                form.submit();
-            },
-            error: function(data) {
-                console.log('error:' + data);
-                // top.postMessage({action: 'search', search: catalogi('#search').val()},'*');
-            }
-        });
-
-        return false;
-    });
-
-
+    }, 2000);
 
 
     //catalogi('a[onclick*="Katalog"]').attr('href', 'http://catalogi.ru/katalog_view.php?url=wenz');
