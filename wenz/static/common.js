@@ -76,7 +76,7 @@ catalogi.parse = function() {
         .css('color', 'white')
         .attr('onclick', '')
         .attr('href', 'http://catalogi.ru/katalog_wenz/');
-
+    catalogi('.categoryNavESpot a').attr('href', 'http://catalogi.ru/katalog_wenz/');
 
     catalogi("#iframe").hide();
     catalogi('.leafletHeaderIcon').remove();
