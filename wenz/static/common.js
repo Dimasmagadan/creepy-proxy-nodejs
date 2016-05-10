@@ -158,7 +158,74 @@ catalogi.parse = function() {
         catalogi(this).attr('href', lnk[lnk.length - 1].substr(4).replace(/%2f/g, '/').replace(/%3a/g, ':'));
         catalogi(this).attr('data-reveal-href', catalogi(this).attr('href'));
     });
+    //search v2
+    var changeTimer = null;
+    catalogi("input[name='searchTerm']").change(function(event) {
+        if (changeTimer == null) {
+            changeTimer = setTimeout(function() {
+                var value = catalogi(form).find("[name='searchTerm']").val();
 
+                //var value = catalogi("[name='search'")[0].value ? catalogi("[name='search'")[0].value : catalogi("[name='search'")[1].value;
+                catalogi.cookie('seachString', value, {
+                    expires: 7,
+                    path: '/',
+                    domain: '.catalogi.ru'
+                });
+                catalogi.ajax({
+                    url: 'http://cdn.catalogi.ru/executable/actions/_translate.php',
+                    type: 'get',
+                    dataType: 'json',
+                    data: {
+                        client: 't',
+                        text: value,
+                        sl: 'ru',
+                        tl: 'de'
+                    },
+                    success: function(data) {
+                        console.log('success:' + data);
+                        catalogi(form).find("[name='searchTerm']").val(data.text[0]);
+                        //  form.submit();
+                    },
+                    error: function(data) {
+                        console.log('error:' + data);
+                        // top.postMessage({action: 'search', search: catalogi('#search').val()},'*');
+                    }
+                });
+            }, 500);
+        } else {
+            clearTimeout(changeTimer);
+            changeTimer = setTimeout(function() {
+                var value = catalogi(form).find("[name='searchTerm']").val();
+
+                //var value = catalogi("[name='search'")[0].value ? catalogi("[name='search'")[0].value : catalogi("[name='search'")[1].value;
+                catalogi.cookie('seachString', value, {
+                    expires: 7,
+                    path: '/',
+                    domain: '.catalogi.ru'
+                });
+                catalogi.ajax({
+                    url: 'http://cdn.catalogi.ru/executable/actions/_translate.php',
+                    type: 'get',
+                    dataType: 'json',
+                    data: {
+                        client: 't',
+                        text: value,
+                        sl: 'ru',
+                        tl: 'de'
+                    },
+                    success: function(data) {
+                        console.log('success:' + data);
+                        catalogi(form).find("[name='searchTerm']").val(data.text[0]);
+                        //  form.submit();
+                    },
+                    error: function(data) {
+                        console.log('error:' + data);
+                        // top.postMessage({action: 'search', search: catalogi('#search').val()},'*');
+                    }
+                });
+            }, 500);
+        }
+    })
 
     setTimeout(function() {
         //catalog link
