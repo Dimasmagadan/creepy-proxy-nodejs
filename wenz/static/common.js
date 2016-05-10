@@ -22,7 +22,9 @@ catalogi.noTranslate = function() {
     catalogi('span:contains("Wohnen")').text('Декор');
     catalogi('span[title="SALE"]').addClass('notranslate');
     catalogi('.accountHeaderIcon').addClass('notranslate');
+    catalogi('.accountHeaderIcon .headerIconText')
     catalogi('#miniShopCart').addClass('notranslate');
+    catalogi('#miniShopCart .headerIconText').text('Корзина');
     catalogi('#categoryNavigation > div > ul > li.last.categoryNavESpot > div > p > a').attr('href', '');
     // Список
     //console.log(catalogi('title').text() + ' ' + catalogi('title').text().search(/marken/i));
