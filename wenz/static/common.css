@@ -16,7 +16,7 @@ body {
 }
 
 .textInHeader {
-    padding: 0em!important;
+    padding:0 0.1em!important;
     margin: 0em!important;
     //font-style: italic;
     //font-size: 1.4em;

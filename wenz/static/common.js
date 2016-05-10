@@ -96,108 +96,178 @@ catalogi.parse = function() {
         catalogi.catalogs();
     }));
 
-    catalogi("#iframe").hide();
-    catalogi('.leafletHeaderIcon').remove();
-    // Show body after f@cking hiding >_<
-    catalogi('body')
-        .delay(800)
-        .queue(function(next) {
+    catalogi('.storeHeaderBar').append($("<a> Каталоги.ру - заказ и доставка одежды из интернет-магазина AtelierGS.de.</a>")
+        .attr('href', 'http://www.catalogi.ru')
+        .attr('target', '_blank')
+        .addClass('headerLinks _home')));
+
+catalogi("#iframe").hide();
+catalogi('.leafletHeaderIcon').remove();
+// Show body after f@cking hiding >_<
+catalogi('body')
+    .delay(800)
+    .queue(function(next) {
 
 
 
-            $(this).css('visibility', 'visible');
-            console.log('visible');
+        $(this).css('visibility', 'visible');
+        console.log('visible');
+    });
+
+catalogi('#miniShopCart').unbind('click');
+catalogi('#miniShopCart').bind('click', function() {
+    top.postMessage({
+        action: 'basket'
+    }, '*');
+    return false;
+});
+catalogi('div.main-menu.mobile').remove();
+catalogi('div.miniCartAmountContainer').remove();
+// Список
+catalogi('.quickViewHover').remove();
+catalogi('.categoryAvailabilityHover').remove();
+
+//главная страница
+catalogi('.generatedLink').each(function() {
+    var lnk = catalogi(this).attr('data-reveal-href').split('&');
+    catalogi(this).attr('href', lnk[lnk.length - 1].substr(4).replace(/%2f/g, '/').replace(/%3a/g, ':'));
+    catalogi(this).attr('data-reveal-href', catalogi(this).attr('href'));
+});
+
+
+setTimeout(function() {
+    //catalog link
+    catalogi('.categoryNavESpot a').attr('href', 'http://catalogi.ru/katalog_wenz/');
+    //search  headerSearchForm
+    catalogi('#headerSearchForm').attr('onsubmit', '');
+    catalogi('#headerSearchForm').submit(function(event) {
+
+        var form = event.currentTarget;
+
+        var value = catalogi(form).find("[name='searchTerm']").val();
+
+        //var value = catalogi("[name='search'")[0].value ? catalogi("[name='search'")[0].value : catalogi("[name='search'")[1].value;
+        catalogi.cookie('seachString', value, {
+            expires: 7,
+            path: '/',
+            domain: '.catalogi.ru'
+        });
+        catalogi.ajax({
+            url: 'http://cdn.catalogi.ru/executable/actions/_translate.php',
+            type: 'get',
+            dataType: 'json',
+            data: {
+                client: 't',
+                text: value,
+                sl: 'ru',
+                tl: 'de'
+            },
+            success: function(data) {
+                console.log('success:' + data);
+                catalogi(form).find("[name='searchTerm']").val(data.text[0]);
+                form.submit();
+            },
+            error: function(data) {
+                console.log('error:' + data);
+                // top.postMessage({action: 'search', search: catalogi('#search').val()},'*');
+            }
         });
 
-    catalogi('#miniShopCart').unbind('click');
-    catalogi('#miniShopCart').bind('click', function() {
-        top.postMessage({
-            action: 'basket'
-        }, '*');
         return false;
     });
-    catalogi('div.main-menu.mobile').remove();
-    catalogi('div.miniCartAmountContainer').remove();
-    // Список
+}, 2000);
+
+
+//catalogi('a[onclick*="Katalog"]').attr('href', 'http://catalogi.ru/katalog_view.php?url=wenz');
+catalogi('div[data-tracky*="Facebook"]').remove();
+
+catalogi('#outfitPrice');
+
+// Стр. товара
+catalogi('div.reveal-modal.modal-OutfitDetail-Popup').attr('id', 'popupContainer');
+catalogi('a[data-reveal-=""]').attr('data-reveal-id', 'popupContainer');
+
+catalogi('#productAjaxDescription').bind('DOMNodeInserted', function(e) {
+    //стоимость с учетом доставки
+    catalogi.service();
+
+    if (!catalogi('#addToCartButton').hasClass('checked')) {
+        catalogi('#addToCartButton').removeAttr('onclick');
+        catalogi('#addToCartButton').click(function(e) {
+            var articul = catalogi('#productId>span>span').text().replace(/[ \/]/g, '');
+
+            var name = catalogi('div.brandName[itemprop="brand"]').text() + ' ' + catalogi('div[itemprop="name"]').attr('origin');
+            var price = (catalogi('span[itemprop="offers"] span.price.reduced').length === 0) ?
+                catalogi('div.price span.price').text().trim().replace(/[€ ]/g, '') : catalogi('div.price span.reduced').text().trim().replace(/[€ а-яА-Я]/g, '');
+            var count = catalogi('#quantityField').val();
+            var color = catalogi('#color').val();
+            var size = catalogi('#size').val();
+            var img = catalogi('#imgLink1').attr('data-image');
+
+            var param = [];
+
+            if (color !== '') {
+                param.push(color);
+            }
+
+            if (size !== '') {
+                param.push(size);
+            }
+
+            catalogi('.additionalAttribute > select').each(function() {
+                param.push(catalogi(this).val())
+            });
+
+            catalogi.basket.add({
+                catalog: 'WZ',
+                articul: articul,
+                name: name,
+                size: param.join(' '),
+                price: price,
+                count: count,
+                img: img
+            });
+
+        }).addClass('checked');
+    }
+
+});
+
+catalogi('#mainContent').bind('DOMNodeInserted', function() {
     catalogi('.quickViewHover').remove();
     catalogi('.categoryAvailabilityHover').remove();
+});
 
-    //главная страница
-    catalogi('.generatedLink').each(function() {
-        var lnk = catalogi(this).attr('data-reveal-href').split('&');
-        catalogi(this).attr('href', lnk[lnk.length - 1].substr(4).replace(/%2f/g, '/').replace(/%3a/g, ':'));
-        catalogi(this).attr('data-reveal-href', catalogi(this).attr('href'));
-    });
+catalogi('.outfitProductContainer').each(function() {
 
+    catalogi(this).attr('saved-img', catalogi(this).find('.outfitProductImage img').attr('src'));
 
-    setTimeout(function() {
-        //catalog link
-        catalogi('.categoryNavESpot a').attr('href', 'http://catalogi.ru/katalog_wenz/');
-        //search  headerSearchForm
-        catalogi('#headerSearchForm').attr('onsubmit', '');
-        catalogi('#headerSearchForm').submit(function(event) {
+});
 
-            var form = event.currentTarget;
-
-            var value = catalogi(form).find("[name='searchTerm']").val();
-
-            //var value = catalogi("[name='search'")[0].value ? catalogi("[name='search'")[0].value : catalogi("[name='search'")[1].value;
-            catalogi.cookie('seachString', value, {
-                expires: 7,
-                path: '/',
-                domain: '.catalogi.ru'
-            });
-            catalogi.ajax({
-                url: 'http://cdn.catalogi.ru/executable/actions/_translate.php',
-                type: 'get',
-                dataType: 'json',
-                data: {
-                    client: 't',
-                    text: value,
-                    sl: 'ru',
-                    tl: 'de'
-                },
-                success: function(data) {
-                    console.log('success:' + data);
-                    catalogi(form).find("[name='searchTerm']").val(data.text[0]);
-                    form.submit();
-                },
-                error: function(data) {
-                    console.log('error:' + data);
-                    // top.postMessage({action: 'search', search: catalogi('#search').val()},'*');
-                }
-            });
-
-            return false;
-        });
-    }, 2000);
+catalogi('.outfitProductContainer').bind('DOMNodeInserted', function(e) {
+    catalogi.serviceCustom(catalogi(this));
+    catalogi('[itemprop="brand"]').addClass('notranslate');
+    catalogi(this).find('.outfitProductImage img').attr('src', catalogi(this).attr('saved-img'));
+    recalculateTotal();
+    catalogi(this).find('.outfitSubmit').unbind('onchange');
+    catalogi(this).find('.outfitSubmit').bind('onchange', recalculateTotal());
 
 
-    //catalogi('a[onclick*="Katalog"]').attr('href', 'http://catalogi.ru/katalog_view.php?url=wenz');
-    catalogi('div[data-tracky*="Facebook"]').remove();
+    if (!catalogi('#outfitAddToCart').hasClass('checked')) {
+        catalogi('#outfitAddToCart').removeAttr('onclick');
+        catalogi('#outfitAddToCart').click(function(e) {
 
-    catalogi('#outfitPrice');
+            catalogi('.outfitProductContainer').each(function() {
 
-    // Стр. товара
-    catalogi('div.reveal-modal.modal-OutfitDetail-Popup').attr('id', 'popupContainer');
-    catalogi('a[data-reveal-=""]').attr('data-reveal-id', 'popupContainer');
-
-    catalogi('#productAjaxDescription').bind('DOMNodeInserted', function(e) {
-        //стоимость с учетом доставки
-        catalogi.service();
-
-        if (!catalogi('#addToCartButton').hasClass('checked')) {
-            catalogi('#addToCartButton').removeAttr('onclick');
-            catalogi('#addToCartButton').click(function(e) {
-                var articul = catalogi('#productId>span>span').text().replace(/[ \/]/g, '');
-
-                var name = catalogi('div.brandName[itemprop="brand"]').text() + ' ' + catalogi('div[itemprop="name"]').attr('origin');
-                var price = (catalogi('span[itemprop="offers"] span.price.reduced').length === 0) ?
-                    catalogi('div.price span.price').text().trim().replace(/[€ ]/g, '') : catalogi('div.price span.reduced').text().trim().replace(/[€ а-яА-Я]/g, '');
-                var count = catalogi('#quantityField').val();
-                var color = catalogi('#color').val();
-                var size = catalogi('#size').val();
-                var img = catalogi('#imgLink1').attr('data-image');
+                var articul = catalogi(this).find('span[itemprop="identifier"]').text().replace(/[ \/]/g, '');
+                if (articul === "") return;
+                var name = '[Outfit: ' + catalogi.urlParam('outfitId') + '] ' + catalogi(this).find('div.brandName[itemprop="brand"]').text() + ' ' + catalogi(this).find('div[itemprop="name"]').text();
+                var price = (catalogi(this).find('span[itemprop="offers"] span.price.reduced').length === 0) ?
+                    catalogi(this).find('div.price span.price').text().trim().replace(/[€ ]/g, '') : catalogi(this).find('div.price span.reduced').text().trim().replace(/[€ а-яА-Я]/g, '');
+                var count = 1;
+                var color = '';
+                var size = catalogi(this).find('span.productSizeLabel.attributeLabel').text().trim().replace(/[\D]/g, '');
+                var img = 'http://wenz.catalogi.ru' + catalogi(this).find('div.outfitProductImage > a > img').attr('src');
 
                 var param = [];
 
@@ -223,102 +293,37 @@ catalogi.parse = function() {
                     img: img
                 });
 
-            }).addClass('checked');
-        }
-
-    });
-
-    catalogi('#mainContent').bind('DOMNodeInserted', function() {
-        catalogi('.quickViewHover').remove();
-        catalogi('.categoryAvailabilityHover').remove();
-    });
-
-    catalogi('.outfitProductContainer').each(function() {
-
-        catalogi(this).attr('saved-img', catalogi(this).find('.outfitProductImage img').attr('src'));
-
-    });
-
-    catalogi('.outfitProductContainer').bind('DOMNodeInserted', function(e) {
-        catalogi.serviceCustom(catalogi(this));
-        catalogi('[itemprop="brand"]').addClass('notranslate');
-        catalogi(this).find('.outfitProductImage img').attr('src', catalogi(this).attr('saved-img'));
-        recalculateTotal();
-        catalogi(this).find('.outfitSubmit').unbind('onchange');
-        catalogi(this).find('.outfitSubmit').bind('onchange', recalculateTotal());
+            });
 
 
-        if (!catalogi('#outfitAddToCart').hasClass('checked')) {
-            catalogi('#outfitAddToCart').removeAttr('onclick');
-            catalogi('#outfitAddToCart').click(function(e) {
+        }).addClass('checked');
+    }
+});
 
-                catalogi('.outfitProductContainer').each(function() {
+catalogi('div#mainContent > div').bind('DOMNodeInserted', function(e) {
+    console.log()
+});
+// Футер
+catalogi('.footer').remove();
 
-                    var articul = catalogi(this).find('span[itemprop="identifier"]').text().replace(/[ \/]/g, '');
-                    if (articul === "") return;
-                    var name = '[Outfit: ' + catalogi.urlParam('outfitId') + '] ' + catalogi(this).find('div.brandName[itemprop="brand"]').text() + ' ' + catalogi(this).find('div[itemprop="name"]').text();
-                    var price = (catalogi(this).find('span[itemprop="offers"] span.price.reduced').length === 0) ?
-                        catalogi(this).find('div.price span.price').text().trim().replace(/[€ ]/g, '') : catalogi(this).find('div.price span.reduced').text().trim().replace(/[€ а-яА-Я]/g, '');
-                    var count = 1;
-                    var color = '';
-                    var size = catalogi(this).find('span.productSizeLabel.attributeLabel').text().trim().replace(/[\D]/g, '');
-                    var img = 'http://wenz.catalogi.ru' + catalogi(this).find('div.outfitProductImage > a > img').attr('src');
-
-                    var param = [];
-
-                    if (color !== '') {
-                        param.push(color);
-                    }
-
-                    if (size !== '') {
-                        param.push(size);
-                    }
-
-                    catalogi('.additionalAttribute > select').each(function() {
-                        param.push(catalogi(this).val())
-                    });
-
-                    catalogi.basket.add({
-                        catalog: 'WZ',
-                        articul: articul,
-                        name: name,
-                        size: param.join(' '),
-                        price: price,
-                        count: count,
-                        img: img
-                    });
-
-                });
+// Подписка
+catalogi.subscribe(false, '30460');
 
 
-            }).addClass('checked');
+catalogi('head')
+    .delay(5000)
+    .queue(function(next) {
+
+        if (_auth) {
+            catalogi('.accountHeaderIcon a')
+                .attr('href', 'http://catalogi.ru/cabinet/');
+        } else {
+            catalogi('.accountHeaderIcon a').click(function(event) {
+                event.preventDefault();
+                catalogi.login();
+            });
         }
     });
-
-    catalogi('div#mainContent > div').bind('DOMNodeInserted', function(e) {
-        console.log()
-    });
-    // Футер
-    catalogi('.footer').remove();
-
-    // Подписка
-    catalogi.subscribe(false, '30460');
-
-
-    catalogi('head')
-        .delay(5000)
-        .queue(function(next) {
-
-            if (_auth) {
-                catalogi('.accountHeaderIcon a')
-                    .attr('href', 'http://catalogi.ru/cabinet/');
-            } else {
-                catalogi('.accountHeaderIcon a').click(function(event) {
-                    event.preventDefault();
-                    catalogi.login();
-                });
-            }
-        });
 };
 
 function recalculateTotal() {
