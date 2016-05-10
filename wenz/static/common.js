@@ -21,7 +21,7 @@ catalogi.noTranslate = function() {
     catalogi('span:contains("Schmuck & Uhren")').text('Бижутерия');
     catalogi('span:contains("Wohnen")').text('Декор');
     catalogi('.categoryNavESpot').addClass('notranslate');
-    catalogi('.categoryNavESpot').text('Каталог');
+    catalogi('.categoryNavESpot a').text('Каталог');
     catalogi('span[title="SALE"]').addClass('notranslate');
     catalogi('.accountHeaderIcon').addClass('notranslate');
     catalogi('.accountHeaderIcon .headerIconText').text('Кабинет');
