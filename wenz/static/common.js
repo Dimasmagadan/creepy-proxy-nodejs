@@ -177,7 +177,7 @@ catalogi.parse = function() {
                 var count = catalogi('#quantityField').val();
                 var color = catalogi('#color').val();
                 var size = catalogi('#size').val();
-                var img = 'http://wenz.catalogi.ru' + catalogi('#imgLink1').attr('data-image');
+                var img = catalogi('#imgLink1').attr('data-image');
 
                 var param = [];
 
