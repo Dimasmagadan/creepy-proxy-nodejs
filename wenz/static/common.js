@@ -72,8 +72,12 @@ catalogi.parse = function() {
     catalogi('.reveal-modal-bg').remove();
 
     // Шапка
-    //catalogi('header > div').css('display', 'none');
-    //catalogi("#iframe").appendTo("header");
+    catalogi('.categoryNavESpot a')
+        .css('color', 'white')
+        .attr('onclick', '')
+        .attr('href', 'http://catalogi.ru/katalog_wenz/');
+
+
     catalogi("#iframe").hide();
     catalogi('.leafletHeaderIcon').remove();
     // Show body after f@cking hiding >_<
