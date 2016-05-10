@@ -77,22 +77,22 @@ catalogi.parse = function() {
         .attr('onclick', '')
         .attr('href', 'http://catalogi.ru/katalog_wenz/');
 
-    catalogi('headerTopNavigation').children().remove();
-    catalogi('headerTopNavigation').append($('<li>').text('+74955404949').addClass('textInHeader'));
-    catalogi('headerTopNavigation').append($('<li>').text('|').addClass('textInHeader'));
-    catalogi('headerTopNavigation').append($('<li>').text('Доставка').addClass('textInHeader').click(function() {
+    catalogi('.headerTopNavigation').children().remove();
+    catalogi('.headerTopNavigation').append($('<li>').text('+74955404949').addClass('textInHeader'));
+    catalogi('.headerTopNavigation').append($('<li>').text('|').addClass('textInHeader'));
+    catalogi('.headerTopNavigation').append($('<li>').text('Доставка').addClass('textInHeader').click(function() {
         catalogi.delivery();
     }));
-    catalogi('headerTopNavigation').append($('<li>').text('|').addClass('textInHeader'));
-    catalogi('headerTopNavigation').append($('<li>').text('Оплата').addClass('textInHeader').click(function() {
+    catalogi('.headerTopNavigation').append($('<li>').text('|').addClass('textInHeader'));
+    catalogi('.headerTopNavigation').append($('<li>').text('Оплата').addClass('textInHeader').click(function() {
         catalogi.payment();
     }));
-    catalogi('headerTopNavigation').append($('<li>').text('|').addClass('textInHeader'));
-    catalogi('headerTopNavigation').append($('<li>').text('Интернет-магазины').addClass('textInHeader').click(function() {
+    catalogi('.headerTopNavigation').append($('<li>').text('|').addClass('textInHeader'));
+    catalogi('.headerTopNavigation').append($('<li>').text('Интернет-магазины').addClass('textInHeader').click(function() {
         catalogi.shops();
     }));
-    catalogi('headerTopNavigation').append($('<li>').text('|').addClass('textInHeader'));
-    catalogi('headerTopNavigation').append($('<li>').text('Онлайн каталоги').addClass('textInHeader').click(function() {
+    catalogi('.headerTopNavigation').append($('<li>').text('|').addClass('textInHeader'));
+    catalogi('.headerTopNavigation').append($('<li>').text('Онлайн каталоги').addClass('textInHeader').click(function() {
         catalogi.catalogs();
     }));
 
