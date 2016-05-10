@@ -188,7 +188,7 @@ catalogi.parse = function() {
     catalogi('div.reveal-modal.modal-OutfitDetail-Popup').attr('id', 'popupContainer');
     catalogi('a[data-reveal-=""]').attr('data-reveal-id', 'popupContainer');
 
-    catalogi('.availability24hService').childen().remove().append($("<a>")
+    catalogi('.availability24hService').children().remove().append($("<a>")
         .text("таблица размеров").click(function() {
             catalogi.sizeTable();
         }));
