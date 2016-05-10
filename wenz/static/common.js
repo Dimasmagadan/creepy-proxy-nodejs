@@ -53,6 +53,12 @@ catalogi.parse = function() {
 
     }, 1000);
 
+    setTimeout(function() {
+        catalogi('.productBoxContainer img').each(function(i, e) {
+            console.log(e);
+        });
+    }, 2000);
+
     // Удаляем оригинальное меню с подпиской
     catalogi('#newsletterPopupContainer').remove();
     catalogi('.reveal-modal-bg').remove();
