@@ -77,7 +77,7 @@ catalogi.parse = function() {
         .attr('onclick', '')
         .attr('href', 'http://catalogi.ru/katalog_wenz/');
 
-    catalogi('.headerTopNavigation').css('margin-top', '5px');
+    //catalogi('.headerTopNavigation').css('margin-top', '6px');
 
     catalogi('.headerTopNavigation').children().remove();
     catalogi('.headerTopNavigation').append($('<li>').text('+74955404949').addClass('textInHeader'));
@@ -98,7 +98,7 @@ catalogi.parse = function() {
         catalogi.catalogs();
     }));
 
-    catalogi('.storeHeaderBar').append($("<a> Каталоги.ру - заказ и доставка одежды из интернет-магазина AtelierGS.de.</a>")
+    catalogi('.storeHeaderBar').append($("<a> Каталоги.ру - заказ и доставка одежды из интернет-магазина wenz.de.</a>")
         .attr('href', 'http://www.catalogi.ru')
         .attr('target', '_blank')
         .addClass('headerLinks _home')
