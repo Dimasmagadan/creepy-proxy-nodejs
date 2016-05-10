@@ -34,6 +34,7 @@ body {
 .textInHeader {
     padding:0 0.1em!important;
     margin: 0em!important;
+    margin-top: 6px;
     cursor: pointer;
     //font-style: italic;
     //font-size: 1.4em;
