@@ -55,7 +55,8 @@ catalogi.parse = function() {
 
     setTimeout(function() {
         catalogi('.productBoxContainer img').each(function(i, e) {
-            console.log(e);
+            var images = JSON.parse(catalogi('#' + $(e).attr('data-original')).text());
+            $(e).attr('src', images.MAIN);
         });
     }, 2000);
 
