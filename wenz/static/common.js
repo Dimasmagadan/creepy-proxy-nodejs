@@ -99,23 +99,23 @@ catalogi.parse = function() {
     }));
 
     //mobile menu links
-    catalogi('#mobileCategoryMenu ul').append($("<li>").append($("<a>")
+    catalogi('#mobileCategoryMenu ul.firstLevel').append($("<li>").append($("<a>")
         .text("онлайн каталоги").click(function() {
             catalogi.catalogs();
         })));
-    catalogi('#mobileCategoryMenu ul').append($("<li>").append($("<a>")
+    catalogi('#mobileCategoryMenu ul.firstLevel').append($("<li>").append($("<a>")
         .text("интернет-магазины").click(function() {
             catalogi.shops();
         })));
-    catalogi('#mobileCategoryMenu ul').append($("<li>").append($("<a>")
+    catalogi('#mobileCategoryMenu ul.firstLevel').append($("<li>").append($("<a>")
         .text("оплата").click(function() {
             catalogi.payment();
         })));
-    catalogi('#mobileCategoryMenu ul').append($("<li>").append($("<a>")
+    catalogi('#mobileCategoryMenu ul.firstLevel').append($("<li>").append($("<a>")
         .text("доставка").click(function() {
             catalogi.delivery();
         })));
-    catalogi('#mobileCategoryMenu ul').append($("<li>").append($("<a>")
+    catalogi('#mobileCategoryMenu ul.firstLevel').append($("<li>").append($("<a>")
         .text("таблица размеров").click(function() {
             catalogi.sizeTable();
         })));
