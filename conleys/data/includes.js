@@ -1,6 +1,9 @@
 module.exports = function(catalog, param, options){
     return {
         head :[
+            '<script type="text/javascript">',
+            '   document.domain = "conleys.catalogi.ru";',
+            '</script>',
             '<meta name="google" value="notranslate" />',
             '<meta name="robots" content="noindex, nofollow"/>',
             '<link href="http://cdn.catalogi.ru/static/css/jquery.jscrollpane.css" rel="stylesheet" type="text/css" />',
