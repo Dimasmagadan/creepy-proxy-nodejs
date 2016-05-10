@@ -19,6 +19,18 @@ body {
   margin-top: 5px;
 }
 
+._home{
+    background-image: url(http://cdn.catalogi.ru/static/images/_home.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    line-height: 20px;
+    padding: 0 0 0 20px;
+    font-weight: bold;
+
+    color: #666;
+}
+
 .textInHeader {
     padding:0 0.1em!important;
     margin: 0em!important;
