@@ -21,6 +21,8 @@ catalogi.noTranslate = function() {
     catalogi('span:contains("Schmuck & Uhren")').text('Бижутерия');
     catalogi('span:contains("Wohnen")').text('Декор');
     catalogi('span[title="SALE"]').addClass('notranslate');
+    catalogi('.accountHeaderIcon').addClass('notranslate');
+    catalogi('#miniShopCart').addClass('notranslate');
     catalogi('#categoryNavigation > div > ul > li.last.categoryNavESpot > div > p > a').attr('href', '');
     // Список
     //console.log(catalogi('title').text() + ' ' + catalogi('title').text().search(/marken/i));
@@ -69,6 +71,7 @@ catalogi.parse = function() {
     //catalogi('header > div').css('display', 'none');
     //catalogi("#iframe").appendTo("header");
     catalogi("#iframe").hide();
+    catalogi('.leafletHeaderIcon').remove();
     // Show body after f@cking hiding >_<
     catalogi('body')
         .delay(800)
