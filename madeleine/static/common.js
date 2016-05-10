@@ -94,6 +94,9 @@ catalogi.parse = function() {
     catalogi('#tc-tab503').remove();
     catalogi('.mav3-info-btns').remove();
 
+    // фикс кнопки close в предпросмотре
+    catalogi('.close.sprite2').attr('style','');
+
     // Перевод сообщений
     LocalizedText.Shop_Article_AddToCart_Hint_PleaseSelect = 'Выберите цвет и размер.';
     LocalizedText.Shop_Article_AddToCart_Hint_PleaseSelectSize = 'Пожалуйста, выберите размер.';
