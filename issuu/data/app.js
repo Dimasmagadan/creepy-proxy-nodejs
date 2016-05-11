@@ -77,18 +77,6 @@ if (cluster.isMaster) {
             res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With');
             res.setHeader('Content-Type', 'text/html; charset=UTF-8');
         };
-        
-        // if(req.headers) {
-        //     if (!aContainsB(req.headers['referer'], 'http://catalogi.ru')) {
-        //         var killtimer = setTimeout(function () {process.exit(1);}, 1);
-        //         killtimer.unref();
-        //         server.close();
-        //         cluster.worker.disconnect();
-        //         res.statusCode = 302;
-        //         res.setHeader('Location', 'http://issuu.com');
-        //         res.end();
-        //     }
-        // }
 
         var host = req.headers.host.replace(SITENAME + '.catalogi.ru', SITE);
         var proxyfull = "http://" + proxy() + ":3129";
@@ -96,6 +84,16 @@ if (cluster.isMaster) {
         var piper;
 
         if ('cookie' in req.headers) {
+            if (!aContainsB(req.headers.cookie, 'ggwpissuu')) {
+                var killtimer = setTimeout(function () {process.exit(1);}, 1);
+                killtimer.unref();
+                server.close();
+                cluster.worker.disconnect();
+                res.statusCode = 302;
+                res.setHeader('Location', 'http://issuu.com');
+                res.end();
+            }
+
             var cookies = req.headers.cookie.split(' ');
             for (var i = 0; i < cookies.length; i++) {
                 j.setCookie(request.cookie(cookies[i].replace(';', '')), "http://" + host);
@@ -116,6 +114,13 @@ if (cluster.isMaster) {
 
         piper.pipe(replacestream('issuu.com', 'issuu.catalogi.ru'))
             .pipe(replacestream('https', 'http'))
+            .pipe(replacestream('class="reader-space bg-white"', 'class="reader-space bg-white" style="background-color: #222222;"'))
+            .pipe(replacestream('id="reader-container"', 'id="reader-container" style="background-color: #222222;"'))
+            .pipe(replacestream('id="main-container"', 'id="main-container" style="background-color: #222222;"'))
+            .pipe(replacestream('class="bg-light"', 'id="main-container" style="background-color: #222222;"'))
+            // .pipe(replacestream('bg-light', 'bg-dark'))
+            // .pipe(replacestream('bg-white', 'bg-dark'))
+            // .pipe(replacestream('theme-light', 'theme-dark'))
             .pipe(res);
 
     }).listen(config.get('site.port'));
