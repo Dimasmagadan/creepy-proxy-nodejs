@@ -194,11 +194,11 @@ catalogi.parse = function() {
     $('.miniaccount__mysheego-my').remove();
     //change text 
     $('#minibasket > a > span.minibasket__text.hidden-xs-inline.hidden-sm-inline > span.minibasket__basket > font > font > font > font > font > font > font > font > font > font').text("Корзина");
-    $('#miniaccount > a > span.miniaccount__mysheego-sheego > font > font > font > font > font > font > font > font > font > font').text("Кабинет");
+    $('#miniaccount > a > span > font > font').text("Кабинет");
     //smaller font size for menu
     $('#mainnavigation a').css('font-size','16px');
     //search panel
-    $('.search').attr("style","margin-left:0px;");
+    // $('.search').attr("style","margin-left:0px;");
 
 
 
