@@ -368,4 +368,10 @@ catalogi(function() {
     catalogi.parse();
     catalogi.removeShit();
     checkSeach();
+
+    
+        $('img').each(function (index, value) { 
+        $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
+        });
+
 });
