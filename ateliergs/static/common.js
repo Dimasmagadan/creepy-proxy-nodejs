@@ -277,7 +277,7 @@ catalogi.parse = function() {
 
     // Showing body after hiding
     catalogi('body')
-        .delay(500)
+        .delay(1000)
         .queue(function(next) {
             checkBasket();
             catalogi('.basket .pre').remove();
