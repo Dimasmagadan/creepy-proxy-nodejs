@@ -12,6 +12,24 @@ function _googleTranslateElementInit() {
     }, 'google_translate_element');
 }
 
+var currentDomain;
+function getCurrentDomain() {
+    var domain = null;
+
+    var re = /(?:[\s.])([a-z0-9][a-z0-9-]+[a-z0-9])(?:[.\s])/;
+    var str = window.location.hostname;
+    var m;
+
+    if ((m = re.exec(str)) !== null) {
+        if (m.index === re.lastIndex) {
+            re.lastIndex++;
+        }
+        domain = m[0].replace('.', '').replace('.', '');
+    }
+
+    return domain;
+}
+
 // Force use catalogi.service()
 catalogi(document).ready(function() {
     catalogi(".product-variant-options").bind("DOMSubtreeModified", function() {
@@ -38,10 +56,12 @@ catalogi.parse = function() {
         catalogi.login();
     });
     catalogi('.navigation--entry.headerHint').children().remove();
-    catalogi('.navigation--entry.headerHint').append($("<a> Каталоги.ру - заказ и доставка одежды из интернет-магазина apart-fashion.de.</a>")
-        .attr('href', 'http://www.catalogi.ru')
-        .attr('target', '_blank')
-        .addClass('headerLinks _home catalogiLink'));
+    //catalogi('.navigation--entry.headerHint').append(
+    //    catalogi("<a> Каталоги.ру - заказ и доставка одежды из интернет-магазина " + currentDomain + "!!!</a>")
+    //        .attr('href', 'http://www.catalogi.ru')
+    //        .attr('target', '_blank')
+    //        .addClass('headerLinks _home catalogiLink')
+    //);
 
 
     catalogi('ul.service--list').children().remove();
@@ -135,7 +155,10 @@ catalogi.parse = function() {
             catalogi.sizeTable();
         }));
 
+    catalogi('.link--notepad').remove();
 
+    //cтраница категории
+    catalogi('.action--note').remove();
 
     // Подписка
     catalogi.subscribe(false, '31818');
@@ -218,8 +241,7 @@ function addToCart() {
     try {
 
         // артикул
-        var articul = "<a href='" + window.location.href + "' target='_blank'>" +
-            catalogi('span.entry--label').text() + "</a>";
+        var articul = catalogi('span[class=entry--label]').text();
         // название
         var name = catalogi('.product--info > h1.product--title').text().trim();
         // количество
@@ -233,17 +255,19 @@ function addToCart() {
             .replace(',', '.')
             .trim();
         // картинка
-        var img = catalogi('.image--thumbnails img').first().attr('srcset').split(',')[0];
-        var param = [];
+        //var img = catalogi('.image--thumbnails img').first().attr('srcset').split(',')[0];
+        var img_normal = catalogi('.image--thumbnails img').first().attr('srcset');
+        var img_safari = catalogi('.image--thumbnails img').first().attr('src');
+        var img = (img_normal ? img_normal : img_safari).split(',')[0];
 
+        var param = [];
         // цвет
         var color1 = catalogi(catalogi('.configurator--form').children()[2]).text().trim();
-        var color2 = "undef"
+        var color2 = "undef";
         var color = (color1 == "") ? color2 : color1;
         if (color && color.length > 0) param.push(color);
-
         // размер
-        var size1 = catalogi(".configurator--form select option[selected='selected'").text().trim();
+        var size1 = catalogi(".configurator--form select option[selected='selected']").text().trim();
         var size2 = catalogi('li[class*="selected"]:eq(1)').text();
         var size = ((size1 == "") ? size2 : size1).trim();
         if (size == 'Выберите размер' || size == 'Выберите размер ') {
@@ -254,7 +278,7 @@ function addToCart() {
 
         // отправка запроса
         catalogi.basket.add({
-            catalog: 'APART-FASHION.DE',
+            catalog: 'AP',
             articul: articul,
             name: name,
             size: (param.join(' ').trim() == '') ? 0 : param.join(' ').trim(),
@@ -330,23 +354,11 @@ catalogi.removeShit = function() {
 
 // On load
 catalogi(function() {
-    var re = /(?:[\s.])([a-z0-9][a-z0-9-]+[a-z0-9])(?:[.\s])/;
-    var str = window.location.hostname;
-    var m;
-
-    if ((m = re.exec(str)) !== null) {
-        if (m.index === re.lastIndex) {
-            re.lastIndex++;
-        }
-        var currentDomain = m[0].replace('.', '').replace('.', '');
-    }
+    currentDomain = getCurrentDomain();
 
     catalogi('.main-search--form').submit(function(event) {
-
         var form = event.currentTarget;
-
         var value = catalogi(form).find("[name='sSearch']").val();
-
         //var value = catalogi("[name='search'")[0].value ? catalogi("[name='search'")[0].value : catalogi("[name='search'")[1].value;
         catalogi.cookie('seachString', value, {
             expires: 7,
@@ -390,6 +402,6 @@ catalogi(function() {
 
     catalogi.noTranslate();
     catalogi.parse();
-    catalogi.removeShit();
+    //catalogi.removeShit();
     checkSeach();
 });
