@@ -63,7 +63,7 @@
     //margin-right: 0.5em;
     //font-style: italic;
     //font-size: 1.4em;
-    font-size: 13px;
+    font-size: 10px;
     cursor: pointer;
     margin: 0 2px;
 }
@@ -100,10 +100,10 @@ div#navbar-meta {
 .headerLinks {
     text-decoration: none!important;
     font-style: normal!important;
-    margin-left: 1em;
+  //  margin-left: 1em;
     margin-right: 1em;
     font-weight: normal!important;
-    font-size: 13px!important;
+    font-size: 10px!important;
     font-family: Montserrat,sans-serif!important;
 }
 
