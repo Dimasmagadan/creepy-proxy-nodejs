@@ -55,7 +55,9 @@
     color: #666;
 }
 
-
+body {
+  visibility: hidden;
+}
 
 .textInHeader {
     //padding-top: 0.5em;
