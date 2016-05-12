@@ -171,7 +171,7 @@ catalogi.parse = function() {
         //Added by Artem Symonenkov 12.05.2016
 
     //hide all content after first #footer
-    $("#footer").nextAll().hide();
+    $("#footer").nextAll().remove();
 
     //search divs with background images and change url to valid
     $('div').each(function (index, value) { 
@@ -186,6 +186,24 @@ catalogi.parse = function() {
         $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
     });
 
+    //hide payback-logo
+    $('.payback-logo-header').remove();
+
+    //hide basket title
+    $('.minibasket__my').remove();
+    $('.miniaccount__mysheego-my').remove();
+    //change text 
+    $('#minibasket > a > span.minibasket__text.hidden-xs-inline.hidden-sm-inline > span.minibasket__basket > font > font > font > font > font > font > font > font > font > font').text("Корзина");
+    $('#miniaccount > a > span.miniaccount__mysheego-sheego > font > font > font > font > font > font > font > font > font > font').text("Кабинет");
+    //smaller font size for menu
+    $('#mainnavigation a').css('font-size','16px');
+    //search panel
+    $('.search').attr("style","margin-left:0px;");
+
+
+
+
+    
 };
 
 
