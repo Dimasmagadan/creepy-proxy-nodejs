@@ -1,7 +1,22 @@
-var config = require('config'),
-    cluster = require('cluster'),
-    fs = require('fs');
+/**
+ * Created by mihailstepancenko on 13.04.16.
+ */
 
+
+/**
+ * @return {boolean}
+ */
+function IsJsonString(str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
+}
+
+// Load config
+var config = require('config');
 var SITENAME = config.get('site.name'),
     SITEDOMAIN = config.get('site.domain'),
     SITE = SITENAME + SITEDOMAIN,
@@ -18,21 +33,32 @@ var SITENAME = config.get('site.name'),
     };
 var replaces = config.get('replaces');
 
+// Start server
+var cluster = require('cluster');
 if (cluster.isMaster) {
     console.log('Start master');
-    cluster.fork();
-    cluster.fork();
-    cluster.fork();
-    cluster.fork();
-    cluster.fork();
-    cluster.fork();
-    cluster.on('disconnect', function (worker) {
+
+    var fs = require('fs');
+    var clusersConf = JSON.parse(fs.readFileSync("/var/www/global-config.json", 'utf8'));
+
+    if (clusersConf.server.cpuBased) {
+        var os = require('os');
+        var procNum = os.cpus();
+        var forkNum = procNum.length;
+    } else {
+        var forkNum = clusersConf.server.clusersNum;
+    }
+
+    for (var i = 0; i < forkNum; i++) {
+        cluster.fork();
+    }
+
+    cluster.on('disconnect', function(worker) {
         console.error('Worker disconnect!');
         cluster.fork();
     });
-
 } else {
-    console.log("Start worker");
+    console.log("+ worker");
     var http = require("http"),
         request = require("request"),
         replacestream = require("replacestream"),
@@ -40,21 +66,24 @@ if (cluster.isMaster) {
         proxy = require("./proxy"),
         includes = require("./includes")(SITENAME, querystring.stringify(HEADERPARAMS.param), HEADERPARAMS.options);
 
+    request.defaults({
+        followAllRedirects: true
+    });
+
     var j = request.jar();
     var proxiedReq = request.defaults({
         jar: j
     });
 
-    var translates, fsize = 0, fname = "/var/www/translates.json";
+    var translates, fsize = 0;
 
-
-    var server = http.createServer(function (req, res) {
-
-        onError = function (err) {
+    var server = http.createServer(function(req, res) {
+        //console.log('Trying to access: ' + req.headers.host + req.url);
+        onError = function(err) {
             console.error(err);
 
             try {
-                var killtimer = setTimeout(function () {
+                var killtimer = setTimeout(function() {
                     process.exit(1);
                 }, 10);
 
@@ -70,9 +99,12 @@ if (cluster.isMaster) {
             } catch (er) {
                 console.error('Error sending HTTP response', er, req.url);
             }
-        }
-        onResponse = function (response) {
-            if ('location' in response.headers) response.setHeader('Location', response.headers['location'].replace(SITE, SITENAME + '.catalogi.ru'));
+        };
+        onResponse = function(response) {
+            //  console.log(new Date()+" "+ JSON.stringify(response.headers));
+            //  if(response.statusCode == 200){
+            if ('location' in response.headers)
+                response.setHeader('Location', response.headers['location'].replace(SITE, SITENAME + '.catalogi.ru'));
 
             var _cookie = [];
 
@@ -92,33 +124,35 @@ if (cluster.isMaster) {
             }
             res.setHeader('Access-Control-Allow-Origin', '*');
             res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With');
-        }
-        //was error "no such file"
-        //tmp = fs.statSync(fname)["size"];
-        //console.log(tmp);
-        //if (fsize != tmp) {
-        //    fsize = tmp;
-        //    translates = JSON.parse(fs.readFileSync(fname, 'utf8'));
-        //}
+            // }
+        };
 
-
-        //console.log('Trying to access: ' + req.headers.host + req.url);
+        request.get('http://translates.catalogi.ru/temp/' + SITENAME + '.json', function(error, response, body) {
+            if (!error && response.statusCode == 200) {
+                tmp = response.headers['content-length'];
+                //console.log(response.headers['content-length']);
+                if (IsJsonString(body)) {
+                    //console.log("JOSN detected");
+                    if (fsize != tmp) {
+                        fsize = tmp;
+                        translates = JSON.parse(body, 'utf8');
+                    }
+                } else {
+                    //console.log("JOSN NOT detected!");
+                }
+            } else {
+                //console.log("JOSN NOT 200!");
+            }
+        });
 
         var _header = {};
         if ('user-agent' in req.headers) _header['User-Agent'] = req.headers['user-agent'];
         if ('content-type' in req.headers) _header['Content-Type'] = req.headers['content-type'];
         if ('cookie' in req.headers) _header['Cookie'] = req.headers['cookie'];
-        var host = req.headers.host.replace(SITENAME + '.catalogi.ru', SITE);
 
+        var host = req.headers.host.replace(SITENAME + '.catalogi.ru', SITE);
         _header['Host'] = host;
 
-        proxyfull = "http://" + proxy() + ":3129";
-        //console.log("Accessing via: " + proxyfull);
-
-
-
-        var start = new Date();
-        //console.log("Method: " + req.method);
         var url = "http://" + host + req.url;
         var piper;
 
@@ -126,49 +160,58 @@ if (cluster.isMaster) {
         if ('cookie' in req.headers) {
             var cookies = req.headers.cookie.split(' ');
             for (var i = 0; i < cookies.length; i++) {
-                if(cookies[i].split('=')[0] != 'user') {
-                    j.setCookie(request.cookie(cookies[i].replace(';', '')), "http://" + host);
-                }
+                j.setCookie(request.cookie(cookies[i].replace(';', '')), "http://" + host);
             }
         }
+
+        // Proxyng trafic
+        proxyfull = "http://" + proxy() + ":3129";
+        //console.log("Accessing via: " + proxyfull);
+
+        //console.log("Method: " + req.method);
         if (req.method === "GET") {
             piper = proxiedReq.get({
                 url: url,
                 proxy: proxyfull,
             }).on('error', onError).on('response', onResponse).pipe(replacestream(SITE, SITENAME + '.catalogi.ru'));
-        }
-        else if (req.method === "POST") {
+        } else if (req.method === "POST") {
             piper = proxiedReq.post({
                 url: "http://" + host + req.url,
                 proxy: proxyfull,
             }).on('error', onError).on('response', onResponse).pipe(replacestream(SITE, SITENAME + '.catalogi.ru'));
         }
 
-
-        replaces.forEach(function (item, i, arr) {
+        // Replaces from config
+        replaces.forEach(function(item, i, arr) {
             if (item.type === "usual") {
                 piper = piper.pipe(replacestream(item.from, item.to));
-            }
-            else if (item.type === "regex") {
+            } else if (item.type === "regex") {
                 piper = piper.pipe(replacestream(new RegExp(item.from, item.args), item.to));
             }
         });
-        //translates.forEach(function (item, i, arr) {
-        //    if (item.type === "usual") {
-        //        piper = piper.pipe(replacestream(item.from, item.to));
-        //    }
-        //    else if (item.type === "regex") {
-        //        piper = piper.pipe(replacestream(new RegExp(item.from, item.args), item.to));
-        //    }
-        //});
+
+        // Replaces from translates.catalogi.ru
+        if (translates && translates.length) {
+            translates.forEach(function(item, i, arr) {
+                if (item.type === "usual") {
+                    piper = piper.pipe(replacestream(item.from, item.to));
+                } else if (item.type === "regex") {
+                    var from = "(^|[^\\/?$])\\b(" + item.from + ")\\b";
+                    var to = "$1" + item.to;
+                    piper = piper.pipe(replacestream(new RegExp(from, item.args), to));
+                }
+            });
+        }
 
         piper.pipe(replacestream('</body>', includes.body.top + includes.body.bottom + '</body>'))
-            .pipe(replacestream('<head>', '<head>' + includes.head))
+            .pipe(replacestream(new RegExp('<head>', 'i'), '<head>' + includes.head))
+            .pipe(replacestream(new RegExp('</head>', 'i'), includes.headbottom + '</head>'))
+            .pipe(replacestream('https', 'http'))
             .pipe(res);
 
-    }).listen(5050);
+    }).listen(config.get('site.port'));
 }
 
 setInterval(function() {
-    global.gc(); // --expose-gc
+    global.gc(); // --e
 }, 1000);

@@ -2,11 +2,11 @@
 
 NODE_ENV="production"
 NODE_APP='app.js'
-APP_DIR='/var/www/wenz/data';
+APP_DIR='/var/www/apart-fashion/data';
 PID_FILE=$APP_DIR/pid/app.pid
 LOG_FILE=$APP_DIR/log/app.log
 CONFIG_DIR=$APP_DIR/config
-PORT=5050
+PORT=5051
 NODE_EXEC=/usr/bin/node
 
 ###############
@@ -30,7 +30,7 @@ start_app (){
     then
         echo "$PID_FILE exists, process is already running or crashed"
         
-        echo "Stopping $APP_DIR/$NODE_APP ..."
+        echo "Stopping $APP_DIR/$NODE_APP  ..."
         echo "Killing `cat $PID_FILE`"
         kill `cat $PID_FILE`;
         rm -f $PID_FILE;
