@@ -181,10 +181,15 @@ catalogi.parse = function() {
     });
 
     //search img and change url to valid
-    $('img').each(function (index, value) { 
+    setTimeout(function(){
+
+        $('img').each(function (index, value) { 
         console.log($(this).attr("src"));
         $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
-    });
+        });
+
+    }, 2000);
+    
 
     //hide payback-logo
     $('.payback-logo-header').remove();
@@ -194,7 +199,8 @@ catalogi.parse = function() {
     $('.miniaccount__mysheego-my').remove();
     //change text 
     $('#minibasket > a > span.minibasket__text.hidden-xs-inline.hidden-sm-inline > span.minibasket__basket > font > font > font > font > font > font > font > font > font > font').text("Корзина");
-    $('#miniaccount > a > span > font > font').text("Кабинет");
+    $('#miniaccount').empty();
+    $('#miniaccount').text("Кабинет");
     //smaller font size for menu
     $('#mainnavigation a').css('font-size','16px');
     //search panel
@@ -203,7 +209,7 @@ catalogi.parse = function() {
 
 
 
-    
+
 };
 
 
