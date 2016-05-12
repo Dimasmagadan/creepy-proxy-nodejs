@@ -190,13 +190,50 @@ catalogi.parse = function() {
         $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
         });
 
-    window.setInterval(function(){
-        $('img').each(function (index, value) { 
-        $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
-        });
+    // window.setInterval(function(){
+    //     $('img').each(function (index, value) { 
+    //     $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
+    //     });
 
-        console.log('image');
-    }, 5000);
+    //     console.log('image');
+    // }, 5000);
+
+    //images
+    setTimeout(function(){
+
+        $('img').each(function (index, value) { 
+            $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
+        });
+        console.log("IMAGE");
+        }, 2000);
+    setTimeout(function(){
+
+        $('img').each(function (index, value) { 
+            $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
+        });
+        console.log("IMAGE");
+        }, 5000);
+    setTimeout(function(){
+
+        $('img').each(function (index, value) { 
+            $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
+        });
+        console.log("IMAGE");
+        }, 10000);
+    setTimeout(function(){
+
+        $('img').each(function (index, value) { 
+            $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
+        });
+        console.log("IMAGE");
+        }, 20000);
+    setTimeout(function(){
+
+        $('img').each(function (index, value) { 
+            $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
+        });
+        console.log("IMAGE");
+        }, 30000);
 
     //hide payback-logo
     $('.payback-logo-header').remove();
