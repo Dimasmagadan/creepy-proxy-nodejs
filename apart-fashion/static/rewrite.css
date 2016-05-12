@@ -4,14 +4,12 @@
     font-family: "jvds icons";
     src: url("/static/fonts/jvds-icons.woff");
 }
-
 @font-face {
     font-family: 'shopware';
     src: url('/static/fonts/shopware.woff');
     font-weight: normal;
     font-style: normal
 }
-
 @font-face {
     font-family: "GinIcons";
     src: url("/static/fonts/janvanderstorm-iconfont.eot");
@@ -35,7 +33,8 @@
 }
 
 /* Активные элементы шапки */
-._logout{
+
+._logout {
     background-image: url(http://cdn.catalogi.ru/static/images/_logout.png);
     background-position: left center;
     background-repeat: no-repeat;
@@ -45,7 +44,7 @@
     width: 10px;
     height: 16px;
 }
-._home{
+._home {
     background-image: url(http://cdn.catalogi.ru/static/images/_home.png);
     background-position: left center;
     background-repeat: no-repeat;
@@ -53,20 +52,18 @@
     line-height: 20px;
     padding: 0 0 0 20px;
     font-weight: bold;
-
     color: #666;
 }
-
 span.account--display {
     font-weight: normal!important;
 }
 a#addToCartBtn {
-
-    padding: 0.8em 3em;
+    padding: 0.1rem 0;
     background: #000;
+    font-family:'Open Sans Condensed', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
     display: table;
     color: #fff;
-    cursor:pointer;
+    cursor: pointer;
     width: 63%;
     font-size: 1rem;
     line-height: 2.375rem;
@@ -78,22 +75,19 @@ a#addToCartBtn {
     font-style: italic;
     font-size: 1.4em;
 }
-
 @media screen and (max-device-width: 770px) {
     .textInHeader {
         display: none;
     }
 }
-
 @media screen and (max-width: 770px) {
     .myaccount {
-    margin-top: 27px;
-}
-     .textInHeader {
+        margin-top: 27px;
+    }
+    .textInHeader {
         display: none;
     }
-   }
-
+}
 .headerLinks {
     text-decoration: none!important;
     font-style: normal!important;
@@ -103,19 +97,14 @@ a#addToCartBtn {
     font-size: .875rem;
     font-family: "Open Sans Condensed", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
-
-
-
-
-
-#cboxLoadedContent{
-    overflow-x:hidden !important;
- overflow-y:hidden !important;
-padding: 0;
+#cboxLoadedContent {
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    padding: 0;
 }
 
-
 /* Новые расположения элементов шапки */
+
 @media screen and (max-width: 63.9em) {
     #page-header.sticky #account-nav {
         top: 22px;
@@ -127,11 +116,9 @@ padding: 0;
         right: 50px;
         width: 120px
     }
-    #page-header:not(.sticky) #account-nav .my-account a,
-    #page-header:not(.sticky) #account-nav .my-account .link {
+    #page-header:not(.sticky) #account-nav .my-account a, #page-header:not(.sticky) #account-nav .my-account .link {
         position: relative
     }
-
     #page-header.sticky .search {
         width: 165px;
         left: 555px;
@@ -144,7 +131,6 @@ padding: 0;
         width: 50px;
         overflow: hidden;
     }
-
     #page-header.sticky #minicart {
         right: 200px;
     }
@@ -160,15 +146,12 @@ padding: 0;
         right: 100px;
         width: 120px
     }
-    #page-header:not(.sticky) #account-nav .my-account a,
-    #page-header:not(.sticky) #account-nav .my-account .link {
+    #page-header:not(.sticky) #account-nav .my-account a, #page-header:not(.sticky) #account-nav .my-account .link {
         position: relative
     }
-
     #page-header:not(.sticky) #meta-nav {
         max-width: 70%;
     }
-
     #page-header.sticky .search {
         top: 13px;
         width: 140px;
@@ -185,11 +168,9 @@ padding: 0;
         width: 280px;
         left: 655px;
     }
-
     #page-header #root-nav {
         margin-top: 30px;
     }
-
     #page-header.sticky #minicart {
         width: 275px;
         right: 170px;
@@ -201,7 +182,6 @@ padding: 0;
         right: 320px;
         width: 120px;
     }
-
     #page-header.sticky .search {
         left: 1010px;
         width: 170px;
@@ -213,12 +193,10 @@ padding: 0;
         left: 885px;
         width: 280px;
     }
-
     #page-header.sticky #minicart {
         right: 222px;
     }
 }
-
 .search .searchfield {
     width: 63%;
 }
@@ -227,19 +205,19 @@ padding: 0;
     width: 37px;
 }
 
-
 /* Уменьшаем шрифты */
+
 #page-header:not(.sticky) #meta-nav li a, #page-header:not(.sticky) #meta-nav li .link {
-    font: 500 12px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font: 500 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
     display: block;
 }
 #account-nav a, #account-nav .link {
-    font: 500 12px/18px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font: 500 12px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #111;
 }
 #wishlist-link>a, #wishlist-link>.link, #minicart-link>a, #minicart-link>.link {
     color: #111;
-    font: 500 12px/1 "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font: 500 12px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 #account-nav .my-account-login, #account-nav .my-account-flyout-btn {
     color: #111;
@@ -247,7 +225,6 @@ padding: 0;
 #page-header.sticky #minicart {
     top: 21px;
 }
-
 #page-header.sticky #page-header-main-wrapper #header-brand-logo {
     background-size: 100%;
     width: 184px;
@@ -256,6 +233,7 @@ padding: 0;
 }
 
 /* Заменяем лого */
+
 #header-brand-logo {
     display: block;
     text-indent: -9999em;
@@ -272,8 +250,8 @@ padding: 0;
     margin-right: auto;
 }
 
-
 /* Скрываем мусор */
+
 .goog-te-banner-frame.skiptranslate {
     display: none !important;
 }
@@ -284,24 +262,23 @@ padding: 0;
     display: none !important;
 }
 #js-comments-write_button_review, .review-inner-button-panel {
-    display:none;
+    display: none;
 }
 
 /* Подготовка к отображению */
-#_head #_center ._info{
+
+#_head #_center ._info {
     margin: 0px 0 0 34px !important;
 }
-body{
+body {
     top: 0 !important;
     visibility: hidden;
 }
-
 #menu {
     text-transform: uppercase;
-    font: 400 24px/27px Helvetica,Arial,sans-serif;
+    font: 400 24px/27px Helvetica, Arial, sans-serif;
     left: 25px;
 }
-
 #menu::after {
     font-size: 15px;
 }
