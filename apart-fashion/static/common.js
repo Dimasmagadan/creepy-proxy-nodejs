@@ -143,6 +143,22 @@ catalogi.parse = function() {
 
     //страница товара
     if (catalogi('.buybox--button')) {
+        catalogi('.buybox--button').replaceWith(
+            $("<a>В корзину</a>")
+            .addClass('notranslate')
+            .attr('id', 'addToCartBtn')
+            //  .attr('href', '#')
+            .bind('click', function(event) {
+                //  event.preventDefault();
+                addToCart();
+            }).bind('tap', function(event) {
+                //    event.preventDefault();
+                addToCart();
+            })
+
+        );
+    }
+    if (catalogi('.buybox--button')) {
         setInterval(function() {
             if (catalogi('.buybox--button')) {
                 catalogi('.buybox--button').replaceWith(
