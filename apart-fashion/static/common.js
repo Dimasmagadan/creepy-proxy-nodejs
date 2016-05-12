@@ -12,6 +12,24 @@ function _googleTranslateElementInit() {
     }, 'google_translate_element');
 }
 
+var currentDomain;
+function getCurrentDomain() {
+    var domain = null;
+
+    var re = /(?:[\s.])([a-z0-9][a-z0-9-]+[a-z0-9])(?:[.\s])/;
+    var str = window.location.hostname;
+    var m;
+
+    if ((m = re.exec(str)) !== null) {
+        if (m.index === re.lastIndex) {
+            re.lastIndex++;
+        }
+        domain = m[0].replace('.', '').replace('.', '');
+    }
+
+    return domain;
+}
+
 // Force use catalogi.service()
 catalogi(document).ready(function() {
     catalogi(".product-variant-options").bind("DOMSubtreeModified", function() {
@@ -38,10 +56,12 @@ catalogi.parse = function() {
         catalogi.login();
     });
     catalogi('.navigation--entry.headerHint').children().remove();
-    catalogi('.navigation--entry.headerHint').append($("<a> Каталоги.ру - заказ и доставка одежды из интернет-магазина apart-fashion.de.</a>")
-        .attr('href', 'http://www.catalogi.ru')
-        .attr('target', '_blank')
-        .addClass('headerLinks _home catalogiLink'));
+    //catalogi('.navigation--entry.headerHint').append(
+    //    catalogi("<a> Каталоги.ру - заказ и доставка одежды из интернет-магазина " + currentDomain + "!!!</a>")
+    //        .attr('href', 'http://www.catalogi.ru')
+    //        .attr('target', '_blank')
+    //        .addClass('headerLinks _home catalogiLink')
+    //);
 
 
     catalogi('ul.service--list').children().remove();
@@ -331,23 +351,11 @@ catalogi.removeShit = function() {
 
 // On load
 catalogi(function() {
-    var re = /(?:[\s.])([a-z0-9][a-z0-9-]+[a-z0-9])(?:[.\s])/;
-    var str = window.location.hostname;
-    var m;
-
-    if ((m = re.exec(str)) !== null) {
-        if (m.index === re.lastIndex) {
-            re.lastIndex++;
-        }
-        var currentDomain = m[0].replace('.', '').replace('.', '');
-    }
+    currentDomain = getCurrentDomain();
 
     catalogi('.main-search--form').submit(function(event) {
-
         var form = event.currentTarget;
-
         var value = catalogi(form).find("[name='sSearch']").val();
-
         //var value = catalogi("[name='search'")[0].value ? catalogi("[name='search'")[0].value : catalogi("[name='search'")[1].value;
         catalogi.cookie('seachString', value, {
             expires: 7,
@@ -391,6 +399,6 @@ catalogi(function() {
 
     catalogi.noTranslate();
     catalogi.parse();
-    catalogi.removeShit();
+    //catalogi.removeShit();
     checkSeach();
 });
