@@ -161,6 +161,7 @@ catalogi.parse = function() {
     if (catalogi('.buybox--button')) {
         setInterval(function() {
             if (catalogi('.buybox--button')) {
+                catalogi('.link--notepad').remove();
                 catalogi.service();
                 catalogi('.buybox--button').replaceWith(
                     $("<a>В корзину</a>")
