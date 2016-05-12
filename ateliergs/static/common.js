@@ -63,6 +63,8 @@ catalogi.parse = function() {
         .append($("<a> Каталоги.ру</a>")
             .attr('href', 'http://www.catalogi.ru')
             .attr('target', '_blank')
+            .css('padding', '0 0 0 20px!important;')
+            .css('font-weight', 'normal!important')
             .addClass('textInHeader _home')));
 
     catalogi('#main-navigation li.index_6').remove();
