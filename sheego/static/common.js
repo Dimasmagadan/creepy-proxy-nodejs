@@ -194,7 +194,7 @@ catalogi.parse = function() {
 
     }, 4000);
 
-    $( document ).ready(function() {
+    $(window).load(function() {
         $('img').each(function (index, value) { 
             $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
         });
@@ -368,10 +368,5 @@ catalogi(function() {
     catalogi.parse();
     catalogi.removeShit();
     checkSeach();
-
-    
-        $('img').each(function (index, value) { 
-        $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
-        });
 
 });
