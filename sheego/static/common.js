@@ -2,7 +2,6 @@
  * Created by mihailstepancenko on 22.12.15.
  */
 
- // first comment
 
 var timeout1 = 5000; // basket update
 
@@ -168,6 +167,25 @@ catalogi.parse = function() {
                 catalogi('.account-nav-listelem > a').text('Вход');
             }
         });
+
+        //Added by Artem Symonenkov 12.05.2016
+
+    //hide all content after first #footer
+    $("#footer").nextAll().hide();
+
+    //search divs with background images and change url to valid
+    $('div').each(function (index, value) { 
+        if ($(this).css("background-image") != 'none' && $(this).css("background-image").indexOf('http://media.sheego.catalogi.ru/') > -1) {
+            $(this).css("background-image", $(this).css("background-image").replace("catalogi.ru","de") , 'important');
+        }
+    });
+
+    //search img and change url to valid
+    $('img').each(function (index, value) { 
+        console.log($(this).attr("src"));
+        $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
+    });
+
 };
 
 
