@@ -266,6 +266,7 @@ catalogi.parse = function() {
                 }
             });
         };
+        _initEnterSubmit();
     }, 2000);
 
 
