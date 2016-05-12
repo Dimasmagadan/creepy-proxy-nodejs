@@ -60,15 +60,19 @@
 span.account--display {
     font-weight: normal!important;
 }
-/*a#addToCartBtn {
+a#addToCartBtn {
 
     padding: 0.8em 3em;
-    background: red;
+    background: #000;
     display: table;
-  
+    color: #fff;
+    cursor:pointer;
+    width: 63%;
+    font-size: 1rem;
+    line-height: 2.375rem;
     border-radius: 5px;
     text-align: center;
-}*/
+}
 .textInHeader {
     padding-top: 1em;
     font-style: italic;
