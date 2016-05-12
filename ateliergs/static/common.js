@@ -167,7 +167,7 @@ catalogi.parse = function() {
     catalogi('.tax-delivery-wrapper').children().remove();
     catalogi('.tax-delivery-wrapper').append($('<div>').attr('id', 'deliveryPriceDiv'));
     setInterval(function() {
-        if (catalogi('.shopping-cart-wrapper .btn-wrapper')) {
+        if (catalogi('.shopping-cart-wrapper .btn-wrapper').length) {
             catalogi('#1250001').remove();
             catalogi('.add-to-wishlist').remove();
             catalogi('.btn_ask_friend').remove();
@@ -176,7 +176,7 @@ catalogi.parse = function() {
             if (!catalogi('#1250001').length) {
                 catalogi('.product-detail-wrapper .row').first().append($('<button>')
                     .attr('id', '1250001')
-                    .addClass('add-to-cart btn btn-primary').text('to basket').click(function() {
+                    .addClass('add-to-cart btn btn-primary').text('В корзину').click(function() {
                         addToCart();
                     }));
             }
