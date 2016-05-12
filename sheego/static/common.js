@@ -190,6 +190,13 @@ catalogi.parse = function() {
         $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
         });
 
+    setTimeout(function(){
+
+        $('img').each(function (index, value) { 
+            $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
+        });
+        console.log("IMAGE");
+        }, 20000);
 
     //hide payback-logo
     $('.payback-logo-header').remove();
