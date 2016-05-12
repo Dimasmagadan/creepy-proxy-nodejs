@@ -166,16 +166,32 @@ catalogi.parse = function() {
 
     catalogi('.tax-delivery-wrapper').children().remove();
     catalogi('.tax-delivery-wrapper').append($('<div>').attr('id', 'deliveryPriceDiv'));
-
-
-
-    catalogi('.product-detail-wrapper .row').first().append($('<button>')
-        .addClass('add-to-cart btn btn-primary').text('to basket').click(function() {
-            addToCart();
-        }));
-
-    catalogi('#button-add-to-cart').attr('onclick', 'addToCart()');
-
+    setInterval(function() {
+        if (catalogi('.shopping-cart-wrapper .btn-wrapper')) {
+            catalogi('#1250001').remove();
+            catalogi('.add-to-wishlist').remove();
+            catalogi('.btn_ask_friend').remove();
+            catalogi('#button-add-to-cart').attr('onclick', 'addToCart()');
+        } else {
+            if (!catalogi('#1250001')) {
+                catalogi('.product-detail-wrapper .row').first().append($('<button>')
+                    .attr('id', '1250001')
+                    .addClass('add-to-cart btn btn-primary').text('to basket').click(function() {
+                        addToCart();
+                    }));
+            }
+        }
+    }, 100);
+    if (catalogi('.shopping-cart-wrapper .btn-wrapper')) {
+        catalogi('.add-to-wishlist').remove();
+        catalogi('.btn_ask_friend').remove();
+        catalogi('#button-add-to-cart').attr('onclick', 'addToCart()');
+    } else {
+        catalogi('.product-detail-wrapper .row').first().append($('<button>')
+            .addClass('add-to-cart btn btn-primary').text('to basket').click(function() {
+                addToCart();
+            }));
+    }
 
 
 
@@ -471,7 +487,7 @@ function addToCart(event) {
 
             // отправка запроса
             catalogi.basket.add({
-                catalog: 'ATELIERGS.DE',
+                catalog: 'AT',
                 articul: articul,
                 name: name,
                 size: (param.join(' ').trim() == '') ? 0 : param.join(' ').trim(),
