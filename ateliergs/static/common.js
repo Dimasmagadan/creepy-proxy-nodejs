@@ -173,7 +173,7 @@ catalogi.parse = function() {
             catalogi('.btn_ask_friend').remove();
             catalogi('#button-add-to-cart').attr('onclick', 'addToCart()');
         } else {
-            if (!catalogi('#1250001')) {
+            if (!catalogi('#1250001').length) {
                 catalogi('.product-detail-wrapper .row').first().append($('<button>')
                     .attr('id', '1250001')
                     .addClass('add-to-cart btn btn-primary').text('to basket').click(function() {
