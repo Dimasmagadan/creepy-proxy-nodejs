@@ -232,6 +232,7 @@ catalogi.parse = function() {
     });
     setTimeout(function() {
         var _initEnterSubmit = function() {
+            $('#sugWrap #header_search_form #search').unbind('keydown');
             $('#sugWrap #header_search_form #search').keydown(function(event) {
                 var form = $('#sugWrap #header_search_form');
                 if (event.keyCode == 13) {
