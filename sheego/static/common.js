@@ -205,21 +205,13 @@ catalogi.parse = function() {
             });
         });
 
-        setTimeout(function(){
+            setTimeout(function(){
 
         $('img').each(function (index, value) { 
         $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
         });
 
     }, 4000);
-
-        setTimeout(function(){
-
-        $('img').each(function (index, value) { 
-        $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
-        });
-
-    }, 10000);
 
     });
 
@@ -237,22 +229,6 @@ catalogi.parse = function() {
         });
 
     }, 4000);
-
-    setTimeout(function(){
-
-        $('img').each(function (index, value) { 
-        $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
-        });
-
-    }, 6000);
-
-    setTimeout(function(){
-
-        $('img').each(function (index, value) { 
-        $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
-        });
-
-    }, 8000);
 
 
     //hide payback-logo
@@ -393,3 +369,8 @@ catalogi(function() {
     catalogi.removeShit();
     checkSeach();
 });
+
+
+    $('img').each(function (index, value) { 
+        $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
+        });
