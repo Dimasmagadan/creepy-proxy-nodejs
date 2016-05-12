@@ -60,15 +60,15 @@
 span.account--display {
     font-weight: normal!important;
 }
-a#addToCartBtn {
-    /* height: 3em; */
+/*a#addToCartBtn {
+
     padding: 0.8em 3em;
     background: red;
     display: table;
-    /* width: 6em; */
+  
     border-radius: 5px;
     text-align: center;
-}
+}*/
 .textInHeader {
     padding-top: 1em;
     font-style: italic;
