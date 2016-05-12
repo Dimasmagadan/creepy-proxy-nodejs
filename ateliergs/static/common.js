@@ -58,12 +58,12 @@ catalogi.parse = function() {
     catalogi('#navbar-meta ul.nav').append($('<li>').text('Онлайн каталоги').addClass('textInHeader').click(function() {
         catalogi.catalogs();
     }));
-
+    catalogi('#navbar-meta ul.nav').append($('<li>').text('|').addClass('textInHeader'));
     catalogi('#navbar-meta ul.nav').append($('<li>')
-        .append($("<a> Каталоги.ру - заказ и доставка одежды из интернет-магазина AtelierGS.de.</a>")
+        .append($("<a> Каталоги.ру</a>")
             .attr('href', 'http://www.catalogi.ru')
             .attr('target', '_blank')
-            .addClass('headerLinks _home catalogiLink')));
+            .addClass('textInHeader _home')));
 
     catalogi('#main-navigation li.index_6').remove();
     catalogi('#main-navigation a.home-link').children().remove();
