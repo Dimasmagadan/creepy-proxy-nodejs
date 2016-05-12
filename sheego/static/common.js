@@ -198,12 +198,13 @@ catalogi.parse = function() {
         $('img').each(function (index, value) { 
             $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
         });
-    });
-
-    $('.mainnav__submenu subnavigation > div').mouseenter(function(){
-        $('img').each(function (index, value) { 
+    
+        $('.mainnav__submenu subnavigation > div').mouseenter(function(){
+            $('img').each(function (index, value) { 
             $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
+            });
         });
+
     });
 
 
