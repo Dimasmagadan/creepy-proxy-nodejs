@@ -168,6 +168,10 @@ catalogi.parse = function() {
             }
         });
 
+
+
+
+
         //Added by Artem Symonenkov 12.05.2016
 
     //hide all content after first #footer
@@ -194,13 +198,12 @@ catalogi.parse = function() {
         $('img').each(function (index, value) { 
             $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
         });
-    
-        $('.mainnav__submenu subnavigation > div').mouseenter(function(){
-            $('img').each(function (index, value) { 
-            $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
-            });
-        });
+    });
 
+    $('.mainnav__submenu subnavigation > div').mouseenter(function(){
+        $('img').each(function (index, value) { 
+            $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
+        });
     });
 
 
@@ -232,7 +235,7 @@ catalogi.parse = function() {
     //smaller font size for menu
     $('#mainnavigation a').css('font-size','16px');
     //search panel
-    $('.search').attr("style","margin-left:0px;");
+    $('.search').attr("style","left:0px;");
 
 
 
