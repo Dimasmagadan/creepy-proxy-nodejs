@@ -2,6 +2,8 @@
  * Created by mihailstepancenko on 22.12.15.
  */
 
+ // first comment
+
 var timeout1 = 5000; // basket update
 
 function _googleTranslateElementInit() {
