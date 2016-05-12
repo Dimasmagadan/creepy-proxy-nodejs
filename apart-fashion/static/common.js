@@ -200,25 +200,27 @@ catalogi.parse = function() {
 
             if (catalogi('.buybox--button')) {
                 setInterval(function() {
-                    catalogi('.buybox--button').replaceWith(
-                        $("<a>В корзину</a>")
-                        .addClass('notranslate')
-                        .attr('id', 'addToCartBtn')
-                        //  .attr('href', '#')
-                        .bind('click', function(event) {
-                            //  event.preventDefault();
-                            addToCart();
-                        }).bind('tap', function(event) {
-                            //    event.preventDefault();
-                            addToCart();
-                        })
-                        // .click(function(event) {
-                        //     //event.stopPropagation();
-                        //     addToCart();
-                        //     event.preventDefault();
-                        // })
-                    );
-                }, 1000);
+                    if (catalogi('.buybox--button')) {
+                        catalogi('.buybox--button').replaceWith(
+                            $("<a>В корзину</a>")
+                            .addClass('notranslate')
+                            .attr('id', 'addToCartBtn')
+                            //  .attr('href', '#')
+                            .bind('click', function(event) {
+                                //  event.preventDefault();
+                                addToCart();
+                            }).bind('tap', function(event) {
+                                //    event.preventDefault();
+                                addToCart();
+                            })
+                            // .click(function(event) {
+                            //     //event.stopPropagation();
+                            //     addToCart();
+                            //     event.preventDefault();
+                            // })
+                        );
+                    }
+                }, 100);
             }
 
             catalogi(this).css('visibility', 'visible');
