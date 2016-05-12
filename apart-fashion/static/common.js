@@ -142,13 +142,33 @@ catalogi.parse = function() {
 
 
     //страница товара
-    catalogi('.buybox--button').remove();
-    catalogi('.buybox--button-container').append($('<button>')
-        .addClass('buybox--button block btn is--primary is--icon-right is--center is--large')
-        .text("В корзину")
-        .click(function() {
-            addToCart();
-        }));
+    if (catalogi('.buybox--button')) {
+        setInterval(function() {
+            if (catalogi('.buybox--button')) {
+                catalogi('.buybox--button').replaceWith(
+                    $("<a>В корзину</a>")
+                    .addClass('notranslate')
+                    .attr('id', 'addToCartBtn')
+                    //  .attr('href', '#')
+                    .bind('click', function(event) {
+                        //  event.preventDefault();
+                        addToCart();
+                    }).bind('tap', function(event) {
+                        //    event.preventDefault();
+                        addToCart();
+                    })
+
+                );
+            }
+        }, 100);
+    }
+    // catalogi('.buybox--button').remove();
+    // catalogi('.buybox--button-container').append($('<button>')
+    //     .addClass('buybox--button block btn is--primary is--icon-right is--center is--large')
+    //     .text("В корзину")
+    //     .click(function() {
+    //         addToCart();
+    //     }));
 
     catalogi('.product--delivery').remove();
     catalogi('div.product--configurator').append($('<div></div>')
@@ -198,30 +218,7 @@ catalogi.parse = function() {
             });
             checkBasket();
 
-            if (catalogi('.buybox--button')) {
-                setInterval(function() {
-                    if (catalogi('.buybox--button')) {
-                        catalogi('.buybox--button').replaceWith(
-                            $("<a>В корзину</a>")
-                            .addClass('notranslate')
-                            .attr('id', 'addToCartBtn')
-                            //  .attr('href', '#')
-                            .bind('click', function(event) {
-                                //  event.preventDefault();
-                                addToCart();
-                            }).bind('tap', function(event) {
-                                //    event.preventDefault();
-                                addToCart();
-                            })
-                            // .click(function(event) {
-                            //     //event.stopPropagation();
-                            //     addToCart();
-                            //     event.preventDefault();
-                            // })
-                        );
-                    }
-                }, 100);
-            }
+
 
             catalogi(this).css('visibility', 'visible');
         });
