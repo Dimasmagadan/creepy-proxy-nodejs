@@ -135,7 +135,10 @@ catalogi.parse = function() {
             catalogi.sizeTable();
         }));
 
+    catalogi('.link--notepad').remove();
 
+    //cтраница категории
+    catalogi('.action--note').remove();
 
     // Подписка
     catalogi.subscribe(false, '31818');
