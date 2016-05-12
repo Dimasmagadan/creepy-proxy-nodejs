@@ -183,8 +183,8 @@ catalogi.parse = function() {
 
     setTimeout(function(){
         $('div').each(function (index, value) { 
-        if ($(this).css("background-image") != 'none' && $(this).css("background-image").indexOf('http://media.sheego.catalogi.ru/') > -1) {
-            $(this).css("background-image", $(this).css("background-image").replace("catalogi.ru","de") , 'important');
+            if ($(this).css("background-image") != 'none' && $(this).css("background-image").indexOf('http://media.sheego.catalogi.ru/') > -1) {
+                $(this).css("background-image", $(this).css("background-image").replace("catalogi.ru","de") , 'important');
         }
     });
 
@@ -192,15 +192,20 @@ catalogi.parse = function() {
 
     $( document ).ready(function() {
         $('img').each(function (index, value) { 
-        console.log($(this).attr("src"));
-        $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
+            $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
         });
+    
+        $('.mainnav__submenu subnavigation > div').mouseenter(function(){
+            $('img').each(function (index, value) { 
+            $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
+            });
+        });
+
     });
 
 
     //search img and change url to valid
     $('img').each(function (index, value) { 
-        console.log($(this).attr("src"));
         $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
         });
 
@@ -208,7 +213,6 @@ catalogi.parse = function() {
     setTimeout(function(){
 
         $('img').each(function (index, value) { 
-        console.log($(this).attr("src"));
         $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
         });
 
@@ -228,7 +232,7 @@ catalogi.parse = function() {
     //smaller font size for menu
     $('#mainnavigation a').css('font-size','16px');
     //search panel
-    // $('.search').attr("style","margin-left:0px;");
+    $('.search').attr("style","margin-left:0px;");
 
 
 
