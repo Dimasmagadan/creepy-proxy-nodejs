@@ -1,91 +1,25 @@
-body {
+body{
     top: 0 !important;
     visibility: hidden;
 }
 
-@font-face {
-    font-family: 'IcoMoon';
-    src: url("http://www.wenz.catalogi.ru/static/fonts/icomoon.woff");
-    font-weight: normal;
-    font-style: normal
+
+
+
+
+
+#page-header #page-header-main-wrapper{
+    height: 120px !important;
 }
 
-#iframe {
-    margin: 0 auto;
-    display: block;
-}
-
-.storeHeaderBar {
-  margin-top: 5px;
-}
-
-._home{
-    background-image: url(http://cdn.catalogi.ru/static/images/_home.png);
-    background-position: left center;
-    background-repeat: no-repeat;
-    display: inline-block;
-    //line-height: 20px;
-    padding: 0 0 0 20px;
-  //  font-weight: bold;
-
-  //  color: #666;
-}
-
-.textInHeader {
-    padding:0 0.1em!important;
-    margin: 0em!important;
-    margin-top: 6px;
-    cursor: pointer;
-    //font-style: italic;
-    //font-size: 1.4em;
-}
-
-#cboxLoadedContent {
-    moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box;
-    box-sizing: content-box;
-}
-
-.miniCartAmountLabel,
-.shippingCostLink,
-.availability,
-.addToWishlist,
-.footerTopRule,
-.footerNavColumn,
-.footerNavColumn-wide,
-footer,
-a[href="http://www.liveinternet.ru/click;CatalogiRU_NEW"] {
+#header-brand-logo,
+#meta-nav,
+#header-main-content,
+.fact-finder-message,
+#add-to-watchlist-button,
+.social-media,
+#js-comments-write_button_review,
+#page-footer,
+a[href="http://www.liveinternet.ru/click;CatalogiRU_NEW"]{
     display: none !important;
-}
-
-.storelogo,
-.headerContentContainer,
-.miniCartPriceContainer {
-  //  display: none;
-}
-
-.buttonText::before {
-    display:none;
-}
-/*#mainContent > div.outfitDetailsContainer > div.outfitPrice > div.outfitPriceListing > span.vatLabel {
-    display: block;
-}
-
-/*** моб. верися ***/
-@media only screen and (max-width: 600px) {
-    #un-button,
-    #iframe {
-        display: none !important;
-    }
-
-    header > div {
-        display: block !important;
-    }
-    header {
-      display: none!important;
-    }
-    .storelogo,
-    .headerContentContainer {
-        display: block;
-    }
 }
