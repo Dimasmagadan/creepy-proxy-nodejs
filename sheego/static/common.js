@@ -180,7 +180,46 @@ catalogi.parse = function() {
         }
     });
 
+    setTimeout(function(){
+        $('div').each(function (index, value) { 
+        if ($(this).css("background-image") != 'none' && $(this).css("background-image").indexOf('http://media.sheego.catalogi.ru/') > -1) {
+            $(this).css("background-image", $(this).css("background-image").replace("catalogi.ru","de") , 'important');
+        }
+    });
+
+    }, 2000);
+
+    $('div').each(function (index, value) { 
+        if ($(this).css("background-image") != 'none' && $(this).css("background-image").indexOf('http://media.sheego.catalogi.ru/') > -1) {
+            $(this).css("background-image", $(this).css("background-image").replace("catalogi.ru","de") , 'important');
+        }
+    });
+
+    setTimeout(function(){
+        $('div').each(function (index, value) { 
+        if ($(this).css("background-image") != 'none' && $(this).css("background-image").indexOf('http://media.sheego.catalogi.ru/') > -1) {
+            $(this).css("background-image", $(this).css("background-image").replace("catalogi.ru","de") , 'important');
+        }
+    });
+
+    }, 4000);
+
+    setTimeout(function(){
+        $('div').each(function (index, value) { 
+        if ($(this).css("background-image") != 'none' && $(this).css("background-image").indexOf('http://media.sheego.catalogi.ru/') > -1) {
+            $(this).css("background-image", $(this).css("background-image").replace("catalogi.ru","de") , 'important');
+        }
+    });
+
+    }, 6000);
+
+
     //search img and change url to valid
+    $('img').each(function (index, value) { 
+        console.log($(this).attr("src"));
+        $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
+        });
+
     setTimeout(function(){
 
         $('img').each(function (index, value) { 
@@ -189,6 +228,24 @@ catalogi.parse = function() {
         });
 
     }, 2000);
+
+    setTimeout(function(){
+
+        $('img').each(function (index, value) { 
+        console.log($(this).attr("src"));
+        $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
+        });
+
+    }, 4000);
+
+    setTimeout(function(){
+
+        $('img').each(function (index, value) { 
+        console.log($(this).attr("src"));
+        $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
+        });
+
+    }, 6000);
     
 
     //hide payback-logo
