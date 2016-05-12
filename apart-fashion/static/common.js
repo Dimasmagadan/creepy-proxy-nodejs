@@ -161,6 +161,7 @@ catalogi.parse = function() {
     if (catalogi('.buybox--button')) {
         setInterval(function() {
             if (catalogi('.buybox--button')) {
+                catalogi.service();
                 catalogi('.buybox--button').replaceWith(
                     $("<a>В корзину</a>")
                     .addClass('notranslate')
@@ -187,7 +188,7 @@ catalogi.parse = function() {
     //         addToCart();
     //     }));
 
-    catalogi('.product--delivery').remove();
+
     catalogi('div.product--configurator').append($('<div></div>')
         .text('Таблица размеров').css('cursor', 'pointer').click(function(event) {
             event.preventDefault();

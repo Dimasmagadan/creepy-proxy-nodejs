@@ -60,11 +60,12 @@ span.account--display {
 a#addToCartBtn {
     padding: 0.1rem 0;
     background: #000;
-    font-family:'Open Sans Condensed', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    font-family: 'Open Sans Condensed', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
     display: table;
     color: #fff;
     cursor: pointer;
-    width: 63%;
+    width: 55%;
+    font-weight: bold;
     font-size: 1rem;
     line-height: 2.375rem;
     border-radius: 5px;
