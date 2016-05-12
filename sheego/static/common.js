@@ -194,8 +194,8 @@ catalogi.parse = function() {
         $('img').each(function (index, value) { 
         $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
         });
-
-        console.log('image');
+        $("#footer").nextAll().remove();
+        // console.log('image');
     }, 3000);
 
     
