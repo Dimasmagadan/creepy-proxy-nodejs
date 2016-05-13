@@ -152,7 +152,7 @@ catalogi.parse = function() {
                                             + "<a href='#' class='headerLinks' onclick='catalogi.catalogs(); return false' style='margin-left:0px; margin-right:0px;'>Онлайн каталоги</a>|"
                                             + "<a href='#' class='headerLinks' onclick='catalogi.shops(); return false' style='margin-left:0px; margin-right:0px;'>Интернет-магазины</a>|"
                                             + "<a href='#' class='headerLinks' onclick='catalogi.sizeTable(); return false' style='margin-left:0px; margin-right:0px;'>Таблица размеров</a>|"
-                                            + "<a href='#' class='headerLinks' onclick='catalogi.delivery(); return false' style='margin-left:0px; margin-right:0px;'>Доставка</a>|"
+                                            + "<a href='#' class='headerLinks' onclick='catalogi.delivery(); return false' style='margin-left:0px; margin-right:0px;'>Дставка</a>|"
                                             + "<a href='#' class='headerLinks' onclick='catalogi.payment(); return false' style='margin-left:0px; margin-right:0px;'>Оплата</a></div>" );
                                         
 
@@ -223,7 +223,7 @@ catalogi.parse = function() {
     //change text 
     $('#minibasket > a > span.minibasket__text.hidden-xs-inline.hidden-sm-inline > span.minibasket__basket > font > font > font > font > font > font > font > font > font > font').text("Корзина");
     $('#miniaccount').empty();
- $( "#miniaccount" ).append( "<div class='myaccount notranslate' style='display: inline-block !important;'><a class='logged notranslate' style='font-family: 'jvds icons' , sans-serif; font-size: 2.1em;' onclick='catalogi.login(); return false'>Кабинет</a></div>" );
+ $( "#miniaccount" ).append( "<div class='myaccount notranslate' style='display: inline-block !important;'><a class='logged notranslate minibasket__text hidden-xs-inline hidden-sm-inline'  onclick='catalogi.login(); return false'>Кабинет</a></div>" );
     //smaller font size for menu
     $('#mainnavigation a').css('font-size','16px');
     //search panel
@@ -245,6 +245,9 @@ function checkBasket() {
     if (ordersNumber)
         catalogi('.wording .article .num').text(ordersNumber);
     console.log('ordersNumber: ' + ordersNumber);
+
+    $('#minibasket > a > span.minibasket__countvalue.l-vertical-align-helped > font > font > font > font').text(ordersNumber);
+
     catalogi('#mbflyout-area').remove();
 
     window.timer1 = window.setInterval("checkBasket();", timeout1);
