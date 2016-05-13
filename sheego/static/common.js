@@ -158,7 +158,7 @@ catalogi.parse = function() {
                                             + "<div class='col-sm-12 col-xs-12 hidden-md hidden-lg'>"
                                             + "<a href='http://www.catalogi.ru' target='_blank' class='headerLinks _home catalogiLink'> Каталоги.ру </a>|"
                                             + "<a href='#' class='headerLinks' onclick='catalogi.payment(); return false' style='margin-left:0px; margin-right:0px;'>Оплата</a>|"
-                                            + "<a href='#' id='delivery' class='headerLinks notranslate hidden-xs hidden-sm' onclick='catalogi.delivery(); return false' style='margin-left:0px; margin-right:0px;'> Дocтавка </a></div>");
+                                            + "<a href='#'  class='headerLinks notranslate ' onclick='catalogi.delivery(); return false' style='margin-left:0px; margin-right:0px;'> Дocтавка </a></div>");
 
 
             if (_auth) {
