@@ -318,15 +318,15 @@ function addToCart() {
 
         var param = [];
         // цвет
-        var color1 = catalogi(catalogi('.configurator--form').children()[2]).text().trim();
-        var color2 = "undef";
-        var color = (color1 == "") ? color2 : color1;
-        if (color && color.length > 0) param.push(color);
+        // var color1 = catalogi(catalogi('.configurator--form').children()[2]).text().trim();
+        // var color2 = "undef";
+        var color = $('.at-dv-color').text();
+        // if (color && color.length > 0) param.push(color);
         // размер
-        var size1 = catalogi(".configurator--form select option[selected='selected']").text().trim();
-        var size2 = catalogi('li[class*="selected"]:eq(1)').text();
-        var size = ((size1 == "") ? size2 : size1).trim();
-        console.log(articul + name);
+        // var size1 = catalogi(".configurator--form select option[selected='selected']").text().trim();
+        // var size2 = catalogi('li[class*="selected"]:eq(1)').text();
+        var size = $('.at-dv-size').text();
+        // console.log(articul + name);
         // if (size == 'Выберите размер' || size == 'Выберите размер ') {
         //     alert('Выберите размер!');
         //     return;
@@ -338,9 +338,9 @@ function addToCart() {
             catalog: 'sheego',
             articul: articul,
             name: name,
-            size: 'saaa',
+            size: color + size,
             price: price,
-            count: 'ffff',
+            count: '1',
             img: img
         });
         console.log('OK');
