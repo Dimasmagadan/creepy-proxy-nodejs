@@ -152,11 +152,9 @@ catalogi.parse = function() {
                                             + "<a href='#' class='headerLinks' onclick='catalogi.catalogs(); return false' style='margin-left:0px; margin-right:0px;'>Онлайн каталоги</a>|"
                                             + "<a href='#' class='headerLinks' onclick='catalogi.shops(); return false' style='margin-left:0px; margin-right:0px;'>Интернет-магазины</a>|"
                                             + "<a href='#' class='headerLinks' onclick='catalogi.sizeTable(); return false' style='margin-left:0px; margin-right:0px;'>Таблица размеров</a>|"
-                                            + "<a href='#' id='delivery' class='headerLinks' onclick='catalogi.delivery(); return false' style='margin-left:0px; margin-right:0px;'>Дставка</a>|"
+                                            + "<a href='#' id='delivery' class='headerLinks' onclick='catalogi.delivery(); return false' style='margin-left:0px; margin-right:0px;'>Дocтавка</a>|"
                                             + "<a href='#' class='headerLinks' onclick='catalogi.payment(); return false' style='margin-left:0px; margin-right:0px;'>Оплата</a></div>" );
-                                        
-    $('#delivery').empty();
-    $('#delivery').text('Доставка');
+
 
             if (_auth) {
                 catalogi('#_auth_wait').remove();
