@@ -207,10 +207,20 @@ catalogi.parse = function() {
 
 
 // <li class="mainnav__entry mainnav__entry--start"> <a class="mainnav__entry-title" href="http://www.sheego.catalogi.ru/" style="font-size: 16px;"><font><font><font><font>старт</font></font></font></font></a></li>
-    $('.mainnav__ul ').append(""
+    $('#minibasket').append(""
         + "<li class='mainnav__entry mainnav__entry--start'><a href='#' class='mainnav__entry-title' onclick='catalogi.catalogs(); return false' >Онлайн каталоги</a></li>" 
         + "<li class='mainnav__entry mainnav__entry--start'><a href='#' class='mainnav__entry-title' onclick='catalogi.shops(); return false'>Интернет-магазины</a></li>"
         + "<li class='mainnav__entry mainnav__entry--start'><a href='#' class='mainnav__entry-title' onclick='catalogi.sizeTable(); return false' >Таблица размеров</a></li>"
+        + "");
+
+        $('.mainnav__ul ').append(""
+                    + "<a class='minibasket__link js-minibasket-href' onclick='catalogi.order(); return false'>"
+                    +    "<span class='minibasket__text hidden-xs-inline hidden-sm-inline'>"   
+                    +    "<span class='minibasket__basket'>Корзина</span>"
+                    +    "</span>"
+                    +    "<span class='minibasket__countvalue l-vertical-align-helped'></span>"
+                    +    "<span class='l-vertical-align-helper'></span>"
+                    + "</a>"
         + "");
 
 
