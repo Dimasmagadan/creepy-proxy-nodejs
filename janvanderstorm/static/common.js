@@ -160,10 +160,11 @@ catalogi.parse = function() {
     });
 
     // test cart
-    catalogi('.customerboxholder').append("<div class='any-class'>test bucket</div>");
-    catalogi('.any-class').load("http://cdn.catalogi.ru/bucket/blocks/templates.html", function() {
-        console.log("templates was performed.");
-    });
+    catalogi('.customerboxholder').append("<div class='test-bucket'></div>");
+    catalogi('.test-bucket').load("http://cdn.catalogi.ru/bucket/blocks/templates.html");
+    catalogi('.customerboxholder').append("<div class='any-class' style='margin: 30px auto 0; color:#fff;background-color: red;padding: 20px;width: 200px;text-align: center;'>test bucket</div>");
+
+    catalogi('.any-class').hide();
 
     //subscribe button
     catalogi("[href='http://www.janvanderstorm.catalogi.ru/newsletter/']").click(function(event){
