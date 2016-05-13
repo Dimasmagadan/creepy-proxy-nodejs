@@ -1,3 +1,11 @@
+# ateliergs domain config
+
+server {
+    listen 188.40.83.218:443;
+    server_name ateliergs.catalogi.ru *.ateliergs.catalogi.ru;
+    return 301 http://www.ateliergs.catalogi.ru;
+}
+
 server {
     server_name ateliergs.catalogi.ru;
     listen 188.40.83.218;
