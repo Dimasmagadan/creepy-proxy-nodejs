@@ -358,6 +358,11 @@ function addToCart() {
     } catch (e) {
         console.log(e);
     }
+     return false;  setTimeout(function() {
+        if (catalogi('#cboxLoadedContent').length == 0) {
+            catalogi.order();
+        }
+    }, 500);
 
     return false;
 }
