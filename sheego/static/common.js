@@ -354,9 +354,7 @@ function addToCart() {
         console.log(e);
     }
     setTimeout(function() {
-        if (catalogi('#cboxLoadedContent').length == 0) {
             catalogi.order();
-        }
     }, 500);
     return false;
 }
