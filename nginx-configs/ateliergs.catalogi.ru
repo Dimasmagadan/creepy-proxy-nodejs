@@ -23,6 +23,8 @@ server {
     }
 
     location = /app.log {
+        auth_basic "Restricted Content";
+        auth_basic_user_file /var/www/.htpasswd;
         root /var/www/ateliergs/data/log;
         try_files $uri $uri/ /app.log;
     }
