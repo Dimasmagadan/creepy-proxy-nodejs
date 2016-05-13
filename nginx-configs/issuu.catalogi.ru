@@ -1,3 +1,11 @@
+# issuu domain config
+
+server {
+    listen 188.40.83.218:443;
+    server_name issuu.catalogi.ru *.issuu.catalogi.ru;
+    return 301 http://www.issuu.catalogi.ru;
+}
+
 server {
     server_name issuu.catalogi.ru;
     listen 188.40.83.218;
