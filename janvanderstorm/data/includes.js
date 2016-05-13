@@ -19,10 +19,7 @@ module.exports = function(catalog, param, options){
             '<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=_googleTranslateElementInit"></script>',
             '<script type="text/javascript" src="http://www.'+catalog+'.catalogi.ru/static/common.js"></script>',
             //'<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>',
-            '<script type="text/javascript" src="http://cdn.catalogi.ru/bucket/js/vendor/slick.min.js"></script>',
-            '<script type="text/javascript" src="http://cdn.catalogi.ru/bucket/js/vendor/underscore-min.js"></script>',
-            '<script type="text/javascript" src="http://cdn.catalogi.ru/bucket/js/main.js"></script>',
-            '<link type="text/css" href="http://cdn.catalogi.ru/bucket/css/main.css" rel="stylesheet" />'
+
         ].join("\n"),
 
         headbottom: [
@@ -36,7 +33,11 @@ module.exports = function(catalog, param, options){
             ].join("\n"),
 
             bottom: [
-            ].join("\n"),
+                '<script type="text/javascript" src="http://cdn.catalogi.ru/bucket/js/vendor/slick.min.js"></script>',
+                '<script type="text/javascript" src="http://cdn.catalogi.ru/bucket/js/vendor/underscore-min.js"></script>',
+                '<script type="text/javascript" src="http://cdn.catalogi.ru/bucket/js/main.js"></script>',
+                '<link type="text/css" href="http://cdn.catalogi.ru/bucket/css/main.css" rel="stylesheet" />'
+            ].join("\n")
         }
     }
 }
