@@ -283,7 +283,11 @@ catalogi.parse = function() {
     $('.minibasket__my').remove();
     $('.miniaccount__mysheego-my').remove();
     //change text 
-    $('#minibasket > a > span.minibasket__text.hidden-xs-inline.hidden-sm-inline > span.minibasket__basket > font > font > font > font > font > font > font > font > font > font').text("Корзина");
+    $('.minibasketflyout').remove();
+
+    $('.minibasket__basket').empty();
+    $('.minibasket__basket').text('Корзина');
+
     $('#miniaccount').empty();
  $( "#miniaccount" ).append( "<div class='myaccount notranslate' style='display: inline-block !important;'><a class='logged notranslate minibasket__text hidden-xs-inline hidden-sm-inline'  onclick='catalogi.login(); return false'>Кабинет</a></div>" );
     //smaller font size for menu
@@ -365,7 +369,8 @@ function checkBasket() {
         catalogi('.wording .article .num').text(ordersNumber);
     console.log('ordersNumber: ' + ordersNumber);
 
-    $('#minibasket > a > span.minibasket__countvalue.l-vertical-align-helped > font > font > font > font').text(ordersNumber);
+    $('.minibasket__countvalue').empty();
+    $('.minibasket__countvalue').text(ordersNumber);
 
     catalogi('#mbflyout-area').remove();
 
@@ -420,7 +425,6 @@ catalogi(function() {
         var currentDomain = m[0].replace('.', '').replace('.', '');
     }
     catalogi('#mbflyout-area').remove();
-
 
 
     catalogi('.form-search').submit(function(event) {
