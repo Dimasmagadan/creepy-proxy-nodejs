@@ -37,7 +37,7 @@ catalogi.parse = function() {
 
     if (catalogi('.at-dv-addToBasket')) {
         catalogi('.at-dv-addToBasket').replaceWith(
-            $("<button type='button' class='at-dv-addToBasket btn btn-primary btn-tall '>В корзину</button>")
+            $("<button type='button' class='at-dv-addToBasket btn btn-primary btn-tall ' onclick='catalogi.delay('500').order(); return false'>В корзину</button>")
             .addClass('notranslate')
             .attr('id', 'addToCartBtn')
             //  .attr('href', '#')
@@ -51,27 +51,27 @@ catalogi.parse = function() {
 
         );
     }
-    if (catalogi('.at-dv-addToBasket')) {
-        setInterval(function() {
-            if (catalogi('.at-dv-addToBasket')) {
-                // catalogi('.link--notepad').remove();
-                // catalogi.service();
-                catalogi('.at-dv-addToBasket').replaceWith(
-                    $("<button type='button' class='at-dv-addToBasket btn btn-primary btn-tall'>В корзину</button>")
-                    .addClass('notranslate')
-                    .attr('id', 'addToCartBtn')
-                    .bind('click', function(event) {
-                        //  event.preventDefault();
-                        addToCart();
-                    }).bind('tap', function(event) {
-                        //    event.preventDefault();
-                        addToCart();
-                    })
+    // if (catalogi('.at-dv-addToBasket')) {
+    //     setInterval(function() {
+    //         if (catalogi('.at-dv-addToBasket')) {
+    //             // catalogi('.link--notepad').remove();
+    //             // catalogi.service();
+    //             catalogi('.at-dv-addToBasket').replaceWith(
+    //                 $("<button type='button' class='at-dv-addToBasket btn btn-primary btn-tall'>В корзину</button>")
+    //                 .addClass('notranslate')
+    //                 .attr('id', 'addToCartBtn')
+    //                 .bind('click', function(event) {
+    //                     //  event.preventDefault();
+    //                     addToCart();
+    //                 }).bind('tap', function(event) {
+    //                     //    event.preventDefault();
+    //                     addToCart();
+    //                 })
 
-                );
-            }
-        }, 1000);
-    }
+    //             );
+    //         }
+    //     }, 1000);
+    // }
 
 
 
@@ -354,7 +354,7 @@ function addToCart() {
         console.log(e);
     }
     setTimeout(function() {
-            catalogi.order();
+            // catalogi.order();
     }, 500);
     return false;
 }
