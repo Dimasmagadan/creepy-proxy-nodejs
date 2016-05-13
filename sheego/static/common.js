@@ -175,7 +175,7 @@ catalogi.parse = function() {
         //Added by Artem Symonenkov 12.05.2016
 
     //hide all content after first #footer
-    $("#footer").nextAll().remove();
+    // $("#footer").nextAll().remove();
 
     //search divs with background images and change url to valid
     $('div').each(function (index, value) { 
