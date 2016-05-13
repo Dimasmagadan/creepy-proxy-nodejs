@@ -1,0 +1,41 @@
+.slick-prev,
+.slick-next {
+    position: absolute;
+    display: block;
+    height: 30px;
+    width: 300px;
+    line-height: 0;
+    font-size: 0;
+    cursor: pointer;
+    background-color: $grey;
+    padding: 0;
+    border: none;
+    outline: none;
+    left: 0;
+    text-indent: -99999px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.slick-prev:focus,
+.slick-prev:active,
+.slick-prev{
+    top: -30px;
+    background-size: auto;
+    background-image: inline-image('arrow-up.png');
+}
+.slick-next:focus,
+.slick-next:active,
+.slick-next{
+    bottom: -30px;
+    background-size: auto;
+    background-image: inline-image('arrow-down.png');
+}
+
+.slick-disabled{
+    opacity: 0.5;
+    cursor: default;
+
+    &.slick-prev{
+        display: none !important;
+    }
+}

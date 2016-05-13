@@ -1,0 +1,16 @@
+@mixin icon($i) {
+	width: image-width('/icons/' + $i + ".png");
+	height: image-height('/icons/' + $i + ".png");
+	@include inline-block;
+	@include icons-sprite($i);
+}
+
+@mixin inline-svg($i){
+	background-image: inline-image('svg/' + $i + '.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 24px;
+	height: 24px;
+	display: block;
+	margin: 0 auto;
+}
