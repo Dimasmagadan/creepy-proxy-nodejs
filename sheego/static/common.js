@@ -37,7 +37,7 @@ catalogi.parse = function() {
 
     if (catalogi('.at-dv-addToBasket')) {
         catalogi('.at-dv-addToBasket').replaceWith(
-            $("<button type='button' class='at-dv-addToBasket btn btn-primary btn-tall ' onclick='catalogi.delay('500').order(); return false'>В корзину</button>")
+            $("<button type='button' class='at-dv-addToBasket btn btn-primary btn-tall ' onclick='catalogi.delay('1000').order(); return false'>В корзину</button>")
             .addClass('notranslate')
             .attr('id', 'addToCartBtn')
             //  .attr('href', '#')
@@ -353,9 +353,7 @@ function addToCart() {
     } catch (e) {
         console.log(e);
     }
-    setTimeout(function() {
-            // catalogi.order();
-    }, 500);
+
     return false;
 }
 
