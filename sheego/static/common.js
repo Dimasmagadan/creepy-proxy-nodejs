@@ -194,7 +194,7 @@ catalogi.parse = function() {
     //search divs with background images and change url to valid
     $('div').each(function (index, value) { 
         if ($(this).css("background-image") != 'none' && $(this).css("background-image").indexOf('http://media.sheego.catalogi.ru/') > -1) {
-            $(this).css("background-image", $(this).css("background-image").replace("catalogi.ru","de") , 'important');
+            $(this).css("background-image", $(this).css("background-image").replace("catalogi.ru","de") , '!important');
         }
     });
 
@@ -211,6 +211,13 @@ catalogi.parse = function() {
         // console.log('image');
     }, 3000);
 
+    window.setInterval(function(){
+        $('div').each(function (index, value) { 
+            if ($(this).css("background-image") != 'none' && $(this).css("background-image").indexOf('http://media.sheego.catalogi.ru/') > -1) {
+                $(this).css("background-image", $(this).css("background-image").replace("catalogi.ru","de") , '!important');
+            }
+        });
+    }, 8001);
     
 
     //hide payback-logo
