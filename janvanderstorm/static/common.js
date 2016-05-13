@@ -164,7 +164,7 @@ catalogi.parse = function() {
     catalogi('.test-bucket').load("http://cdn.catalogi.ru/bucket/blocks/templates.html");
     catalogi('.customerboxholder').append("<div class='any-class' style='margin: 30px auto 0; color:#fff;background-color: red;padding: 20px;width: 200px;text-align: center;'>test bucket</div>");
 
-    //catalogi('.any-class').hide();
+    catalogi('.any-class').hide();
 
     //subscribe button
     catalogi("[href='http://www.janvanderstorm.catalogi.ru/newsletter/']").click(function(event){
