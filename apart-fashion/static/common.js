@@ -57,7 +57,8 @@ catalogi.parse = function() {
         catalogi.login();
     });
     catalogi('.navigation--entry.headerHint').children().remove();
-    catalogi('.headerHint').css('width', '80%');
+    catalogi('.headerHint').css('width', '60%').css('left', '0');
+    catalogi('.navigation--entry.entry--service').css('right', '0');
     //catalogi('.navigation--entry.headerHint').append(
     //    catalogi("<a> Каталоги.ру - заказ и доставка одежды из интернет-магазина " + currentDomain + "!!!</a>")
     //        .attr('href', 'http://www.catalogi.ru')
