@@ -1,59 +1,25 @@
 body{
-  top: 0 !important;
-  visibility: hidden;
-}
-
-#iframe{
-	margin: 0 auto;
-	display: block;
-}
-
-#un-button, #un-button font{
-	font-size: 14px !important;
+    top: 0 !important;
+    visibility: hidden;
 }
 
 
-#un-button, #un-button font,
-#colorbox div, #colorbox a, #colorbox img, #colorbox input{
-	-webkit-box-sizing: content-box !important;
-	-moz-box-sizing: content-box !important;
-	box-sizing: content-box !important;
+
+
+
+
+#page-header #page-header-main-wrapper{
+    height: 120px !important;
 }
 
-#colorbox h2{
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-}
-
-.header{
-	margin-top: 0px !important;
-}
-
-.navigation li.level-top{
-	font-size: 12px !important;
-}
-
-.top-nav-col2 ul li{
-	font-size: 10px !important;
-}
-
-.top-bar,
-.header .container,
-.header .container,
-a[href="#delivery"],
-.footer,
+#header-brand-logo,
+#meta-nav,
+#header-main-content,
+.fact-finder-message,
+#add-to-watchlist-button,
+.social-media,
+#js-comments-write_button_review,
+#page-footer,
 a[href="http://www.liveinternet.ru/click;CatalogiRU_NEW"]{
-	display: none !important;
-}
-
-@media (max-width: 767px){
-	#iframe,
-	#un-button,
-	.switcher-container{
-		display: none !important;
-	}
-
-	.top-bar,
-	.header .container{
-		display: block !important;
-	}
+    display: none !important;
 }
