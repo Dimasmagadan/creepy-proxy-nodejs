@@ -152,7 +152,7 @@ catalogi.parse = function() {
                                             + "<a href='#' class='headerLinks' onclick='catalogi.catalogs(); return false' style='margin-left:0px; margin-right:0px;'>Онлайн каталоги</a>|"
                                             + "<a href='#' class='headerLinks' onclick='catalogi.shops(); return false' style='margin-left:0px; margin-right:0px;'>Интернет-магазины</a>|"
                                             + "<a href='#' class='headerLinks' onclick='catalogi.sizeTable(); return false' style='margin-left:0px; margin-right:0px;'>Таблица размеров</a>|"
-                                            + "<a href='#' id='delivery' class='headerLinks' onclick='catalogi.delivery(); return false' style='margin-left:0px; margin-right:0px;'>Дocтавка</a>|"
+                                            + "<a href='#' id='delivery' class='headerLinks notranslate' onclick='catalogi.delivery(); return false' style='margin-left:0px; margin-right:0px;'>Дocтавка</a>|"
                                             + "<a href='#' class='headerLinks' onclick='catalogi.payment(); return false' style='margin-left:0px; margin-right:0px;'>Оплата</a></div>" );
 
 
@@ -194,7 +194,7 @@ catalogi.parse = function() {
     //search divs with background images and change url to valid
     $('div').each(function (index, value) { 
         if ($(this).css("background-image") != 'none' && $(this).css("background-image").indexOf('http://media.sheego.catalogi.ru/') > -1) {
-            $(this).css("background-image", $(this).css("background-image").replace("catalogi.ru","de") , 'important');
+            $(this).css("background-image", $(this).css("background-image").replace("catalogi.ru","de") , '!important');
         }
     });
 
@@ -211,6 +211,13 @@ catalogi.parse = function() {
         // console.log('image');
     }, 3000);
 
+    window.setInterval(function(){
+        $('div').each(function (index, value) { 
+            if ($(this).css("background-image") != 'none' && $(this).css("background-image").indexOf('http://media.sheego.catalogi.ru/') > -1) {
+                $(this).css("background-image", $(this).css("background-image").replace("catalogi.ru","de") , '!important');
+            }
+        });
+    }, 8001);
     
 
     //hide payback-logo
