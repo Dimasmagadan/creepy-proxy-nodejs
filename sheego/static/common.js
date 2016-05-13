@@ -154,7 +154,7 @@ catalogi.parse = function() {
                                             + "<a href='#' class='headerLinks' onclick='catalogi.sizeTable(); return false' style='margin-left:0px; margin-right:0px;'>Таблица размеров</a>|"
                                             + "<a href='#' id='delivery' class='headerLinks notranslate' onclick='catalogi.delivery(); return false' style='margin-left:0px; margin-right:0px;'> Дocтавка </a>|"
                                             + "<a href='#' class='headerLinks' onclick='catalogi.payment(); return false' style='margin-left:0px; margin-right:0px;'>Оплата</a></div>" 
-                                            + "<a href='#' style="'margin-left': '20px'">+74955404949</a>");
+                                            + "<a href='#' style='margin-left: 20px'>+74955404949</a>");
 
 
             if (_auth) {
