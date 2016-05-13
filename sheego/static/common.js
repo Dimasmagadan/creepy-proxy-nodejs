@@ -70,7 +70,7 @@ catalogi.parse = function() {
 
                 );
             }
-        }, 100);
+        }, 1000);
     }
 
 
@@ -310,8 +310,8 @@ function addToCart() {
             .trim();
         // картинка
         //var img = catalogi('.image--thumbnails img').first().attr('srcset').split(',')[0];
-        var img_normal = catalogi('.js-thumb-img img').first().attr('src');
-        var img = (img_normal ? img_normal : img_safari).split(',')[0];
+        var img = catalogi('.js-thumb-img img').first().attr('src');
+        // var img = (img_normal ? img_normal : img_safari).split(',')[0];
 
         var param = [];
         // цвет
@@ -323,6 +323,7 @@ function addToCart() {
         var size1 = catalogi(".configurator--form select option[selected='selected']").text().trim();
         var size2 = catalogi('li[class*="selected"]:eq(1)').text();
         var size = ((size1 == "") ? size2 : size1).trim();
+        console.log("articul" + "name");
         if (size == 'Выберите размер' || size == 'Выберите размер ') {
             alert('Выберите размер!');
             return;
@@ -331,7 +332,7 @@ function addToCart() {
 
         // отправка запроса
         catalogi.basket.add({
-            catalog: 'AP',
+            catalog: 'sheego',
             articul: articul,
             name: name,
             size: (param.join(' ').trim() == '') ? 0 : param.join(' ').trim(),
