@@ -1,3 +1,14 @@
+# apart-fashion domain config
+
+server {
+    server_name apart-fashion.catalogi.ru;
+    listen 188.40.83.218:443;
+    ssl on;
+    ssl_certificate      /etc/nginx/ssl/nginx.crt;
+    ssl_certificate_key  /etc/nginx/ssl/nginx.key;
+    rewrite ^(.*) http://www.apart-fashion.catalogi.ru$1 permanent;
+}
+
 server {
     server_name apart-fashion.catalogi.ru;
     listen 188.40.83.218;
