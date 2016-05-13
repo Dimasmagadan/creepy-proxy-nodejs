@@ -49,4 +49,6 @@ server {
         root /var/www;
         internal;
     }
+
+    
 }
