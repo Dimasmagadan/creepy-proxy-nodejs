@@ -247,7 +247,7 @@ catalogi.parse = function() {
     $('#topbar-bulletpoints').remove();
 
     //hide all content after first #footer
-    // $("#footer").nextAll().remove();
+    $("#footer").nextAll().hide();
 
     //search divs with background images and change url to valid
     $('div').each(function (index, value) { 
