@@ -247,7 +247,7 @@ catalogi.parse = function() {
     $('#topbar-bulletpoints').remove();
 
     //hide all content after first #footer
-    $("#footer").nextAll().remove();
+    // $("#footer").nextAll().remove();
 
     //search divs with background images and change url to valid
     $('div').each(function (index, value) { 
@@ -323,12 +323,12 @@ function addToCart() {
         var size1 = catalogi(".configurator--form select option[selected='selected']").text().trim();
         var size2 = catalogi('li[class*="selected"]:eq(1)').text();
         var size = ((size1 == "") ? size2 : size1).trim();
-        console.log("articul" + "name");
-        if (size == 'Выберите размер' || size == 'Выберите размер ') {
-            alert('Выберите размер!');
-            return;
-        }
-        if (size && size.length > 0) param.push(size);
+        console.log(articul + name);
+        // if (size == 'Выберите размер' || size == 'Выберите размер ') {
+        //     alert('Выберите размер!');
+        //     return;
+        // }
+        // if (size && size.length > 0) param.push(size);
 
         // отправка запроса
         catalogi.basket.add({
