@@ -147,7 +147,7 @@ catalogi.parse = function() {
         .queue(function(next) {
 
 
-    $( "#header-topbar > div > div" ).append( "<div id='topbar-slogan' class='col-md-6 hidden-xs hidden-sm'><a href='http://www.catalogi.ru' target='_blank' class='headerLinks _home catalogiLink'> Каталоги.ру <span class='hidden-xs hidden-sm'>- заказ и доставка одежды из интернет-магазина Sheego.de.</span></a></div>"
+    $( "#header-topbar > div > div" ).append( "<div id='topbar-slogan' class='col-md-6 hidden-xs hidden-sm'><a href='http://www.catalogi.ru' target='_blank' class='headerLinks _home catalogiLink'> Каталоги.ру <span class='hidden-xs hidden-sm hidden-md'>- заказ и доставка одежды из интернет-магазина Sheego.de.</span></a></div>"
                                             + "<div class=' col-md-6'>"
                                             + "<a href='#' class='headerLinks hidden-xs hidden-sm' onclick='catalogi.catalogs(); return false' style='margin-left:0px; margin-right:0px;'>Онлайн каталоги</a><span class='hidden-xs hidden-sm'>|</span>"
                                             + "<a href='#' class='headerLinks hidden-xs hidden-sm' onclick='catalogi.shops(); return false' style='margin-left:0px; margin-right:0px;'>Интернет-магазины</a><span class='hidden-xs hidden-sm'>|</span>"
