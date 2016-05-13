@@ -152,8 +152,9 @@ catalogi.parse = function() {
                                             + "<a href='#' class='headerLinks' onclick='catalogi.catalogs(); return false' style='margin-left:0px; margin-right:0px;'>Онлайн каталоги</a>|"
                                             + "<a href='#' class='headerLinks' onclick='catalogi.shops(); return false' style='margin-left:0px; margin-right:0px;'>Интернет-магазины</a>|"
                                             + "<a href='#' class='headerLinks' onclick='catalogi.sizeTable(); return false' style='margin-left:0px; margin-right:0px;'>Таблица размеров</a>|"
-                                            + "<a href='#' id='delivery' class='headerLinks notranslate' onclick='catalogi.delivery(); return false' style='margin-left:0px; margin-right:0px;'>Дocтавка</a>|"
-                                            + "<a href='#' class='headerLinks' onclick='catalogi.payment(); return false' style='margin-left:0px; margin-right:0px;'>Оплата</a></div>" );
+                                            + "<a href='#' id='delivery' class='headerLinks notranslate' onclick='catalogi.delivery(); return false' style='margin-left:0px; margin-right:0px;'> Дocтавка </a>|"
+                                            + "<a href='#' class='headerLinks' onclick='catalogi.payment(); return false' style='margin-left:0px; margin-right:0px;'>Оплата</a></div>" 
+                                            + "<a href='#' style="'margin-left': '20px'">+74955404949</a>");
 
 
             if (_auth) {
@@ -208,17 +209,12 @@ catalogi.parse = function() {
         $('img').each(function (index, value) { 
         $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
         });
-        // console.log('image');
-    }, 3000);
-
-    window.setInterval(function(){
         $('div').each(function (index, value) { 
             if ($(this).css("background-image") != 'none' && $(this).css("background-image").indexOf('http://media.sheego.catalogi.ru/') > -1) {
                 $(this).css("background-image", $(this).css("background-image").replace("catalogi.ru","de") , '!important');
             }
         });
     }, 1000);
-    
 
     //hide payback-logo
     $('.payback-logo-header').remove();
