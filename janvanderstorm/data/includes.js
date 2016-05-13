@@ -28,15 +28,15 @@ module.exports = function(catalog, param, options){
 
         body: {
             top: [
+                '<script type="text/javascript" src="http://cdn.catalogi.ru/bucket/js/vendor/slick.min.js"></script>',
+                '<script type="text/javascript" src="http://cdn.catalogi.ru/bucket/js/vendor/underscore-min.js"></script>',
+                '<script type="text/javascript" src="http://cdn.catalogi.ru/bucket/js/main.js"></script>',
+                '<link type="text/css" href="http://cdn.catalogi.ru/bucket/css/main.css" rel="stylesheet" />',
                 '<div id="google_translate_element" style="display: none"></div>',
                 '<iframe src="http://cdn.catalogi.ru/executable/index.php?'+param+'" width="'+options.width+'px" height="'+options.height+'px" frameborder="0" name="_head" id="iframe"/>'
             ].join("\n"),
 
             bottom: [
-                '<script type="text/javascript" src="http://cdn.catalogi.ru/bucket/js/vendor/slick.min.js"></script>',
-                '<script type="text/javascript" src="http://cdn.catalogi.ru/bucket/js/vendor/underscore-min.js"></script>',
-                '<script type="text/javascript" src="http://cdn.catalogi.ru/bucket/js/main.js"></script>',
-                '<link type="text/css" href="http://cdn.catalogi.ru/bucket/css/main.css" rel="stylesheet" />'
             ].join("\n")
         }
     }

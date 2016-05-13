@@ -3,6 +3,10 @@ body{
     visibility: hidden;
 }
 
+.cookie.error {
+    visibility: hidden;
+}
+
 
 
 
