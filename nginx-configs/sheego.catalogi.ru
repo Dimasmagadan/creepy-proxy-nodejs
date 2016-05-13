@@ -1,12 +1,9 @@
 # sheego domain config
 
 server {
-    server_name sheego.catalogi.ru;
     listen 188.40.83.218:443;
-    ssl on;
-    ssl_certificate      /etc/nginx/ssl/nginx.crt;
-    ssl_certificate_key  /etc/nginx/ssl/nginx.key;
-    rewrite ^(.*) http://www.sheego.catalogi.ru$1 permanent;
+    server_name sheego.catalogi.ru *.sheego.catalogi.ru;
+    return 301 http://www.sheego.catalogi.ru;
 }
 
 server {
