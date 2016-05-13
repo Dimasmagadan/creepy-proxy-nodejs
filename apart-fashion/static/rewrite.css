@@ -71,6 +71,10 @@ a#addToCartBtn {
     border-radius: 5px;
     text-align: center;
 }
+.catalogiLink{
+  position: absolute;
+  left: 0;
+}
 .textInHeader {
     padding-top: 1em;
     font-style: italic;
