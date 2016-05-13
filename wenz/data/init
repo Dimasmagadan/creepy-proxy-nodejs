@@ -2,7 +2,7 @@
 
 NODE_ENV="production"
 NODE_APP='app.js'
-APP_DIR='/var/www/apart-fashion/data';
+APP_DIR='/var/www/wenz/data';
 PID_FILE=$APP_DIR/pid/app.pid
 LOG_FILE=$APP_DIR/log/app.log
 CONFIG_DIR=$APP_DIR/config
@@ -29,7 +29,7 @@ start_app (){
     if [ -f $PID_FILE ]
     then
         echo "$PID_FILE exists, process is already running or crashed"
-        
+
         echo "Stopping $APP_DIR/$NODE_APP  ..."
         echo "Killing `cat $PID_FILE`"
         kill `cat $PID_FILE`;
@@ -95,4 +95,3 @@ case "$1" in
         exit 1
     ;;
 esac
-
