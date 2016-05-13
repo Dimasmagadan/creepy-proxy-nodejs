@@ -250,6 +250,7 @@ catalogi.parse = function() {
     $('#iframe').nextAll().remove();
     $('#iframe').hide();
     // $("#footer").nextAll().hide();
+    //aaaa
 
     //search divs with background images and change url to valid
     $('div').each(function (index, value) { 
