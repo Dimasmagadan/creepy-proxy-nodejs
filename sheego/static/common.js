@@ -336,12 +336,12 @@ function addToCart() {
         // отправка запроса
         catalogi.basket.add({
             catalog: 'sheego',
-            articul: articul,
-            name: name,
-            size: (param.join(' ').trim() == '') ? 0 : param.join(' ').trim(),
-            price: price,
-            count: count,
-            img: img
+            articul: name,
+            name: 'aaa',
+            size: 'saaa',
+            price: 'asasd',
+            count: 'ffff',
+            img: 'sas'
         });
         console.log('OK');
     } catch (e) {
