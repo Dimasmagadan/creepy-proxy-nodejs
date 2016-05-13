@@ -1,0 +1,17 @@
+{
+  "site": {
+    "name"        : "bonaparte",
+    "domain"      : ".de",
+    "port"        : 5053
+  },
+  "header": {
+    "catalog"     : "bonaparte",
+    "alias"       : "BP",
+    "info"        : "Интернет-магазин bonaparte. Каталоги.ру - заказ и доставка одежды из европейских интернет-магазинов."
+  },
+  "options": {
+    "height"      : 150,
+    "width"       : 1000
+  },
+  "replaces": []
+}

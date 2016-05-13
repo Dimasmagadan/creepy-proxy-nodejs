@@ -1,0 +1,285 @@
+/* Заменяем шрифты*/
+
+@font-face {
+    font-family: "jvds icons";
+    src: url("/static/fonts/jvds-icons.woff");
+}
+@font-face {
+    font-family: 'shopware';
+    src: url('/static/fonts/shopware.woff');
+    font-weight: normal;
+    font-style: normal
+}
+@font-face {
+    font-family: "GinIcons";
+    src: url("/static/fonts/janvanderstorm-iconfont.eot");
+    src: url("/static/fonts/janvanderstorm-iconfont.eot?#iefix") format("embedded-opentype"), url("/static/fonts/janvanderstorm-iconfont.woff") format("woff"), url("/static/fonts/janvanderstorm-iconfont.ttf") format("truetype"), url("/static/fonts/janvanderstorm-iconfont.svg#impressionen-iconfont") format("svg");
+    font-weight: normal;
+    font-style: normal
+}
+@font-face {
+    font-family: "Myriad";
+    src: url("/static/fonts/7f8bf145-43b4-4e18-8ab6-38552ac83b70.eot?#iefix");
+    src: url("/static/fonts/7f8bf145-43b4-4e18-8ab6-38552ac83b70.eot?#iefix") format("eot"), url("/static/fonts/6ad65c4a-999a-4b06-92ad-075dd9a6c0a7.woff2") format("woff2"), url("/static/fonts/3efa8eef-d81a-4a5b-ba15-94c5afa463cf.woff") format("woff"), url("/static/fonts/0ac3a8d1-ea58-4bc8-b995-cd7fce51290e.ttf") format("truetype"), url("/static/fonts/f360572f-8d74-4e11-b63c-91a55e17c82d.svg#f360572f-8d74-4e11-b63c-91a55e17c82d") format("svg");
+    font-weight: 300;
+    font-style: italic
+}
+@font-face {
+    font-family: "Myriad";
+    src: url("/static/fonts/4f2af761-c017-4801-9aa5-5d30643373ce.eot?#iefix");
+    src: url("/static/fonts/4f2af761-c017-4801-9aa5-5d30643373ce.eot?#iefix") format("eot"), url("/static/fonts/eba438b3-9ab9-48ba-b1c5-610f83b38303.woff2") format("woff2"), url("/static/fonts/acfb7490-30f6-4bf4-a1b8-70ff9172d209.woff") format("woff"), url("/static/fonts/5bf402e3-ba96-414e-bc7e-cb6689fe32c1.ttf") format("truetype"), url("/static/fonts/c5dceae7-427a-4765-b06b-ea2eecca3434.svg#c5dceae7-427a-4765-b06b-ea2eecca3434") format("svg");
+    font-weight: 700;
+    font-style: normal
+}
+
+/* Активные элементы шапки */
+
+._logout {
+    background-image: url(http://cdn.catalogi.ru/static/images/_logout.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    display: block;
+    float: right;
+    width: 10px;
+    height: 16px;
+}
+._home {
+    background-image: url(http://cdn.catalogi.ru/static/images/_home.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    line-height: 20px;
+    padding: 0 0 0 20px;
+    font-weight: bold;
+    color: #666;
+}
+span.account--display {
+    font-weight: normal!important;
+}
+a#addToCartBtn {
+    padding: 0.1rem 0;
+    background: #000;
+    font-family: 'Open Sans Condensed', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    display: table;
+    color: #fff;
+    cursor: pointer;
+    width: 55%;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 2.375rem;
+    border-radius: 5px;
+    text-align: center;
+}
+.textInHeader {
+    padding-top: 1em;
+    font-style: italic;
+    font-size: 1.4em;
+}
+@media screen and (max-device-width: 770px) {
+    .textInHeader {
+        display: none;
+    }
+}
+@media screen and (max-width: 770px) {
+    .myaccount {
+        margin-top: 27px;
+    }
+    .textInHeader {
+        display: none;
+    }
+}
+.headerLinks {
+    text-decoration: none!important;
+    font-style: normal!important;
+    margin-left: 1em;
+    margin-right: 1em;
+    font-weight: normal!important;
+    font-size: .875rem;
+    font-family: "Open Sans Condensed", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+#cboxLoadedContent {
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    padding: 0;
+}
+
+/* Новые расположения элементов шапки */
+
+@media screen and (max-width: 63.9em) {
+    #page-header.sticky #account-nav {
+        top: 22px;
+        right: 470px;
+        width: 120px;
+    }
+    #page-header:not(.sticky) #account-nav {
+        top: 14px;
+        right: 50px;
+        width: 120px
+    }
+    #page-header:not(.sticky) #account-nav .my-account a, #page-header:not(.sticky) #account-nav .my-account .link {
+        position: relative
+    }
+    #page-header.sticky .search {
+        width: 165px;
+        left: 555px;
+    }
+    #page-header:not(.sticky) .search {
+        width: 170px;
+        left: 535px;
+    }
+    #page-header:not(.sticky) .search-button {
+        width: 50px;
+        overflow: hidden;
+    }
+    #page-header.sticky #minicart {
+        right: 200px;
+    }
+}
+@media screen and (min-width: 64em) {
+    #page-header.sticky #account-nav {
+        top: 22px;
+        right: 230px;
+        width: 120px;
+    }
+    #page-header:not(.sticky) #account-nav {
+        top: 14px;
+        right: 100px;
+        width: 120px
+    }
+    #page-header:not(.sticky) #account-nav .my-account a, #page-header:not(.sticky) #account-nav .my-account .link {
+        position: relative
+    }
+    #page-header:not(.sticky) #meta-nav {
+        max-width: 70%;
+    }
+    #page-header.sticky .search {
+        top: 13px;
+        width: 140px;
+        left: 815px;
+    }
+    #page-header.sticky .search .searchfield {
+        width: 100px;
+    }
+    #page-header:not(.sticky) .search-button {
+        width: 50px;
+        overflow: hidden;
+    }
+    .search {
+        width: 280px;
+        left: 655px;
+    }
+    #page-header #root-nav {
+        margin-top: 30px;
+    }
+    #page-header.sticky #minicart {
+        width: 275px;
+        right: 170px;
+    }
+}
+@media screen and (min-width: 80em) {
+    #page-header.sticky #account-nav {
+        top: 22px;
+        right: 320px;
+        width: 120px;
+    }
+    #page-header.sticky .search {
+        left: 1010px;
+        width: 170px;
+    }
+    #page-header.sticky .search .searchfield {
+        width: 115px;
+    }
+    .search {
+        left: 885px;
+        width: 280px;
+    }
+    #page-header.sticky #minicart {
+        right: 222px;
+    }
+}
+.search .searchfield {
+    width: 63%;
+}
+#page-header.sticky .search .search-button {
+    overflow: hidden;
+    width: 37px;
+}
+
+/* Уменьшаем шрифты */
+
+#page-header:not(.sticky) #meta-nav li a, #page-header:not(.sticky) #meta-nav li .link {
+    font: 500 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: block;
+}
+#account-nav a, #account-nav .link {
+    font: 500 12px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #111;
+}
+#wishlist-link>a, #wishlist-link>.link, #minicart-link>a, #minicart-link>.link {
+    color: #111;
+    font: 500 12px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#account-nav .my-account-login, #account-nav .my-account-flyout-btn {
+    color: #111;
+}
+#page-header.sticky #minicart {
+    top: 21px;
+}
+#page-header.sticky #page-header-main-wrapper #header-brand-logo {
+    background-size: 100%;
+    width: 184px;
+    height: 60px;
+    top: 11px;
+}
+
+/* Заменяем лого */
+
+#header-brand-logo {
+    display: block;
+    text-indent: -9999em;
+    background: transparent url("/static/images/janvanderstorm-logo.svg") no-repeat 0 0 scroll;
+    background-image: url("/static/images/janvanderstorm-logo.svg");
+    height: 70px;
+    width: 400px;
+    position: relative;
+    top: 53px;
+    margin-bottom: 34px;
+    background-size: contain;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Скрываем мусор */
+
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+.js-layer.layer-hide {
+    display: none !important;
+}
+.panel.panel-type-4 {
+    display: none !important;
+}
+#js-comments-write_button_review, .review-inner-button-panel {
+    display: none;
+}
+
+/* Подготовка к отображению */
+
+#_head #_center ._info {
+    margin: 0px 0 0 34px !important;
+}
+body {
+    top: 0 !important;
+    visibility: hidden;
+}
+#menu {
+    text-transform: uppercase;
+    font: 400 24px/27px Helvetica, Arial, sans-serif;
+    left: 25px;
+}
+#menu::after {
+    font-size: 15px;
+}
