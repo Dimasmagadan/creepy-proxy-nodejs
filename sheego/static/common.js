@@ -170,8 +170,6 @@ catalogi.parse = function() {
 
 
 
-
-
         //Added by Artem Symonenkov 12.05.2016
 
     //custom header     
@@ -179,13 +177,14 @@ catalogi.parse = function() {
     $('#topbar-salutation').remove();
     $('#topbar-bulletpoints').remove();
 
-    $( "#header-topbar > div > div" ).append( "<div id='topbar-slogan' class='hidden-xs hidden-sm col-md-6'><a href='http://www.catalogi.ru' target='_blank' class='headerLinks _home catalogiLink'> Каталоги.ру - заказ и доставка одежды из интернет-магазина Sheego.de.</a></div>" );
-    $( "#header-topbar > div > div" ).append( "<div class='hidden-xs hidden-sm col-md-6'>" 
-                                        + "<a href='#' class='headerLinks' onclick='catalogi.catalogs(); return false' style='margin-left:0px; margin-right:0px;'>Онлайн каталоги</a>|"
-                                        + "<a href='#' class='headerLinks' onclick='catalogi.shops(); return false' style='margin-left:0px; margin-right:0px;'>Интернет-магазины</a>|"
-                                        + "<a href='#' class='headerLinks' onclick='catalogi.sizeTable(); return false' style='margin-left:0px; margin-right:0px;'>Таблица размеров</a>|"
-                                        + "<a href='#' class='headerLinks' onclick='catalogi.delivery(); return false' style='margin-left:0px; margin-right:0px;'>Доставка</a>|"
-                                        + "<a href='#' class='headerLinks' onclick='catalogi.payment(); return false' style='margin-left:0px; margin-right:0px;'>Оплата</a></div>" );
+    $( "#header-topbar > div > div" ).append( "<div id='topbar-slogan' class='hidden-xs hidden-sm col-md-6'><a href='http://www.catalogi.ru' target='_blank' class='headerLinks _home catalogiLink'> Каталоги.ру - заказ и доставка одежды из интернет-магазина Sheego.de.</a></div>"
+                                            + "<div class='hidden-xs hidden-sm col-md-6'>"
+                                            + "<a href='#' class='headerLinks' onclick='catalogi.catalogs(); return false' style='margin-left:0px; margin-right:0px;'>Онлайн каталоги</a>|"
+                                            + "<a href='#' class='headerLinks' onclick='catalogi.shops(); return false' style='margin-left:0px; margin-right:0px;'>Интернет-магазины</a>|"
+                                            + "<a href='#' class='headerLinks' onclick='catalogi.sizeTable(); return false' style='margin-left:0px; margin-right:0px;'>Таблица размеров</a>|"
+                                            + "<a href='#' class='headerLinks' onclick='catalogi.delivery(); return false' style='margin-left:0px; margin-right:0px;'>Доставка</a>|"
+                                            + "<a href='#' class='headerLinks' onclick='catalogi.payment(); return false' style='margin-left:0px; margin-right:0px;'>Оплата</a></div>" );
+                                        
 
 
     //hide all content after first #footer
