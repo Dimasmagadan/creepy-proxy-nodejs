@@ -423,8 +423,6 @@ catalogi(function() {
 
 
 
-currentDomain = getCurrentDomain();
-
     catalogi('.form-search').submit(function(event) {
         var form = event.currentTarget;
         var value = catalogi(form).find("[name='sSearch']").val();
