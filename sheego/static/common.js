@@ -281,6 +281,7 @@ catalogi.parse = function() {
                 $(this).css("background-image", $(this).css("background-image").replace("catalogi.ru","de") , '!important');
             }
         });
+        $('#content.search').css('width', '100%', '!important');
     }, 1000);
 
     //hide payback-logo
