@@ -32,6 +32,51 @@ catalogi.noTranslate = function() {
 };
 
 catalogi.parse = function() {
+
+
+
+    if (catalogi('.at-dv-addToBasket')) {
+        catalogi('.at-dv-addToBasket').replaceWith(
+            $("<button type='button' class='at-dv-addToBasket btn btn-primary btn-tall '>В корзину</button>")
+            .addClass('notranslate')
+            .attr('id', 'addToCartBtn')
+            //  .attr('href', '#')
+            .bind('click', function(event) {
+                //  event.preventDefault();
+                addToCart();
+            }).bind('tap', function(event) {
+                //    event.preventDefault();
+                addToCart();
+            })
+
+        );
+    }
+    if (catalogi('.at-dv-addToBasket')) {
+        setInterval(function() {
+            if (catalogi('.at-dv-addToBasket')) {
+                // catalogi('.link--notepad').remove();
+                // catalogi.service();
+                catalogi('.at-dv-addToBasket').replaceWith(
+                    $("<button type='button' class='at-dv-addToBasket btn btn-primary btn-tall'>В корзину</button>")
+                    .addClass('notranslate')
+                    .attr('id', 'addToCartBtn')
+                    .bind('click', function(event) {
+                        //  event.preventDefault();
+                        addToCart();
+                    }).bind('tap', function(event) {
+                        //    event.preventDefault();
+                        addToCart();
+                    })
+
+                );
+            }
+        }, 100);
+    }
+
+
+
+
+
     //// Шапка
     catalogi('#iframe').hide();
 
@@ -154,7 +199,7 @@ catalogi.parse = function() {
                                             + "<a href='#' class='headerLinks hidden-xs hidden-sm' onclick='catalogi.sizeTable(); return false' style='margin-left:0px; margin-right:0px;'>Таблица размеров</a><span class='hidden-xs hidden-sm'>|</span>"
                                             + "<a href='#' id='delivery' class='headerLinks notranslate hidden-xs hidden-sm' onclick='catalogi.delivery(); return false' style='margin-left:0px; margin-right:0px;'> Дocтавка </a><span class='hidden-xs hidden-sm'>|</span>"
                                             + "<a href='#' class='headerLinks hidden-xs hidden-sm' onclick='catalogi.payment(); return false' style='margin-left:0px; margin-right:0px;'>Оплата</a>" 
-                                            + "<a href='#' class='hidden-xs hidden-sm' style='margin-left: 20px'>+74955404949</a></div>"
+                                            + "<a href='#' class='hidden-xs hidden-sm hidden-md' style='margin-left: 20px'>+74955404949</a></div>"
                                             + "<div class='col-sm-12 col-xs-12 hidden-md hidden-lg'>"
                                             + "<a href='http://www.catalogi.ru' target='_blank' class='headerLinks _home catalogiLink'> Каталоги.ру </a>|"
                                             + "<a href='#' class='headerLinks' onclick='catalogi.payment(); return false' style='margin-left:0px; margin-right:0px;'>Оплата</a>|"
