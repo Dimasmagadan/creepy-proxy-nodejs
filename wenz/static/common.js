@@ -60,21 +60,21 @@ catalogi.parse = function() {
     //catalogi('.headerTopNavigation').css('margin-top', '6px');
     //service links
     catalogi('.headerTopNavigation').children().remove();
-    catalogi('.headerTopNavigation').append($('<li>').text('+74955404949').addClass('textInHeader'));
-    catalogi('.headerTopNavigation').append($('<li>').text('|').addClass('textInHeader'));
-    catalogi('.headerTopNavigation').append($('<li>').text('Доставка').addClass('textInHeader').click(function() {
+    catalogi('.headerTopNavigation').append($('<li>').text('+74955404949').addClass('textInHeader notranslate'));
+    catalogi('.headerTopNavigation').append($('<li>').text('|').addClass('textInHeader notranslate'));
+    catalogi('.headerTopNavigation').append($('<li>').text('Доставка').addClass('textInHeader notranslate').click(function() {
         catalogi.delivery();
     }));
-    catalogi('.headerTopNavigation').append($('<li>').text('|').addClass('textInHeader'));
-    catalogi('.headerTopNavigation').append($('<li>').text('Оплата').addClass('textInHeader').click(function() {
+    catalogi('.headerTopNavigation').append($('<li>').text('|').addClass('textInHeader notranslate'));
+    catalogi('.headerTopNavigation').append($('<li>').text('Оплата').addClass('textInHeader notranslate').click(function() {
         catalogi.payment();
     }));
-    catalogi('.headerTopNavigation').append($('<li>').text('|').addClass('textInHeader'));
-    catalogi('.headerTopNavigation').append($('<li>').text('Интернет-магазины').addClass('textInHeader').click(function() {
+    catalogi('.headerTopNavigation').append($('<li>').text('|').addClass('textInHeader notranslate'));
+    catalogi('.headerTopNavigation').append($('<li>').text('Интернет-магазины').addClass('textInHeader notranslate').click(function() {
         catalogi.shops();
     }));
-    catalogi('.headerTopNavigation').append($('<li>').text('|').addClass('textInHeader'));
-    catalogi('.headerTopNavigation').append($('<li>').text('Онлайн каталоги').addClass('textInHeader').click(function() {
+    catalogi('.headerTopNavigation').append($('<li>').text('|').addClass('textInHeader notranslate'));
+    catalogi('.headerTopNavigation').append($('<li>').text('Онлайн каталоги').addClass('textInHeader notranslate').click(function() {
         catalogi.catalogs();
     }));
 
@@ -83,7 +83,7 @@ catalogi.parse = function() {
     catalogi('.storeHeaderBar').append($("<a> Каталоги.ру - заказ и доставка одежды из интернет-магазина wenz.de.</a>")
         .attr('href', 'http://www.catalogi.ru')
         .attr('target', '_blank')
-        .addClass('headerLinks _home')
+        .addClass('headerLinks _home notranslate')
         .css('padding-top', '5px'));
 
     //basket area
