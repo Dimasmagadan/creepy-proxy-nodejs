@@ -287,9 +287,9 @@ catalogi.parse = function() {
         script.src = "http://www.wenz.catalogi.ru/static/js/Product.min.js";
         document.getElementsByTagName('head')[0].appendChild(script);
         script = document.createElement('script');
-        script.src = "http://www.wenz.catalogi.ru/static/js/jquery.jcarousel.js";
-        document.getElementsByTagName('head')[0].appendChild(script);
-        script = document.createElement('script');
+        //  script.src = "http://www.wenz.catalogi.ru/static/js/jquery.jcarousel.js";
+        //  document.getElementsByTagName('head')[0].appendChild(script);
+        //  script = document.createElement('script');
         script.src = "http://www.wenz.catalogi.ru/static/js/jquery.elevatezoom.js";
         document.getElementsByTagName('head')[0].appendChild(script);
         script = document.createElement('script');
