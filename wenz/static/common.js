@@ -182,6 +182,7 @@ catalogi.parse = function() {
         catalogi.sizeTable();
     });
     setInterval(function() {
+        catalogi('#fitanalytics-size-advisor').text("Таблица размеров");
         catalogi('#fitanalytics-size-advisor')
             .replaceWith(catalogi('#fitanalytics-size-advisor').clone());
     }, 1000);
