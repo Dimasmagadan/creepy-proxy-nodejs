@@ -102,9 +102,7 @@ if (cluster.isMaster) {
         onResponse = function(response) {
             //  console.log(new Date()+" "+ JSON.stringify(response.headers));
             //  if(response.statusCode == 200){
-            console.log(response.statusCode);
-            console.log(response.body);
-            console.log(response.headers['location']);
+
             if ('location' in response.headers)
                 response.setHeader('Location', response.headers['location'].replace(SITE, SITENAME + '.catalogi.ru'));
 
