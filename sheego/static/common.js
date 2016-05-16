@@ -63,6 +63,10 @@ catalogi.parse = function() {
     //     $(this).removeAttr("href");
     // });
 
+    $('.colors').find('a').each(function (index, value) {
+        $(this).removeClass('js-ajax');
+    });
+
 
     // $('.js-moreinfo-size').find('button').each(function (index, value) { 
     //     $(this).replaceWith("<a class='btn btn-primary btn-small size-selected'>" + $(this).text() + "</a>");
