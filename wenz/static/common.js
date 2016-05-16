@@ -1,7 +1,9 @@
 /**
  * Created by mihailstepancenko on 22.12.15.
  */
-catalogi('body').html(catalogi('body').html().replace('wenz.de', 'wenz.catalogi.ru'));
+catalogi("script").each(function(i, e) {
+    e.innerHTML = e.innerHTML.replace('wenz.de', 'wenz.catalogi.ru');
+})
 var timeout1 = 5000; // basket update
 
 function _googleTranslateElementInit() {
