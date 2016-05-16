@@ -289,7 +289,7 @@ function checkBasket() {
     // $('.minibasket__countvalue').empty();
     $('#minibasket').empty();
         $('#minibasket').append(""
-                    + "<a class='minibasket__link js-minibasket-href' onclick='catalogi.order(); return false'>"
+                    + "<a class='minibasket__link js-minibasket-href' href='' onclick='catalogi.order(); return false'>"
                     +    "<span class='minibasket__text hidden-xs-inline hidden-sm-inline'>"   
                     +    "<span class='minibasket__basket'>Корзина</span>"
                     +    "</span>"
