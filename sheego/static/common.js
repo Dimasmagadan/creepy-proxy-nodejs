@@ -290,7 +290,7 @@ function checkBasket() {
 
 
     $('#minibasket').empty();
-    // $('#minibasket').attr("onclick","catalogi.order(); return false");
+    $('#minibasket').attr("onclick","catalogi.order(); return false");
         $('#minibasket').append(""
                     + "<a class='minibasket__link js-minibasket-href' >"
                     +    "<span class='minibasket__text hidden-xs-inline hidden-sm-inline'>"   
@@ -306,10 +306,10 @@ function checkBasket() {
     $("#minibasket").children().off();
     $("#minibasket").find("*").off();
 
-    catalogi('#minibasket').click(function(event) {
-                event.preventDefault();
-                catalogi.order();
-            });
+    // catalogi('#minibasket').click(function(event) {
+    //             event.preventDefault();
+    //             catalogi.order();
+    //         });
 
     catalogi('#mbflyout-area').remove();
 
