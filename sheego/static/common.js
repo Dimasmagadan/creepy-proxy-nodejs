@@ -292,7 +292,7 @@ function checkBasket() {
     $('#minibasket').empty();
     // $('#minibasket').attr("onclick","catalogi.order(); return false");
         $('#minibasket').append(""
-                    + "<a class='minibasket__link js-minibasket-href' href='' >"
+                    + "<a class='minibasket__link js-minibasket-href' >"
                     +    "<span class='minibasket__text hidden-xs-inline hidden-sm-inline'>"   
                     +    "<span class='minibasket__basket'>Корзина</span>"
                     +    "</span>"
@@ -307,6 +307,9 @@ function checkBasket() {
     //             catalogi.order();
     //         });
 
+    $('#minibasket').unbind();
+    $("#minibasket").children().off();
+    $("#minibasket").find("*").off();
 
     catalogi('#mbflyout-area').remove();
 
