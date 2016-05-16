@@ -215,6 +215,7 @@ catalogi.parse = function() {
                 .click(function() {
                     catalogi.sizeTable();
                 })
+                .insertAfter('.productSizes')
         }
 
         setTimeout(function() {
