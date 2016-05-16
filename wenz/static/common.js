@@ -87,7 +87,7 @@ catalogi.parse = function() {
 
     //basket area
     catalogi('.leafletHeaderIcon').remove();
-
+    catalogi('#miniShopCart').text('Корзина');
     catalogi('#miniShopCart').unbind('click');
     catalogi('#miniShopCart').bind('click', function() {
         top.postMessage({
@@ -305,7 +305,7 @@ catalogi.parse = function() {
     catalogi('head')
         .delay(5000)
         .queue(function(next) {
-
+            catalogi('.accountHeaderIcon a').text('Кабинет') ж
             if (_auth) {
                 catalogi('.accountHeaderIcon a')
                     .attr('href', 'http://catalogi.ru/cabinet/');
