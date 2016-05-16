@@ -53,9 +53,9 @@ catalogi.parse = function() {
         );
     }
 
-    $('.color-item').unbind();
-    $('.color-item').children().off();
-    $('.color-item').find("*").off();
+    // $('.color-item').unbind();
+    // $('.color-item').children().off();
+    // $('.color-item').find("*").off();
 
 
 
@@ -64,9 +64,17 @@ catalogi.parse = function() {
     });
 
 
-    $('size').unbind();
-    $('size').children().off();
-    $('size').find("*").off();
+    $('.js-moreinfo-size').find('button').each(function (index, value) { 
+        $(this).replaceWith("<a class='btn btn-primary btn-small size-selected'>" + $(this).text() + "</a>");
+    });
+
+    $('.size-selected').bind('click', function(event) {
+        $('.js-moreinfo-size').find('.btn').each(function (index, value) { 
+            $(this).removeClass('active');
+        });
+
+        $('.at-dv-size').text(" - " + $(this).text());
+    });
 
 
 
