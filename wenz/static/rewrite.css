@@ -79,7 +79,7 @@ a#addToCartBtn {
 .textInHeader {
     padding:0 0.1em!important;
     margin: 0em!important;
-    margin-top: 6px;
+    margin-top: 8px!important;
     cursor: pointer;
     color: #666;
     text-decoration: none!important;
