@@ -186,6 +186,10 @@ catalogi.parse = function() {
     setInterval(function() {
         catalogi('#fitanalytics-size-advisor')
             .replaceWith(catalogi('#fitanalytics-size-advisor').clone());
+        catalogi('.colorTile').each(function(i, e) {
+            $(e).find('div').first()
+                .attr('onclick', $(e).find('div').first().attr('onclick').split(';')[1]);
+        });
     }, 1000);
     catalogi('#fitanalytics-size-advisor')
         .replaceWith(catalogi('#fitanalytics-size-advisor').clone());
@@ -205,10 +209,7 @@ catalogi.parse = function() {
         catalogi('#fitanalytics-size-advisor').click(function() {
             catalogi.sizeTable();
         });
-        catalogi('.colorTile').each(function(i, e) {
-            $(e).find('div').first()
-                .attr('onclick', $(e).find('div').first().attr('onclick').split(';')[1]);
-        })
+
 
         catalogi.service();
         catalogi('.shippingCostLink').remove();
