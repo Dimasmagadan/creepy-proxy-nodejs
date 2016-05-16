@@ -216,7 +216,8 @@ catalogi.parse = function() {
         .delay(1000)
         .queue(function(next) {
 
-                $('#iframe').show();
+        $('#iframe').show();
+        $('#iframe').css('width','100%');
 
             catalogi('.navigation--entry.headerHint').children().remove();
             catalogi('.navigation--entry.headerHint').text("");
