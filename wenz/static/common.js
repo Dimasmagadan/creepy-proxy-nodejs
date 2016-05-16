@@ -189,16 +189,18 @@ catalogi.parse = function() {
     var replaceTimer = null;
     catalogi('#productAjaxDescription').bind('DOMNodeInserted', function(e) {
         //стоимость с учетом доставки
-        catalogi('#fitanalytics-size-advisor').unbind('click');
-        catalogi('#fitanalytics-size-advisor').click(function() {
-            catalogi.sizeTable();
-        });
+
         if (replaceTimer != null) {
             replaceTimer = setTimeout(function() {
                 replaceSizeTable();
                 replaceTimer = null;
-            }, 500);
+            }, 1000);
         }
+        catalogi('#fitanalytics-size-advisor').unbind('click');
+        catalogi('#fitanalytics-size-advisor').click(function() {
+            catalogi.sizeTable();
+        });
+
 
         catalogi.service();
         catalogi('.shippingCostLink').remove();
