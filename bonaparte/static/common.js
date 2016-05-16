@@ -50,7 +50,7 @@ catalogi.noTranslate = function() {
 catalogi.parse = function() {
 
 
-    $('#iframe').show();
+
 
 
 
@@ -215,6 +215,8 @@ catalogi.parse = function() {
     catalogi('body')
         .delay(1000)
         .queue(function(next) {
+
+                $('#iframe').show();
 
             catalogi('.navigation--entry.headerHint').children().remove();
             catalogi('.navigation--entry.headerHint').text("");
