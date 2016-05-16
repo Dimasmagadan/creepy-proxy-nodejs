@@ -295,6 +295,9 @@ catalogi.parse = function() {
         script = document.createElement('script');
         script.src = "http://www.wenz.catalogi.ru/static/js/jquery.lazyload.js";
         document.getElementsByTagName('head')[0].appendChild(script);
+        script = document.createElement('script');
+        script.src = "http://www.wenz.catalogi.ru/static/js/ld.js";
+        document.getElementsByTagName('head')[0].appendChild(script);
     }, 1000);
 
     setTimeout(function() {
