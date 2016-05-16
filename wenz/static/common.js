@@ -174,11 +174,17 @@ catalogi.parse = function() {
 
     //product page
     catalogi('#fitanalytics-size-advisor').unbind('click');
-    catalogi('#fitanalytics-size-advisor').click(catalogi.sizeTable)
+    catalogi('#fitanalytics-size-advisor').click(function() {
+        catalogi.sizeTable();
+    });
     catalogi('.shippingCostLink').remove();
     catalogi('.addToWishlist').remove();
     catalogi('#productAjaxDescription').bind('DOMNodeInserted', function(e) {
         //стоимость с учетом доставки
+        catalogi('#fitanalytics-size-advisor').unbind('click');
+        catalogi('#fitanalytics-size-advisor').click(function() {
+            catalogi.sizeTable();
+        });
         catalogi.service();
         catalogi('.shippingCostLink').remove();
         catalogi('.addToWishlist').remove();
