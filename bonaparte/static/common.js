@@ -48,6 +48,12 @@ catalogi.noTranslate = function() {
 };
 
 catalogi.parse = function() {
+
+
+    $('#iframe').show();
+
+
+
     //// Шапка
     catalogi('#iframe').hide();
     catalogi('.navigation--entry.entry--notepad').remove();
