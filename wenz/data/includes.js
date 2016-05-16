@@ -10,6 +10,8 @@ module.exports = function(catalog, param, options) {
             '<link href="http://www.' + catalog + '.catalogi.ru/static/override.css" rel="stylesheet" type="text/css" />',
             '<script type="text/javascript" src="http://cdn.catalogi.ru/static/js/jquery-2.1.4.min.js"></script>',
             '<script type="text/javascript" src="http://www.' + catalog + '.catalogi.ru/static/js/jquery.jcarousel.js"></script>',
+            '<script type="text/javascript" src="http://www.' + catalog + '.catalogi.ru/static/js/jquery.elevatezoom.js"></script>',
+            '<script type="text/javascript" src="http://www.' + catalog + '.catalogi.ru/static/js/jquery.jquery.lazyload.js"></script>',
             '<script type="text/javascript" src="http://cdn.catalogi.ru/static/js/jquery.mousewheel.js"></script>',
             '<script type="text/javascript" src="http://cdn.catalogi.ru/static/js/jquery.jscrollpane.min.js"></script>',
             '<script type="text/javascript" src="http://cdn.catalogi.ru/static/js/jquery.colorbox-min.js"></script>',
