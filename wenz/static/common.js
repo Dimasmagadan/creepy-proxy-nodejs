@@ -174,7 +174,10 @@ catalogi.parse = function() {
 
     //product page
 
-    catalogi('#fitanalytics-size-advisor').unbind('click');
+    catalogi('#fitanalytics-size-advisor')
+        .addClass('notranslate')
+        .text("Таблица размеров")
+        .unbind('click');
     catalogi('#fitanalytics-size-advisor').click(function() {
         catalogi.sizeTable();
     });
@@ -194,10 +197,7 @@ catalogi.parse = function() {
         //стоимость с учетом доставки
 
 
-        catalogi('#fitanalytics-size-advisor')
-            .addClass('notranslate')
-            .text("Таблица размеров")
-            .unbind('click');
+        catalogi('#fitanalytics-size-advisor').unbind('click');
         catalogi('#fitanalytics-size-advisor').click(function() {
             catalogi.sizeTable();
         });
