@@ -174,10 +174,12 @@ catalogi.parse = function() {
 
     //product page
     catalogi('.shippingCostLink').remove();
+    catalogi('.addToWishlist').remove();
     catalogi('#productAjaxDescription').bind('DOMNodeInserted', function(e) {
         //стоимость с учетом доставки
         catalogi.service();
         catalogi('.shippingCostLink').remove();
+        catalogi('.addToWishlist').remove();
         if (!catalogi('#addToCartButton').hasClass('checked')) {
             catalogi('#addToCartButton').removeAttr('onclick');
             catalogi('#addToCartButton').click(function(e) {
