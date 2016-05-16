@@ -302,11 +302,11 @@ function checkBasket() {
         + "");
     $('.minibasket__countvalue').text(ordersNumber);
 
-    catalogi('#minibasket').click(function(event) {
-                event.preventDefault();
-                catalogi.order();
-            });
-    catalogi('#minibasket').find("*").off();
+    // catalogi('#minibasket').click(function(event) {
+    //             event.preventDefault();
+    //             catalogi.order();
+    //         });
+
 
     catalogi('#mbflyout-area').remove();
 
