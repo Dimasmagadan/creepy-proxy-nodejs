@@ -173,7 +173,7 @@ catalogi.parse = function() {
 
 
     //product page
-    replaceSizeTable();
+
     catalogi('#fitanalytics-size-advisor').unbind('click');
     catalogi('#fitanalytics-size-advisor').click(function() {
         catalogi.sizeTable();
