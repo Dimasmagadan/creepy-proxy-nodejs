@@ -291,6 +291,7 @@ function checkBasket() {
 
     $('#minibasket').empty();
     $('#minibasket').attr("onclick","catalogi.order(); return false");
+    $('#minibasket').css('cursor','pointer');
         $('#minibasket').append(""
                     + "<a class='minibasket__link js-minibasket-href' style='cursor : pointer'>"
                     +    "<span class='minibasket__text hidden-xs-inline hidden-sm-inline'>"   
