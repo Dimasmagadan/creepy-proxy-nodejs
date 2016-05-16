@@ -262,7 +262,7 @@ catalogi.parse = function() {
                     articul: articul,
                     name: name,
                     size: param.join(' '),
-                    price: price,
+                    price: price.replace(',', '.'),
                     count: count,
                     img: img
                 });
