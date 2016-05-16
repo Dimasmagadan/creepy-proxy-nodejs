@@ -66,9 +66,7 @@ if (cluster.isMaster) {
         proxy = require("./proxy"),
         includes = require("./includes")(SITENAME, querystring.stringify(HEADERPARAMS.param), HEADERPARAMS.options);
 
-    request.defaults({
-        followAllRedirects: true
-    });
+
 
     var j = request.jar();
     var proxiedReq = request.defaults({
