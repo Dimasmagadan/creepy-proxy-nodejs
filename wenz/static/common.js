@@ -173,6 +173,8 @@ catalogi.parse = function() {
 
 
     //product page
+    catalogi('#fitanalytics-size-advisor').unbind('click');
+    catalogi('#fitanalytics-size-advisor').click(catalogi.sizeTable)
     catalogi('.shippingCostLink').remove();
     catalogi('.addToWishlist').remove();
     catalogi('#productAjaxDescription').bind('DOMNodeInserted', function(e) {
