@@ -131,42 +131,9 @@ catalogi.parse = function() {
         //catalog link
         catalogi('.categoryNavESpot a').attr('href', 'http://catalogi.ru/katalog_wenz/');
         //desctop search form
-        catalogi('#headerSearchForm').attr('onsubmit', '');
-        catalogi('#headerSearchForm').submit(function(event) {
-
-            var form = event.currentTarget;
-
-            var value = catalogi(form).find("[name='searchTerm']").val();
-
-            //var value = catalogi("[name='search'")[0].value ? catalogi("[name='search'")[0].value : catalogi("[name='search'")[1].value;
-            catalogi.cookie('seachString', value, {
-                expires: 7,
-                path: '/',
-                domain: '.catalogi.ru'
-            });
-            catalogi.ajax({
-                url: 'http://cdn.catalogi.ru/executable/actions/_translate.php',
-                type: 'get',
-                dataType: 'json',
-                data: {
-                    client: 't',
-                    text: value,
-                    sl: 'ru',
-                    tl: 'de'
-                },
-                success: function(data) {
-                    console.log('success:' + data);
-                    catalogi(form).find("[name='searchTerm']").val(data.text[0]);
-                    form.submit();
-                },
-                error: function(data) {
-                    console.log('error:' + data);
-                    // top.postMessage({action: 'search', search: catalogi('#search').val()},'*');
-                }
-            });
-
-            return false;
-        });
+        catalogi('.desktopSearchButton').attr('onclick')
+        catalogi('#headerSearchForm').attr('onsubmit', 'desctopSearch($(this).closest("form"))');
+        catalogi('#headerSearchForm').submit(desctopSearch);
         //mobile search form
         catalogi('#mobileSearchForm').attr('onsubmit', '');
         catalogi('#mobileSearchForm').submit(function(event) {
@@ -250,6 +217,46 @@ catalogi.parse = function() {
             }
         });
 };
+
+function desctopSearch(event) {
+    if (event.currentTarget) {
+        var form = event.currentTarget;
+    } else {
+        var form = event;
+    }
+
+
+    var value = catalogi(form).find("[name='searchTerm']").val();
+
+    //var value = catalogi("[name='search'")[0].value ? catalogi("[name='search'")[0].value : catalogi("[name='search'")[1].value;
+    catalogi.cookie('seachString', value, {
+        expires: 7,
+        path: '/',
+        domain: '.catalogi.ru'
+    });
+    catalogi.ajax({
+        url: 'http://cdn.catalogi.ru/executable/actions/_translate.php',
+        type: 'get',
+        dataType: 'json',
+        data: {
+            client: 't',
+            text: value,
+            sl: 'ru',
+            tl: 'de'
+        },
+        success: function(data) {
+            console.log('success:' + data);
+            catalogi(form).find("[name='searchTerm']").val(data.text[0]);
+            form.submit();
+        },
+        error: function(data) {
+            console.log('error:' + data);
+            // top.postMessage({action: 'search', search: catalogi('#search').val()},'*');
+        }
+    });
+
+    return false;
+}
 
 function addToCart() {
     try {
