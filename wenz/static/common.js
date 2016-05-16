@@ -102,31 +102,106 @@ catalogi.parse = function() {
 
     //mobile menu links
     catalogi('#topBarMenuButton').click(function() {
-        setTimeout(function() {
+            setTimeout(function() {
 
-            catalogi('#mobileCategoryMenu ul.firstLevel').append($("<li>").append($("<a>")
-                .text("онлайн каталоги").addClass('category').css("padding", '0.5em').click(function() {
-                    catalogi.catalogs();
-                })));
-            catalogi('#mobileCategoryMenu ul.firstLevel').append($("<li>").append($("<a>")
-                .text("интернет-магазины").addClass('category').css("padding", '0.5em').click(function() {
-                    catalogi.shops();
-                })));
-            catalogi('#mobileCategoryMenu ul.firstLevel').append($("<li>").append($("<a>")
-                .text("оплата").addClass('category').css("padding", '0.5em').click(function() {
-                    catalogi.payment();
-                })));
-            catalogi('#mobileCategoryMenu ul.firstLevel').append($("<li>").append($("<a>")
-                .text("доставка").addClass('category').css("padding", '0.5em').click(function() {
-                    catalogi.delivery();
-                })));
-            catalogi('#mobileCategoryMenu ul.firstLevel').append($("<li>").append($("<a>")
-                .text("таблица размеров").addClass('category').css("padding", '0.5em').click(function() {
-                    catalogi.sizeTable();
-                })));
-        }, 200);
-    })
+                catalogi('#mobileCategoryMenu ul.firstLevel').append($("<li>").append($("<a>")
+                    .text("онлайн каталоги").addClass('category').css("padding", '0.5em').click(function() {
+                        catalogi.catalogs();
+                    })));
+                catalogi('#mobileCategoryMenu ul.firstLevel').append($("<li>").append($("<a>")
+                    .text("интернет-магазины").addClass('category').css("padding", '0.5em').click(function() {
+                        catalogi.shops();
+                    })));
+                catalogi('#mobileCategoryMenu ul.firstLevel').append($("<li>").append($("<a>")
+                    .text("оплата").addClass('category').css("padding", '0.5em').click(function() {
+                        catalogi.payment();
+                    })));
+                catalogi('#mobileCategoryMenu ul.firstLevel').append($("<li>").append($("<a>")
+                    .text("доставка").addClass('category').css("padding", '0.5em').click(function() {
+                        catalogi.delivery();
+                    })));
+                catalogi('#mobileCategoryMenu ul.firstLevel').append($("<li>").append($("<a>")
+                    .text("таблица размеров").addClass('category').css("padding", '0.5em').click(function() {
+                        catalogi.sizeTable();
+                    })));
+            }, 200);
+        })
+        //search
+    setTimeout(function() {
+        //catalog link
+        catalogi('.categoryNavESpot a').attr('href', 'http://catalogi.ru/katalog_wenz/');
+        //desctop search form
+        catalogi('#headerSearchForm').attr('onsubmit', '');
+        catalogi('#headerSearchForm').submit(function(event) {
 
+            var form = event.currentTarget;
+
+            var value = catalogi(form).find("[name='searchTerm']").val();
+
+            //var value = catalogi("[name='search'")[0].value ? catalogi("[name='search'")[0].value : catalogi("[name='search'")[1].value;
+            catalogi.cookie('seachString', value, {
+                expires: 7,
+                path: '/',
+                domain: '.catalogi.ru'
+            });
+            catalogi.ajax({
+                url: 'http://cdn.catalogi.ru/executable/actions/_translate.php',
+                type: 'get',
+                dataType: 'json',
+                data: {
+                    client: 't',
+                    text: value,
+                    sl: 'ru',
+                    tl: 'de'
+                },
+                success: function(data) {
+                    console.log('success:' + data);
+                    catalogi(form).find("[name='searchTerm']").val(data.text[0]);
+                    form.submit();
+                },
+                error: function(data) {
+                    console.log('error:' + data);
+                    // top.postMessage({action: 'search', search: catalogi('#search').val()},'*');
+                }
+            });
+
+            return false;
+        });
+        //mobile search form
+        catalogi('#mobileSearchForm').attr('onsubmit', '');
+        catalogi('#mobileSearchForm').submit(function(event) {
+            var form = event.currentTarget;
+            var value = catalogi(form).find("[name='searchTerm']").val();
+            //var value = catalogi("[name='search'")[0].value ? catalogi("[name='search'")[0].value : catalogi("[name='search'")[1].value;
+            catalogi.cookie('seachString', value, {
+                expires: 7,
+                path: '/',
+                domain: '.catalogi.ru'
+            });
+            catalogi.ajax({
+                url: 'http://cdn.catalogi.ru/executable/actions/_translate.php',
+                type: 'get',
+                dataType: 'json',
+                data: {
+                    client: 't',
+                    text: value,
+                    sl: 'ru',
+                    tl: 'de'
+                },
+                success: function(data) {
+                    console.log('success:' + data);
+                    catalogi(form).find("[name='searchTerm']").val(data.text[0]);
+                    form.submit();
+                },
+                error: function(data) {
+                    console.log('error:' + data);
+                    // top.postMessage({action: 'search', search: catalogi('#search').val()},'*');
+                }
+            });
+
+            return false;
+        });
+    }, 2000);
 
     // Подписка
     catalogi.subscribe(false, '30460');
