@@ -59,9 +59,9 @@ catalogi.parse = function() {
 
 
 
-    $('.color-item').each(function (index, value) { 
-        $(this).removeAttr("href");
-    });
+    // $('.color-item').each(function (index, value) { 
+    //     $(this).removeAttr("href");
+    // });
 
 
     $('.js-moreinfo-size').find('button').each(function (index, value) { 
