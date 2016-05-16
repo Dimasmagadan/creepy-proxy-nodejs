@@ -53,12 +53,20 @@ catalogi.parse = function() {
         );
     }
 
-    $('colors').unbind();
-    $('colors').children().off();
-    $('colors').find("*").off();
-    $('size').unbind();
-    $('size').children().off();
-    $('size').find("*").off();
+    // $('.color-item').unbind();
+    // $('.color-item').children().off();
+    // $('.color-item').find("*").off();
+
+
+
+    // $('.color-item').each(function (index, value) { 
+    //     $(this).removeAttr("href");
+    // });
+
+
+    // $('size').unbind();
+    // $('size').children().off();
+    // $('size').find("*").off();
 
 
 
