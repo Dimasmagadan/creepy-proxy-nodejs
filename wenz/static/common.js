@@ -97,6 +97,7 @@ catalogi.parse = function() {
     });
     catalogi('div.miniCartAmountContainer').remove();
     catalogi('#mobile_lightAmountContainer').remove();
+    catalogi('#mobile_lightCartCountContainer').remove();
 
     //footer
     catalogi('#footer').remove();
