@@ -81,8 +81,14 @@ a#addToCartBtn {
     margin: 0em!important;
     margin-top: 6px;
     cursor: pointer;
-    //font-style: italic;
-    //font-size: 1.4em;
+    color: #666;
+    text-decoration: none!important;
+    font-style: normal!important;
+    font-weight: normal!important;
+    font-size: .875rem;
+    font-family: "Open Sans Condensed", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+
 }
 @media screen and (max-device-width: 770px) {
     .textInHeader {
