@@ -109,18 +109,18 @@ catalogi.parse = function() {
         .queue(function(next) {
 
 
-    $( "#header-topbar > div > div" ).append( "<div id='topbar-slogan' class='col-md-6 hidden-xs hidden-sm'><a href='http://www.catalogi.ru' target='_blank' class='headerLinks _home catalogiLink'> Каталоги.ру <span class='hidden-xs hidden-sm hidden-md'>- заказ и доставка одежды из интернет-магазина Sheego.de.</span></a></div>"
+    $( "#header-topbar > div > div" ).append( "<div id='topbar-slogan' class='col-md-6 hidden-xs hidden-sm'><a href='http://www.catalogi.ru' target='_blank' class='headerLinks _home catalogiLink' style='cursor:pointer'> Каталоги.ру <span class='hidden-xs hidden-sm hidden-md'>- заказ и доставка одежды из интернет-магазина Sheego.de.</span></a></div>"
                                             + "<div class=' col-md-6'>"
-                                            + "<a href='#' class='headerLinks hidden-xs hidden-sm' onclick='catalogi.catalogs(); return false' style='margin-left:0px; margin-right:0px;'>Онлайн каталоги</a><span class='hidden-xs hidden-sm'>|</span>"
-                                            + "<a href='#' class='headerLinks hidden-xs hidden-sm' onclick='catalogi.shops(); return false' style='margin-left:0px; margin-right:0px;'>Интернет-магазины</a><span class='hidden-xs hidden-sm'>|</span>"
-                                            + "<a href='#' class='headerLinks hidden-xs hidden-sm' onclick='catalogi.sizeTable(); return false' style='margin-left:0px; margin-right:0px;'>Таблица размеров</a><span class='hidden-xs hidden-sm'>|</span>"
-                                            + "<a href='#' id='delivery' class='headerLinks notranslate hidden-xs hidden-sm' onclick='catalogi.delivery(); return false' style='margin-left:0px; margin-right:0px;'> Дocтавка </a><span class='hidden-xs hidden-sm'>|</span>"
-                                            + "<a href='#' class='headerLinks hidden-xs hidden-sm' onclick='catalogi.payment(); return false' style='margin-left:0px; margin-right:0px;'>Оплата</a>" 
+                                            + "<a href='#' class='headerLinks hidden-xs hidden-sm' onclick='catalogi.catalogs(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'>Онлайн каталоги</a><span class='hidden-xs hidden-sm'>|</span>"
+                                            + "<a href='#' class='headerLinks hidden-xs hidden-sm' onclick='catalogi.shops(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'>Интернет-магазины</a><span class='hidden-xs hidden-sm'>|</span>"
+                                            + "<a href='#' class='headerLinks hidden-xs hidden-sm' onclick='catalogi.sizeTable(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'>Таблица размеров</a><span class='hidden-xs hidden-sm'>|</span>"
+                                            + "<a href='#' id='delivery' class='headerLinks notranslate hidden-xs hidden-sm' onclick='catalogi.delivery(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'> Дocтавка </a><span class='hidden-xs hidden-sm'>|</span>"
+                                            + "<a href='#' class='headerLinks hidden-xs hidden-sm' onclick='catalogi.payment(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'>Оплата</a>" 
                                             + "<a href='#' class='hidden-xs hidden-sm hidden-md' style='margin-left: 20px'>+74955404949</a></div>"
                                             + "<div class='col-sm-12 col-xs-12 hidden-md hidden-lg'>"
-                                            + "<a href='http://www.catalogi.ru' target='_blank' class='headerLinks _home catalogiLink'> Каталоги.ру </a>|"
-                                            + "<a href='#' class='headerLinks' onclick='catalogi.payment(); return false' style='margin-left:0px; margin-right:0px;'>Оплата</a>|"
-                                            + "<a href='#'  class='headerLinks notranslate ' onclick='catalogi.delivery(); return false' style='margin-left:0px; margin-right:0px;'> Дocтавка </a></div>");
+                                            + "<a href='http://www.catalogi.ru' target='_blank' class='headerLinks _home catalogiLink' style='cursor:pointer'> Каталоги.ру </a>|"
+                                            + "<a href='#' class='headerLinks' onclick='catalogi.payment(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'>Оплата</a>|"
+                                            + "<a href='#'  class='headerLinks notranslate ' onclick='catalogi.delivery(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'> Дocтавка </a></div>");
 
 
 // <li class="mainnav__entry mainnav__entry--start"> <a class="mainnav__entry-title" href="http://www.sheego.catalogi.ru/" style="font-size: 16px;"><font><font><font><font>старт</font></font></font></font></a></li>
