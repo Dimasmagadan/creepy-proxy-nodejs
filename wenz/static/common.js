@@ -51,6 +51,48 @@ catalogi.parse = function() {
     //// Шапка
     catalogi('#iframe').hide();
 
+    //desctop menu
+    catalogi('.categoryNavESpot a')
+        .css('color', 'white')
+        .attr('onclick', '')
+        .attr('href', 'http://catalogi.ru/katalog_wenz/');
+
+    //catalogi('.headerTopNavigation').css('margin-top', '6px');
+    //service links
+    catalogi('.headerTopNavigation').children().remove();
+    catalogi('.headerTopNavigation').append($('<li>').text('+74955404949').addClass('textInHeader'));
+    catalogi('.headerTopNavigation').append($('<li>').text('|').addClass('textInHeader'));
+    catalogi('.headerTopNavigation').append($('<li>').text('Доставка').addClass('textInHeader').click(function() {
+        catalogi.delivery();
+    }));
+    catalogi('.headerTopNavigation').append($('<li>').text('|').addClass('textInHeader'));
+    catalogi('.headerTopNavigation').append($('<li>').text('Оплата').addClass('textInHeader').click(function() {
+        catalogi.payment();
+    }));
+    catalogi('.headerTopNavigation').append($('<li>').text('|').addClass('textInHeader'));
+    catalogi('.headerTopNavigation').append($('<li>').text('Интернет-магазины').addClass('textInHeader').click(function() {
+        catalogi.shops();
+    }));
+    catalogi('.headerTopNavigation').append($('<li>').text('|').addClass('textInHeader'));
+    catalogi('.headerTopNavigation').append($('<li>').text('Онлайн каталоги').addClass('textInHeader').click(function() {
+        catalogi.catalogs();
+    }));
+
+
+
+    catalogi('.storeHeaderBar').append($("<a> Каталоги.ру - заказ и доставка одежды из интернет-магазина wenz.de.</a>")
+        .attr('href', 'http://www.catalogi.ru')
+        .attr('target', '_blank')
+        .addClass('headerLinks _home')
+        .css('padding-top', '5px'));
+
+    //basket area
+    catalogi('.leafletHeaderIcon').remove();
+
+    //footer
+    catalogi('#footer').remove();
+
+
     // Подписка
     catalogi.subscribe(false, '31818');
 
@@ -67,6 +109,13 @@ catalogi.parse = function() {
         document.getElementsByTagName('head')[0].appendChild(script);
 
     }, 1000);
+
+    setTimeout(function() {
+        catalogi('.productBoxContainer img').each(function(i, e) {
+            var images = JSON.parse(catalogi('#' + $(e).attr('data-original')).text());
+            $(e).attr('src', images.MAIN).removeClass('lazyLoad');
+        });
+    }, 2000);
 
     // Showing body after hiding
     catalogi('body')
