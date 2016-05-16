@@ -52,29 +52,13 @@ catalogi.parse = function() {
 
         );
     }
-    // if (catalogi('.at-dv-addToBasket')) {
-    //     setInterval(function() {
-    //         if (catalogi('.at-dv-addToBasket')) {
-    //             // catalogi('.link--notepad').remove();
-    //             // catalogi.service();
-    //             catalogi('.at-dv-addToBasket').replaceWith(
-    //                 $("<button type='button' class='at-dv-addToBasket btn btn-primary btn-tall'>В корзину</button>")
-    //                 .addClass('notranslate')
-    //                 .attr('id', 'addToCartBtn')
-    //                 .bind('click', function(event) {
-    //                     //  event.preventDefault();
-    //                     addToCart();
-    //                 }).bind('tap', function(event) {
-    //                     //    event.preventDefault();
-    //                     addToCart();
-    //                 })
 
-    //             );
-    //         }
-    //     }, 1000);
-    // }
-
-
+    $('colors').unbind();
+    $('colors').children().off();
+    $('colors').find("*").off();
+    $('size').unbind();
+    $('size').children().off();
+    $('size').find("*").off();
 
 
 
