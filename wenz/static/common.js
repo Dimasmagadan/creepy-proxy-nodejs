@@ -305,7 +305,7 @@ catalogi.parse = function() {
     catalogi('head')
         .delay(5000)
         .queue(function(next) {
-            catalogi('.accountHeaderIcon a').text('Кабинет') ж
+            catalogi('.accountHeaderIcon a').text('Кабинет');
             if (_auth) {
                 catalogi('.accountHeaderIcon a')
                     .attr('href', 'http://catalogi.ru/cabinet/');
