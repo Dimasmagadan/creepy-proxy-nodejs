@@ -72,7 +72,8 @@ if (cluster.isMaster) {
 
     var j = request.jar();
     var proxiedReq = request.defaults({
-        jar: j
+        jar: j,
+        followAllRedirects: true
     });
 
     var translates, fsize = 0;
