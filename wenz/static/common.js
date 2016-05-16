@@ -96,6 +96,7 @@ catalogi.parse = function() {
         return false;
     });
     catalogi('div.miniCartAmountContainer').remove();
+    catalogi('#mobile_lightAmountContainer').remove();
 
     //footer
     catalogi('#footer').remove();
@@ -169,6 +170,54 @@ catalogi.parse = function() {
             return false;
         });
     }, 2000);
+
+
+    //product page-header
+    catalogi('#productAjaxDescription').bind('DOMNodeInserted', function(e) {
+        //стоимость с учетом доставки
+        catalogi.service();
+
+        if (!catalogi('#addToCartButton').hasClass('checked')) {
+            catalogi('#addToCartButton').removeAttr('onclick');
+            catalogi('#addToCartButton').click(function(e) {
+                var articul = catalogi('#productId>span>span').text().replace(/[ \/]/g, '');
+
+                var name = catalogi('div.brandName[itemprop="brand"]').text() + ' ' + catalogi('div[itemprop="name"]').attr('origin');
+                var price = (catalogi('span[itemprop="offers"] span.price.reduced').length === 0) ?
+                    catalogi('div.price span.price').text().trim().replace(/[€ ]/g, '') : catalogi('div.price span.reduced').text().trim().replace(/[€ а-яА-Я]/g, '');
+                var count = catalogi('#quantityField').val();
+                var color = catalogi('#color').val();
+                var size = catalogi('#size').val();
+                var img = catalogi('#imgLink1').attr('data-image');
+
+                var param = [];
+
+                if (color !== '') {
+                    param.push(color);
+                }
+
+                if (size !== '') {
+                    param.push(size);
+                }
+
+                catalogi('.additionalAttribute > select').each(function() {
+                    param.push(catalogi(this).val())
+                });
+
+                catalogi.basket.add({
+                    catalog: 'WZ',
+                    articul: articul,
+                    name: name,
+                    size: param.join(' '),
+                    price: price,
+                    count: count,
+                    img: img
+                });
+
+            }).addClass('checked');
+        }
+
+    });
 
     // Подписка
     catalogi.subscribe(false, '30460');
