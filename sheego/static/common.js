@@ -67,18 +67,20 @@ catalogi.parse = function() {
         $(this).removeClass('js-ajax');
     });
 
+    $('.js-moreinfo-size').removeClass('.js-moreinfo-size').removeClass('.js-sizeSelector')
 
-    // $('.js-moreinfo-size').find('button').each(function (index, value) { 
-    //     $(this).replaceWith("<a class='btn btn-primary btn-small size-selected'>" + $(this).text() + "</a>");
-    // });
 
-    // $('.size-selected').bind('click', function(event) {
-    //     $('.js-moreinfo-size').find('.btn').each(function (index, value) { 
-    //         $(this).removeClass('active');
-    //     });
+    $('.js-moreinfo-size').find('button').each(function (index, value) { 
+        $(this).replaceWith("<a class='btn btn-primary btn-small size-selected'>" + $(this).text() + "</a>");
+    });
 
-    //     $('.at-dv-size').text(" - " + $(this).text());
-    // });
+    $('.size-selected').bind('click', function(event) {
+        $('.js-moreinfo-size').find('.btn').each(function (index, value) { 
+            $(this).removeClass('active');
+        });
+
+        $('.at-dv-size').text(" - " + $(this).text());
+    });
 
 
 
@@ -208,8 +210,10 @@ catalogi.parse = function() {
     $('.minibasket__basket').empty();
     $('.minibasket__basket').text('Корзина');
 
+
+    //кабинет
     $('#miniaccount').empty();
- $( "#miniaccount" ).append( "<div class='myaccount notranslate' style='display: inline-block !important;'><a class='logged notranslate minibasket__text hidden-xs-inline hidden-sm-inline'  onclick='catalogi.login(); return false'>Кабинет</a></div>" );
+     $( "#miniaccount" ).append( "<div class='myaccount notranslate' style='display: inline-block !important;'><a class='logged notranslate minibasket__text hidden-xs-inline hidden-sm-inline'  onclick='catalogi.login(); return false'>Кабинет</a><img src='https://image.freepik.com/free-icon/male-user-shadow_318-34042.png'></div>" );
     //smaller font size for menu
     $('#mainnavigation a').css('font-size','16px');
     //search panel
