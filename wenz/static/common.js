@@ -300,12 +300,12 @@ catalogi.parse = function() {
         document.getElementsByTagName('head')[0].appendChild(script);
     }, 1000);
 
-    setTimeout(function() {
+    /*setTimeout(function() {
         catalogi('.productBoxContainer img').each(function(i, e) {
             var images = JSON.parse(catalogi('#' + $(e).attr('data-original')).text());
             $(e).attr('src', images.MAIN).removeClass('lazyLoad');
         });
-    }, 2000);
+    }, 2000);*/
 
     // Showing body after hiding
     catalogi('body')
