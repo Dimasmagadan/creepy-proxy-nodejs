@@ -167,6 +167,11 @@ catalogi.parse = function() {
     $('#topbar-salutation').remove();
     $('#topbar-bulletpoints').remove();
 
+    $('.firstlevel').remove();
+    $('.secondlevel').remove();
+    $('.thirdlevel').remove();
+    $('.fourthlevel').remove();
+
     //hide all content after first #footer
     $('#iframe').nextAll().remove();
     $('#iframe').hide();
@@ -287,7 +292,7 @@ function addToCart() {
         if (catalogi('#cboxLoadedContent').length == 0) {
             catalogi.order();
         }
-    }, 500);
+    }, 800);
 
     return false;
 }
