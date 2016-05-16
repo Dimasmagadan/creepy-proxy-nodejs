@@ -64,17 +64,17 @@ catalogi.parse = function() {
     // });
 
 
-    $('.js-moreinfo-size').find('button').each(function (index, value) { 
-        $(this).replaceWith("<a class='btn btn-primary btn-small size-selected'>" + $(this).text() + "</a>");
-    });
+    // $('.js-moreinfo-size').find('button').each(function (index, value) { 
+    //     $(this).replaceWith("<a class='btn btn-primary btn-small size-selected'>" + $(this).text() + "</a>");
+    // });
 
-    $('.size-selected').bind('click', function(event) {
-        $('.js-moreinfo-size').find('.btn').each(function (index, value) { 
-            $(this).removeClass('active');
-        });
+    // $('.size-selected').bind('click', function(event) {
+    //     $('.js-moreinfo-size').find('.btn').each(function (index, value) { 
+    //         $(this).removeClass('active');
+    //     });
 
-        $('.at-dv-size').text(" - " + $(this).text());
-    });
+    //     $('.at-dv-size').text(" - " + $(this).text());
+    // });
 
 
 
