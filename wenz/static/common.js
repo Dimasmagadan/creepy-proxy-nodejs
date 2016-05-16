@@ -194,7 +194,7 @@ catalogi.parse = function() {
         //стоимость с учетом доставки
 
 
-        catalogi('#fitanalytics-size-advisor').unbind('click');
+        catalogi('#fitanalytics-size-advisor').addClass('notranslate').unbind('click');
         catalogi('#fitanalytics-size-advisor').click(function() {
             catalogi.sizeTable();
         });
