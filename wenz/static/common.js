@@ -260,9 +260,13 @@ catalogi.parse = function() {
         .queue(function(next) {
 
             if (_auth) {
-
+                catalogi('.accountHeaderIcon a')
+                    .attr('href', 'http://catalogi.ru/cabinet/');
             } else {
-
+                catalogi('.accountHeaderIcon a').click(function(event) {
+                    event.preventDefault();
+                    catalogi.login();
+                });
             }
         });
 };
@@ -391,18 +395,15 @@ function checkSeach() {
 
 // Скидка
 catalogi.service = function() {
-    if ('_service' in window && catalogi('p.product--tax')) {
-        catalogi('p.product--tax').children().remove();
-        _price = catalogi('.product--price')
-            .first()
-            .text()
-            .replace('€', '')
-            .replace('*', '')
-            .replace(',', '.')
-            .trim();
-        _delivery = parseFloat(_price) + ((parseFloat(_price) / 100) * parseFloat(_service));
-        catalogi('p.product--tax').text('С учетом доставки € ' + _delivery.toFixed(2));
-        // catalogi('.product-shipping-costs').text('С учетом доставки € '+_delivery.toFixed(2));
+    if ('_service' in window) {
+        var _price = (catalogi('span[itemprop="offers"] span.price.reduced').length === 0) ?
+            catalogi('div.price span.price').text().trim().replace(/[€ ]/g, '') : catalogi('div.price span.reduced').text().trim().replace(/[€ а-яА-Я]/g, '');
+        if (_price != '') {
+            var _delivery = parseFloat(_price.replace(',', '.')) + ((parseFloat(_price.replace(',', '.')) / 100) * parseFloat(_service));
+            if (catalogi('.vatLabel').text() != 'С учетом доставки € ' + _delivery.toFixed(2)) {
+                catalogi('.vatLabel').text('С учетом доставки € ' + _delivery.toFixed(2));
+            }
+        }
     }
 };
 
