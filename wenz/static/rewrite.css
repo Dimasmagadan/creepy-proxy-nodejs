@@ -77,9 +77,12 @@ a#addToCartBtn {
     text-align: center;
 }
 .textInHeader {
-    padding-top: 1em;
-    font-style: italic;
-    font-size: 1.4em;
+    padding:0 0.1em!important;
+    margin: 0em!important;
+    margin-top: 6px;
+    cursor: pointer;
+    //font-style: italic;
+    //font-size: 1.4em;
 }
 @media screen and (max-device-width: 770px) {
     .textInHeader {
