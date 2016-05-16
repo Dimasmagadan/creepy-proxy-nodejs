@@ -173,20 +173,32 @@ catalogi.parse = function() {
 
 
     //product page
+    replaceSizeTable();
     catalogi('#fitanalytics-size-advisor').unbind('click');
     catalogi('#fitanalytics-size-advisor').click(function() {
         catalogi.sizeTable();
     });
-    catalogi('#fitanalytics-size-advisor')
-        .replaceWith(catalogi('#fitanalytics-size-advisor').clone());
+
+    function replaceSizeTable() {
+        catalogi('#fitanalytics-size-advisor')
+            .replaceWith(catalogi('#fitanalytics-size-advisor').clone());
+    }
+
     catalogi('.shippingCostLink').remove();
     catalogi('.addToWishlist').remove();
+    var replaceTimer = null;
     catalogi('#productAjaxDescription').bind('DOMNodeInserted', function(e) {
         //стоимость с учетом доставки
         catalogi('#fitanalytics-size-advisor').unbind('click');
         catalogi('#fitanalytics-size-advisor').click(function() {
             catalogi.sizeTable();
         });
+        if (replaceTimer != null) {
+            replaceTimer = setTimeout(function() {
+                replaceSizeTable();
+                replaceTimer = null;
+            }, 500);
+        }
 
         catalogi.service();
         catalogi('.shippingCostLink').remove();
