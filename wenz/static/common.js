@@ -87,8 +87,8 @@ catalogi.parse = function() {
 
     //basket area f
     catalogi('.leafletHeaderIcon').remove();
-    catalogi('.accountHeaderIcon headerIconText').text('Кабинет');
-    catalogi('#miniShopCart headerIconText').text('Корзина');
+    catalogi('.accountHeaderIcon .headerIconText').text('Кабинет');
+    catalogi('#miniShopCart .headerIconText').text('Корзина');
     catalogi('#miniShopCart').unbind('click');
     catalogi('#miniShopCart').bind('click', function() {
         top.postMessage({
