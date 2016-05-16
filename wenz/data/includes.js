@@ -36,7 +36,8 @@ module.exports = function(catalog, param, options) {
             bottom: [
                 '<script type="text/javascript" src="http://www.' + catalog + '.catalogi.ru/static/js/kmo.min.js"></script>',
                 '<script type="text/javascript" src="http://www.' + catalog + '.catalogi.ru/static/js/kmoquery.min.js"></script>',
-                '<script type="text/javascript" src="http://www.' + catalog + '.catalogi.ru/static/js/Product.min.js"></script>'
+                '<script type="text/javascript" src="http://www.' + catalog + '.catalogi.ru/static/js/Product.min.js"></script>',
+                '<script type="text/javascript" src="http://www.' + catalog + '.catalogi.ru/static/js/Catalog.min.js"></script>'
             ].join("\n"),
         }
     }
