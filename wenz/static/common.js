@@ -78,23 +78,58 @@ catalogi.parse = function() {
         catalogi.catalogs();
     }));
 
-
-
     catalogi('.storeHeaderBar').append($("<a> Каталоги.ру - заказ и доставка одежды из интернет-магазина wenz.de.</a>")
         .attr('href', 'http://www.catalogi.ru')
         .attr('target', '_blank')
         .addClass('headerLinks _home notranslate')
         .css('padding-top', '5px'));
 
+
     //basket area
     catalogi('.leafletHeaderIcon').remove();
+
+    catalogi('#miniShopCart').unbind('click');
+    catalogi('#miniShopCart').bind('click', function() {
+        top.postMessage({
+            action: 'basket'
+        }, '*');
+        return false;
+    });
+    catalogi('div.miniCartAmountContainer').remove();
 
     //footer
     catalogi('#footer').remove();
 
+    //mobile menu links
+    catalogi('#topBarMenuButton').click(function() {
+        setTimeout(function() {
+
+            catalogi('#mobileCategoryMenu ul.firstLevel').append($("<li>").append($("<a>")
+                .text("онлайн каталоги").addClass('category').css("padding", '0.5em').click(function() {
+                    catalogi.catalogs();
+                })));
+            catalogi('#mobileCategoryMenu ul.firstLevel').append($("<li>").append($("<a>")
+                .text("интернет-магазины").addClass('category').css("padding", '0.5em').click(function() {
+                    catalogi.shops();
+                })));
+            catalogi('#mobileCategoryMenu ul.firstLevel').append($("<li>").append($("<a>")
+                .text("оплата").addClass('category').css("padding", '0.5em').click(function() {
+                    catalogi.payment();
+                })));
+            catalogi('#mobileCategoryMenu ul.firstLevel').append($("<li>").append($("<a>")
+                .text("доставка").addClass('category').css("padding", '0.5em').click(function() {
+                    catalogi.delivery();
+                })));
+            catalogi('#mobileCategoryMenu ul.firstLevel').append($("<li>").append($("<a>")
+                .text("таблица размеров").addClass('category').css("padding", '0.5em').click(function() {
+                    catalogi.sizeTable();
+                })));
+        }, 200);
+    })
+
 
     // Подписка
-    catalogi.subscribe(false, '31818');
+    catalogi.subscribe(false, '30460');
 
     setTimeout(function() {
         var script = null;
