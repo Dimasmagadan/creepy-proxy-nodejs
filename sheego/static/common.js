@@ -306,6 +306,7 @@ function checkBasket() {
                 event.preventDefault();
                 catalogi.order();
             });
+    catalogi('#minibasket').off();
 
     catalogi('#mbflyout-area').remove();
 
