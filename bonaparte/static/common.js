@@ -223,7 +223,7 @@ catalogi.parse = function() {
         $('#top').remove();
         $('#languageMenu').remove();
         $('#dropDownCartBoxTitle').remove();
-        $('#topSection').css('height','10px')
+        $('.topSection').css('height','10px')
         $('#iframe').insertBefore('.topSection');
 
             catalogi('.navigation--entry.headerHint').children().remove();
