@@ -85,7 +85,7 @@ catalogi.parse = function() {
         .css('padding-top', '5px'));
 
 
-    //basket area
+    //basket area f
     catalogi('.leafletHeaderIcon').remove();
     catalogi('#miniShopCart').text('Корзина');
     catalogi('#miniShopCart').unbind('click');
