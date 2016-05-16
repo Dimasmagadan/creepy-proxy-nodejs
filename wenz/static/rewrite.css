@@ -1,5 +1,10 @@
 /* Заменяем шрифты*/
-
+@font-face {
+    font-family: 'IcoMoon';
+    src: url("http://www.wenz.catalogi.ru/static/fonts/icomoon.woff");
+    font-weight: normal;
+    font-style: normal
+}
 @font-face {
     font-family: "jvds icons";
     src: url("/static/fonts/jvds-icons.woff");
