@@ -15,7 +15,7 @@ module.exports = function(catalog, param, options) {
             '<script type="text/javascript" src="http://cdn.catalogi.ru/static/js/jquery.validationEngine-ru.js"></script>',
             '<script type="text/javascript" src="http://cdn.catalogi.ru/static/js/jquery.validationEngine.js"></script>',
             '<script type="text/javascript" src="http://cdn.catalogi.ru/static/js/jquery.cookie.js"></script>',
-            '<script type="text/javascript" src="http://cdn.catalogi.ru/static/js/jquery.jcarousel.js"></script>',
+            '<script type="text/javascript" src="http://www.' + catalog + '.catalogi.ru/static/jquery.jcarousel.js"></script>',
             '<script type="text/javascript" src="http://cdn.catalogi.ru/static/js/common.js"></script>',
             '<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=_googleTranslateElementInit"></script>',
             '<script type="text/javascript" src="http://www.' + catalog + '.catalogi.ru/static/common.js"></script>'
