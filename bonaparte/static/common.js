@@ -218,6 +218,13 @@ catalogi.parse = function() {
 
         $('#iframe').show();
         $('#iframe').css('width','100%');
+        $('#TopImageMap').remove();
+        $('.additionalMenu').remove();
+        $('#top').remove();
+        $('#languageMenu').remove();
+        $('#dropDownCartBoxTitle').remove();
+        $('#topSection').css('height','10px')
+        $('#iframe').insertBefore('.topSection');
 
             catalogi('.navigation--entry.headerHint').children().remove();
             catalogi('.navigation--entry.headerHint').text("");
