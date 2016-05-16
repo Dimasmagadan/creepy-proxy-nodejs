@@ -177,6 +177,8 @@ catalogi.parse = function() {
     catalogi('#fitanalytics-size-advisor').click(function() {
         catalogi.sizeTable();
     });
+    catalogi('#fitanalytics-size-advisor')
+        .replaceWith(catalogi('#fitanalytics-size-advisor').clone());
     catalogi('.shippingCostLink').remove();
     catalogi('.addToWishlist').remove();
     catalogi('#productAjaxDescription').bind('DOMNodeInserted', function(e) {
@@ -185,8 +187,7 @@ catalogi.parse = function() {
         catalogi('#fitanalytics-size-advisor').click(function() {
             catalogi.sizeTable();
         });
-        catalogi('#fitanalytics-size-advisor')
-            .replaceWith(catalogi('#fitanalytics-size-advisor').clone());
+
         catalogi.service();
         catalogi('.shippingCostLink').remove();
         catalogi('.addToWishlist').remove();
