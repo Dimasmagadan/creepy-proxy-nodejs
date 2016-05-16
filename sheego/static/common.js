@@ -292,7 +292,7 @@ function checkBasket() {
     $('#minibasket').empty();
     $('#minibasket').attr("onclick","catalogi.order(); return false");
         $('#minibasket').append(""
-                    + "<a class='minibasket__link js-minibasket-href' href='http://www.sheego.catalogi.ru/checkout/cart' onclick='catalogi.order(); return false'>"
+                    + "<a class='minibasket__link js-minibasket-href' href='http://www.sheego.catalogi.ru/checkout/cart' >"
                     +    "<span class='minibasket__text hidden-xs-inline hidden-sm-inline'>"   
                     +    "<span class='minibasket__basket'>Корзина</span>"
                     +    "</span>"
@@ -306,7 +306,7 @@ function checkBasket() {
                 event.preventDefault();
                 catalogi.order();
             });
-    catalogi('#minibasket').find("*").off();
+    // catalogi('#minibasket').find("*").off();
 
     catalogi('#mbflyout-area').remove();
 
