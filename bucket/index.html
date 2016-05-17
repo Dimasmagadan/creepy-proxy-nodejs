@@ -1,0 +1,82 @@
+<!--/**
+ * html
+ * Copyright (c) 2016-05-11 by dimasmagadan@gmail.com
+ * This file is generated automatically. Do not edit.
+ */
+--><!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="any-class" style="margin: 30px auto 0; color:#fff;background-color: red;padding: 20px;width: 200px;text-align: center;">
+		корзина
+	</div>    
+
+	<script type="text/template" id="MainViewTemplate">
+		<!-- <div class="osCart"> -->
+			<div class="osCart-wrap">
+				<div class="osCart-title"></div>
+				
+				<div class="osCart-items">
+					<% _.each(items, function(el,key){ %>
+						<div class="osCart-item">
+							<img class="osCart-image" src="<%- el.img %>" alt="">
+							<div class="osCart-itemdetails">
+								<a href="#" class="osCart-link__remove" data-index="<%- key %>">x</a>
+								<a href="<%- el.url %>" class="osCart-link"><%= el.title %></a>
+								<% if(!_.isUndefined(el.size)){ %>
+									<div class="osCart-note">Größe: <%= el.size %></div>
+								<% } %>
+								<div class="osCart-note">Anzahl: <%= el.number %></div>
+							</div>
+							<div class="osCart-price"><%= el.price %> <%= currency %></div>
+						</div>
+					<% }) %>
+				</div>
+
+				<div class="osCart-total"></div>
+				<button class="osCart-button__submit">Submit</button>
+				<button class="osCart-button__clear">Clear</button>
+			</div>
+		<!-- </div> -->
+	</script>
+
+	<script type="text/template" id="TotalViewTemplate">
+		Gesamtsumme: <%= total %>
+	</script>
+
+	<script type="text/template" id="TitleViewTemplate">
+		<% if(count>0){ %>
+			<%= site %> - <%= count %>
+		<% } else { %>
+			Cart is empty.
+		<% } %>
+	</script>
+
+	<script type="text/template" id="SlideViewTemplate">
+		<div class="osCart-item">
+			<img class="osCart-image" src="<%- el.img %>" alt="">
+			<div class="osCart-itemdetails">
+				<a href="#" class="osCart-link__remove" data-index="<%- key %>">x</a>
+				<a href="<%- el.url %>" class="osCart-link"><%= el.title %></a>
+				<% if(!_.isUndefined(el.size)){ %>
+					<div class="osCart-note">Größe: <%= el.size %></div>
+				<% } %>
+				<div class="osCart-note">Anzahl: <%= el.number %></div>
+			</div>
+			<div class="osCart-price"><%= el.price %> <%= currency %></div>
+		</div>
+	</script>
+
+	<link rel="stylesheet" href="css/main.css">	
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
+	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.js"><\/script>')</script>
+	<!-- <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js"></script> -->
+	<script src="js/vendor/slick.min.js"></script>
+	<script src="js/vendor/underscore-min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
