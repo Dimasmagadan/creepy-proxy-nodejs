@@ -232,7 +232,7 @@ function addToCart() {
             catalog: 'BP',
             articul: articul,
             name: name,
-            size: color + size,
+            size: color + " " + size,
             price: price,
             count: count,
             img: img
