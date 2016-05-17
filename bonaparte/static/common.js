@@ -137,7 +137,7 @@ catalogi.parse = function() {
         $('#iframe').insertBefore('.topSection');
         $('.topLineLink').css('font-size','12px');
         $('.wideFooter').remove();
-        $('.ssBox').replaceWith($('.ssBox').clone());
+        $('.ssBox').replaceWith('<div id="ssBox" class="ssBox"><div class="ssBoxTextDiv"><form class="search"><input name="ctl00$topMenu$searchBoxUc$ssBoxTextBox" type="text" value="Suchbegriff eingeben" title="введите слово для поиска" class="ssBoxTextBox keepValue" autocomplete="off"></div><div class="ssBoxButtonDiv"><input type="submit"  class="ssBoxButton"></div></form></div>');
 
 
         //add to cart button
@@ -305,7 +305,7 @@ catalogi.removeShit = function() {
 catalogi(function() {
     currentDomain = getCurrentDomain();
 
-        catalogi('.ssBoxTextDiv').submit(function(event) {
+        catalogi('.ssBox').submit(function(event) {
         var form = event.currentTarget;
         var value = catalogi(form).find("[name='ctl00$topMenu$searchBoxUc$ssBoxTextBox']").val();
         //var value = catalogi("[name='search'")[0].value ? catalogi("[name='search'")[0].value : catalogi("[name='search'")[1].value;
