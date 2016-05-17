@@ -141,12 +141,11 @@ catalogi.parse = function() {
 
 
         //add to cart button
-        $('.addToCart').replaceWith('<div id="divAddToCart" class="itemButton addToCart"><input value="Добавить в корзину"  type="button" class="bigButton addToCartButton"></div>')
-            .bind('click', function(event) {
+        $('.addToCart').replaceWith('<div id="divAddToCart" class="itemButton addToCart"><input value="Добавить в корзину"  type="button" class="bigButton addToCartButton"></div>');
+            $('.addToCartButton').bind('click', function(event) {
                 //  event.preventDefault();
                 addToCart();
-            });
-
+            })
 
             catalogi('.navigation--entry.headerHint').children().remove();
             catalogi('.navigation--entry.headerHint').text("");
