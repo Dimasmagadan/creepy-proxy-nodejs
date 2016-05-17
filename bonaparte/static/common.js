@@ -137,11 +137,11 @@ catalogi.parse = function() {
         $('#iframe').insertBefore('.topSection');
         $('.topLineLink').css('font-size','12px');
         $('.wideFooter').remove();
-        $('.ssBox').replaceWith('<div id="ssBox" class="ssBox"><form action="/search" class="search"><div class="ssBoxTextDiv"><input name="ctl00$topMenu$searchBoxUc$ssBoxTextBox" type="text" value="Поиск" title="введите слово для поиска" class="ssBoxTextBox keepValue" autocomplete="off"></div><div class="ssBoxButtonDiv"><button type="submit" class="searchButton"></button></div></form></div>');
+        $('.ssBox').replaceWith('<div id="ssBox" class="ssBox"><form action="/search" class="search"><div class="ssBoxTextDiv"><input name="ctl00$topMenu$searchBoxUc$ssBoxTextBox" type="text" value="Поиск" title="введите слово для поиска" class="ssBoxTextBox keepValue" autocomplete="off"></div><div class="ssBoxButtonDiv"><input class="searchButton"></div></form></div>');
 
 
         $('.searchButton').bind('click', function(event) {
-
+            console.log("aaaa");
         })
 
     $('.search').unbind();
