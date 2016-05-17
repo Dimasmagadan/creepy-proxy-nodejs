@@ -93,7 +93,14 @@ div#navbar-meta {
         margin-top: -3.25rem;
     }
 }
-
+.navbar-brand {
+    display: block;
+    padding: 0;
+    height: 100%;
+    max-height: 50px;
+    max-width: 45%;
+    
+}
 @media screen and (max-width: 770px) {
     .myaccount {
     margin-top: 27px;
