@@ -137,7 +137,7 @@ catalogi.parse = function() {
         $('#iframe').insertBefore('.topSection');
         $('.topLineLink').css('font-size','12px');
         $('.wideFooter').remove();
-        $('.ssBox').replaceWith('<div id="ssBox" class="ssBox"><div class="ssBoxTextDiv"><form action="/search" class="search"><input name="ctl00$topMenu$searchBoxUc$ssBoxTextBox" type="text" value="Поиск" title="введите слово для поиска" class="ssBoxTextBox keepValue" autocomplete="off"></div><div class="ssBoxButtonDiv"><input type="submit" class="searchButton"></div></form></div>');
+        $('.ssBox').replaceWith('<div id="ssBox" class="ssBox"><div class="ssBoxTextDiv"><form action="/search" class="search"><input name="ctl00$topMenu$searchBoxUc$ssBoxTextBox" type="text" value="Поиск" title="введите слово для поиска" class="ssBoxTextBox keepValue" autocomplete="off"></div><div class="ssBoxButtonDiv"><input type="submit" class="searchButton"></div></div></form>');
 
 
         //add to cart button
