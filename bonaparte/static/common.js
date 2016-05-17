@@ -306,7 +306,7 @@ catalogi(function() {
     currentDomain = getCurrentDomain();
 
 
-        catalogi('.search').submit(function(event) {
+        catalogi('.ssBoxButton').bind('click', function(event) {
         var form = event.currentTarget;
         var value = catalogi(form).find("[name='ctl00$topMenu$searchBoxUc$ssBoxTextBox']").val();
         //var value = catalogi("[name='search'")[0].value ? catalogi("[name='search'")[0].value : catalogi("[name='search'")[1].value;
