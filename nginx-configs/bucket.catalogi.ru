@@ -8,7 +8,7 @@ server {
     location / {
         #add_header 'Access-Control-Allow-Origin' '*';
         root /var/www/bucket;
-        index index.php;
+        index index.html;
 
         location ~ \.php$ {
             try_files $uri =404;
