@@ -1019,9 +1019,8 @@ function Anthem_CallBack(url, target, id, method, args, clientCallBack, clientCa
 	    var action = action1.replace("www.bonaparte.catalogi.ru","de.bonaparteshop.com");
 	    x.open("POST", url ? url : action);
 	    x.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=utf-8");
-	    x.setRequestHeader('Access-Control-Allow-Origin', '*');
-	    x.setRequestHeader('Access-Control-Allow-Headers', 'Content-Description');
-	    x.setRequestHeader('Access-Control-Max-Age', '1728000');
+	    x.setRequestHeader("Origin","https://de.bonaparteshop.com");
+	    x.setRequestHeader("Refer",action);
 	    //x.setRequestHeader("Accept-Encoding", "gzip, deflate");
 	    if (typeof(clientCallBack) == "function") {
 		    x.onreadystatechange = function() {
