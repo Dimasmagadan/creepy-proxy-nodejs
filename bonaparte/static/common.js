@@ -137,7 +137,7 @@ catalogi.parse = function() {
         $('#iframe').insertBefore('.topSection');
         $('.topLineLink').css('font-size','12px');
         $('.wideFooter').remove();
-        $('.ssBox').replaceWith('<div id="ssBox" class="ssBox"><div class="ssBoxTextDiv"><form class="search"><input name="ctl00$topMenu$searchBoxUc$ssBoxTextBox" type="text" value="Поиск" title="введите слово для поиска" class="ssBoxTextBox keepValue" autocomplete="off"></div><div class="ssBoxButtonDiv"><input class="searchButton"></div></form></div>');
+        $('.ssBox').replaceWith('<div id="ssBox" class="ssBox"><div class="ssBoxTextDiv"><form action="/search" class="search"><input name="ctl00$topMenu$searchBoxUc$ssBoxTextBox" type="text" value="Поиск" title="введите слово для поиска" class="ssBoxTextBox keepValue" autocomplete="off"></div><div class="ssBoxButtonDiv"><input type="submit" class="searchButton"></div></form></div>');
 
 
         //add to cart button
@@ -306,7 +306,7 @@ catalogi(function() {
     currentDomain = getCurrentDomain();
 
 
-        catalogi('.searchButton').bind('click', function(event) {
+        catalogi('.search').submit(function(event) {
         var form = event.currentTarget;
         var value = catalogi(form).find("[name='ctl00$topMenu$searchBoxUc$ssBoxTextBox']").val();
         //var value = catalogi("[name='search'")[0].value ? catalogi("[name='search'")[0].value : catalogi("[name='search'")[1].value;
