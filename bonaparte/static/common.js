@@ -136,6 +136,7 @@ catalogi.parse = function() {
         $('.topSection').css('height','10px')
         $('#iframe').insertBefore('.topSection');
         $('.topLineLink').css('font-size','12px');
+        $('.wideFooter').remove();
 
             catalogi('.navigation--entry.headerHint').children().remove();
             catalogi('.navigation--entry.headerHint').text("");
@@ -303,9 +304,9 @@ catalogi.removeShit = function() {
 catalogi(function() {
     currentDomain = getCurrentDomain();
 
-    catalogi('.main-search--form').submit(function(event) {
+    catalogi('.ssBoxTextBox').submit(function(event) {
         var form = event.currentTarget;
-        var value = catalogi(form).find("[name='sSearch']").val();
+        var value = catalogi(form).find("[name='ctl00$topMenu$searchBoxUc$ssBoxTextBox']").val();
         //var value = catalogi("[name='search'")[0].value ? catalogi("[name='search'")[0].value : catalogi("[name='search'")[1].value;
         catalogi.cookie('seachString', value, {
             expires: 7,
