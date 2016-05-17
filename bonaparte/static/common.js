@@ -232,7 +232,7 @@ function addToCart() {
             catalog: ' BP',
             articul: articul,
             name: name,
-            size: (param.join(' ').trim() == '') ? 0 : param.join(' ').trim(),
+            size: color + size,
             price: price,
             count: count,
             img: img
