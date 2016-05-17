@@ -137,7 +137,7 @@ catalogi.parse = function() {
         $('#iframe').insertBefore('.topSection');
         $('.topLineLink').css('font-size','12px');
         $('.wideFooter').remove();
-
+        $('.ssBox').replaceWith($('.ssBox').clone());
 
 
         //add to cart button
