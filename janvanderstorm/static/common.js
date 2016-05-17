@@ -159,13 +159,6 @@ catalogi.parse = function() {
         return false;
     });
 
-    // test cart
-    catalogi('.customerboxholder').append("<div class='test-bucket'></div>");
-    catalogi('.test-bucket').load("http://bucket.catalogi.ru/blocks/templates.html");
-    catalogi('.customerboxholder').append("<div class='any-class' style='margin: 30px auto 0; color:#fff;background-color: red;padding: 20px;width: 200px;text-align: center;'>test bucket</div>");
-
-    //catalogi('.any-class').hide();
-
     //subscribe button
     catalogi("[href='http://www.janvanderstorm.catalogi.ru/newsletter/']").click(function(event){
         //event.preventDefault();
@@ -546,4 +539,13 @@ catalogi(function(){
     catalogi.parse();
     catalogi.removeShit();
     checkSeach();
+
+    // test cart
+    catalogi('.customerboxholder').append("<div class='test-bucket'></div>");
+    catalogi('.test-bucket').addClass('notranslate').load("http://bucket.catalogi.ru/blocks/templates.html");
+    catalogi.getScript("http://bucket.catalogi.ru/js/main.js", function(data, status, jqxhr) {
+        console.log('main.js loaded');
+    });
+    catalogi('.customerboxholder').append("<div class='any-class'>bucket</div>");
+    catalogi('.any-class').hide();
 });
