@@ -6,7 +6,7 @@ server {
     charset UTF-8;
 
     location / {
-        #add_header 'Access-Control-Allow-Origin' '*';
+        add_header 'Access-Control-Allow-Origin' '*';
         root /var/www/bucket;
         index index.html;
 
