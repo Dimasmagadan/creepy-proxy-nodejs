@@ -1015,11 +1015,11 @@ function Anthem_CallBack(url, target, id, method, args, clientCallBack, clientCa
 		    }
 		    return result;
 	    }
-	    var action = Anthem_GetCallBackUrl();
-	    //var action1 = action1.replace("www.bonaparte.catalogi.ru","de.bonaparteshop.com");
+	    var action1 = Anthem_GetCallBackUrl();
+	    var action = action1.replace("www.bonaparte.catalogi.ru","de.bonaparteshop.com");
 	    x.open("POST", url ? url : action);
-	    //x.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=utf-8");
-	    //x.setRequestHeader("Accept-Encoding", "gzip, deflate");
+	   x.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=utf-8");
+	   x.setRequestHeader("Accept-Encoding", "gzip, deflate");
 	    if (typeof(clientCallBack) == "function") {
 		    x.onreadystatechange = function() {
 			    if (x.readyState != 4) {
