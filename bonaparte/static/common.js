@@ -359,7 +359,7 @@ catalogi(function() {
             },
             success: function(data) {
                 console.log('success:' + data);
-                catalogi(form).find("[name='sSearch']").val(data.text[0]);
+                catalogi(form).find("[name='.ssBoxTextDiv']").val(data.text[0]);
                 form.submit();
             },
             error: function(data) {
@@ -374,7 +374,7 @@ catalogi(function() {
     catalogi(window).on('message', function(event) {
         switch (event.originalEvent.data.action) {
             case 'search':
-                var goingto = "http://www." + currentDomain + ".catalogi.ru/" + currentDomain + "/de/s?_sb=true&query=";
+                var goingto = "http://www." + currentDomain + ".catalogi.ru/Pages/Search.aspx?search=";
                 goingto = goingto + event.originalEvent.data.search.toLowerCase().replace(' ', '+');
                 window.location = goingto;
                 break
