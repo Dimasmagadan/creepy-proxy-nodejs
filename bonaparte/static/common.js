@@ -137,43 +137,10 @@ catalogi.parse = function() {
         $('#iframe').insertBefore('.topSection');
         $('.topLineLink').css('font-size','12px');
         $('.wideFooter').remove();
-        $('.ssBox').replaceWith('<div id="ssBox" class="ssBox"><div class="ssBoxTextDiv"><form action="/search" class="search"><input name="ctl00$topMenu$searchBoxUc$ssBoxTextBox" type="text" value="Поиск" title="введите слово для поиска" class="ssBoxTextBox keepValue" autocomplete="off"></div><div class="ssBoxButtonDiv"><input class="searchButton"></div></div></form>');
+        $('.ssBox').replaceWith('<div id="ssBox" class="ssBox"><form action="/search" class="search"><div class="ssBoxTextDiv"><input name="ctl00$topMenu$searchBoxUc$ssBoxTextBox" type="text" value="Поиск" title="введите слово для поиска" class="ssBoxTextBox keepValue" autocomplete="off"></div><div class="ssBoxButtonDiv"><input type="submit" class="searchButton"></div></form></div>');
 
 
         $('.searchButton').bind('click', function(event) {
-
-        catalogi('.search').submit(function(event) {
-        var form = event.currentTarget;
-        var value = catalogi(form).find("[name='ctl00$topMenu$searchBoxUc$ssBoxTextBox']").val();
-        //var value = catalogi("[name='search'")[0].value ? catalogi("[name='search'")[0].value : catalogi("[name='search'")[1].value;
-        catalogi.cookie('seachString', value, {
-            expires: 7,
-            path: '/',
-            domain: '.catalogi.ru'
-        });
-        catalogi.ajax({
-            url: 'http://cdn.catalogi.ru/executable/actions/_translate.php',
-            type: 'get',
-            dataType: 'json',
-            data: {
-                client: 't',
-                text: value,
-                sl: 'ru',
-                tl: 'de'
-            },
-            success: function(data) {
-                console.log('success:' + data);
-                catalogi(form).find("[name='ctl00$topMenu$searchBoxUc$ssBoxTextBox']").val(data.text[0]);
-                form.submit();
-            },
-            error: function(data) {
-                console.log('error:' + data);
-                // top.postMessage({action: 'search', search: catalogi('#search').val()},'*');
-            }
-        });
-
-        return false;
-    });
 
         })
 
@@ -347,7 +314,38 @@ catalogi(function() {
     currentDomain = getCurrentDomain();
 
 
+        catalogi('.search').submit(function(event) {
+        var form = event.currentTarget;
+        var value = catalogi(form).find("[name='ctl00$topMenu$searchBoxUc$ssBoxTextBox']").val();
+        //var value = catalogi("[name='search'")[0].value ? catalogi("[name='search'")[0].value : catalogi("[name='search'")[1].value;
+        catalogi.cookie('seachString', value, {
+            expires: 7,
+            path: '/',
+            domain: '.catalogi.ru'
+        });
+        catalogi.ajax({
+            url: 'http://cdn.catalogi.ru/executable/actions/_translate.php',
+            type: 'get',
+            dataType: 'json',
+            data: {
+                client: 't',
+                text: value,
+                sl: 'ru',
+                tl: 'de'
+            },
+            success: function(data) {
+                console.log('success:' + data);
+                catalogi(form).find("[name='ctl00$topMenu$searchBoxUc$ssBoxTextBox']").val(data.text[0]);
+                form.submit();
+            },
+            error: function(data) {
+                console.log('error:' + data);
+                // top.postMessage({action: 'search', search: catalogi('#search').val()},'*');
+            }
+        });
 
+        return false;
+    });
 
 
     catalogi(window).on('message', function(event) {
