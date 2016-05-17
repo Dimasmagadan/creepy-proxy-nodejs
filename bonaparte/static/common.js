@@ -305,39 +305,6 @@ catalogi.removeShit = function() {
 catalogi(function() {
     currentDomain = getCurrentDomain();
 
-    catalogi('.ssBoxTextBox').submit(function(event) {
-        var form = event.currentTarget;
-        var value = catalogi(form).find("[name='ctl00$topMenu$searchBoxUc$ssBoxTextBox']").val();
-        //var value = catalogi("[name='search'")[0].value ? catalogi("[name='search'")[0].value : catalogi("[name='search'")[1].value;
-        catalogi.cookie('seachString', value, {
-            expires: 7,
-            path: '/',
-            domain: '.catalogi.ru'
-        });
-        catalogi.ajax({
-            url: 'http://cdn.catalogi.ru/executable/actions/_translate.php',
-            type: 'get',
-            dataType: 'json',
-            data: {
-                client: 't',
-                text: value,
-                sl: 'ru',
-                tl: 'de'
-            },
-            success: function(data) {
-                console.log('success:' + data);
-                catalogi(form).find("[name='sSearch']").val(data.text[0]);
-                form.submit();
-            },
-            error: function(data) {
-                console.log('error:' + data);
-                // top.postMessage({action: 'search', search: catalogi('#search').val()},'*');
-            }
-        });
-
-        return false;
-    });
-
         catalogi('.ssBoxTextDiv').submit(function(event) {
         var form = event.currentTarget;
         var value = catalogi(form).find("[name='ctl00$topMenu$searchBoxUc$ssBoxTextBox']").val();
