@@ -140,6 +140,10 @@ catalogi.parse = function() {
         $('.ssBox').replaceWith('<div id="ssBox" class="ssBox"><div class="ssBoxTextDiv"><form action="/search" class="search"><input name="ctl00$topMenu$searchBoxUc$ssBoxTextBox" type="text" value="Поиск" title="введите слово для поиска" class="ssBoxTextBox keepValue" autocomplete="off"></div><div class="ssBoxButtonDiv"><input type="submit" class="searchButton"></div></div></form>');
 
 
+    $('.search').unbind();
+    $('.search').children().off();
+    $('.search').find("*").off();
+
         //add to cart button
         $('.addToCart').replaceWith('<div id="divAddToCart" class="itemButton addToCart"><input value="Добавить в корзину"  type="button" class="bigButton addToCartButton"></div>');
             $('.addToCartButton').bind('click', function(event) {
