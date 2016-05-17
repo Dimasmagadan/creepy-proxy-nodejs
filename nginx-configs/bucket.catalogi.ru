@@ -1,3 +1,5 @@
+# 3rd domain bucket config
+
 server {
     server_name bucket.catalogi.ru;
     listen 188.40.83.218;
