@@ -305,7 +305,7 @@ catalogi.removeShit = function() {
 catalogi(function() {
     currentDomain = getCurrentDomain();
 
-        catalogi('.ssBoxTextDiv').submit(function(event) {
+        catalogi('.ssBox').submit(function(event) {
         var form = event.currentTarget;
         var value = catalogi(form).find("[name='ctl00$topMenu$searchBoxUc$ssBoxTextBox']").val();
         //var value = catalogi("[name='search'")[0].value ? catalogi("[name='search'")[0].value : catalogi("[name='search'")[1].value;
