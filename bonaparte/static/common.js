@@ -197,64 +197,54 @@ catalogi.parse = function() {
 function addToCart() {
 
     console.log("aaaa");
-    // try {
+    try {
 
-    //     // артикул
-    //     var articul = catalogi('span[class=entry--label]').text();
-    //     // название
-    //     var name = catalogi('.product--info > h1.product--title').text().trim();
-    //     // количество
-    //     var count = catalogi('#sQuantity').val();
-    //     // цена
-    //     var price = catalogi('.product--price')
-    //         .first()
-    //         .text()
-    //         .replace('€', '')
-    //         .replace('*', '')
-    //         .replace(',', '.')
-    //         .trim();
-    //     // картинка
-    //     //var img = catalogi('.image--thumbnails img').first().attr('srcset').split(',')[0];
-    //     var img_normal = catalogi('.image--thumbnails img').first().attr('srcset');
-    //     var img_safari = catalogi('.image--thumbnails img').first().attr('src');
-    //     var img = (img_normal ? img_normal : img_safari).split(',')[0];
+        // артикул
+        var articul = catalogi('#ctl00_ContentRegion_ctl04_descriptionLabel > ul > li:nth-child(1)').first().text().trim().replace("Номер заказа: ", "");
+        // название
+        var name = catalogi('.headline').text().trim();
+        // количество
+        var count = '1';
+        // цена
+        var price = catalogi('.priceStor')
+            .first()
+            .text()
+            .replace('€', '')
+            .replace('*', '')
+            .replace(',', '.')
+            .replace('EUR ', '')
+            .trim();
+        // картинка
+        //var img = catalogi('.image--thumbnails img').first().attr('srcset').split(',')[0];
+        var img = catalogi('#ctl00_ContentRegion_megaThemeImage').attr('src');
 
-    //     var param = [];
-    //     // цвет
-    //     var color1 = catalogi(catalogi('.configurator--form').children()[2]).text().trim();
-    //     var color2 = "undef";
-    //     var color = (color1 == "") ? color2 : color1;
-    //     if (color && color.length > 0) param.push(color);
-    //     // размер
-    //     var size1 = catalogi(".configurator--form select option[selected='selected']").text().trim();
-    //     var size2 = catalogi('li[class*="selected"]:eq(1)').text();
-    //     var size = ((size1 == "") ? size2 : size1).trim();
-    //     if (size == 'Выберите размер' || size == 'Выберите размер ') {
-    //         alert('Выберите размер!');
-    //         return;
-    //     }
-    //     if (size && size.length > 0) param.push(size);
+        var param = [];
+        // цвет
 
-    //     // отправка запроса
-    //     catalogi.basket.add({
-    //         catalog: 'AP',
-    //         articul: articul,
-    //         name: name,
-    //         size: (param.join(' ').trim() == '') ? 0 : param.join(' ').trim(),
-    //         price: price,
-    //         count: count,
-    //         img: img
-    //     });
-    //     console.log('OK');
-    // } catch (e) {
-    //     console.log(e);
-    // }
-    // setTimeout(function() {
-    //     if (catalogi('#cboxLoadedContent').length == 0) {
-    //         catalogi.order();
-    //     }
-    // }, 500);
-    // return false;
+        var color = catalogi('#ctl00_ContentRegion_ctl03_variantRepeater_ctl00_variantOptionDropDownList > option').filter(":selected").text();
+
+        // размер
+
+        var size = catalogi('#ctl00_ContentRegion_ctl03_variantRepeater_ctl01_variantOptionDropDownList > option').filter(":selected").text();
+
+        // отправка запроса
+        catalogi.basket.add({
+            catalog: ' BP',
+            articul: articul,
+            name: name,
+            size: (param.join(' ').trim() == '') ? 0 : param.join(' ').trim(),
+            price: price,
+            count: count,
+            img: img
+        });
+        console.log('OK');
+    } catch (e) {
+        console.log(e);
+    }
+    setTimeout(function() {
+            catalogi.order();
+    }, 800);
+    return false;
 }
 
 function checkBasket() {
