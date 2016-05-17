@@ -1,4 +1,5 @@
 /* Заменяем шрифты*/
+
 @font-face {
     font-family: 'IcoMoon';
     src: url("http://www.wenz.catalogi.ru/static/fonts/icomoon.woff");
@@ -77,7 +78,7 @@ a#addToCartBtn {
     text-align: center;
 }
 .textInHeader {
-    padding:0 0.1em!important;
+    padding: 0 0.1em!important;
     margin: 0em!important;
     margin-top: 8px!important;
     cursor: pointer;
@@ -87,12 +88,13 @@ a#addToCartBtn {
     font-weight: normal!important;
     font-size: .875rem;
     font-family: "Open Sans Condensed", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-
-
 }
 @media screen and (max-device-width: 770px) {
     .textInHeader {
         display: none;
+    }
+    .navbar-button-wrapper {
+        margin-top: -3.25rem;
     }
 }
 @media screen and (max-width: 770px) {
