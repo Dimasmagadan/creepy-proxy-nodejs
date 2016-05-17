@@ -53,96 +53,6 @@ catalogi.parse = function() {
 
 
 
-
-    //// Шапка
-    catalogi('#iframe').hide();
-    catalogi('.navigation--entry.entry--notepad').remove();
-    catalogi('.navigation--entry.entry--account .account--display').text('Кабинет');
-    catalogi('.navigation--entry.entry--account').click(function(event) {
-        event.preventDefault();
-        catalogi.login();
-    });
-    catalogi('.navigation--entry.headerHint').children().remove();
-    catalogi('.headerHint').css('width', '80%');
-    //catalogi('.navigation--entry.headerHint').append(
-    //    catalogi("<a> Каталоги.ру - заказ и доставка одежды из интернет-магазина " + currentDomain + "!!!</a>")
-    //        .attr('href', 'http://www.catalogi.ru')
-    //        .attr('target', '_blank')
-    //        .addClass('headerLinks _home catalogiLink')
-    //);
-
-
-    catalogi('ul.service--list').children().remove();
-    catalogi('ul.service--list')
-        .append($('<li>')
-            .addClass('service--entry')
-            .append($("<a>")
-                .addClass("service--link icon--phone")
-                .text('+74955404949')));
-    catalogi('ul.service--list')
-        .append($('<li>')
-            .addClass('service--entry')
-            .append($("<a>")
-                .addClass("service--link")
-                .text('доставка')
-                .click(function() {
-                    catalogi.delivery();
-                })));
-    catalogi('ul.service--list')
-        .append($('<li>')
-            .addClass('service--entry')
-            .append($("<a>")
-                .addClass("service--link")
-                .text('оплата')
-                .click(function() {
-                    catalogi.payment();
-                })));
-    catalogi('ul.service--list')
-        .append($('<li>')
-            .addClass('service--entry')
-            .append($("<a>")
-                .addClass("service--link")
-                .text('интернет-магазины')
-                .click(function() {
-                    catalogi.shops();
-                })));
-    catalogi('ul.service--list')
-        .append($('<li>')
-            .addClass('service--entry')
-            .append($("<a>")
-                .addClass("service--link")
-                .text('онлайн каталоги')
-                .click(function() {
-                    catalogi.catalogs();
-                })));
-
-    catalogi('.shop-sites--navigation').children().remove();
-    catalogi('.shop-sites--navigation').append($("<li>").addClass('navigation--entry')
-        .append($("<a>").addClass('navigation--link link--go-forward')
-            .text("онлайн каталоги").click(function() {
-                catalogi.catalogs();
-            })));
-    catalogi('.shop-sites--navigation').append($("<li>").addClass('navigation--entry')
-        .append($("<a>").addClass('navigation--link link--go-forward')
-            .text("интернет-магазины").click(function() {
-                catalogi.shops();
-            })));
-    catalogi('.shop-sites--navigation').append($("<li>").addClass('navigation--entry')
-        .append($("<a>").addClass('navigation--link link--go-forward')
-            .text("оплата").click(function() {
-                catalogi.payment();
-            })));
-    catalogi('.shop-sites--navigation').append($("<li>").addClass('navigation--entry')
-        .append($("<a>").addClass('navigation--link link--go-forward')
-            .text("доставка").click(function() {
-                catalogi.delivery();
-            })));
-    catalogi('.shop-sites--navigation').append($("<li>").addClass('navigation--entry')
-        .append($("<a>").addClass('navigation--link link--go-forward')
-            .text("таблица размеров").click(function() {
-                catalogi.sizeTable();
-            })));
-
     //юр страницы
     catalogi('footer.footer-main').remove();
 
@@ -225,6 +135,7 @@ catalogi.parse = function() {
         $('#dropDownCartBoxTitle').remove();
         $('.topSection').css('height','10px')
         $('#iframe').insertBefore('.topSection');
+        $('.topLineLink').css('font-size','12px');
 
             catalogi('.navigation--entry.headerHint').children().remove();
             catalogi('.navigation--entry.headerHint').text("");
