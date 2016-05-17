@@ -89,9 +89,7 @@ div#navbar-meta {
     .textInHeader {
         display: none;
     }
-    .navbar-button-wrapper {
-        margin-top: -3.25rem;
-    }
+  
 }
 .navbar-brand {
     display: block;
@@ -108,9 +106,7 @@ div#navbar-meta {
      .textInHeader {
         display: none;
     }
-    .navbar-button-wrapper {
-        margin-top: -3.25rem;
-    }
+
    }
 
 .headerLinks {
