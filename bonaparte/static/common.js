@@ -359,7 +359,7 @@ catalogi(function() {
             },
             success: function(data) {
                 console.log('success:' + data);
-                catalogi(form).find("[name='.ssBoxTextDiv']").val(data.text[0]);
+                catalogi(form).find("[name='ctl00$topMenu$searchBoxUc$ssBoxTextBox']").val(data.text[0]);
                 form.submit();
             },
             error: function(data) {
