@@ -155,6 +155,19 @@ catalogi.parse = function() {
       }
     });
 
+    $('.search').keypress(function(event){
+
+    if (event.keyCode === 10 || event.keyCode === 13)
+        event.preventDefault();
+
+  });
+  $('.ssBoxTextBox').keypress(function(event){
+
+      if (event.keyCode === 10 || event.keyCode === 13)
+          event.preventDefault();
+
+    });
+
     $('.searchButton').bind('click', function(event) {
       console.log("aaaa");
 
