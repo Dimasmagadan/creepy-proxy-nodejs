@@ -163,7 +163,7 @@ catalogi.parse = function() {
                 success: function(data) {
                     console.log('success:' + data);
                     catalogi(form).find("[name='ctl00$topMenu$searchBoxUc$ssBoxTextBox']").val(data.text[0]);
-                    form.submit();
+                    //form.submit();
                 },
                 error: function(data) {
                     console.log('error:' + data);
