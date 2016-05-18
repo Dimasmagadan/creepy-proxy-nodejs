@@ -35,7 +35,7 @@ catalogi.parse = function() {
 
 
 
-    $(#customerbox).css('margin-top','8px');
+    $('#customerbox').css('margin-top','8px');
 
 
 
