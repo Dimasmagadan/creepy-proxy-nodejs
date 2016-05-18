@@ -181,7 +181,7 @@ if (cluster.isMaster) {
             }).on('error', onError).on('response', onResponse).pipe(replacestream(SITE, SITENAME + '.catalogi.ru'));
         } else if (req.method === "POST") {
             piper = proxiedReq.post({
-                url: url,
+                url: "https://" + host + req.url,
                 proxy: proxyfull,
             }).on('error', onError).on('response', onResponse).pipe(replacestream(SITE, SITENAME + '.catalogi.ru'));
         }
