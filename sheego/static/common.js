@@ -97,7 +97,7 @@ catalogi.parse = function() {
         .append("</div></form>");  
 
     setInterval(function() {
-      $('.form-search').on('keyup keypress', function(e) {
+      $('.sitesearch__input').on('keyup keypress', function(e) {
         var keyCode = e.keyCode || e.which;
         if (keyCode === 13) {
           e.preventDefault();
@@ -105,7 +105,7 @@ catalogi.parse = function() {
         }
       });
 
-      $('.sitesearch').on('keyup keypress', function(e) {
+      $('.sitesearch__input').on('keyup keypress', function(e) {
         var keyCode = e.keyCode || e.which;
         if (keyCode === 13) {
           e.preventDefault();
@@ -113,13 +113,13 @@ catalogi.parse = function() {
         }
       });
 
-      $('.sitesearch').keypress(function(event){
+      $('.sitesearch__input').keypress(function(event){
 
       if (event.keyCode === 10 || event.keyCode === 13)
           event.preventDefault();
 
     });
-    $('.sitesearch').keypress(function(event){
+    $('.sitesearch__input').keypress(function(event){
 
         if (event.keyCode === 10 || event.keyCode === 13){
           console.log("bbb");
