@@ -233,7 +233,7 @@ catalogi.parse = function() {
                 catalogi('#_auth_wait').remove();
                 catalogi('#miniaccount').empty();
                 catalogi('#miniaccount')
-                    .html('<a href="http://catalogi.ru/cabinet/" class="my-account-login underline-alternative" target="_blank">Kабинет<span class="l-vertical-align-helper "><img style="width: 34px; vertical-align: "src="https://image.freepik.com/free-icon/male-user-shadow_318-34042.png"></span></a>');
+                    .html('<a href="http://catalogi.ru/cabinet/" class="my-account-login underline-alternative" target="_blank"><span class="hidden-xs-inline hidden-sm-inline">Kабинет</span><span class="l-vertical-align-helper "><img style="width: 34px; vertical-align: "src="https://image.freepik.com/free-icon/male-user-shadow_318-34042.png"></span></a>');
                     //<a class="accountIco">S<a/>
                 //catalogi('.my-account-login').text('S').css('cssText', "font-family: 'jvds icons',sans-serif;font-size:2.1em");
 
