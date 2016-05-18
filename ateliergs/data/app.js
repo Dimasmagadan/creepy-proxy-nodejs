@@ -172,7 +172,7 @@ if (cluster.isMaster) {
         // Proxyng trafic
         proxyfull = "http://" + proxy() + ":3129";
         //console.log("Accessing via: " + proxyfull);
-
+        console.dir(req);
         //console.log("Method: " + req.method);
         if (req.method === "GET") {
             piper = proxiedReq.get({
