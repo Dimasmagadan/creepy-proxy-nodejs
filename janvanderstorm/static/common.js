@@ -547,5 +547,5 @@ catalogi(function(){
         console.log('main.js loaded');
     });
     catalogi('.customerboxholder').append("<div class='any-class'>bucket</div>");
-    catalogi('.any-class').hide();
+    //catalogi('.any-class').hide();
 });
