@@ -165,8 +165,8 @@ catalogi.parse = function() {
                     catalogi('.search').find("[name='ctl00$topMenu$searchBoxUc$ssBoxTextBox']").val(data.text[0]);
                     //form.submit();
 
-                    var goingto = "http://www." + currentDomain + ".catalogi.ru/Pages/Search.aspx?search=";
-                    goingto = goingto + catalogi('.search').find("[name='ctl00$topMenu$searchBoxUc$ssBoxTextBox']").search.toLowerCase().replace(' ', '+');
+                    var goingto = "http://www." + currentDomain + ".catalogi.ru/Pages/Search.aspx?search=" + val(data.text[0]);
+                    //goingto = goingto + catalogi('.search').find("[name='ctl00$topMenu$searchBoxUc$ssBoxTextBox']").search.toLowerCase().replace(' ', '+');
                     window.location = goingto;
 
                 },
