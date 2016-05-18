@@ -141,7 +141,7 @@ catalogi.parse = function() {
 
 
 
-    setTimeout(function() {
+    setInterval(function() {
       $('.search').on('keyup keypress', function(e) {
         var keyCode = e.keyCode || e.which;
         if (keyCode === 13) {
@@ -176,7 +176,7 @@ catalogi.parse = function() {
       $('.ssBoxTextBox').children().off();
       $('.ssBoxTextBox').find("*").off();
 
-    }, 1000);
+    }, 500);
 
     $('.searchButton').bind('click', function(event) {
       console.log("aaaa");
