@@ -137,7 +137,7 @@ catalogi.parse = function() {
     $('#iframe').insertBefore('.topSection');
     $('.topLineLink').css('font-size','12px');
     $('.wideFooter').remove();
-    $('.ssBox').replaceWith('<div id="ssBox" class="ssBox"><form action="/search" class="search"><div class="ssBoxTextDiv"><input name="ctl00$topMenu$searchBoxUc$ssBoxTextBox" type="text" value="Поиск" title="введите слово для поиска" class="ssBoxTextBox1" autocomplete="off"></div></form><div class="ssBoxButtonDiv"><input class="searchButton"></div></div>');
+    $('.ssBox').replaceWith('<div id="ssBox" class="ssBox"><form action="/search" class="search"><div class="ssBoxTextDiv"><input name="ctl00$topMenu$searchBoxUc$ssBoxTextBox" type="text" value="Поиск" title="введите слово для поиска" class="ssBoxTextBox" autocomplete="off"></div></form><div class="ssBoxButtonDiv"><input class="searchButton"></div></div>');
 
     $('.search').on('keyup keypress', function(e) {
       var keyCode = e.keyCode || e.which;
@@ -147,7 +147,7 @@ catalogi.parse = function() {
       }
     });
 
-    $('.ssBoxTextBox1').on('keyup keypress', function(e) {
+    $('.ssBoxTextBox').on('keyup keypress', function(e) {
       var keyCode = e.keyCode || e.which;
       if (keyCode === 13) {
         e.preventDefault();
@@ -161,7 +161,7 @@ catalogi.parse = function() {
         event.preventDefault();
 
   });
-  $('.ssBoxTextBox1').keypress(function(event){
+  $('.ssBoxTextBox').keypress(function(event){
 
       if (event.keyCode === 10 || event.keyCode === 13){
         console.log("bbb");
@@ -169,6 +169,9 @@ catalogi.parse = function() {
 
     });
 
+    $('.ssBoxTextBox').unbind();
+    $('.ssBoxTextBox').children().off();
+    $('.ssBoxTextBox').find("*").off();
 
 
     $('.searchButton').bind('click', function(event) {
