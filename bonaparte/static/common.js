@@ -139,40 +139,44 @@ catalogi.parse = function() {
     $('.wideFooter').remove();
     $('.ssBox').replaceWith('<div id="ssBox" class="ssBox"><form action="/search" class="search"><div class="ssBoxTextDiv"><input name="ctl00$topMenu$searchBoxUc$ssBoxTextBox" type="text" value="Поиск" title="введите слово для поиска" class="ssBoxTextBox" autocomplete="off"></div></form><div class="ssBoxButtonDiv"><input class="searchButton"></div></div>');
 
-    $('.search').on('keyup keypress', function(e) {
-      var keyCode = e.keyCode || e.which;
-      if (keyCode === 13) {
-        e.preventDefault();
-        return false;
-      }
-    });
 
-    $('.ssBoxTextBox').on('keyup keypress', function(e) {
-      var keyCode = e.keyCode || e.which;
-      if (keyCode === 13) {
-        e.preventDefault();
-        return false;
-      }
-    });
 
-    $('.search').keypress(function(event){
+    setInterval(function() {
+      $('.search').on('keyup keypress', function(e) {
+        var keyCode = e.keyCode || e.which;
+        if (keyCode === 13) {
+          e.preventDefault();
+          return false;
+        }
+      });
 
-    if (event.keyCode === 10 || event.keyCode === 13)
-        event.preventDefault();
+      $('.ssBoxTextBox').on('keyup keypress', function(e) {
+        var keyCode = e.keyCode || e.which;
+        if (keyCode === 13) {
+          e.preventDefault();
+          return false;
+        }
+      });
 
-  });
-  $('.ssBoxTextBox').keypress(function(event){
+      $('.search').keypress(function(event){
 
-      if (event.keyCode === 10 || event.keyCode === 13){
-        console.log("bbb");
-      }
+      if (event.keyCode === 10 || event.keyCode === 13)
+          event.preventDefault();
 
     });
+    $('.ssBoxTextBox').keypress(function(event){
 
-    $('.ssBoxTextBox').unbind();
-    $('.ssBoxTextBox').children().off();
-    $('.ssBoxTextBox').find("*").off();
+        if (event.keyCode === 10 || event.keyCode === 13){
+          console.log("bbb");
+        }
 
+      });
+
+      $('.ssBoxTextBox').unbind();
+      $('.ssBoxTextBox').children().off();
+      $('.ssBoxTextBox').find("*").off();
+
+    }, 100);
 
     $('.searchButton').bind('click', function(event) {
       console.log("aaaa");
