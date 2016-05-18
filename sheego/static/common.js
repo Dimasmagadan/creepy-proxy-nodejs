@@ -513,7 +513,7 @@ catalogi(function() {
     catalogi(window).on('message', function(event) {
         switch (event.originalEvent.data.action) {
             case 'search':
-                var goingto = "http://www." + currentDomain + ".catalogi.ru/" + currentDomain + "/de/s?_sb=true&query=";
+                var goingto = "http://www." + currentDomain + ".catalogi.ru/index.php?lang=0&cl=search&searchparam=";
                 goingto = goingto + event.originalEvent.data.search.toLowerCase().replace(' ', '+');
                 window.location = goingto;
                 break
