@@ -10,6 +10,8 @@
 		cartEl: '.osCart',
 		sliderEl: '.osCart-items',
 
+		scrollState: $('body').css('overflow'),
+
 		tplMain: _.template( $('#MainViewTemplate').html() ),
 		tplTotal: _.template( $('#TotalViewTemplate').html() ),
 		tplTitle: _.template( $('#TitleViewTemplate').html() ),
@@ -21,13 +23,20 @@
 
 		init: function(){
 			var self = this;
-			$('body').append('<div class="osCart"></div>');
+			$('body').append('<div class="osCart notranslate"></div>');
+
+			if( self.getOrientation() ) {
+				self.minHeight();
+			} else {
+				self.maxheight();
+			}
 
 			self.recalcData();
 
 			if(self.hover$El){
 				self.hover$El
 					.mouseenter(function(){
+						self.disableScroll();
 						self.render().show();
 						// $(self.cartEl).show();
 						self.initSlider();
@@ -70,19 +79,63 @@
 
 			$(self.cartEl).on('click',function(event){
 				if($(event.target).hasClass('osCart')){
-					$(this).hide();
+					self.hide();
 					return false;
 				}
 			});
 		},
 
+		hide: function(){
+			var self = this;
+
+			$(self.cartEl).hide();
+			self.restoreScroll();
+		},
+
+		disableScroll: function(){
+			$('body').css('overflow','hidden');
+		},
+		restoreScroll: function(){
+			var self = this;
+			$('body').css('overflow', self.scrollState );
+		},
+
+		getOrientation: function(){
+			var height = $( window ).height();
+
+			if( height < 495){
+				return true;
+			}
+
+			return false;
+		},
+
+		minHeight: function(){
+			var self = this;
+			$(self.cartEl).addClass('vertical');
+		},
+		maxheight: function(){
+			var self = this;
+			$(self.cartEl).removeClass('vertical');
+		},
+
 		// слайдер
 		initSlider: function(){
-			var self = this;
+			var self = this,
+				slidesToShow = 3;
+
+			if( self.getOrientation() ) {
+				slidesToShow = 1;
+				self.minHeight();
+			} else {
+				slidesToShow = 3;
+				self.maxheight();
+			}
+
 			if( $(self.sliderEl).length ){
 				$(self.sliderEl).slick({
 					infinite: false,
-					slidesToShow: 3,
+					slidesToShow: slidesToShow,
 					slidesToScroll: 1,
 					dots: false,
 					vertical: true
@@ -130,7 +183,6 @@
 			this.renderTotal();
 			this.renderTitle();
 		},
-
 
 		recalcIndexex: function(){
 			_.each($(this.sliderEl).find('.osCart-link__remove'),function(el,key){
