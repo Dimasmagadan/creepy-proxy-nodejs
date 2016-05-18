@@ -63,9 +63,9 @@ catalogi.parse = function() {
 
 
 
-    $('.color-item').each(function (index, value) { 
-        $(this).removeAttr("href");
-    });
+    // $('.color-item').each(function (index, value) { 
+    //     $(this).removeAttr("href");
+    // });
 
     $('.colors').find('a').each(function (index, value) {
         $(this).removeClass('js-ajax');
