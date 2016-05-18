@@ -66,13 +66,12 @@ if (cluster.isMaster) {
         proxy = require("./proxy"),
         includes = require("./includes")(SITENAME, querystring.stringify(HEADERPARAMS.param), HEADERPARAMS.options);
 
-    // request.defaults({
-    //     followAllRedirects: true
-    // });
+    request.defaults({
+        followAllRedirects: true
+    });
 
     var j = request.jar();
     var proxiedReq = request.defaults({
-        followAllRedirects: true,
         jar: j
     });
 
@@ -102,7 +101,6 @@ if (cluster.isMaster) {
             }
         };
         onResponse = function(response) {
-
             //console.log(new Date()+" "+ JSON.stringify(response.headers));
             //console.log(response.statusCode);
             //  if(response.statusCode == 200){
