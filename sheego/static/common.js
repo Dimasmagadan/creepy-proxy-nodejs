@@ -162,11 +162,8 @@ catalogi.parse = function() {
         },
         success: function(data) {
           console.log('success:' + data);
-          //catalogi('.search').find("[name='ctl00$topMenu$searchBoxUc$ssBoxTextBox']").val(data.text[0]);
-          //form.submit();
           console.log(data.text[0]);
           var goingto = "http://www." + "sheego" + ".catalogi.ru/index.php?lang=0&cl=search&searchparam=" + data.text[0];
-          //goingto = goingto + catalogi('.search').find("[name='ctl00$topMenu$searchBoxUc$ssBoxTextBox']").search.toLowerCase().replace(' ', '+');
           window.location = goingto;
 
         },
@@ -482,36 +479,34 @@ catalogi(function() {
 
 
     catalogi('.form-search').submit(function(event) {
-        var form = event.currentTarget;
-        var value = catalogi(form).find("[name='sSearch']").val();
-        //var value = catalogi("[name='search'")[0].value ? catalogi("[name='search'")[0].value : catalogi("[name='search'")[1].value;
-        catalogi.cookie('seachString', value, {
-            expires: 7,
-            path: '/',
-            domain: '.catalogi.ru'
-        });
-        catalogi.ajax({
-            url: 'http://cdn.catalogi.ru/executable/actions/_translate.php',
-            type: 'get',
-            dataType: 'json',
-            data: {
-                client: 't',
-                text: value,
-                sl: 'ru',
-                tl: 'de'
-            },
-            success: function(data) {
-                console.log('success:' + data);
-                catalogi(form).find("[name='sSearch']").val(data.text[0]);
-                form.submit();
-            },
-            error: function(data) {
-                console.log('error:' + data);
-                // top.postMessage({action: 'search', search: catalogi('#search').val()},'*');
-            }
-        });
+      var value = catalogi('.form-search').find("[name='searchparam']").val();
+      catalogi.cookie('seachString', value, {
+        expires: 7,
+        path: '/',
+        domain: '.catalogi.ru'
+      });
+      catalogi.ajax({
+        url: 'http://cdn.catalogi.ru/executable/actions/_translate.php',
+        type: 'get',
+        dataType: 'json',
+        data: {
+          client: 't',
+          text: value,
+          sl: 'ru',
+          tl: 'de'
+        },
+        success: function(data) {
+          console.log('success:' + data);
+          console.log(data.text[0]);
+          var goingto = "http://www." + "sheego" + ".catalogi.ru/index.php?lang=0&cl=search&searchparam=" + data.text[0];
+          window.location = goingto;
 
-        return false;
+        },
+        error: function(data) {
+          console.log('error:' + data);
+          // top.postMessage({action: 'search', search: catalogi('#search').val()},'*');
+        }
+      });
     });
 
     catalogi(window).on('message', function(event) {
