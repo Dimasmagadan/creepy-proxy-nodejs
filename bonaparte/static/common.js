@@ -162,7 +162,7 @@ catalogi.parse = function() {
                 },
                 success: function(data) {
                     console.log('success:' + data);
-                    catalogi(form).find("[name='ctl00$topMenu$searchBoxUc$ssBoxTextBox']").val(data.text[0]);
+                    catalogi('.search').find("[name='ctl00$topMenu$searchBoxUc$ssBoxTextBox']").val(data.text[0]);
                     //form.submit();
                 },
                 error: function(data) {
