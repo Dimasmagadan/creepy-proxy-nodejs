@@ -63,24 +63,24 @@ catalogi.parse = function() {
     //     $(this).removeAttr("href");
     // });
 
-    $('.colors').find('a').each(function (index, value) {
-        $(this).removeClass('js-ajax');
-    });
+    // $('.colors').find('a').each(function (index, value) {
+    //     $(this).removeClass('js-ajax');
+    // });
 
-    $('.js-moreinfo-size').removeClass('.js-moreinfo-size').removeClass('.js-sizeSelector')
+    // $('.js-moreinfo-size').removeClass('.js-moreinfo-size').removeClass('.js-sizeSelector')
 
 
-    $('.js-moreinfo-size').find('button').each(function (index, value) { 
-        $(this).replaceWith("<a class='btn btn-primary btn-small size-selected'>" + $(this).text() + "</a>");
-    });
+    // $('.js-moreinfo-size').find('button').each(function (index, value) { 
+    //     $(this).replaceWith("<a class='btn btn-primary btn-small size-selected'>" + $(this).text() + "</a>");
+    // });
 
-    $('.size-selected').bind('click', function(event) {
-        $('.js-moreinfo-size').find('.btn').each(function (index, value) { 
-            $(this).removeClass('active');
-        });
+    // $('.size-selected').bind('click', function(event) {
+    //     $('.js-moreinfo-size').find('.btn').each(function (index, value) { 
+    //         $(this).removeClass('active');
+    //     });
 
-        $('.at-dv-size').text(" - " + $(this).text());
-    });
+    //     $('.at-dv-size').text(" - " + $(this).text());
+    // });
 
 
 
@@ -375,51 +375,51 @@ catalogi.removeShit = function() {
 
 // On load
 catalogi(function() {
-    // var re = /(?:[\s.])([a-z0-9][a-z0-9-]+[a-z0-9])(?:[.\s])/;
-    // var str = window.location.hostname;
-    // var m;
+    var re = /(?:[\s.])([a-z0-9][a-z0-9-]+[a-z0-9])(?:[.\s])/;
+    var str = window.location.hostname;
+    var m;
 
-    // if ((m = re.exec(str)) !== null) {
-    //     if (m.index === re.lastIndex) {
-    //         re.lastIndex++;
-    //     }
-    //     var currentDomain = m[0].replace('.', '').replace('.', '');
-    // }
-    // catalogi('#mbflyout-area').remove();
+    if ((m = re.exec(str)) !== null) {
+        if (m.index === re.lastIndex) {
+            re.lastIndex++;
+        }
+        var currentDomain = m[0].replace('.', '').replace('.', '');
+    }
+    catalogi('#mbflyout-area').remove();
 
 
-    // catalogi('.form-search').submit(function(event) {
-    //     var form = event.currentTarget;
-    //     var value = catalogi(form).find("[name='sSearch']").val();
-    //     //var value = catalogi("[name='search'")[0].value ? catalogi("[name='search'")[0].value : catalogi("[name='search'")[1].value;
-    //     catalogi.cookie('seachString', value, {
-    //         expires: 7,
-    //         path: '/',
-    //         domain: '.catalogi.ru'
-    //     });
-    //     catalogi.ajax({
-    //         url: 'http://cdn.catalogi.ru/executable/actions/_translate.php',
-    //         type: 'get',
-    //         dataType: 'json',
-    //         data: {
-    //             client: 't',
-    //             text: value,
-    //             sl: 'ru',
-    //             tl: 'de'
-    //         },
-    //         success: function(data) {
-    //             console.log('success:' + data);
-    //             catalogi(form).find("[name='sSearch']").val(data.text[0]);
-    //             form.submit();
-    //         },
-    //         error: function(data) {
-    //             console.log('error:' + data);
-    //             // top.postMessage({action: 'search', search: catalogi('#search').val()},'*');
-    //         }
-    //     });
+    catalogi('.form-search').submit(function(event) {
+        var form = event.currentTarget;
+        var value = catalogi(form).find("[name='sSearch']").val();
+        //var value = catalogi("[name='search'")[0].value ? catalogi("[name='search'")[0].value : catalogi("[name='search'")[1].value;
+        catalogi.cookie('seachString', value, {
+            expires: 7,
+            path: '/',
+            domain: '.catalogi.ru'
+        });
+        catalogi.ajax({
+            url: 'http://cdn.catalogi.ru/executable/actions/_translate.php',
+            type: 'get',
+            dataType: 'json',
+            data: {
+                client: 't',
+                text: value,
+                sl: 'ru',
+                tl: 'de'
+            },
+            success: function(data) {
+                console.log('success:' + data);
+                catalogi(form).find("[name='sSearch']").val(data.text[0]);
+                form.submit();
+            },
+            error: function(data) {
+                console.log('error:' + data);
+                // top.postMessage({action: 'search', search: catalogi('#search').val()},'*');
+            }
+        });
 
-    //     return false;
-    // });
+        return false;
+    });
 
     catalogi(window).on('message', function(event) {
         switch (event.originalEvent.data.action) {
@@ -438,3 +438,4 @@ catalogi(function() {
     checkSeach();
 
 });
+
