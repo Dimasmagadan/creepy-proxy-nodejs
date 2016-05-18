@@ -233,10 +233,10 @@ catalogi.parse = function() {
                 catalogi('#_auth_wait').remove();
                 catalogi('#miniaccount').empty();
                 catalogi('#miniaccount')
-                    .html('<a href="http://catalogi.ru/cabinet/" class="my-account-login underline-alternative" target="_blank">Kабинет</a><a style="font-family: "jvds icons",sans-serif;font-size:2.1em">S<a/>');
+                    .html('<a href="http://catalogi.ru/cabinet/" class="my-account-login underline-alternative" target="_blank">Kабинет</a><a class="accountIco">S<a/>');
                 //catalogi('.my-account-login').text('S').css('cssText', "font-family: 'jvds icons',sans-serif;font-size:2.1em");
-                catalogi('.my-account-login').append("<a>S</a>");
-                //catalogi('.my-account-login').css('cssText', "font-family: 'jvds icons',sans-serif;font-size:2.1em");
+                //catalogi('.my-account-login').append("<a>S</a>");
+                catalogi('.accountIco').css('cssText', "font-family: 'jvds icons',sans-serif;font-size:2.1em");
 
                 catalogi('.account-nav-listelem').show();
                 catalogi('._logout').click(function() {
