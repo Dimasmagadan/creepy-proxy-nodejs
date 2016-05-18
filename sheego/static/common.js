@@ -231,8 +231,8 @@ catalogi.parse = function() {
 
             if (_auth) {
                 catalogi('#_auth_wait').remove();
-                catalogi('.myaccount.notranslate > a').remove();
-                catalogi('.myaccount.notranslate')
+                catalogi('#miniaccount').empty();
+                catalogi('#miniaccount')
                     .html('<a href="http://catalogi.ru/cabinet/" class="my-account-login underline-alternative" target="_blank">Личный кабинет</a>');
                 catalogi('.myaccount.notranslate > a').text('S').css('cssText', "font-family: 'jvds icons',sans-serif;font-size:2.1em");
                 catalogi('.account-nav-listelem').show();
