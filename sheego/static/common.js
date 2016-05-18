@@ -234,7 +234,7 @@ catalogi.parse = function() {
                 catalogi('#miniaccount').empty();
                 catalogi('#miniaccount')
                     .html('<a href="http://catalogi.ru/cabinet/" class="my-account-login underline-alternative" target="_blank">Kабинет</a>');
-                catalogi('.my-account-login').text('S').css('cssText', "font-family: 'jvds icons',sans-serif;font-size:2.1em");
+                //catalogi('.my-account-login').text('S').css('cssText', "font-family: 'jvds icons',sans-serif;font-size:2.1em");
                 catalogi('.account-nav-listelem').show();
                 catalogi('._logout').click(function() {
                     catalogi.logout();
