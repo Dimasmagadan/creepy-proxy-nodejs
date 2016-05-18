@@ -93,11 +93,11 @@
 		},
 
 		disableScroll: function(){
-			$('body').css('overflow','hidden');
+			// $('body').css('overflow','hidden');
 		},
 		restoreScroll: function(){
 			var self = this;
-			$('body').css('overflow', self.scrollState );
+			// $('body').css('overflow', self.scrollState );
 		},
 
 		getOrientation: function(){
