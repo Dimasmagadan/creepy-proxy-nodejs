@@ -84,57 +84,24 @@ catalogi.parse = function() {
     // });
 
     //SEARCH
-    setInterval(function() {
-      $('.js-searchParam').on('keyup keypress', function(e) {
-        var keyCode = e.keyCode || e.which;
-        if (keyCode === 13) {
-          e.preventDefault();
-          return false;
-        }
-      });
+   $('.form-search').empty();
 
-      $('.js-searchParam').on('keyup keypress', function(e) {
-        var keyCode = e.keyCode || e.which;
-        if (keyCode === 13) {
-          e.preventDefault();
-          return false;
-        }
-      });
+    $('.form-search').append("<form class='form-search  sitesearch is-sitesearch--desktop at-form-search'>")
+        .append("<div class='typeahead-container'>")
+        .append("<div class='sitesearch__wrapper form-search-wrapper typeahead-field'>")
+        .append("<input type='hidden' name='lang' value='0'>")
+        .append("<input type='hidden' name='cl' value='search'>")
+        .append("<input type='text' required='' class='typeahead-query sitesearch__input js-searchParam at-search-param parsley-validated' name='searchparam' value='' placeholder='Артикул/Suchbegriff' parsley-required='true'  autocomplete='off'>")
+        .append("<button class='btn sitesearch__magnifier typeahead-button' type='button' value=''><span class='searchmagnifier'></span><span class='searchloading js-searchloading'></span>поиск</button></div>")
+        .append("<div class='js-parsley-searchfield-error-container'></div>")
+        .append("</div></form>");  
 
-      $('.js-searchParam').keypress(function(event){
 
-      if (event.keyCode === 10 || event.keyCode === 13)
-          event.preventDefault();
 
-    });
-    $('.js-searchParam').keypress(function(event){
-
-        if (event.keyCode === 10 || event.keyCode === 13){
-          console.log("bbb");
-        }
-
-      });
-
-      $('.js-searchParam').unbind();
-      $('.js-searchParam').children().off();
-      $('.js-searchParam').find("*").off();
-
-      $('.sitesearch__magnifier').unbind();
-      $('.sitesearch__magnifier').children().off();
-      $('.sitesearch__magnifier').find("*").off();
-
-      $('.form-search-wrapper').unbind();
-      $('.form-search-wrapper').children().off();
-      $('.form-search-wrapper').find("*").off();
-
-    }, 500);
 
 
     //// Шапка
     catalogi('#iframe').hide();
-
-   
-
 
     // Подписка
     catalogi.subscribe(false, '31386');
