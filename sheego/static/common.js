@@ -94,7 +94,9 @@ catalogi.parse = function() {
         .append("<input type='text' required='' class='typeahead-query sitesearch__input js-searchParam at-search-param parsley-validated' name='searchparam' value='' placeholder='Артикул/Suchbegriff' parsley-required='true'  autocomplete='off'>")
         .append("<button class='btn sitesearch__magnifier typeahead-button' type='button' value=''><span class='searchmagnifier'></span><span class='searchloading js-searchloading'></span>поиск</button></div>")
         .append("<div class='js-parsley-searchfield-error-container'></div>")
-        .append("</div></form>");  
+        .append("</div></form>");
+
+
 
     setInterval(function() {
       $('.sitesearch__input').on('keyup keypress', function(e) {
@@ -135,6 +137,8 @@ catalogi.parse = function() {
       $('.form-search').unbind();
       $('.form-search').children().off();
       $('.form-search').find("*").off();
+       $('.form-search').find("*").addBack().off();
+    $('.form-search').children().addBack().off();  
     }, 500);
 
     $('.sitesearch__magnifier').bind('click', function(event) {
