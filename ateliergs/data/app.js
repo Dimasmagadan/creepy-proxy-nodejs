@@ -103,7 +103,7 @@ if (cluster.isMaster) {
         };
         onResponse = function(response) {
 
-            //  console.dir(response);
+            //console.log(new Date()+" "+ JSON.stringify(response.headers));
             //console.log(response.statusCode);
             //  if(response.statusCode == 200){
             if ('location' in response.headers)
