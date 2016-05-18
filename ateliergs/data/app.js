@@ -103,7 +103,7 @@ if (cluster.isMaster) {
         };
         onResponse = function(response) {
 
-            console.dir(response);
+            //  console.dir(response);
             //console.log(response.statusCode);
             //  if(response.statusCode == 200){
             if ('location' in response.headers)
@@ -181,7 +181,7 @@ if (cluster.isMaster) {
             }).on('error', onError).on('response', onResponse).pipe(replacestream(SITE, SITENAME + '.catalogi.ru'));
         } else if (req.method === "POST") {
             piper = proxiedReq.post({
-                url: "http://" + host + req.url,
+                url: url,
                 proxy: proxyfull,
             }).on('error', onError).on('response', onResponse).pipe(replacestream(SITE, SITENAME + '.catalogi.ru'));
         }
