@@ -86,7 +86,7 @@ catalogi.parse = function() {
     //SEARCH
    $('.form-search').empty();
 
-    $('.form-search').append("<form class='form-search  sitesearch is-sitesearch--desktop at-form-search'>")
+    $('.form-search').append("<form class='form-search  sitesearch is-sitesearch--desktop at-form-search' onkeypress='return event.keyCode != 13;'>")
         .append("<div class='typeahead-container'>")
         .append("<div class='sitesearch__wrapper form-search-wrapper typeahead-field'>")
         .append("<input type='hidden' name='lang' value='0'>")
