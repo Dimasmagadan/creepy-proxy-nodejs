@@ -116,7 +116,7 @@ catalogi.parse = function() {
         .append($('<span></span>').css('cssText', "font-family: 'jvds icons',sans-serif;font-size:35px;vertical-align: bottom;").text("B"));
 
 
-    catalogi('.filter-sort-tab-wrapper').remove();
+    //catalogi('.filter-sort-tab-wrapper').remove();
 
     //side menu
     catalogi('.navbar-button.navbar-toggle.collapsed .icon-text').text('Меню');
