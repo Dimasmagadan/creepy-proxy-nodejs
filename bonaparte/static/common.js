@@ -163,10 +163,13 @@ catalogi.parse = function() {
   });
   $('.ssBoxTextBox').keypress(function(event){
 
-      if (event.keyCode === 10 || event.keyCode === 13)
-          event.preventDefault();
+      if (event.keyCode === 10 || event.keyCode === 13){
+        console.log("bbb");
+      }
 
     });
+
+
 
     $('.searchButton').bind('click', function(event) {
       console.log("aaaa");
