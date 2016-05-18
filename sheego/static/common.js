@@ -313,8 +313,8 @@ catalogi.parse = function() {
     //кабинет
     $('#miniaccount').empty();
      $( "#miniaccount" ).append( "<div class='myaccount notranslate' style='display: inline-block !important;'><a class='logged notranslate minibasket__text '  onclick='catalogi.login(); return false'><span class='hidden-xs-inline hidden-sm-inline'>Кабинет</span><span class='l-vertical-align-helper '><img style='width: 34px; vertical-align: 'src='https://image.freepik.com/free-icon/male-user-shadow_318-34042.png'></span></a></div>" );
-     $( "#miniaccount" ).css('vertical-align','middle');
-     $( "#miniaccount" ).css('padding-top','0px');
+     //$( "#miniaccount" ).css('vertical-align','middle');
+     //$( "#miniaccount" ).css('padding-top','0px');
     
 
 
@@ -409,8 +409,8 @@ function checkBasket() {
     $('#minibasket').empty();
     $('#minibasket').attr("onclick","catalogi.order(); return false");
     $('#minibasket').css('cursor','pointer');
-    $('#minibasket').css('vertical-align','sub');
-    $('#minibasket').css('margin-top','8px');
+    //$('#minibasket').css('vertical-align','sub');
+    //$('#minibasket').css('margin-top','8px');
         $('#minibasket').append(""
                     + "<a class='minibasket__link js-minibasket-href' style='cursor : pointer'>"
                     +    "<span class='minibasket__text hidden-xs-inline hidden-sm-inline'>"   
