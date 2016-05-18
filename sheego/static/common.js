@@ -67,6 +67,7 @@ catalogi.parse = function() {
     //     $(this).removeClass('js-ajax');
     // });
 
+    //size!!!
     // $('.js-moreinfo-size').removeClass('.js-moreinfo-size').removeClass('.js-sizeSelector')
 
 
@@ -82,6 +83,51 @@ catalogi.parse = function() {
     //     $('.at-dv-size').text(" - " + $(this).text());
     // });
 
+    //SEARCH
+    setInterval(function() {
+      $('.js-searchParam').on('keyup keypress', function(e) {
+        var keyCode = e.keyCode || e.which;
+        if (keyCode === 13) {
+          e.preventDefault();
+          return false;
+        }
+      });
+
+      $('.js-searchParam').on('keyup keypress', function(e) {
+        var keyCode = e.keyCode || e.which;
+        if (keyCode === 13) {
+          e.preventDefault();
+          return false;
+        }
+      });
+
+      $('.js-searchParam').keypress(function(event){
+
+      if (event.keyCode === 10 || event.keyCode === 13)
+          event.preventDefault();
+
+    });
+    $('.js-searchParam').keypress(function(event){
+
+        if (event.keyCode === 10 || event.keyCode === 13){
+          console.log("bbb");
+        }
+
+      });
+
+      $('.js-searchParam').unbind();
+      $('.js-searchParam').children().off();
+      $('.js-searchParam').find("*").off();
+
+      $('.sitesearch__magnifier').unbind();
+      $('.sitesearch__magnifier').children().off();
+      $('.sitesearch__magnifier').find("*").off();
+
+      $('.form-search-wrapper').unbind();
+      $('.form-search-wrapper').children().off();
+      $('.form-search-wrapper').find("*").off();
+
+    }, 500);
 
 
     //// Шапка
