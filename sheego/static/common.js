@@ -137,7 +137,7 @@ catalogi.parse = function() {
       $('.form-search').find("*").off();
     }, 500);
 
-        $('.searchButton').bind('click', function(event) {
+        $('.sitesearch__magnifier').bind('click', function(event) {
       console.log("aaaa");
 
       var value = catalogi('.form-search').find("[name='searchparam']").val();
