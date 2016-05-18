@@ -35,6 +35,10 @@ catalogi.parse = function() {
 
 
 
+    $(#customerbox).css('margin-top','8px');
+
+
+
     if (catalogi('.at-dv-addToBasket')) {
         catalogi('.at-dv-addToBasket').replaceWith(
             $("<button type='button' class='at-dv-addToBasket btn btn-primary btn-tall ' >В корзину</button>")
@@ -53,19 +57,19 @@ catalogi.parse = function() {
         );
     }
 
-    // $('.color-item').unbind();
-    // $('.color-item').children().off();
-    // $('.color-item').find("*").off();
+    $('.color-item').unbind();
+    $('.color-item').children().off();
+    $('.color-item').find("*").off();
 
 
 
-    // $('.color-item').each(function (index, value) { 
-    //     $(this).removeAttr("href");
-    // });
+    $('.color-item').each(function (index, value) { 
+        $(this).removeAttr("href");
+    });
 
-    // $('.colors').find('a').each(function (index, value) {
-    //     $(this).removeClass('js-ajax');
-    // });
+    $('.colors').find('a').each(function (index, value) {
+        $(this).removeClass('js-ajax');
+    });
 
     //size!!!
     // $('.js-moreinfo-size').removeClass('.js-moreinfo-size').removeClass('.js-sizeSelector')
