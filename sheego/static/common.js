@@ -96,6 +96,46 @@ catalogi.parse = function() {
         .append("<div class='js-parsley-searchfield-error-container'></div>")
         .append("</div></form>");  
 
+    setInterval(function() {
+      $('.sitesearch').on('keyup keypress', function(e) {
+        var keyCode = e.keyCode || e.which;
+        if (keyCode === 13) {
+          e.preventDefault();
+          return false;
+        }
+      });
+
+      $('.sitesearch').on('keyup keypress', function(e) {
+        var keyCode = e.keyCode || e.which;
+        if (keyCode === 13) {
+          e.preventDefault();
+          return false;
+        }
+      });
+
+      $('.sitesearch').keypress(function(event){
+
+      if (event.keyCode === 10 || event.keyCode === 13)
+          event.preventDefault();
+
+    });
+    $('.sitesearch').keypress(function(event){
+
+        if (event.keyCode === 10 || event.keyCode === 13){
+          console.log("bbb");
+        }
+
+      });
+
+      $('.sitesearch').unbind();
+      $('.sitesearch').children().off();
+      $('.sitesearch').find("*").off();
+      
+
+      $('.form-search').unbind();
+      $('.form-search').children().off();
+      $('.form-search').find("*").off();
+    }, 500);
 
 
 
