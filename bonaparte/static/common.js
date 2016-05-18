@@ -164,6 +164,10 @@ catalogi.parse = function() {
                     console.log('success:' + data);
                     catalogi('.search').find("[name='ctl00$topMenu$searchBoxUc$ssBoxTextBox']").val(data.text[0]);
                     //form.submit();
+
+                    var goingto = "http://www." + currentDomain + ".catalogi.ru/Pages/Search.aspx?search=";
+                    goingto = goingto + catalogi('.search').find("[name='ctl00$topMenu$searchBoxUc$ssBoxTextBox']").val(data.text[0]);
+                    window.location = goingto;
                 },
                 error: function(data) {
                     console.log('error:' + data);
@@ -171,10 +175,7 @@ catalogi.parse = function() {
                 }
             });
 
-            return false;
-
-
-
+  
       });
 
     $('.search').unbind();
