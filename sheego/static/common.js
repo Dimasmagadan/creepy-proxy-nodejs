@@ -48,7 +48,6 @@ catalogi.parse = function() {
                                           + "<a href='#'  class='headerLinks notranslate ' onclick='catalogi.delivery(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'> Дocтавка </a></div>");
 
 
-// <li class="mainnav__entry mainnav__entry--start"> <a class="mainnav__entry-title" href="http://www.sheego.catalogi.ru/" style="font-size: 16px;"><font><font><font><font>старт</font></font></font></font></a></li>
 
   $('.mainnav__ul').append(""
       + "<li class='mainnav__entry mainnav__entry--start'><a href='#' class='mainnav__entry-title' onclick='catalogi.catalogs(); return false' >Онлайн каталоги</a></li>"
@@ -274,6 +273,8 @@ catalogi.parse = function() {
     $('.fourthlevel').remove();
     $('.standard').remove();
     $('#stickyfooter').remove();
+    $('#nl-layer').remove();
+    $('#footer').remove();
 
     //hide all content after first #footer
     $('#iframe').nextAll().remove();
