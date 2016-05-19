@@ -227,10 +227,6 @@ console.log('aaaaa');
         .queue(function(next) {
 
 
-
-
-
-
             if (_auth) {
                 catalogi('#_auth_wait').remove();
                 catalogi('#miniaccount').empty();
@@ -277,9 +273,9 @@ console.log('aaaaa');
     $('#footer').remove();
 
     //hide all content after first #footer
-    $('#iframe').nextAll().remove();
-    $('#iframe').hide();
-    // $("#footer").nextAll().hide();
+    // $('#iframe').nextAll().remove();
+    // $('#iframe').hide();
+    $("#footer").nextAll().hide();
     //aaaa
 
     //search divs with background images and change url to valid
