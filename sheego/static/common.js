@@ -34,6 +34,29 @@ catalogi.noTranslate = function() {
 catalogi.parse = function() {
 
 
+  $( "#header-topbar > div > div" ).append( "<div id='topbar-slogan' class='col-md-6 hidden-xs hidden-sm'><a href='http://www.catalogi.ru' target='_blank' class='headerLinks _home catalogiLink' style='cursor:pointer'> Каталоги.ру <span class='hidden-xs hidden-sm hidden-md'>- заказ и доставка одежды из интернет-магазина Sheego.de.</span></a></div>"
+                                          + "<div class=' col-md-6'>"
+                                          + "<a href='#' class='headerLinks hidden-xs hidden-sm' onclick='catalogi.catalogs(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'>Онлайн каталоги</a><span class='hidden-xs hidden-sm'>|</span>"
+                                          + "<a href='#' class='headerLinks hidden-xs hidden-sm' onclick='catalogi.shops(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'>Интернет-магазины</a><span class='hidden-xs hidden-sm'>|</span>"
+                                          + "<a href='#' class='headerLinks hidden-xs hidden-sm' onclick='catalogi.sizeTable(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'>Таблица размеров</a><span class='hidden-xs hidden-sm'>|</span>"
+                                          + "<a href='#' id='delivery' class='headerLinks notranslate hidden-xs hidden-sm' onclick='catalogi.delivery(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'> Дocтавка </a><span class='hidden-xs hidden-sm'>|</span>"
+                                          + "<a href='#' class='headerLinks hidden-xs hidden-sm' onclick='catalogi.payment(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'>Оплата</a>"
+                                          + "<a href='#' class='hidden-xs hidden-sm hidden-md' style='margin-left: 20px'>+74955404949</a></div>"
+                                          + "<div class='col-sm-12 col-xs-12 hidden-md hidden-lg'>"
+                                          + "<a href='http://www.catalogi.ru' target='_blank' class='headerLinks _home catalogiLink' style='cursor:pointer'> Каталоги.ру </a>|"
+                                          + "<a href='#' class='headerLinks' onclick='catalogi.payment(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'>Оплата</a>|"
+                                          + "<a href='#'  class='headerLinks notranslate ' onclick='catalogi.delivery(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'> Дocтавка </a></div>");
+
+
+// <li class="mainnav__entry mainnav__entry--start"> <a class="mainnav__entry-title" href="http://www.sheego.catalogi.ru/" style="font-size: 16px;"><font><font><font><font>старт</font></font></font></font></a></li>
+
+  $('.mainnav__ul').append(""
+      + "<li class='mainnav__entry mainnav__entry--start'><a href='#' class='mainnav__entry-title' onclick='catalogi.catalogs(); return false' >Онлайн каталоги</a></li>"
+      + "<li class='mainnav__entry mainnav__entry--start'><a href='#' class='mainnav__entry-title' onclick='catalogi.shops(); return false'>Интернет-магазины</a></li>"
+      + "<li class='mainnav__entry mainnav__entry--start'><a href='#' class='mainnav__entry-title' onclick='catalogi.sizeTable(); return false' >Таблица размеров</a></li>"
+      + "");
+
+
 
     $('#customerbox').css('margin-top','8px');
 
@@ -63,7 +86,7 @@ catalogi.parse = function() {
 
 
 
-    // $('.color-item').each(function (index, value) { 
+    // $('.color-item').each(function (index, value) {
     //     $(this).removeAttr("href");
     // });
 
@@ -75,12 +98,12 @@ catalogi.parse = function() {
     // $('.js-moreinfo-size').removeClass('.js-moreinfo-size').removeClass('.js-sizeSelector')
 
 
-    // $('.js-moreinfo-size').find('button').each(function (index, value) { 
+    // $('.js-moreinfo-size').find('button').each(function (index, value) {
     //     $(this).replaceWith("<a class='btn btn-primary btn-small size-selected'>" + $(this).text() + "</a>");
     // });
 
     // $('.size-selected').bind('click', function(event) {
-    //     $('.js-moreinfo-size').find('.btn').each(function (index, value) { 
+    //     $('.js-moreinfo-size').find('.btn').each(function (index, value) {
     //         $(this).removeClass('active');
     //     });
 
@@ -136,13 +159,13 @@ catalogi.parse = function() {
       $('.sitesearch__input').unbind();
       $('.sitesearch__input').children().off();
       $('.sitesearch__input').find("*").off();
-      
+
 
       $('.form-search').unbind();
       $('.form-search').children().off();
       $('.form-search').find("*").off();
        $('.form-search').find("*").addBack().off();
-    $('.form-search').children().addBack().off();  
+    $('.form-search').children().addBack().off();
     }, 500);
 
     $('.sitesearch__magnifier').bind('click', function(event) {
@@ -205,27 +228,7 @@ catalogi.parse = function() {
         .queue(function(next) {
 
 
-    $( "#header-topbar > div > div" ).append( "<div id='topbar-slogan' class='col-md-6 hidden-xs hidden-sm'><a href='http://www.catalogi.ru' target='_blank' class='headerLinks _home catalogiLink' style='cursor:pointer'> Каталоги.ру <span class='hidden-xs hidden-sm hidden-md'>- заказ и доставка одежды из интернет-магазина Sheego.de.</span></a></div>"
-                                            + "<div class=' col-md-6'>"
-                                            + "<a href='#' class='headerLinks hidden-xs hidden-sm' onclick='catalogi.catalogs(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'>Онлайн каталоги</a><span class='hidden-xs hidden-sm'>|</span>"
-                                            + "<a href='#' class='headerLinks hidden-xs hidden-sm' onclick='catalogi.shops(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'>Интернет-магазины</a><span class='hidden-xs hidden-sm'>|</span>"
-                                            + "<a href='#' class='headerLinks hidden-xs hidden-sm' onclick='catalogi.sizeTable(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'>Таблица размеров</a><span class='hidden-xs hidden-sm'>|</span>"
-                                            + "<a href='#' id='delivery' class='headerLinks notranslate hidden-xs hidden-sm' onclick='catalogi.delivery(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'> Дocтавка </a><span class='hidden-xs hidden-sm'>|</span>"
-                                            + "<a href='#' class='headerLinks hidden-xs hidden-sm' onclick='catalogi.payment(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'>Оплата</a>" 
-                                            + "<a href='#' class='hidden-xs hidden-sm hidden-md' style='margin-left: 20px'>+74955404949</a></div>"
-                                            + "<div class='col-sm-12 col-xs-12 hidden-md hidden-lg'>"
-                                            + "<a href='http://www.catalogi.ru' target='_blank' class='headerLinks _home catalogiLink' style='cursor:pointer'> Каталоги.ру </a>|"
-                                            + "<a href='#' class='headerLinks' onclick='catalogi.payment(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'>Оплата</a>|"
-                                            + "<a href='#'  class='headerLinks notranslate ' onclick='catalogi.delivery(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'> Дocтавка </a></div>");
 
-
-// <li class="mainnav__entry mainnav__entry--start"> <a class="mainnav__entry-title" href="http://www.sheego.catalogi.ru/" style="font-size: 16px;"><font><font><font><font>старт</font></font></font></font></a></li>
-    
-    $('.mainnav__ul').append(""
-        + "<li class='mainnav__entry mainnav__entry--start'><a href='#' class='mainnav__entry-title' onclick='catalogi.catalogs(); return false' >Онлайн каталоги</a></li>" 
-        + "<li class='mainnav__entry mainnav__entry--start'><a href='#' class='mainnav__entry-title' onclick='catalogi.shops(); return false'>Интернет-магазины</a></li>"
-        + "<li class='mainnav__entry mainnav__entry--start'><a href='#' class='mainnav__entry-title' onclick='catalogi.sizeTable(); return false' >Таблица размеров</a></li>"
-        + "");
 
 
 
@@ -260,7 +263,7 @@ catalogi.parse = function() {
         //Added  12.05.2016
 
 
-                //custom header     
+                //custom header
     $('#topbar-slogan').remove();
     $('#topbar-salutation').remove();
     $('#topbar-bulletpoints').remove();
@@ -269,6 +272,8 @@ catalogi.parse = function() {
     $('.secondlevel').remove();
     $('.thirdlevel').remove();
     $('.fourthlevel').remove();
+    $('.standard').remove();
+    $('#stickyfooter').remove();
 
     //hide all content after first #footer
     $('#iframe').nextAll().remove();
@@ -277,7 +282,7 @@ catalogi.parse = function() {
     //aaaa
 
     //search divs with background images and change url to valid
-    $('div').each(function (index, value) { 
+    $('div').each(function (index, value) {
         if ($(this).css("background-image") != 'none' && $(this).css("background-image").indexOf('http://media.sheego.catalogi.ru/') > -1) {
             $(this).css("background-image", $(this).css("background-image").replace("catalogi.ru","de") , '!important');
         }
@@ -285,15 +290,15 @@ catalogi.parse = function() {
 
 
     //search img and change url to valid
-    $('img').each(function (index, value) { 
+    $('img').each(function (index, value) {
         $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
         });
 
     window.setInterval(function(){
-        $('img').each(function (index, value) { 
+        $('img').each(function (index, value) {
         $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
         });
-        $('div').each(function (index, value) { 
+        $('div').each(function (index, value) {
             if ($(this).css("background-image") != 'none' && $(this).css("background-image").indexOf('http://media.sheego.catalogi.ru/') > -1) {
                 $(this).css("background-image", $(this).css("background-image").replace("catalogi.ru","de") , '!important');
             }
@@ -307,7 +312,7 @@ catalogi.parse = function() {
     //hide basket title
     $('.minibasket__my').remove();
     $('.miniaccount__mysheego-my').remove();
-    //change text 
+    //change text
     $('.minibasketflyout').remove();
 
     $('.minibasket__basket').empty();
@@ -319,7 +324,7 @@ catalogi.parse = function() {
      $( "#miniaccount" ).append( "<div class='myaccount notranslate' style='display: inline-block !important;'><a class='logged notranslate minibasket__text '  onclick='catalogi.login(); return false'><span class='hidden-xs-inline hidden-sm-inline'>Кабинет</span><span class='l-vertical-align-helper '><img style='width: 34px; vertical-align: 'src='https://image.freepik.com/free-icon/male-user-shadow_318-34042.png'></span></a></div>" );
      //$( "#miniaccount" ).css('vertical-align','middle');
      //$( "#miniaccount" ).css('padding-top','0px');
-    
+
 
 
 
@@ -417,7 +422,7 @@ function checkBasket() {
     //$('#minibasket').css('margin-top','8px');
         $('#minibasket').append(""
                     + "<a class='minibasket__link js-minibasket-href' style='cursor : pointer'>"
-                    +    "<span class='minibasket__text hidden-xs-inline hidden-sm-inline'>"   
+                    +    "<span class='minibasket__text hidden-xs-inline hidden-sm-inline'>"
                     +    "<span class='minibasket__basket'>Корзина</span>"
                     +    "</span>"
                     +    "<span class='minibasket__countvalue l-vertical-align-helped'></span>"
@@ -538,4 +543,3 @@ catalogi(function() {
     checkSeach();
 
 });
-
