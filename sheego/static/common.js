@@ -307,10 +307,19 @@ catalogi.parse = function() {
         $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
         });
 
+        $('source').each(function (index, value) {
+            $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
+            });
+
     window.setInterval(function(){
         $('img').each(function (index, value) {
         $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
         });
+
+        $('source').each(function (index, value) {
+    $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
+    });
+    
         $('div').each(function (index, value) {
             if ($(this).css("background-image") != 'none' && $(this).css("background-image").indexOf('http://media.sheego.catalogi.ru/') > -1) {
                 $(this).css("background-image", $(this).css("background-image").replace("catalogi.ru","de") , '!important');
