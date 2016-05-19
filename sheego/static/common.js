@@ -40,7 +40,21 @@ catalogi.parse = function() {
   $('#iframe').nextAll().remove();
   $('#iframe').hide();
   $('.standard').remove();
-  $('#startbody > script:nth-child(16)').remove();
+  $('#footer').remove();
+
+  $('#topbar-slogan').remove();
+  $('#topbar-salutation').remove();
+  $('#topbar-bulletpoints').remove();
+
+  $('.firstlevel').remove();
+  $('.secondlevel').remove();
+  $('.thirdlevel').remove();
+  $('.fourthlevel').remove();
+  $('.standard').remove();
+  $('#stickyfooter').remove();
+  $('#nl-layer').remove();
+
+  //$('#startbody > script:nth-child(16)').remove();
 
   //  $("#footer").nextAll().remove();
 
@@ -274,17 +288,7 @@ catalogi.parse = function() {
 
 
                 //custom header
-    $('#topbar-slogan').remove();
-    $('#topbar-salutation').remove();
-    $('#topbar-bulletpoints').remove();
 
-    $('.firstlevel').remove();
-    $('.secondlevel').remove();
-    $('.thirdlevel').remove();
-    $('.fourthlevel').remove();
-    $('.standard').remove();
-    $('#stickyfooter').remove();
-    $('#nl-layer').remove();
     //$('#footer').remove();
 
 
