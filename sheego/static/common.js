@@ -39,7 +39,11 @@ catalogi.parse = function() {
   // $('#iframe').remove();
   // $('#iframe').nextAll().remove();
   // $('#iframe').hide();
-   $("#footer").nextAll().remove();
+  setInterval(function(){
+    $("#footer").nextAll().remove();
+  }, 100);
+
+
 
   if ($('#nav-catalogi').length == 0) {
     $( "#header-topbar > div > div" ).append( "<div id='topbar-slogan nav-catalogi' class='col-md-6 hidden-xs hidden-sm'><a href='http://www.catalogi.ru' target='_blank' class='headerLinks _home catalogiLink' style='cursor:pointer'> Каталоги.ру <span class='hidden-xs hidden-sm hidden-md'>- заказ и доставка одежды из интернет-магазина Sheego.de.</span></a></div>"
