@@ -33,6 +33,11 @@ catalogi.noTranslate = function() {
 
 catalogi.parse = function() {
 
+  //hide all content after first #footer
+  // $('#iframe').nextAll().remove();
+  // $('#iframe').hide();
+  $("#footer").nextAll().remove();
+
 
   $( "#header-topbar > div > div" ).append( "<div id='topbar-slogan' class='col-md-6 hidden-xs hidden-sm'><a href='http://www.catalogi.ru' target='_blank' class='headerLinks _home catalogiLink' style='cursor:pointer'> Каталоги.ру <span class='hidden-xs hidden-sm hidden-md'>- заказ и доставка одежды из интернет-магазина Sheego.de.</span></a></div>"
                                           + "<div class=' col-md-6'>"
@@ -272,10 +277,7 @@ console.log('aaaaa');
     $('#nl-layer').remove();
     $('#footer').remove();
 
-    //hide all content after first #footer
-    // $('#iframe').nextAll().remove();
-    // $('#iframe').hide();
-    $("#footer").nextAll().hide();
+
     //aaaa
 
     //search divs with background images and change url to valid
