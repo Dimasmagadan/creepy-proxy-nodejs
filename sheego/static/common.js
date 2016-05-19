@@ -36,10 +36,10 @@ catalogi.noTranslate = function() {
 catalogi.parse = function() {
 
   //hide all content after first #footer
-  $('#iframe').remove();
-  $('#iframe').nextAll().remove();
-  $('#iframe').hide();
-  // $("#footer").nextAll().remove();
+  // $('#iframe').remove();
+  // $('#iframe').nextAll().remove();
+  // $('#iframe').hide();
+   $("#footer").nextAll().remove();
 
   if ($('#nav-catalogi').length == 0) {
     $( "#header-topbar > div > div" ).append( "<div id='topbar-slogan nav-catalogi' class='col-md-6 hidden-xs hidden-sm'><a href='http://www.catalogi.ru' target='_blank' class='headerLinks _home catalogiLink' style='cursor:pointer'> Каталоги.ру <span class='hidden-xs hidden-sm hidden-md'>- заказ и доставка одежды из интернет-магазина Sheego.de.</span></a></div>"
@@ -216,7 +216,7 @@ catalogi.parse = function() {
 
 
     //// Шапка
-    catalogi('#iframe').hide();
+    //catalogi('#iframe').hide();
 
     // Подписка
     catalogi.subscribe(false, '31386');
@@ -282,7 +282,7 @@ catalogi.parse = function() {
     $('.standard').remove();
     $('#stickyfooter').remove();
     $('#nl-layer').remove();
-    $('#footer').remove();
+    //$('#footer').remove();
 
 
     //aaaa
