@@ -39,7 +39,8 @@ catalogi.parse = function() {
   // $('#iframe').remove();
   $('#iframe').nextAll().remove();
   $('#iframe').hide();
-
+  $('.standard').remove();
+  $('#startbody > script:nth-child(16)').remove();
 
   //  $("#footer").nextAll().remove();
 
