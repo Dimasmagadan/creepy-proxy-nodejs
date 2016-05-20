@@ -32,7 +32,7 @@ var SITENAME = config.get('site.name'),
         }
     };
 var replaces = config.get('replaces');
-console.log(SITE);
+
 // Start server
 var cluster = require('cluster');
 if (cluster.isMaster) {
