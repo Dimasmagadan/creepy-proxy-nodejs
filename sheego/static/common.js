@@ -251,7 +251,7 @@ catalogi.parse = function() {
     catalogi('head')
         .delay(5000)
         .queue(function(next) {
-$('#footer').remove();
+    //$('#footer').remove();
 
             if (_auth) {
                 catalogi('#_auth_wait').remove();
