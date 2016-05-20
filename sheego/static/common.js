@@ -55,7 +55,9 @@ catalogi.parse = function() {
   $('#nl-layer').remove();
   $("#footer").hide();
 
-  
+  if ($('.sizetable').length > 0) {
+    $('.sizetable').replaceWith('<a class="btn btn-text sizetable" onclick="catalogi.sizeTable(); return false" style="cursor:pointer;"  title="таблицы размеров"><span class="arrow">&gt;</span>Диаграмма размера</a>');
+  }
 
   //$('#startbody > script:nth-child(16)').remove();
 
