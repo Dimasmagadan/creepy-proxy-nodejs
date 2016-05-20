@@ -248,8 +248,6 @@ catalogi.parse = function() {
     checkBasket();
 
 
-
-
     catalogi(this).css('visibility', 'visible');
 
 //video
@@ -262,7 +260,6 @@ catalogi.parse = function() {
     }
 
 
-  });
   });
 
   catalogi('head')
