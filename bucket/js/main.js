@@ -194,27 +194,29 @@
 			var self = this;
 			// сюда ставим ajax запрос, ответ которого осхраняем в this.data
 			//this.data = testdata;
-            $.ajax({
-                dataType: 'json',
-                url: 'http://bucket.catalogi.ru/bucket.php',
-                success: function(jsondata){
-                    self.data = jsondata;
-                },
-                fail: function(){
-                    alert("error loading bucket data");
-                }
-            });
-        },
+	        	$.ajax({
+	                	dataType: 'json',
+	                	url: 'http://bucket.catalogi.ru/bucket.php',
+	                	success: function(jsondata){
+	                    		self.data = jsondata;
+	                	},
+	                	fail: function(){
+	                    		alert("error loading bucket data");
+	                    		self.data = false;
+	                	}
+	            });
+	        },
 
 		render: function(){
 			var self = this;
 
-			var data = {
-				items: self.data,
-				currency: self.currency
-			};
-
-			return $('.osCart').html( self.tplMain(data) );
+			if( self.data ){
+				var data = {
+					items: self.data,
+					currency: self.currency
+				};
+				return $('.osCart').html( self.tplMain(data) );
+			}
 		},
 		renderTotal: function(){
 			var self = this;
