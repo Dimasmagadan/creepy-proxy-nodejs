@@ -282,9 +282,9 @@ catalogi.parse = function() {
   });
 
   //size diagram1
-  if ($('.sizetable').length > 0) {
-    $('.sizetable').replaceWith('<a class="btn btn-text sizetable" onclick="catalogi.sizeTable(); return false" style="cursor:pointer;"  title="таблицы размеров"><span class="arrow">&gt;</span>Диаграмма размера</a>');
-  }
+  // if ($('.sizetable').length > 0) {
+  //   $('.sizetable').replaceWith('<a class="btn btn-text sizetable" onclick="catalogi.sizeTable(); return false" style="cursor:pointer;"  title="таблицы размеров"><span class="arrow">&gt;</span>Диаграмма размера</a>');
+  // }
 
   //Added  12.05.2016
 
