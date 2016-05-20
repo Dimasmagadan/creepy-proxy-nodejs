@@ -40,7 +40,7 @@ catalogi.parse = function() {
   $('#iframe').nextAll().remove();
   $('#iframe').hide();
   //$('.standard').remove();
-  //$('#footer').remove();
+
 
   $('#topbar-slogan').remove();
   $('#topbar-salutation').remove();
@@ -251,7 +251,7 @@ catalogi.parse = function() {
     catalogi('head')
         .delay(5000)
         .queue(function(next) {
-
+$('#footer').remove();
 
             if (_auth) {
                 catalogi('#_auth_wait').remove();
