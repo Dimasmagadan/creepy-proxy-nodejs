@@ -50,7 +50,16 @@ catalogi.noTranslate = function() {
 catalogi.parse = function() {
 
 
-
+setInterval(function(){ 
+    if ($('.addToCart').length > 0 && $('.myCart') == 0) {
+    $('.addToCart').replaceWith('<div id="divAddToCart" class="itemButton addToCart newCart"><input value="Добавить в корзину"  type="button" class="bigButton addToCartButton"></div>');
+    $('.addToCartButton').bind('click', function(event) {
+      //  event.preventDefault();
+      addToCart();
+    });
+        
+    } 
+}, 500);
 
 
   //юр страницы
@@ -222,7 +231,7 @@ catalogi.parse = function() {
     $('.search').find("*").off();
 
     //add to cart button
-    $('.addToCart').replaceWith('<div id="divAddToCart" class="itemButton addToCart"><input value="Добавить в корзину"  type="button" class="bigButton addToCartButton"></div>');
+    $('.addToCart').replaceWith('<div id="divAddToCart" class="itemButton addToCart newCart"><input value="Добавить в корзину"  type="button" class="bigButton addToCartButton"></div>');
     $('.addToCartButton').bind('click', function(event) {
       //  event.preventDefault();
       addToCart();
