@@ -90,7 +90,8 @@ catalogi.parse = function() {
 
   $('#customerbox').css('margin-top','8px');
 
-
+//подписка
+catalogi.subscribe(false, '31386');
 
   if (catalogi('.at-dv-addToBasket')) {
     catalogi('.at-dv-addToBasket').replaceWith(
@@ -238,7 +239,7 @@ catalogi.parse = function() {
   //catalogi('#iframe').hide();
 
   // Подписка
-  catalogi.subscribe(false, '31386');
+
 
 
   // Showing body after hiding
