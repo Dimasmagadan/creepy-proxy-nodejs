@@ -32,7 +32,10 @@ catalogi.noTranslate = function() {
 
     catalogi('#leftcol > ul:eq(0)').addClass('notranslate');
     catalogi('#rightcol').children('div').addClass('notranslate');
-}
+
+    catalogi('a[href=#bewertung]').addClass('notranslate');
+    catalogi('#bewertung').addClass('notranslate');
+};
 
 // Main section
 catalogi.parse = function() {
@@ -118,7 +121,7 @@ catalogi.parse = function() {
     catalogi('.c2c').remove();
     catalogi('.form2').remove();
 
-    catalogi('a[href=#bewertung]').parent().remove();
+    //catalogi('a[href=#bewertung]').parent().remove();
 
     // Show body after f@cking hiding >_<
     catalogi('body')
