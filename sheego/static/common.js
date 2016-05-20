@@ -95,6 +95,7 @@ var isshow = localStorage.getItem('status');
     if (isshow== null) {
         localStorage.setItem('isshow', 1);
 
+        console.log('bbb');
         // Show popup here
         catalogi.colorbox({
                 iframe: true,
@@ -104,13 +105,7 @@ var isshow = localStorage.getItem('status');
               });
     }
 
-    catalogi.colorbox({
-            iframe: true,
-            href: 'http://cdn.catalogi.ru/executable/partials/subscribe.php?group=31386',
-            innerWidth: 580,
-            innerHeight: 480
-          });
-          
+
 
   if (catalogi('.at-dv-addToBasket')) {
     catalogi('.at-dv-addToBasket').replaceWith(
