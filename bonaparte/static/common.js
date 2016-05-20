@@ -51,10 +51,10 @@ catalogi.parse = function() {
 
 
 setInterval(function(){ 
-    if ($('.addToCart').length > 0 && $('.myCart').length == 0) {
+    if ($('.addToCart').length > 0 && $('.newCart').length == 0) {
     $('.addToCart').replaceWith('<div id="divAddToCart" class="itemButton addToCart newCart"><input value="Добавить в корзину"  type="button" class="bigButton addToCartButton"></div>');
     
-        $('.sizeGuideLink').empty();
+    $('.sizeGuideLink').empty();
     $('.sizeGuideLink').append('<a id="ctl00_ContentRegion_ctl03_sizeGuideModalHyperLink" onclick="catalogi.sizeTable(); return false" style="cursor:pointer;">Диаграма размеров</a>');
     
     $('.addToCartButton').bind('click', function(event) {
