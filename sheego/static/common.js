@@ -42,18 +42,18 @@ catalogi.parse = function() {
   //catalogi('.standard').remove();
 
 
-  catalogi('#topbar-slogan').remove();
-  catalogi('#topbar-salutation').remove();
-  catalogi('#topbar-bulletpoints').remove();
-
-  catalogi('.firstlevel').remove();
-  catalogi('.secondlevel').remove();
-  catalogi('.thirdlevel').remove();
-  catalogi('.fourthlevel').remove();
-  catalogi('.standard').remove();
-  catalogi('#stickyfooter').remove();
-  catalogi('#nl-layer').remove();
-  catalogi("#footer").hide();
+  // catalogi('#topbar-slogan').remove();
+  // catalogi('#topbar-salutation').remove();
+  // catalogi('#topbar-bulletpoints').remove();
+  //
+  // catalogi('.firstlevel').remove();
+  // catalogi('.secondlevel').remove();
+  // catalogi('.thirdlevel').remove();
+  // catalogi('.fourthlevel').remove();
+  // catalogi('.standard').remove();
+  // catalogi('#stickyfooter').remove();
+  // catalogi('#nl-layer').remove();
+  // catalogi("#footer").hide();
 
   //catalogi('#startbody > script:nth-child(16)').remove();
 
@@ -314,9 +314,9 @@ catalogi.parse = function() {
       catalogi(this).attr("src", catalogi(this).attr("src").replace("catalogi.ru","de"));
     });
 
-    catalogi('source').each(function (index, value) {
-      catalogi(this).attr("src", catalogi(this).attr("src").replace("catalogi.ru","de"));
-    });
+    // catalogi('source').each(function (index, value) {
+    //   catalogi(this).attr("src", catalogi(this).attr("src").replace("catalogi.ru","de"));
+    // });
 
     catalogi('.standard').remove();
 
