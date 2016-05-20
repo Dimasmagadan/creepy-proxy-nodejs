@@ -252,6 +252,7 @@ catalogi.parse = function() {
 
     catalogi(this).css('visibility', 'visible');
 
+//video
     if ($('video').length > 0) {
       $('video').each(function (index, value) {
         //$(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
