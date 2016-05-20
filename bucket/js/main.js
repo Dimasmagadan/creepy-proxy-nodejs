@@ -191,13 +191,14 @@
 		},
 
 		recalcData: function(){
+			var self = this;
 			// сюда ставим ajax запрос, ответ которого осхраняем в this.data
 			//this.data = testdata;
             $.ajax({
                 dataType: 'json',
                 url: 'http://bucket.catalogi.ru/bucket.php',
                 success: function(jsondata){
-                    this.data = jsondata;
+                    self.data = jsondata;
                 },
                 fail: function(){
                     alert("error loading bucket data");
