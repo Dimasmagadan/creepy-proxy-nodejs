@@ -40,7 +40,7 @@ catalogi.parse = function() {
   $('#iframe').nextAll().remove();
   $('#iframe').hide();
   //$('.standard').remove();
-  //$('#footer').remove();
+  $('#footer').remove();
 
   $('#topbar-slogan').remove();
   $('#topbar-salutation').remove();
