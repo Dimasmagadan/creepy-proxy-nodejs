@@ -91,7 +91,19 @@ catalogi.parse = function() {
   catalogi('#customerbox').css('margin-top','8px');
 
 //подписка
-catalogi.subscribe(false, '31386');
+var isshow = localStorage.getItem('status');
+    if (isshow== null) {
+        localStorage.setItem('isshow', 1);
+
+        // Show popup here
+        catalogi.colorbox({
+                iframe: true,
+                href: 'http://cdn.catalogi.ru/executable/partials/subscribe.php?group=31386',
+                innerWidth: 580,
+                innerHeight: 480
+              });
+    }
+
 
   if (catalogi('.at-dv-addToBasket')) {
     catalogi('.at-dv-addToBasket').replaceWith(
