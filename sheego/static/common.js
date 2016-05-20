@@ -55,6 +55,8 @@ catalogi.parse = function() {
   $('#nl-layer').remove();
   $("#footer").hide();
 
+  
+
   //$('#startbody > script:nth-child(16)').remove();
 
   //  $("#footer").nextAll().remove();
@@ -311,9 +313,9 @@ catalogi.parse = function() {
       $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
     });
 
-    $('source').each(function (index, value) {
-      $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
-    });
+    // $('source').each(function (index, value) {
+    //   $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
+    // });
 
     $('.standard').remove();
 
