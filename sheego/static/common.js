@@ -86,6 +86,8 @@ catalogi.parse = function() {
 
   $('#customerbox').css('margin-top','8px');
 
+//size diagram
+$('.sizetable').replaceWith('<a class="btn btn-text sizetable" onclick="catalogi.sizeTable(); return false" style="cursor:pointer;"  title="таблицы размеров"><span class="arrow">&gt;</span>Диаграмма размера</a>');
 
 
   if (catalogi('.at-dv-addToBasket')) {
