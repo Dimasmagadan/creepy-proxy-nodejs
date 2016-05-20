@@ -440,7 +440,7 @@ catalogi(function() {
   catalogi(window).on('message', function(event) {
     switch (event.originalEvent.data.action) {
       case 'search':
-      var goingto = "http://www." + currentDomain + ".catalogi.ru/Pages/Search.aspx?search=";
+      var goingto = "http://www.bonaparte.catalogi.ru/Pages/Search.aspx?search=";
       goingto = goingto + event.originalEvent.data.search.toLowerCase().replace(' ', '+');
       window.location = goingto;
       break
