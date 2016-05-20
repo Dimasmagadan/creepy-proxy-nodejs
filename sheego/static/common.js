@@ -36,31 +36,31 @@ catalogi.noTranslate = function() {
 catalogi.parse = function() {
 
   //hide all content after first #footer
-  // $('#iframe').remove();
-  $('#iframe').nextAll().remove();
-  $('#iframe').hide();
-  //$('.standard').remove();
+  // catalogi('#iframe').remove();
+  catalogi('#iframe').nextAll().remove();
+  catalogi('#iframe').hide();
+  //catalogi('.standard').remove();
 
 
-  $('#topbar-slogan').remove();
-  $('#topbar-salutation').remove();
-  $('#topbar-bulletpoints').remove();
+  catalogi('#topbar-slogan').remove();
+  catalogi('#topbar-salutation').remove();
+  catalogi('#topbar-bulletpoints').remove();
 
-  $('.firstlevel').remove();
-  $('.secondlevel').remove();
-  $('.thirdlevel').remove();
-  $('.fourthlevel').remove();
-  $('.standard').remove();
-  $('#stickyfooter').remove();
-  $('#nl-layer').remove();
-  $("#footer").hide();
+  catalogi('.firstlevel').remove();
+  catalogi('.secondlevel').remove();
+  catalogi('.thirdlevel').remove();
+  catalogi('.fourthlevel').remove();
+  catalogi('.standard').remove();
+  catalogi('#stickyfooter').remove();
+  catalogi('#nl-layer').remove();
+  catalogi("#footer").hide();
 
-  //$('#startbody > script:nth-child(16)').remove();
+  //catalogi('#startbody > script:nth-child(16)').remove();
 
-  //  $("#footer").nextAll().remove();
+  //  catalogi("#footer").nextAll().remove();
 
-  if ($('#ccc').length == 0) {
-    $( "#header-topbar > div > div" ).append( "<div id='ccc'<div id='topbar-slogan' class='col-md-6 hidden-xs hidden-sm'><a href='http://www.catalogi.ru' target='_blank' class='headerLinks _home catalogiLink' style='cursor:pointer'> Каталоги.ру <span class='hidden-xs hidden-sm hidden-md'>- заказ и доставка одежды из интернет-магазина Sheego.de.</span></a></div>"
+  if (catalogi('#ccc').length == 0) {
+    catalogi( "#header-topbar > div > div" ).append( "<div id='ccc'<div id='topbar-slogan' class='col-md-6 hidden-xs hidden-sm'><a href='http://www.catalogi.ru' target='_blank' class='headerLinks _home catalogiLink' style='cursor:pointer'> Каталоги.ру <span class='hidden-xs hidden-sm hidden-md'>- заказ и доставка одежды из интернет-магазина Sheego.de.</span></a></div>"
     + "<div class=' col-md-6'>"
     + "<a href='#' class='headerLinks hidden-xs hidden-sm' onclick='catalogi.catalogs(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'>Онлайн каталоги</a><span class='hidden-xs hidden-sm'>|</span>"
     + "<a href='#' class='headerLinks hidden-xs hidden-sm' onclick='catalogi.shops(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'>Интернет-магазины</a><span class='hidden-xs hidden-sm'>|</span>"
@@ -75,7 +75,7 @@ catalogi.parse = function() {
 
     console.log('aaaaa');
 
-    $('.mainnav__ul').append(""
+    catalogi('.mainnav__ul').append(""
     + "<li class='mainnav__entry mainnav__entry--start'><a href='#' class='mainnav__entry-title' onclick='catalogi.catalogs(); return false' >Онлайн каталоги</a></li>"
     + "<li class='mainnav__entry mainnav__entry--start'><a href='#' class='mainnav__entry-title' onclick='catalogi.shops(); return false'>Интернет-магазины</a></li>"
     + "<li class='mainnav__entry mainnav__entry--start'><a href='#' class='mainnav__entry-title' onclick='catalogi.sizeTable(); return false' >Таблица размеров</a></li>"
@@ -84,13 +84,13 @@ catalogi.parse = function() {
   }
 
 
-  $('#customerbox').css('margin-top','8px');
+  catalogi('#customerbox').css('margin-top','8px');
 
 
 
   if (catalogi('.at-dv-addToBasket')) {
     catalogi('.at-dv-addToBasket').replaceWith(
-      $("<button type='button' class='at-dv-addToBasket btn btn-primary btn-tall ' >В корзину</button>")
+      catalogi("<button type='button' class='at-dv-addToBasket btn btn-primary btn-tall ' >В корзину</button>")
       .addClass('notranslate')
       .attr('id', 'addToCartBtn')
       //  .attr('href', '#')
@@ -106,40 +106,40 @@ catalogi.parse = function() {
     );
   }
 
-  $('.color-item').unbind();
-  $('.color-item').children().off();
-  $('.color-item').find("*").off();
+  catalogi('.color-item').unbind();
+  catalogi('.color-item').children().off();
+  catalogi('.color-item').find("*").off();
 
 
 
-  // $('.color-item').each(function (index, value) {
-  //     $(this).removeAttr("href");
+  // catalogi('.color-item').each(function (index, value) {
+  //     catalogi(this).removeAttr("href");
   // });
 
-  $('.colors').find('a').each(function (index, value) {
-    $(this).removeClass('js-ajax');
+  catalogi('.colors').find('a').each(function (index, value) {
+    catalogi(this).removeClass('js-ajax');
   });
 
   //size!!!
-  // $('.js-moreinfo-size').removeClass('.js-moreinfo-size').removeClass('.js-sizeSelector')
+  // catalogi('.js-moreinfo-size').removeClass('.js-moreinfo-size').removeClass('.js-sizeSelector')
 
 
-  // $('.js-moreinfo-size').find('button').each(function (index, value) {
-  //     $(this).replaceWith("<a class='btn btn-primary btn-small size-selected'>" + $(this).text() + "</a>");
+  // catalogi('.js-moreinfo-size').find('button').each(function (index, value) {
+  //     catalogi(this).replaceWith("<a class='btn btn-primary btn-small size-selected'>" + catalogi(this).text() + "</a>");
   // });
 
-  // $('.size-selected').bind('click', function(event) {
-  //     $('.js-moreinfo-size').find('.btn').each(function (index, value) {
-  //         $(this).removeClass('active');
+  // catalogi('.size-selected').bind('click', function(event) {
+  //     catalogi('.js-moreinfo-size').find('.btn').each(function (index, value) {
+  //         catalogi(this).removeClass('active');
   //     });
 
-  //     $('.at-dv-size').text(" - " + $(this).text());
+  //     catalogi('.at-dv-size').text(" - " + catalogi(this).text());
   // });
 
   //SEARCH
-  $('.form-search').empty();
+  catalogi('.form-search').empty();
 
-  $('.form-search').append("<form class='form-search  sitesearch is-sitesearch--desktop at-form-search' onkeypress='return event.keyCode != 13;'>")
+  catalogi('.form-search').append("<form class='form-search  sitesearch is-sitesearch--desktop at-form-search' onkeypress='return event.keyCode != 13;'>")
   .append("<div class='typeahead-container'>")
   .append("<div class='sitesearch__wrapper form-search-wrapper typeahead-field'>")
   .append("<input type='hidden' name='lang' value='0'>")
@@ -152,7 +152,7 @@ catalogi.parse = function() {
 
 
   setInterval(function() {
-    $('.sitesearch__input').on('keyup keypress', function(e) {
+    catalogi('.sitesearch__input').on('keyup keypress', function(e) {
       var keyCode = e.keyCode || e.which;
       if (keyCode === 13) {
         e.preventDefault();
@@ -160,7 +160,7 @@ catalogi.parse = function() {
       }
     });
 
-    $('.sitesearch__input').on('keyup keypress', function(e) {
+    catalogi('.sitesearch__input').on('keyup keypress', function(e) {
       var keyCode = e.keyCode || e.which;
       if (keyCode === 13) {
         e.preventDefault();
@@ -168,13 +168,13 @@ catalogi.parse = function() {
       }
     });
 
-    $('.sitesearch__input').keypress(function(event){
+    catalogi('.sitesearch__input').keypress(function(event){
 
       if (event.keyCode === 10 || event.keyCode === 13)
       event.preventDefault();
 
     });
-    $('.sitesearch__input').keypress(function(event){
+    catalogi('.sitesearch__input').keypress(function(event){
 
       if (event.keyCode === 10 || event.keyCode === 13){
         console.log("bbb");
@@ -182,19 +182,19 @@ catalogi.parse = function() {
 
     });
 
-    $('.sitesearch__input').unbind();
-    $('.sitesearch__input').children().off();
-    $('.sitesearch__input').find("*").off();
+    catalogi('.sitesearch__input').unbind();
+    catalogi('.sitesearch__input').children().off();
+    catalogi('.sitesearch__input').find("*").off();
 
 
-    $('.form-search').unbind();
-    $('.form-search').children().off();
-    $('.form-search').find("*").off();
-    $('.form-search').find("*").addBack().off();
-    $('.form-search').children().addBack().off();
+    catalogi('.form-search').unbind();
+    catalogi('.form-search').children().off();
+    catalogi('.form-search').find("*").off();
+    catalogi('.form-search').find("*").addBack().off();
+    catalogi('.form-search').children().addBack().off();
   }, 500);
 
-  $('.sitesearch__magnifier').bind('click', function(event) {
+  catalogi('.sitesearch__magnifier').bind('click', function(event) {
     console.log("aaaa");
 
     var value = catalogi('.form-search').find("[name='searchparam']").val();
@@ -252,7 +252,7 @@ catalogi.parse = function() {
   catalogi('head')
   .delay(5000)
   .queue(function(next) {
-    //$('#footer').remove();
+    //catalogi('#footer').remove();
 
     if (_auth) {
       catalogi('#_auth_wait').remove();
@@ -287,65 +287,65 @@ catalogi.parse = function() {
 
   //custom header
 
-  //$('#footer').remove();
+  //catalogi('#footer').remove();
 
 
   //aaaa
 
   //search divs with background images and change url to valid
-  $('div').each(function (index, value) {
-    if ($(this).css("background-image") != 'none' && $(this).css("background-image").indexOf('http://media.sheego.catalogi.ru/') > -1) {
-      $(this).css("background-image", $(this).css("background-image").replace("catalogi.ru","de") , '!important');
+  catalogi('div').each(function (index, value) {
+    if (catalogi(this).css("background-image") != 'none' && catalogi(this).css("background-image").indexOf('http://media.sheego.catalogi.ru/') > -1) {
+      catalogi(this).css("background-image", catalogi(this).css("background-image").replace("catalogi.ru","de") , '!important');
     }
   });
 
 
   //search img and change url to valid
-  $('img').each(function (index, value) {
-    $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
+  catalogi('img').each(function (index, value) {
+    catalogi(this).attr("src", catalogi(this).attr("src").replace("catalogi.ru","de"));
   });
 
-  $('source').each(function (index, value) {
-    $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
+  catalogi('source').each(function (index, value) {
+    catalogi(this).attr("src", catalogi(this).attr("src").replace("catalogi.ru","de"));
   });
 
   window.setInterval(function(){
-    $('img').each(function (index, value) {
-      $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
+    catalogi('img').each(function (index, value) {
+      catalogi(this).attr("src", catalogi(this).attr("src").replace("catalogi.ru","de"));
     });
 
-    $('source').each(function (index, value) {
-      $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
+    catalogi('source').each(function (index, value) {
+      catalogi(this).attr("src", catalogi(this).attr("src").replace("catalogi.ru","de"));
     });
 
-    $('.standard').remove();
+    catalogi('.standard').remove();
 
-    $('div').each(function (index, value) {
-      if ($(this).css("background-image") != 'none' && $(this).css("background-image").indexOf('http://media.sheego.catalogi.ru/') > -1) {
-        $(this).css("background-image", $(this).css("background-image").replace("catalogi.ru","de") , '!important');
+    catalogi('div').each(function (index, value) {
+      if (catalogi(this).css("background-image") != 'none' && catalogi(this).css("background-image").indexOf('http://media.sheego.catalogi.ru/') > -1) {
+        catalogi(this).css("background-image", catalogi(this).css("background-image").replace("catalogi.ru","de") , '!important');
       }
     });
-    $('#content.search').css('width', '100%', '!important');
+    catalogi('#content.search').css('width', '100%', '!important');
   }, 1000);
 
   //hide payback-logo
-  $('.payback-logo-header').remove();
+  catalogi('.payback-logo-header').remove();
 
   //hide basket title
-  $('.minibasket__my').remove();
-  $('.miniaccount__mysheego-my').remove();
+  catalogi('.minibasket__my').remove();
+  catalogi('.miniaccount__mysheego-my').remove();
   //change text
-  $('.minibasketflyout').remove();
+  catalogi('.minibasketflyout').remove();
 
-  $('.minibasket__basket').empty();
-  $('.minibasket__basket').text('Корзина');
+  catalogi('.minibasket__basket').empty();
+  catalogi('.minibasket__basket').text('Корзина');
 
 
   //кабинет
-  $('#miniaccount').empty();
-  $( "#miniaccount" ).append( "<div class='myaccount notranslate' style='display: inline-block !important;'><a class='logged notranslate minibasket__text '  onclick='catalogi.login(); return false'><span class='hidden-xs-inline hidden-sm-inline'>Кабинет</span><span class='l-vertical-align-helper '><img style='width: 34px; vertical-align: 'src='https://image.freepik.com/free-icon/male-user-shadow_318-34042.png'></span></a></div>" );
-  //$( "#miniaccount" ).css('vertical-align','middle');
-  //$( "#miniaccount" ).css('padding-top','0px');
+  catalogi('#miniaccount').empty();
+  catalogi( "#miniaccount" ).append( "<div class='myaccount notranslate' style='display: inline-block !important;'><a class='logged notranslate minibasket__text '  onclick='catalogi.login(); return false'><span class='hidden-xs-inline hidden-sm-inline'>Кабинет</span><span class='l-vertical-align-helper '><img style='width: 34px; vertical-align: 'src='https://image.freepik.com/free-icon/male-user-shadow_318-34042.png'></span></a></div>" );
+  //catalogi( "#miniaccount" ).css('vertical-align','middle');
+  //catalogi( "#miniaccount" ).css('padding-top','0px');
 
 
 
@@ -353,9 +353,9 @@ catalogi.parse = function() {
 
 
   //smaller font size for menu
-  $('#mainnavigation a').css('font-size','16px');
+  catalogi('#mainnavigation a').css('font-size','16px');
   //search panel
-  $('.search').attr("style","left:0px;");
+  catalogi('.search').attr("style","left:0px;");
 
 
 
@@ -388,12 +388,12 @@ function addToCart() {
     // цвет
     // var color1 = catalogi(catalogi('.configurator--form').children()[2]).text().trim();
     // var color2 = "undef";
-    var color = $('.at-dv-color').text();
+    var color = catalogi('.at-dv-color').text();
     // if (color && color.length > 0) param.push(color);
     // размер
     // var size1 = catalogi(".configurator--form select option[selected='selected']").text().trim();
     // var size2 = catalogi('li[class*="selected"]:eq(1)').text();
-    var size = $('.at-dv-size').text();
+    var size = catalogi('.at-dv-size').text();
     // console.log(articul + name);
     // if (size == 'Выберите размер' || size == 'Выберите размер ') {
     //     alert('Выберите размер!');
@@ -434,15 +434,15 @@ function checkBasket() {
   catalogi('.wording .article .num').text(ordersNumber);
   console.log('ordersNumber: ' + ordersNumber);
 
-  // $('.minibasket__countvalue').empty();
+  // catalogi('.minibasket__countvalue').empty();
 
 
-  $('#minibasket').empty();
-  $('#minibasket').attr("onclick","catalogi.order(); return false");
-  $('#minibasket').css('cursor','pointer');
-  //$('#minibasket').css('vertical-align','sub');
-  //$('#minibasket').css('margin-top','8px');
-  $('#minibasket').append(""
+  catalogi('#minibasket').empty();
+  catalogi('#minibasket').attr("onclick","catalogi.order(); return false");
+  catalogi('#minibasket').css('cursor','pointer');
+  //catalogi('#minibasket').css('vertical-align','sub');
+  //catalogi('#minibasket').css('margin-top','8px');
+  catalogi('#minibasket').append(""
   + "<a class='minibasket__link js-minibasket-href' style='cursor : pointer'>"
   +    "<span class='minibasket__text hidden-xs-inline hidden-sm-inline'>"
   +    "<span class='minibasket__basket'>Корзина</span>"
@@ -451,11 +451,11 @@ function checkBasket() {
   +    "<span class='l-vertical-align-helper'></span>"
   + "</a>"
   + "");
-  $('.minibasket__countvalue').text(ordersNumber);
+  catalogi('.minibasket__countvalue').text(ordersNumber);
 
-  $('#minibasket').unbind();
-  $("#minibasket").children().off();
-  $("#minibasket").find("*").off();
+  catalogi('#minibasket').unbind();
+  catalogi("#minibasket").children().off();
+  catalogi("#minibasket").find("*").off();
 
   // catalogi('#minibasket').click(function(event) {
   //             event.preventDefault();
@@ -481,7 +481,7 @@ catalogi.service = function() {
     catalogi('#deliveryPriceDiv').remove();
     _price = catalogi('.pricearea .price .value').text().replace('€', '').replace(',', '.').trim();
     _delivery = parseFloat(_price) + ((parseFloat(_price) / 100) * parseFloat(_service));
-    catalogi('.pricearea').append($('<div></div>').attr('id', 'deliveryPriceDiv').text('С учетом доставки € ' + _delivery.toFixed(2)));
+    catalogi('.pricearea').append(catalogi('<div></div>').attr('id', 'deliveryPriceDiv').text('С учетом доставки € ' + _delivery.toFixed(2)));
     // catalogi('.product-shipping-costs').text('С учетом доставки € '+_delivery.toFixed(2));
   }
 };
