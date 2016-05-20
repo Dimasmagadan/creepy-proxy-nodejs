@@ -51,7 +51,7 @@ catalogi.parse = function() {
 
 
 setInterval(function(){ 
-    if ($('.addToCart').length > 0 && $('.myCart') == 0) {
+    if ($('.addToCart').length > 0 && $('.myCart').length == 0) {
     $('.addToCart').replaceWith('<div id="divAddToCart" class="itemButton addToCart newCart"><input value="Добавить в корзину"  type="button" class="bigButton addToCartButton"></div>');
     $('.addToCartButton').bind('click', function(event) {
       //  event.preventDefault();
