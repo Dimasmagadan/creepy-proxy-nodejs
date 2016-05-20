@@ -38,15 +38,21 @@ server {
     }
 
     location / {
-        #if ($allowed_country = no) {
-        #   rewrite ^/ http://www.bonaparte.de/ permanent;
-        #}
+        if ($request_method = POST ) {
+            return 418;
+        }
+
         proxy_pass http://127.0.0.1:5053;
         proxy_redirect http://127.0.0.1:5053/ /;
         proxy_set_header Host $host;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_set_header X-Real-IP $remote_addr;
+    }
+
+    error_page 418 = @post;
+    location @post {
+        proxy_pass https://de.bonaparteshop.com:443;
     }
 
 	error_page 500 502 503 504 /50x.html;
