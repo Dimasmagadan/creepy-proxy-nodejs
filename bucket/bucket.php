@@ -15,5 +15,41 @@ if(isset($_COOKIE["user"])){
 $stm->execute();
 $rows = $stm->fetchAll();
 
-print_r($rows);
+$ggwp = array();
+foreach($rows as $order) {
+    $id = $order["articul"];
+
+    if($order["search_link"]!=null){
+        $order["search_link"]=str_replace('$search_link', str_replace(" ", "", $order["articul"]), $order["search_link"]);
+        if(($order["catalog"] == 'BE') || ($order["catalog"] == 'KE') || ($order["catalog"] == 'ER')){
+            $order["search_link"] = str_replace('099', '', $order["search_link"] );
+        }
+        $order["articul"]="<a href=\"".$order["search_link"]."\" target=\"_blank\">".$order["articul"]."</a>";
+    }
+
+    $title = $order["naimenovanie"];
+    $url = $order["articul"];
+    $site = $order["shop_name"];
+    $img = $order["img"];
+    $size = $order["size"];
+    $color = '';
+    $price = $order["price"];
+    $number = $order["quan"];
+
+    $arr = [
+        'id' => $id,
+        'title' => $title,
+        'url' => $url,
+        'site' => $site,
+        'img' => $img,
+        'size' => $size,
+        'color' => $color,
+        'price' => $price,
+        'number' => $number
+    ];
+    array_push($ggwp, $arr);
+}
+
+header('Content-Type: application/json');
+echo json_encode($ggwp, JSON_PRETTY_PRINT);
 die();
