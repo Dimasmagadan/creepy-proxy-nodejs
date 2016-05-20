@@ -2,6 +2,7 @@
  * Created by mihailstepancenko on 22.12.15.
  */
 
+ // first comment
 
 var timeout1 = 5000; // basket update
 
@@ -32,157 +33,99 @@ catalogi.noTranslate = function() {
 };
 
 catalogi.parse = function() {
-
-
-
-    $('#customerbox').css('margin-top','8px');
-
-
-
-    if (catalogi('.at-dv-addToBasket')) {
-        catalogi('.at-dv-addToBasket').replaceWith(
-            $("<button type='button' class='at-dv-addToBasket btn btn-primary btn-tall ' >В корзину</button>")
-            .addClass('notranslate')
-            .attr('id', 'addToCartBtn')
-            //  .attr('href', '#')
-            .bind('click', function(event) {
-                //  event.preventDefault();
-                addToCart();
-            })
-            // .bind('tap', function(event) {
-            //     //    event.preventDefault();
-            //     addToCart();
-            // })
-
-        );
-    }
-
-    $('.color-item').unbind();
-    $('.color-item').children().off();
-    $('.color-item').find("*").off();
-
-
-
-    // $('.color-item').each(function (index, value) {
-    //     $(this).removeAttr("href");
-    // });
-
-    $('.colors').find('a').each(function (index, value) {
-        $(this).removeClass('js-ajax');
-    });
-
-    //size!!!
-    // $('.js-moreinfo-size').removeClass('.js-moreinfo-size').removeClass('.js-sizeSelector')
-
-
-    // $('.js-moreinfo-size').find('button').each(function (index, value) {
-    //     $(this).replaceWith("<a class='btn btn-primary btn-small size-selected'>" + $(this).text() + "</a>");
-    // });
-
-    // $('.size-selected').bind('click', function(event) {
-    //     $('.js-moreinfo-size').find('.btn').each(function (index, value) {
-    //         $(this).removeClass('active');
-    //     });
-
-    //     $('.at-dv-size').text(" - " + $(this).text());
-    // });
-
-    //SEARCH
-   $('.form-search').empty();
-
-    $('.form-search').append("<form class='form-search  sitesearch is-sitesearch--desktop at-form-search' onkeypress='return event.keyCode != 13;'>")
-        .append("<div class='typeahead-container'>")
-        .append("<div class='sitesearch__wrapper form-search-wrapper typeahead-field'>")
-        .append("<input type='hidden' name='lang' value='0'>")
-        .append("<input type='hidden' name='cl' value='search'>")
-        .append("<input type='text' required='' class='typeahead-query sitesearch__input js-searchParam at-search-param parsley-validated' name='searchparam' value='' placeholder='Артикул/Suchbegriff' parsley-required='true'  autocomplete='off'>")
-        .append("<button class='btn sitesearch__magnifier typeahead-button' type='button' value=''><span class='searchmagnifier'></span><span class='searchloading js-searchloading'></span>поиск</button></div>")
-        .append("<div class='js-parsley-searchfield-error-container'></div>")
-        .append("</div></form>");
-
-
-
-    setInterval(function() {
-      $('.sitesearch__input').on('keyup keypress', function(e) {
-        var keyCode = e.keyCode || e.which;
-        if (keyCode === 13) {
-          e.preventDefault();
-          return false;
-        }
-      });
-
-      $('.sitesearch__input').on('keyup keypress', function(e) {
-        var keyCode = e.keyCode || e.which;
-        if (keyCode === 13) {
-          e.preventDefault();
-          return false;
-        }
-      });
-
-      $('.sitesearch__input').keypress(function(event){
-
-      if (event.keyCode === 10 || event.keyCode === 13)
-          event.preventDefault();
-
-    });
-    $('.sitesearch__input').keypress(function(event){
-
-        if (event.keyCode === 10 || event.keyCode === 13){
-          console.log("bbb");
-        }
-
-      });
-
-      $('.sitesearch__input').unbind();
-      $('.sitesearch__input').children().off();
-      $('.sitesearch__input').find("*").off();
-
-
-      $('.form-search').unbind();
-      $('.form-search').children().off();
-      $('.form-search').find("*").off();
-       $('.form-search').find("*").addBack().off();
-    $('.form-search').children().addBack().off();
-    }, 500);
-
-    $('.sitesearch__magnifier').bind('click', function(event) {
-      console.log("aaaa");
-
-      var value = catalogi('.form-search').find("[name='searchparam']").val();
-      catalogi.cookie('seachString', value, {
-        expires: 7,
-        path: '/',
-        domain: '.catalogi.ru'
-      });
-      catalogi.ajax({
-        url: 'http://cdn.catalogi.ru/executable/actions/_translate.php',
-        type: 'get',
-        dataType: 'json',
-        data: {
-          client: 't',
-          text: value,
-          sl: 'ru',
-          tl: 'de'
-        },
-        success: function(data) {
-          console.log('success:' + data);
-          console.log(data.text[0]);
-          var goingto = "http://www." + "sheego" + ".catalogi.ru/index.php?lang=0&cl=search&searchparam=" + data.text[0];
-          window.location = goingto;
-
-        },
-        error: function(data) {
-          console.log('error:' + data);
-          // top.postMessage({action: 'search', search: catalogi('#search').val()},'*');
-        }
-      });
-    });
-
-
-
-
     //// Шапка
     catalogi('#iframe').hide();
+
+    // Добавление в корзину
+    catalogi('.addToCartForm').submit(function(event) {
+        try {
+
+            var complekt = catalogi('.variantselectform');
+
+            if (complekt.length == 1) {
+                var queryString = $('.addToCartForm').serialize();
+                // артикул
+                var articul = "<a href='" + window.location.href + "' target='_blank'>" + catalogi(".articlenumber .num").text() + "</a>";
+                // название
+                var name = catalogi('.articlemain .articlename').text().trim();
+                // количество
+                var count = catalogi("input[name=quantity]").val();
+                // цена
+                var price = catalogi('.pricearea .price .value').first().text().replace(',', '.');
+                // картинка
+                if (window.innerWidth < 770) {
+                    var img = catalogi('#thumbslider img').attr('data-src');
+                } else {
+                    var img = catalogi('#thumbimages img').attr('src');
+                }
+
+
+                var param = [];
+
+                // цвет
+                var color1 = catalogi('#colorSelect .active').attr('data-original-title');
+                var color2 = catalogi('li[class*="selected"]:eq(0)').attr('title');
+                var color = (color1 == "") ? color2 : color1;
+                if (color && color.length > 0) param.push(color);
+
+                // размер
+                var size1 = catalogi('.button-holder .active').text();
+                var size2 = catalogi('li[class*="selected"]:eq(1)').text();
+                var size = ((size1 == "") ? size2 : size1).trim();
+                if (size == 'Выберите размер' || size == 'Выберите размер ') {
+                    alert('Выберите размер!');
+                    return;
+                }
+                if (size && size.length > 0) param.push(size);
+
+                // отправка запроса
+                catalogi.basket.add({
+                    catalog: 'Janvanderstorm.de',
+                    articul: articul,
+                    name: name,
+                    size: (param.join(' ').trim() == '') ? 0 : param.join(' ').trim(),
+                    price: price,
+                    count: count,
+                    img: img
+                });
+
+            } else {
+                var numberPattern = /\d+/g;
+
+                var namePart = catalogi('.articlemain .articlenumber').text();
+                namePart = namePart.match(numberPattern);
+                namePart = "<a href='" + window.location.href + "' target='_blank'>" + namePart + "</a>";
+                for (var i = 0; i < complekt.length; i++) {
+                    if (catalogi(complekt[i]).find('.checkbox.dark.active').length > 0) {
+                        var objToSend = {
+                            catalog: 'Janvanderstorm.de',
+                            articul: "<a href='" + window.location.href + "' target='_blank'>" + JSON.parse(catalogi(complekt[i]).attr('data-variantselect')).productId + "</a>",
+                            name: "Комплект " + catalogi(complekt[i]).find('.articlename').text(),
+                            size: "size " + catalogi(complekt[i]).find('.variantselect .button-holder .active').text(),
+                            price: catalogi(complekt[i]).find('.price .value').text().replace(',', '.'),
+                            count: 1,
+                            img: catalogi(complekt[i]).find('.imgholder img').attr('src')
+                        };
+                        catalogi.basket.add(objToSend);
+                    }
+                    //alert(catalogi(complekt[i]).find('.imgholder img').attr('src'));
+                }
+            }
+
+            console.log('OK');
+        } catch (e) {
+            console.log(e);
+        }
+        setTimeout(function() {
+            catalogi('#cboxLoadedContent').css('width', catalogi('#cboxLoadedContent').css('width').replace('px', '') + 40 + 'px');
+            catalogi('#cboxLoadedContent').css('height', catalogi('#cboxLoadedContent').css('height').replace('px', '') + 40 + 'px');
+        }, 500);
+        return false;
+    });
+
+
+
+
 
     // Подписка
     catalogi.subscribe(false, '31386');
@@ -204,41 +147,12 @@ catalogi.parse = function() {
         .delay(5000)
         .queue(function(next) {
 
-
-    $( "#header-topbar > div > div" ).append( "<div id='topbar-slogan' class='col-md-6 hidden-xs hidden-sm'><a href='http://www.catalogi.ru' target='_blank' class='headerLinks _home catalogiLink' style='cursor:pointer'> Каталоги.ру <span class='hidden-xs hidden-sm hidden-md'>- заказ и доставка одежды из интернет-магазина Sheego.de.</span></a></div>"
-                                            + "<div class=' col-md-6'>"
-                                            + "<a href='#' class='headerLinks hidden-xs hidden-sm' onclick='catalogi.catalogs(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'>Онлайн каталоги</a><span class='hidden-xs hidden-sm'>|</span>"
-                                            + "<a href='#' class='headerLinks hidden-xs hidden-sm' onclick='catalogi.shops(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'>Интернет-магазины</a><span class='hidden-xs hidden-sm'>|</span>"
-                                            + "<a href='#' class='headerLinks hidden-xs hidden-sm' onclick='catalogi.sizeTable(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'>Таблица размеров</a><span class='hidden-xs hidden-sm'>|</span>"
-                                            + "<a href='#' id='delivery' class='headerLinks notranslate hidden-xs hidden-sm' onclick='catalogi.delivery(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'> Дocтавка </a><span class='hidden-xs hidden-sm'>|</span>"
-                                            + "<a href='#' class='headerLinks hidden-xs hidden-sm' onclick='catalogi.payment(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'>Оплата</a>"
-                                            + "<a href='#' class='hidden-xs hidden-sm hidden-md' style='margin-left: 20px'>+74955404949</a></div>"
-                                            + "<div class='col-sm-12 col-xs-12 hidden-md hidden-lg'>"
-                                            + "<a href='http://www.catalogi.ru' target='_blank' class='headerLinks _home catalogiLink' style='cursor:pointer'> Каталоги.ру </a>|"
-                                            + "<a href='#' class='headerLinks' onclick='catalogi.payment(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'>Оплата</a>|"
-                                            + "<a href='#'  class='headerLinks notranslate ' onclick='catalogi.delivery(); return false' style='margin-left:0px; margin-right:0px; cursor:pointer;'> Дocтавка </a></div>");
-
-
-// <li class="mainnav__entry mainnav__entry--start"> <a class="mainnav__entry-title" href="http://www.sheego.catalogi.ru/" style="font-size: 16px;"><font><font><font><font>старт</font></font></font></font></a></li>
-
-    $('.mainnav__ul').append(""
-        + "<li class='mainnav__entry mainnav__entry--start'><a href='#' class='mainnav__entry-title' onclick='catalogi.catalogs(); return false' >Онлайн каталоги</a></li>"
-        + "<li class='mainnav__entry mainnav__entry--start'><a href='#' class='mainnav__entry-title' onclick='catalogi.shops(); return false'>Интернет-магазины</a></li>"
-        + "<li class='mainnav__entry mainnav__entry--start'><a href='#' class='mainnav__entry-title' onclick='catalogi.sizeTable(); return false' >Таблица размеров</a></li>"
-        + "");
-
-
-
             if (_auth) {
                 catalogi('#_auth_wait').remove();
-                catalogi('#miniaccount').empty();
-                catalogi('#miniaccount')
-                    .html('<a href="http://catalogi.ru/cabinet/" class="my-account-login underline-alternative" target="_blank"><span class="hidden-xs-inline hidden-sm-inline">Kабинет</span><span class="l-vertical-align-helper "><img style="width: 34px; vertical-align: "src="https://image.freepik.com/free-icon/male-user-shadow_318-34042.png"></span></a>');
-                    //<a class="accountIco">S<a/>
-                //catalogi('.my-account-login').text('S').css('cssText', "font-family: 'jvds icons',sans-serif;font-size:2.1em");
-
-                catalogi('.accountIco').css('cssText', "font-family: 'jvds icons',sans-serif;font-size:2.1em");
-
+                catalogi('.myaccount.notranslate > a').remove();
+                catalogi('.myaccount.notranslate')
+                    .html('<a href="http://catalogi.ru/cabinet/" class="my-account-login underline-alternative" target="_blank">Личный кабинет</a>');
+                catalogi('.myaccount.notranslate > a').text('S').css('cssText', "font-family: 'jvds icons',sans-serif;font-size:2.1em");
                 catalogi('.account-nav-listelem').show();
                 catalogi('._logout').click(function() {
                     catalogi.logout();
@@ -254,148 +168,8 @@ catalogi.parse = function() {
                 catalogi('.account-nav-listelem > a').text('Вход');
             }
         });
-
-
-
-        //Added  12.05.2016
-
-
-                //custom header
-    $('#topbar-slogan').remove();
-    $('#topbar-salutation').remove();
-    $('#topbar-bulletpoints').remove();
-
-    $('.firstlevel').remove();
-    $('.secondlevel').remove();
-    $('.thirdlevel').remove();
-    $('.fourthlevel').remove();
-
-    //hide all content after first #footer
-    $('#iframe').nextAll().remove();
-    $('#iframe').hide();
-    // $("#footer").nextAll().hide();
-    //aaaa
-
-    //search divs with background images and change url to valid
-    $('div').each(function (index, value) {
-        if ($(this).css("background-image") != 'none' && $(this).css("background-image").indexOf('http://media.sheego.catalogi.ru/') > -1) {
-            $(this).css("background-image", $(this).css("background-image").replace("catalogi.ru","de") , '!important');
-        }
-    });
-
-
-    //search img and change url to valid
-    $('img').each(function (index, value) {
-        $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
-        });
-
-    window.setInterval(function(){
-        $('img').each(function (index, value) {
-        $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
-        });
-        $('div').each(function (index, value) {
-            if ($(this).css("background-image") != 'none' && $(this).css("background-image").indexOf('http://media.sheego.catalogi.ru/') > -1) {
-                $(this).css("background-image", $(this).css("background-image").replace("catalogi.ru","de") , '!important');
-            }
-        });
-        $('#content.search').css('width', '100%', '!important');
-    }, 1000);
-
-    //hide payback-logo
-    $('.payback-logo-header').remove();
-
-    //hide basket title
-    $('.minibasket__my').remove();
-    $('.miniaccount__mysheego-my').remove();
-    //change text
-    $('.minibasketflyout').remove();
-
-    $('.minibasket__basket').empty();
-    $('.minibasket__basket').text('Корзина');
-
-
-    //кабинет
-    $('#miniaccount').empty();
-     $( "#miniaccount" ).append( "<div class='myaccount notranslate' style='display: inline-block !important;'><a class='logged notranslate minibasket__text '  onclick='catalogi.login(); return false'><span class='hidden-xs-inline hidden-sm-inline'>Кабинет</span><span class='l-vertical-align-helper '><img style='width: 34px; vertical-align: 'src='https://image.freepik.com/free-icon/male-user-shadow_318-34042.png'></span></a></div>" );
-     //$( "#miniaccount" ).css('vertical-align','middle');
-     //$( "#miniaccount" ).css('padding-top','0px');
-
-
-
-
-
-
-    //smaller font size for menu
-    $('#mainnavigation a').css('font-size','16px');
-    //search panel
-    $('.search').attr("style","left:0px;");
-
-
-
 };
 
-
-function addToCart() {
-    try {
-
-        // артикул
-        var articul = catalogi('.at-dv-artNr').first().text().trim();
-        // название
-        var name = catalogi('.at-dv-itemName').first().text().trim();
-        // количество
-        var count = catalogi('#sQuantity').val();
-        // цена
-        var price = catalogi('.at-lastprice')
-        .first()
-            .text()
-            .replace('€', '')
-            .replace('*', '')
-            .replace(',', '.')
-            .trim();
-        // картинка
-        //var img = catalogi('.image--thumbnails img').first().attr('srcset').split(',')[0];
-        var img = catalogi('.js-thumb-img img').first().attr('src');
-        // var img = (img_normal ? img_normal : img_safari).split(',')[0];
-
-        var param = [];
-        // цвет
-        // var color1 = catalogi(catalogi('.configurator--form').children()[2]).text().trim();
-        // var color2 = "undef";
-        var color = $('.at-dv-color').text();
-        // if (color && color.length > 0) param.push(color);
-        // размер
-        // var size1 = catalogi(".configurator--form select option[selected='selected']").text().trim();
-        // var size2 = catalogi('li[class*="selected"]:eq(1)').text();
-        var size = $('.at-dv-size').text();
-        // console.log(articul + name);
-        // if (size == 'Выберите размер' || size == 'Выберите размер ') {
-        //     alert('Выберите размер!');
-        //     return;
-        // }
-        // if (size && size.length > 0) param.push(size);
-
-        // отправка запроса
-        catalogi.basket.add({
-            catalog: 'SG',
-            articul: articul,
-            name: name,
-            size: color + size,
-            price: price,
-            count: '1',
-            img: img
-        });
-        console.log('OK');
-    } catch (e) {
-        console.log(e);
-    }
-     return false;  setTimeout(function() {
-        if (catalogi('#cboxLoadedContent').length == 0) {
-            catalogi.order();
-        }
-    }, 800);
-
-    return false;
-}
 
 
 function checkBasket() {
@@ -406,35 +180,6 @@ function checkBasket() {
     if (ordersNumber)
         catalogi('.wording .article .num').text(ordersNumber);
     console.log('ordersNumber: ' + ordersNumber);
-
-    // $('.minibasket__countvalue').empty();
-
-
-    $('#minibasket').empty();
-    $('#minibasket').attr("onclick","catalogi.order(); return false");
-    $('#minibasket').css('cursor','pointer');
-    //$('#minibasket').css('vertical-align','sub');
-    //$('#minibasket').css('margin-top','8px');
-        $('#minibasket').append(""
-                    + "<a class='minibasket__link js-minibasket-href' style='cursor : pointer'>"
-                    +    "<span class='minibasket__text hidden-xs-inline hidden-sm-inline'>"
-                    +    "<span class='minibasket__basket'>Корзина</span>"
-                    +    "</span>"
-                    +    "<span class='minibasket__countvalue l-vertical-align-helped'></span>"
-                    +    "<span class='l-vertical-align-helper'></span>"
-                    + "</a>"
-        + "");
-    $('.minibasket__countvalue').text(ordersNumber);
-
-    $('#minibasket').unbind();
-    $("#minibasket").children().off();
-    $("#minibasket").find("*").off();
-
-    // catalogi('#minibasket').click(function(event) {
-    //             event.preventDefault();
-    //             catalogi.order();
-    //         });
-
     catalogi('#mbflyout-area').remove();
 
     window.timer1 = window.setInterval("checkBasket();", timeout1);
@@ -490,41 +235,46 @@ catalogi(function() {
     catalogi('#mbflyout-area').remove();
 
 
-    catalogi('.form-search').submit(function(event) {
-      var value = catalogi('.form-search').find("[name='searchparam']").val();
-      catalogi.cookie('seachString', value, {
-        expires: 7,
-        path: '/',
-        domain: '.catalogi.ru'
-      });
-      catalogi.ajax({
-        url: 'http://cdn.catalogi.ru/executable/actions/_translate.php',
-        type: 'get',
-        dataType: 'json',
-        data: {
-          client: 't',
-          text: value,
-          sl: 'ru',
-          tl: 'de'
-        },
-        success: function(data) {
-          console.log('success:' + data);
-          console.log(data.text[0]);
-          var goingto = "http://www." + "sheego" + ".catalogi.ru/index.php?lang=0&cl=search&searchparam=" + data.text[0];
-          window.location = goingto;
 
-        },
-        error: function(data) {
-          console.log('error:' + data);
-          // top.postMessage({action: 'search', search: catalogi('#search').val()},'*');
-        }
-      });
+    catalogi('.searchform').submit(function(event) {
+
+        var form = event.currentTarget;
+
+        var value = catalogi(form).find("[name='search']").val();
+
+        //var value = catalogi("[name='search'")[0].value ? catalogi("[name='search'")[0].value : catalogi("[name='search'")[1].value;
+        catalogi.cookie('seachString', value, {
+            expires: 7,
+            path: '/',
+            domain: '.catalogi.ru'
+        });
+        catalogi.ajax({
+            url: 'http://cdn.catalogi.ru/executable/actions/_translate.php',
+            type: 'get',
+            dataType: 'json',
+            data: {
+                client: 't',
+                text: value,
+                sl: 'ru',
+                tl: 'de'
+            },
+            success: function(data) {
+                console.log('success:' + data);
+                catalogi(form).find("[name='search']").val(data.text[0]);
+                form.submit();
+            },
+            error: function(data) {
+                console.log('error:' + data);
+                // top.postMessage({action: 'search', search: catalogi('#search').val()},'*');
+            }
+        });
+        return false;
     });
 
     catalogi(window).on('message', function(event) {
         switch (event.originalEvent.data.action) {
             case 'search':
-                var goingto = "http://www." + currentDomain + ".catalogi.ru/index.php?lang=0&cl=search&searchparam=";
+                var goingto = "http://www." + currentDomain + ".catalogi.ru/" + currentDomain + "/de/s?_sb=true&query=";
                 goingto = goingto + event.originalEvent.data.search.toLowerCase().replace(' ', '+');
                 window.location = goingto;
                 break
@@ -536,5 +286,4 @@ catalogi(function() {
     catalogi.parse();
     catalogi.removeShit();
     checkSeach();
-
 });
