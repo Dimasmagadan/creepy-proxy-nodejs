@@ -39,20 +39,20 @@ catalogi.parse = function() {
   // $('#iframe').remove();
   $('#iframe').nextAll().remove();
   $('#iframe').hide();
-  $('.standard').remove();
-  $('#footer').remove();
+  //$('.standard').remove();
+  //$('#footer').remove();
 
   $('#topbar-slogan').remove();
   $('#topbar-salutation').remove();
   $('#topbar-bulletpoints').remove();
 
-  $('.firstlevel').remove();
-  $('.secondlevel').remove();
-  $('.thirdlevel').remove();
-  $('.fourthlevel').remove();
-  $('.standard').remove();
-  $('#stickyfooter').remove();
-  $('#nl-layer').remove();
+  // $('.firstlevel').remove();
+  // $('.secondlevel').remove();
+  // $('.thirdlevel').remove();
+  // $('.fourthlevel').remove();
+  // $('.standard').remove();
+  // $('#stickyfooter').remove();
+  // $('#nl-layer').remove();
 
   //$('#startbody > script:nth-child(16)').remove();
 
@@ -81,9 +81,6 @@ catalogi.parse = function() {
         + "");
 
   }
-
-
-
 
 
     $('#customerbox').css('margin-top','8px');
@@ -319,7 +316,7 @@ catalogi.parse = function() {
         $('source').each(function (index, value) {
     $(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
     });
-    
+
         $('div').each(function (index, value) {
             if ($(this).css("background-image") != 'none' && $(this).css("background-image").indexOf('http://media.sheego.catalogi.ru/') > -1) {
                 $(this).css("background-image", $(this).css("background-image").replace("catalogi.ru","de") , '!important');
