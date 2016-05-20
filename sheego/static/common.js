@@ -37,8 +37,8 @@ catalogi.parse = function() {
 
   //hide all content after first #footer
   // catalogi('#iframe').remove();
-  catalogi('#iframe').nextAll().remove();
-  catalogi('#iframe').hide();
+  // catalogi('#iframe').nextAll().remove();
+  // catalogi('#iframe').hide();
   //catalogi('.standard').remove();
 
 
@@ -55,7 +55,6 @@ catalogi.parse = function() {
   // catalogi('#nl-layer').remove();
   // catalogi("#footer").hide();
 
-  //catalogi('#startbody > script:nth-child(16)').remove();
 
   //  catalogi("#footer").nextAll().remove();
 
@@ -284,7 +283,7 @@ catalogi.parse = function() {
 
   //Added  12.05.2016
 
-
+// $('.sizetable').replaceWith('<a class="btn btn-text sizetable" onclick="catalogi.sizeTable(); return false" style="cursor:pointer;"  title="таблицы размеров"><span class="arrow">&gt;</span>Диаграмма размера</a>');
   //custom header
 
   //catalogi('#footer').remove();
@@ -305,9 +304,6 @@ catalogi.parse = function() {
     catalogi(this).attr("src", catalogi(this).attr("src").replace("catalogi.ru","de"));
   });
 
-  catalogi('source').each(function (index, value) {
-    catalogi(this).attr("src", catalogi(this).attr("src").replace("catalogi.ru","de"));
-  });
 
   window.setInterval(function(){
     catalogi('img').each(function (index, value) {
