@@ -251,6 +251,18 @@ catalogi.parse = function() {
 
 
     catalogi(this).css('visibility', 'visible');
+
+//video
+    if ($('video').length > 0) {
+      $('video').each(function (index, value) {
+        //$(this).attr("src", $(this).attr("src").replace("catalogi.ru","de"));
+        var validSource = $(this).find('source').attr('src').replace('catalogi.ru','de');
+        $(this).replaceWith('<video style="width:100%" preload="auto" loop="" autoplay="" controls="" muted="" poster=""><source src=" '+ validSource +' "type="video/mp4 "><img src=""></video>');
+      });
+      }
+
+
+    }
   });
 
   catalogi('head')
